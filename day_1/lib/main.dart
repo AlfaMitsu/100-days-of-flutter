@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import 'src/featutres/todo/presentation/views/home_view.dart';
+
 void main() {
   runApp(const MyApp());
 }
@@ -9,9 +11,10 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return const MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'Flutter Demo',
+      title: '100 days of Flutter',
+      home: HomeView(),
     );
   }
 }
