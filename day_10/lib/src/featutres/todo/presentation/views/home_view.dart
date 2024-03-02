@@ -32,7 +32,7 @@ class HomeView extends StatelessWidget {
                         animatedTexts: [
                           TyperAnimatedText(
                             'TRISHIA',
-                            speed: const Duration(microseconds: 120),
+                            speed: const Duration(milliseconds: 120),
                             textStyle: kAnimatedTyperTextStyle,
                           ),
                         ],
