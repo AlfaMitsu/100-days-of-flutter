@@ -5,8 +5,13 @@ class CoffeeItem {
   String? subtitle;
   double? price;
 
-  CoffeeItem(
-      {this.rating, this.itemImg, this.title, this.subtitle, this.price});
+  CoffeeItem({
+    this.rating,
+    this.itemImg,
+    this.title,
+    this.subtitle,
+    this.price,
+  });
 
   CoffeeItem.fromJson(Map<String, dynamic> json) {
     rating = json['rating'];
