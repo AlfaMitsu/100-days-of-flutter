@@ -14,6 +14,13 @@ const TextStyle kPickTimeTextStyle = TextStyle(
   fontSize: 30,
 );
 
+const TextStyle kWalletVisaTextStyle = TextStyle(
+  fontStyle: FontStyle.italic,
+  fontSize: 28,
+  color: kWhiteTextColor,
+  fontWeight: FontWeight.w900,
+);
+
 const TextStyle kQiblahTextStyle = TextStyle(
   color: kWhiteTextColor,
   fontSize: 24,
@@ -52,6 +59,19 @@ const TextStyle kAnimatedTypewritterTextStyle = TextStyle(
   color: kBlueColor,
   fontSize: 20,
   fontWeight: FontWeight.w600,
+);
+
+const TextStyle kWalletCardNumberTextStyle = TextStyle(
+  fontSize: 20,
+  color: kWhiteTextColor,
+  fontWeight: FontWeight.w700,
+  letterSpacing: 2,
+);
+
+const TextStyle kWalletCardSettingsTextStyle = TextStyle(
+  fontWeight: FontWeight.w500,
+  fontSize: 20,
+  color: kBlackTextColor,
 );
 
 const TextStyle kVerifyTextTextStyle = TextStyle(
@@ -96,6 +116,13 @@ const TextStyle kWalletSeeAllTextStyle = TextStyle(
   fontWeight: FontWeight.w700,
 );
 
+const TextStyle kWalletCardSubDetailsTextStyle = TextStyle(
+  color: kGreyColor,
+  fontSize: 16,
+  fontWeight: FontWeight.w700,
+  letterSpacing: 2,
+);
+
 const TextStyle kBottomTitlesTextStyle = TextStyle(
   color: kBlackColor,
   fontSize: 15,
@@ -126,10 +153,23 @@ const TextStyle kWalletTransactionsTextStyle = TextStyle(
   fontWeight: FontWeight.w700,
 );
 
+const TextStyle kWalletCardTextStyle = TextStyle(
+  color: kGreyColor,
+  fontSize: 14,
+  fontWeight: FontWeight.w900,
+);
+
 const TextStyle kReminderTextStyle = TextStyle(
   color: kRedColor,
   fontSize: 12,
   fontWeight: FontWeight.w400,
+);
+
+const TextStyle kWalletCardDetailsTextStyle = TextStyle(
+  color: kTealColor,
+  fontSize: 12,
+  fontWeight: FontWeight.w700,
+  letterSpacing: 2,
 );
 
 const TextStyle kVerifyTextStyle = TextStyle(

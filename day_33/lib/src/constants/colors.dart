@@ -29,11 +29,14 @@ const kTransparent = Colors.transparent;
 
 const kWhiteTextColor = kWhiteColor;
 const kGreyTextColor = kGreyColor;
+const kBlackTextColor = kBlackColor;
 
 // Widgets Colors
 
 const kBlueGreyColor = Color(0xFF7393B3);
 const kIconColor = Color(0xFF4E4F53);
+const kCardColor = Color.fromRGBO(35, 60, 103, 1);
+const kCardSettingsSwitch = Color.fromRGBO(50, 172, 121, 1);
 
 // Gradient Colors
 
