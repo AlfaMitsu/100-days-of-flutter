@@ -1,7 +1,9 @@
+import 'package:day_36/src/constants/colors.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 
+import '../../../../constants/styles.dart';
 import '../../data/models/cart_model.dart';
 import '../widgets/grocery_item_tile.dart';
 import 'cart_view.dart';
@@ -18,42 +20,39 @@ class _HomeViewState extends State<HomeView> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.transparent,
+        backgroundColor: kTransparent,
         elevation: 0,
-        leading: Padding(
-          padding: const EdgeInsets.only(left: 24.0),
+        leading: const Padding(
+          padding: EdgeInsets.only(left: 24),
           child: Icon(
             Icons.location_on,
-            color: Colors.grey[700],
+            color: kGrey800Color,
           ),
         ),
-        title: Text(
-          'Sydney, Australia',
-          style: TextStyle(
-            fontSize: 16,
-            color: Colors.grey[700],
-          ),
+        title: const Text(
+          'Davao, Philippines',
+          style: kGroceryHeadingIntroViewTextStyle,
         ),
         centerTitle: false,
         actions: [
           Padding(
-            padding: const EdgeInsets.only(right: 24.0),
+            padding: const EdgeInsets.only(right: 24),
             child: Container(
               padding: const EdgeInsets.all(16),
               decoration: BoxDecoration(
-                color: Colors.grey[200],
+                color: kGrey200Color,
                 borderRadius: BorderRadius.circular(12),
               ),
               child: const Icon(
                 Icons.person,
-                color: Colors.grey,
+                color: kGreyColor,
               ),
             ),
           ),
         ],
       ),
       floatingActionButton: FloatingActionButton(
-        backgroundColor: Colors.black,
+        backgroundColor: kWhiteColor,
         onPressed: () => Navigator.push(
           context,
           MaterialPageRoute(
@@ -68,71 +67,57 @@ class _HomeViewState extends State<HomeView> {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           const SizedBox(height: 48),
-
-          // good morning bro
           const Padding(
-            padding: EdgeInsets.symmetric(horizontal: 24.0),
+            padding: EdgeInsets.symmetric(horizontal: 24),
             child: Text('Good morning,'),
           ),
-
           const SizedBox(height: 4),
-
-          // Let's order fresh items for you
           Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 24.0),
+            padding: const EdgeInsets.symmetric(horizontal: 24),
             child: Text(
               "Let's order fresh items for you",
-              style: GoogleFonts.notoSerif(
-                fontSize: 36,
-                fontWeight: FontWeight.bold,
-              ),
+              style: kGroceryIntroViewTextStyle,
             ),
           ),
-
           const SizedBox(height: 24),
-
           const Padding(
-            padding: EdgeInsets.symmetric(horizontal: 24.0),
+            padding: EdgeInsets.symmetric(horizontal: 24),
             child: Divider(),
           ),
-
           const SizedBox(height: 24),
-
-          // categories -> horizontal listview
           Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 24.0),
+            padding: const EdgeInsets.symmetric(horizontal: 24),
             child: Text(
               "Fresh Items",
-              style: GoogleFonts.notoSerif(
-                //fontWeight: FontWeight.bold,
-                fontSize: 18,
-              ),
+              style: kGroceryHomeViewItemsTextStyle,
             ),
           ),
-
-          // recent orders -> show last 3
           Expanded(
             child: Consumer<CartModel>(
               builder: (context, value, child) {
-                return GridView.builder(
-                  padding: const EdgeInsets.all(12),
-                  physics: const NeverScrollableScrollPhysics(),
-                  itemCount: value.shopItems.length,
-                  gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                    crossAxisCount: 2,
-                    childAspectRatio: 1 / 1.2,
+                return SingleChildScrollView(
+                  child: GridView.builder(
+                    shrinkWrap: true,
+                    padding: const EdgeInsets.all(12),
+                    physics: const NeverScrollableScrollPhysics(),
+                    itemCount: value.shopItems.length,
+                    gridDelegate:
+                        const SliverGridDelegateWithFixedCrossAxisCount(
+                      crossAxisCount: 2,
+                      childAspectRatio: 1 / 1.2,
+                    ),
+                    itemBuilder: (context, index) {
+                      return GroceryItemTile(
+                        itemName: value.shopItems[index][0],
+                        itemPrice: value.shopItems[index][1],
+                        imagePath: value.shopItems[index][2],
+                        color: value.shopItems[index][3],
+                        onPressed: () =>
+                            Provider.of<CartModel>(context, listen: false)
+                                .addItemToCart(index),
+                      );
+                    },
                   ),
-                  itemBuilder: (context, index) {
-                    return GroceryItemTile(
-                      itemName: value.shopItems[index][0],
-                      itemPrice: value.shopItems[index][1],
-                      imagePath: value.shopItems[index][2],
-                      color: value.shopItems[index][3],
-                      onPressed: () =>
-                          Provider.of<CartModel>(context, listen: false)
-                              .addItemToCart(index),
-                    );
-                  },
                 );
               },
             ),

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'colors.dart';
 
 // TextStyle
@@ -7,6 +8,11 @@ const TextStyle kWalletBalanceTextStyle = TextStyle(
   color: kWhiteTextColor,
   fontSize: 36,
   fontWeight: FontWeight.w700,
+);
+
+TextStyle kGroceryIntroViewTextStyle = GoogleFonts.notoSerif(
+  fontSize: 36,
+  fontWeight: FontWeight.bold,
 );
 
 const TextStyle kPickTimeTextStyle = TextStyle(
@@ -98,6 +104,16 @@ const TextStyle kWalletMinusMoneyTextStyle = TextStyle(
   color: kRedColor,
 );
 
+TextStyle kGroceryHomeViewItemsTextStyle = GoogleFonts.notoSerif(
+  fontSize: 18,
+);
+
+TextStyle kGroceryCartTotalTextStyle = const TextStyle(
+  fontSize: 18,
+  fontWeight: FontWeight.bold,
+  color: kWhiteTextColor,
+);
+
 const TextStyle kResendTextStyle = TextStyle(
   color: kLightGreenColor,
   fontSize: 16,
@@ -121,6 +137,16 @@ const TextStyle kWalletCardSubDetailsTextStyle = TextStyle(
   fontSize: 16,
   fontWeight: FontWeight.w700,
   letterSpacing: 2,
+);
+
+const TextStyle kGroceryHeadingIntroViewTextStyle = TextStyle(
+  color: kGrey800Color,
+  fontSize: 16,
+);
+
+const TextStyle kGrocerySubHeadingIntroviewTextStyle = TextStyle(
+  color: kWhiteTextColor,
+  fontSize: 16,
 );
 
 const TextStyle kBottomTitlesTextStyle = TextStyle(

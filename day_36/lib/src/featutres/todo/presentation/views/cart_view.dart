@@ -1,7 +1,9 @@
+import 'package:day_36/src/constants/colors.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 
+import '../../../../constants/styles.dart';
 import '../../data/models/cart_model.dart';
 
 class CartView extends StatelessWidget {
@@ -13,8 +15,8 @@ class CartView extends StatelessWidget {
       appBar: AppBar(
         backgroundColor: Colors.transparent,
         elevation: 0,
-        iconTheme: IconThemeData(
-          color: Colors.grey[800],
+        iconTheme: const IconThemeData(
+          color: kGrey800Color,
         ),
       ),
       body: Consumer<CartModel>(
@@ -22,9 +24,8 @@ class CartView extends StatelessWidget {
           return Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              // Let's order fresh items for you
               Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 24.0),
+                padding: const EdgeInsets.symmetric(horizontal: 24),
                 child: Text(
                   "My Cart",
                   style: GoogleFonts.notoSerif(
@@ -33,11 +34,9 @@ class CartView extends StatelessWidget {
                   ),
                 ),
               ),
-
-              // list view of cart
               Expanded(
                 child: Padding(
-                  padding: const EdgeInsets.all(12.0),
+                  padding: const EdgeInsets.all(12),
                   child: ListView.builder(
                     itemCount: value.cartItems.length,
                     padding: const EdgeInsets.all(12),
@@ -46,8 +45,9 @@ class CartView extends StatelessWidget {
                         padding: const EdgeInsets.all(12.0),
                         child: Container(
                           decoration: BoxDecoration(
-                              color: Colors.grey[200],
-                              borderRadius: BorderRadius.circular(8)),
+                            color: kGrey200Color,
+                            borderRadius: BorderRadius.circular(8),
+                          ),
                           child: ListTile(
                             leading: Image.asset(
                               value.cartItems[index][2],
@@ -74,15 +74,12 @@ class CartView extends StatelessWidget {
                   ),
                 ),
               ),
-
-              // total amount + pay now
-
               Padding(
                 padding: const EdgeInsets.all(36.0),
                 child: Container(
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(8),
-                    color: Colors.green,
+                    color: kLightGreenColor,
                   ),
                   padding: const EdgeInsets.all(24),
                   child: Row(
@@ -91,28 +88,20 @@ class CartView extends StatelessWidget {
                       Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          Text(
+                          const Text(
                             'Total Price',
-                            style: TextStyle(color: Colors.green[200]),
+                            style: TextStyle(color: kLightGreenColor),
                           ),
-
                           const SizedBox(height: 8),
-                          // total price
                           Text(
                             '\$${value.calculateTotal()}',
-                            style: const TextStyle(
-                              fontSize: 18,
-                              fontWeight: FontWeight.bold,
-                              color: Colors.white,
-                            ),
+                            style: kGroceryCartTotalTextStyle,
                           ),
                         ],
                       ),
-
-                      // pay now
                       Container(
                         decoration: BoxDecoration(
-                          border: Border.all(color: Colors.green.shade200),
+                          border: Border.all(color: kLightGreenColor),
                           borderRadius: BorderRadius.circular(28),
                         ),
                         padding: const EdgeInsets.all(12),
@@ -120,12 +109,12 @@ class CartView extends StatelessWidget {
                           children: [
                             Text(
                               'Pay Now',
-                              style: TextStyle(color: Colors.white),
+                              style: TextStyle(color: kWhiteTextColor),
                             ),
                             Icon(
                               Icons.arrow_forward_ios,
                               size: 16,
-                              color: Colors.white,
+                              color: kWhiteColor,
                             ),
                           ],
                         ),
@@ -133,7 +122,7 @@ class CartView extends StatelessWidget {
                     ],
                   ),
                 ),
-              )
+              ),
             ],
           );
         },

@@ -1,36 +1,51 @@
 import 'package:day_36/src/constants/assets.dart';
+import 'package:day_36/src/constants/colors.dart';
 import 'package:flutter/material.dart';
 
 class CartModel extends ChangeNotifier {
-  // list of items on sale
   final List shopItems = const [
-    // [ itemName, itemPrice, imagePath, color ]
-    ["Avocado", "4.00", kImgProfile, Colors.green],
-    ["Banana", "2.50", kImgProfile, Colors.yellow],
-    ["Chicken", "12.80", kImgProfile, Colors.brown],
-    ["Water", "1.00", kImgProfile, Colors.blue],
+    [
+      "Avocado",
+      "4.00",
+      kImgAvocado,
+      kLightGreenColor,
+    ],
+    [
+      "Banana",
+      "2.50",
+      kImgBanana,
+      kYellowColor,
+    ],
+    [
+      "Chicken",
+      "12.80",
+      kImgChicken,
+      kBrownColor,
+    ],
+    [
+      "Water",
+      "1.00",
+      kImgWater,
+      kBlueColor,
+    ],
   ];
 
-  // list of cart items
   List cartItems = [];
 
   get getCartItems => cartItems;
 
   get getShopItems => shopItems;
 
-  // add item to cart
   void addItemToCart(int index) {
     cartItems.add(shopItems[index]);
     notifyListeners();
   }
 
-  // remove item from cart
   void removeItemFromCart(int index) {
     cartItems.removeAt(index);
     notifyListeners();
   }
 
-  // calculate total price
   String calculateTotal() {
     double totalPrice = 0;
     for (int i = 0; i < cartItems.length; i++) {

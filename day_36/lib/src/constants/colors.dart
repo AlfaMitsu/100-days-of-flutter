@@ -24,6 +24,8 @@ const kTealColor = Color(0xFF23B6E6);
 const kLightGreenColor = Color(0xFF02D39A);
 const kRedColor = Color(0xFFFF0000);
 const kTransparent = Colors.transparent;
+const kYellowColor = Color(0xFFFFFF00);
+const kBrownColor = Color(0xFF964B00);
 
 // Text Colors
 

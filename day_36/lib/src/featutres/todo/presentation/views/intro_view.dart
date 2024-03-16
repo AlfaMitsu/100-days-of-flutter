@@ -1,7 +1,10 @@
 import 'package:day_36/src/constants/assets.dart';
+import 'package:day_36/src/constants/colors.dart';
 import 'package:day_36/src/featutres/todo/presentation/views/home_view.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+
+import '../../../../constants/styles.dart';
 
 class IntroView extends StatelessWidget {
   const IntroView({super.key});
@@ -13,43 +16,30 @@ class IntroView extends StatelessWidget {
       body: SafeArea(
         child: Column(
           children: [
-            // big logo
             Padding(
               padding: const EdgeInsets.only(
-                left: 100.0,
-                right: 100.0,
+                left: 100,
+                right: 100,
                 top: 120,
                 bottom: 20,
               ),
-              child: Image.asset(kImgSample, height: 10,),
+              child: Image.asset(kImgAvocado),
             ),
-
-            // we deliver groceries at your doorstep
             Padding(
-              padding: const EdgeInsets.all(28.0),
+              padding: const EdgeInsets.all(28),
               child: Text(
                 'We deliver groceries at your doorstep',
                 textAlign: TextAlign.center,
-                style: GoogleFonts.notoSerif(
-                    fontSize: 36, fontWeight: FontWeight.bold),
+                style: kGroceryIntroViewTextStyle,
               ),
             ),
-
-            // groceree gives you fresh vegetables and fruits
-            Text(
+            const Text(
               'Fresh items everyday',
               textAlign: TextAlign.center,
-              style: TextStyle(
-                fontSize: 16,
-                color: Colors.grey[700],
-              ),
+              style: kGroceryHeadingIntroViewTextStyle,
             ),
-
             const SizedBox(height: 24),
-
             const Spacer(),
-
-            // get started button
             GestureDetector(
               onTap: () => Navigator.pushReplacement(
                 context,
@@ -62,20 +52,13 @@ class IntroView extends StatelessWidget {
               child: Container(
                 padding: const EdgeInsets.all(24),
                 decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(16),
-                  color: const Color.fromARGB(255, 112, 91, 222),
-                ),
+                    borderRadius: BorderRadius.circular(16), color: kBlueColor),
                 child: const Text(
                   "Get Started",
-                  style: TextStyle(
-                    color: Colors.white,
-                    // fontWeight: FontWeight.bold,
-                    fontSize: 16,
-                  ),
+                  style: kGrocerySubHeadingIntroviewTextStyle,
                 ),
               ),
             ),
-
             const Spacer(),
           ],
         ),
