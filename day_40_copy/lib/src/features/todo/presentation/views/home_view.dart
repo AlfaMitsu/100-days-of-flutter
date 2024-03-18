@@ -5,6 +5,11 @@ import '../widgets/custom_asset_loading.dart';
 import '../widgets/custom_cached_asset_loading.dart';
 import '../widgets/custom_controller.dart';
 import '../widgets/event_sounds.dart';
+import '../widgets/event_star_rating.dart';
+import '../widgets/example_state_machine.dart';
+import '../widgets/liquid_download.dart';
+import '../widgets/little_machine.dart';
+import '../widgets/play_one_shot_animation.dart';
 
 class HomeView extends StatefulWidget {
   const HomeView({super.key});
@@ -34,6 +39,26 @@ class _HomeViewState extends State<HomeView> {
     const _Page(
       'Event Sounds',
       EventSounds(),
+    ),
+    const _Page(
+      'Event Star Rating',
+      EventStarRating(),
+    ),
+    const _Page(
+      'Button State Machine',
+      ExampleStateMachine(),
+    ),
+    const _Page(
+      'Liquid Download',
+      LiquidDownload(),
+    ),
+    const _Page(
+      'Little Machine',
+      LittleMachine(),
+    ),
+    const _Page(
+      'Play One-Shot Animation',
+      PlayOneShotAnimation(),
     ),
   ];
 
