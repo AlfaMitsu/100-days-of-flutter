@@ -10,6 +10,13 @@ import '../widgets/example_state_machine.dart';
 import '../widgets/liquid_download.dart';
 import '../widgets/little_machine.dart';
 import '../widgets/play_one_shot_animation.dart';
+import '../widgets/play_pause_animation.dart';
+import '../widgets/simple_asset_animation.dart';
+import '../widgets/simple_network_animation.dart';
+import '../widgets/simple_state_machine.dart';
+import '../widgets/skinning_demo.dart';
+import '../widgets/state_machine_listener.dart';
+import '../widgets/state_machine_skills.dart';
 
 class HomeView extends StatefulWidget {
   const HomeView({super.key});
@@ -59,6 +66,34 @@ class _HomeViewState extends State<HomeView> {
     const _Page(
       'Play One-Shot Animation',
       PlayOneShotAnimation(),
+    ),
+    const _Page(
+      'Play/Pause Animation',
+      PlayPauseAnimation(),
+    ),
+    const _Page(
+      'Simple Animation - Asset',
+      SimpleAssetAnimation(),
+    ),
+    const _Page(
+      'Simple Animation - Network',
+      SimpleNetworkAnimation(),
+    ),
+    const _Page(
+      'Simple State Machine',
+      SimpleStateMachine(),
+    ),
+    const _Page(
+      'Skinning Demo',
+      SkinningDemo(),
+    ),
+    const _Page(
+      'State Machine with Listener',
+      StateMachineListener(),
+    ),
+    const _Page(
+      'State Skills Machine',
+      StateMachineSkills(),
     ),
   ];
 
