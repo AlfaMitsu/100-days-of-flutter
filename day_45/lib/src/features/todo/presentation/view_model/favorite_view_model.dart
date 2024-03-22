@@ -3,7 +3,7 @@ import 'package:get/get.dart';
 
 import '../../../../constants/globs.dart';
 import '../../domain/repositories/service_call.dart';
-import '../models/offer_product_model.dart';
+import '../../data/models/offer_product_model.dart';
 
 class FavoriteViewModel extends GetxController {
   final RxList<OfferProductModel> listArr = <OfferProductModel>[].obs;

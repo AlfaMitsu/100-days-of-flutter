@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-import '../../data/repositories/splash_view_model.dart';
+import '../view_model/splash_view_model.dart';
 import '../../domain/repositories/color_extension.dart';
 
 class SplashView extends StatefulWidget {

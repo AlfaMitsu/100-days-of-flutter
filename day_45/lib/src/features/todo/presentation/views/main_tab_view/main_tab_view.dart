@@ -2,8 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 
-import '../../../data/repositories/favorite_view_model.dart';
+import '../../view_model/favorite_view_model.dart';
 import '../../../domain/repositories/color_extension.dart';
+import '../account/account_view.dart';
+import '../cart/my_cart_view.dart';
+import '../explore/explore_view.dart';
+import '../favourite/favourite_view.dart';
 import '../home_view/home_view.dart';
 
 class MainTabView extends StatefulWidget {
@@ -46,12 +50,12 @@ class _MainTabViewState extends State<MainTabView>
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: TabBarView(controller: controller, children: [
-        const HomeView(),
-        const ExploreView(),
-        const MyCartView(),
-        const FavoritesView(),
-        const AccountView(),
+      body: TabBarView(controller: controller, children: const [
+        HomeView(),
+        ExploreView(),
+        MyCartView(),
+        FavouriteView(),
+        AccountView(),
       ]),
       bottomNavigationBar: Container(
         decoration: const BoxDecoration(

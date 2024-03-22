@@ -1,9 +1,9 @@
 import 'package:get/get.dart';
 
 import '../../../../constants/globs.dart';
-import '../../presentation/views/main_tab_view/main_tab_view.dart';
-import '../../presentation/views/login/welcome_view.dart';
-import '../models/user_payload_model.dart';
+import '../views/main_tab_view/main_tab_view.dart';
+import '../views/login/welcome_view.dart';
+import '../../data/models/user_payload_model.dart';
 
 class SplashViewModel extends GetxController {
   final userPayload = UserPayloadModel().obs;

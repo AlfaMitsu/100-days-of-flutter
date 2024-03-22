@@ -3,8 +3,8 @@ import 'package:get/get.dart';
 
 import '../../../../constants/globs.dart';
 import '../../domain/repositories/service_call.dart';
-import '../models/offer_product_model.dart';
-import '../models/type_model.dart';
+import '../../data/models/offer_product_model.dart';
+import '../../data/models/type_model.dart';
 
 class HomeViewModel extends GetxController {
   final RxList<OfferProductModel> offerArr = <OfferProductModel>[].obs;

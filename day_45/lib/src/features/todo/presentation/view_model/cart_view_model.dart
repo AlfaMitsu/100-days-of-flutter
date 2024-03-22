@@ -3,11 +3,11 @@ import 'package:get/get.dart';
 
 import '../../../../constants/globs.dart';
 import '../../domain/repositories/service_call.dart';
-import '../../presentation/views/cart/order_accept_view.dart';
-import '../models/address_model.dart';
-import '../models/cart_item_model.dart';
-import '../models/payment_model.dart';
-import '../models/promo_code_model.dart';
+import '../views/cart/order_accept_view.dart';
+import '../../data/models/address_model.dart';
+import '../../data/models/cart_item_model.dart';
+import '../../data/models/payment_model.dart';
+import '../../data/models/promo_code_model.dart';
 
 class CartViewModel extends GetxController {
   final RxList<CartItemModel> listArr = <CartItemModel>[].obs;

@@ -4,7 +4,7 @@ import 'package:get/get.dart';
 
 import '../../../../constants/globs.dart';
 import '../../domain/repositories/service_call.dart';
-import '../../presentation/views/login/verification_view.dart';
+import '../views/login/verification_view.dart';
 import 'forgot_password_set_view.dart';
 
 class ForgotPasswordViewModel extends GetxController {

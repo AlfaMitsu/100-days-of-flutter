@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-import '../../../data/repositories/cart_view_model.dart';
-import '../../../data/repositories/home_view_model.dart';
+import '../../view_model/cart_view_model.dart';
+import '../../view_model/home_view_model.dart';
 import '../../../domain/repositories/color_extension.dart';
 import '../../widgets/category_cell.dart';
 import '../../widgets/product_cell.dart';

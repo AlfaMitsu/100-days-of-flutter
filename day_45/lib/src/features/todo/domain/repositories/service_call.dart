@@ -4,7 +4,7 @@ import 'package:flutter/foundation.dart';
 import 'package:get/get.dart';
 import 'package:http/http.dart' as http;
 
-import '../../data/repositories/splash_view_model.dart';
+import '../../presentation/view_model/splash_view_model.dart';
 
 typedef ResSuccess = Future<void> Function(Map<String, dynamic>);
 typedef ResFailure = Future<void> Function(dynamic);

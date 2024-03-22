@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 import '../../domain/repositories/color_extension.dart';
-import '../../presentation/widgets/line_text_field.dart';
-import '../../presentation/widgets/round_button.dart';
+import '../widgets/line_text_field.dart';
+import '../widgets/round_button.dart';
 import 'forgot_password_view_model.dart';
 
 class ForgotPasswordSetView extends StatefulWidget {

@@ -2,7 +2,7 @@ import 'package:day_45/src/features/todo/presentation/views/login/forgot_passwor
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-import '../../../data/repositories/login_view_model.dart';
+import '../../view_model/login_view_model.dart';
 import '../../../domain/repositories/color_extension.dart';
 import '../../widgets/line_text_field.dart';
 import '../../widgets/round_button.dart';

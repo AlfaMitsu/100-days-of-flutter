@@ -5,8 +5,8 @@ import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:get/get.dart';
 
 import '../../../data/models/offer_product_model.dart';
-import '../../../data/repositories/cart_view_model.dart';
-import '../../../data/repositories/product_detail_view_model.dart';
+import '../../view_model/cart_view_model.dart';
+import '../../view_model/product_detail_view_model.dart';
 import '../../../domain/repositories/color_extension.dart';
 import '../../widgets/round_button.dart';
 

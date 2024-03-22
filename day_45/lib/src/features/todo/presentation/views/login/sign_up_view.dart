@@ -3,7 +3,7 @@ import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-import '../../../data/repositories/sign_up_view_model.dart';
+import '../../view_model/sign_up_view_model.dart';
 import '../../../domain/repositories/color_extension.dart';
 import '../../widgets/line_text_field.dart';
 import '../../widgets/round_button.dart';

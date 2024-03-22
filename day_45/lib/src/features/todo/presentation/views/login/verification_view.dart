@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-import '../../../data/repositories/forgot_password_view_model.dart';
+import '../../view_model/forgot_password_view_model.dart';
 import '../../../domain/repositories/color_extension.dart';
 import '../../widgets/line_text_field.dart';
 
