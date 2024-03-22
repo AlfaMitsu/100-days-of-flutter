@@ -7,6 +7,7 @@ import '../../widgets/round_button.dart';
 import '../../widgets/round_icon_button.dart';
 import 'login_view.dart';
 import 'sign_up_view.dart';
+import 'verification_view.dart';
 
 class SignInView extends StatefulWidget {
   const SignInView({super.key});
@@ -38,7 +39,7 @@ class _SignInViewState extends State<SignInView> {
           mainAxisAlignment: MainAxisAlignment.end,
           children: [
             Image.asset(
-              "assets/img/bottom_bg.png",
+              "lib/src/resources/assets/images/bottom_bg.png",
               width: media.width,
               height: media.height,
               fit: BoxFit.cover,
@@ -46,7 +47,7 @@ class _SignInViewState extends State<SignInView> {
           ],
         ),
         Image.asset(
-          "assets/img/sign_in_top.png",
+          "lib/src/resources/assets/images/sign_in_top.png",
           width: media.width,
         ),
         SingleChildScrollView(
@@ -176,7 +177,7 @@ class _SignInViewState extends State<SignInView> {
                   padding: const EdgeInsets.symmetric(horizontal: 20),
                   child: RoundIconButton(
                     title: "Continue with Google",
-                    icon: "assets/img/google_logo.png",
+                    icon: "lib/src/resources/assets/images/google_logo.png",
                     bgColor: const Color(0xff5383EC),
                     onPressed: () {
                       Navigator.push(
@@ -195,7 +196,7 @@ class _SignInViewState extends State<SignInView> {
                   padding: const EdgeInsets.symmetric(horizontal: 20),
                   child: RoundIconButton(
                     title: "Continue with Facebook",
-                    icon: "assets/img/fb_logo.png",
+                    icon: "lib/src/resources/assets/images/fb_logo.png",
                     bgColor: const Color(0xff4A66AC),
                     onPressed: () {},
                   ),

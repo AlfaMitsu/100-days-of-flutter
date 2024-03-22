@@ -24,7 +24,7 @@ class _ForgotPasswordSetViewState extends State<ForgotPasswordSetView> {
     return Stack(children: [
       Container(
         color: Colors.white,
-        child: Image.asset("assets/img/bottom_bg.png",
+        child: Image.asset("lib/src/resources/assets/images/img/bottom_bg.png",
             width: media.width, height: media.height, fit: BoxFit.cover),
       ),
       Scaffold(
@@ -36,7 +36,7 @@ class _ForgotPasswordSetViewState extends State<ForgotPasswordSetView> {
                 Navigator.pop(context);
               },
               icon: Image.asset(
-                "assets/img/back.png",
+                "lib/src/resources/assets/images/back.png",
                 width: 20,
                 height: 20,
               )),
@@ -53,7 +53,7 @@ class _ForgotPasswordSetViewState extends State<ForgotPasswordSetView> {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Image.asset(
-                        "assets/img/color_logo.png",
+                        "lib/src/resources/assets/images/color_logo.png",
                         width: 40,
                       ),
                     ],

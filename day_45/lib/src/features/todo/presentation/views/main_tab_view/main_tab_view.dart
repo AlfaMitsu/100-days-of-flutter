@@ -4,6 +4,7 @@ import 'package:get/get.dart';
 
 import '../../../data/repositories/favorite_view_model.dart';
 import '../../../domain/repositories/color_extension.dart';
+import '../home_view/home_view.dart';
 
 class MainTabView extends StatefulWidget {
   const MainTabView({super.key});

@@ -23,7 +23,7 @@ class _VerificationViewState extends State<VerificationView> {
     return Stack(children: [
       Container(
         color: Colors.white,
-        child: Image.asset("assets/img/bottom_bg.png",
+        child: Image.asset("lib/src/resources/assets/images/bottom_bg.png",
             width: media.width, height: media.height, fit: BoxFit.cover),
       ),
       Scaffold(
@@ -35,7 +35,7 @@ class _VerificationViewState extends State<VerificationView> {
                 Navigator.pop(context);
               },
               icon: Image.asset(
-                "assets/img/back.png",
+                "lib/src/resources/assets/images/back.png",
                 width: 20,
                 height: 20,
               )),
@@ -97,7 +97,7 @@ class _VerificationViewState extends State<VerificationView> {
                               color: TColor.primary,
                               borderRadius: BorderRadius.circular(30)),
                           child: Image.asset(
-                            "assets/img/next.png",
+                            "lib/src/resources/assets/images/next.png",
                             width: 20,
                             height: 20,
                           ),
