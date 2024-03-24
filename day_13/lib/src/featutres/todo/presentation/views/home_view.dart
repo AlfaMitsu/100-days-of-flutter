@@ -1,6 +1,7 @@
 import 'dart:async';
 
 import 'package:day_13/src/constants/colors.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:pin_code_fields/pin_code_fields.dart';
 
@@ -135,7 +136,9 @@ class _HomeViewState extends State<HomeView> {
                   debugPrint("Completed");
                 },
                 onTap: () {
-                  print("Pressed");
+                  if (kDebugMode) {
+                    print("Pressed");
+                  }
                 },
                 onChanged: (value) {
                   debugPrint(value);
@@ -145,7 +148,9 @@ class _HomeViewState extends State<HomeView> {
                 },
                 beforeTextPaste: (text) {
                   debugPrint("Allowing to paste $text");
-                  print('123123');
+                  if (kDebugMode) {
+                    print('123123');
+                  }
                   return true;
                 },
               ),
