@@ -1,0 +1,1 @@
+const String kImgSample = "lib/src/resources/assets/images/kImgSample.jpg";
