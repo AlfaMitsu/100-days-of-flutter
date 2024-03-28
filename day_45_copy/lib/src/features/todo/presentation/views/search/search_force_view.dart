@@ -1,6 +1,8 @@
+import 'package:day_45_copy/src/constants/colors.dart';
 import 'package:flutter/material.dart';
 
-import '../../widgets/color_extension.dart';
+import '../../../../../constants/styles.dart';
+import '../../../data/data_sources/arrays.dart';
 
 class SearchForceView extends StatefulWidget {
   final Function(String)? didSearch;
@@ -11,27 +13,13 @@ class SearchForceView extends StatefulWidget {
 }
 
 class _SearchForceViewState extends State<SearchForceView> {
-  TextEditingController txtSearch = TextEditingController();
-
-  List perviousArr = [
-    "Search 1",
-    "Search 2",
-    "Search 3",
-    "Search 4",
-    "Search 5"
-  ];
-  List resultArr = [
-    "Gross Anatomy",
-    "When To Rob A Bank",
-    "The Bite In The Apple",
-    "The Ignorant Maestro"
-  ];
+  TextEditingController textSearch = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.transparent,
+        backgroundColor: kTransparent,
         elevation: 0,
         leading: Container(),
         leadingWidth: 0,
@@ -40,67 +28,70 @@ class _SearchForceViewState extends State<SearchForceView> {
             Expanded(
               child: Container(
                 decoration: BoxDecoration(
-                    color: TColor.textbox,
-                    borderRadius: BorderRadius.circular(20)),
+                  color: kTextbox,
+                  borderRadius: BorderRadius.circular(20),
+                ),
                 child: TextField(
-                  controller: txtSearch,
+                  controller: textSearch,
                   onChanged: (value) {
                     setState(() {});
                   },
                   decoration: InputDecoration(
-                    contentPadding:
-                        const EdgeInsets.symmetric(vertical: 15, horizontal: 8),
+                    contentPadding: const EdgeInsets.symmetric(
+                      vertical: 15,
+                      horizontal: 8,
+                    ),
                     focusedBorder: InputBorder.none,
                     enabledBorder: InputBorder.none,
                     errorBorder: InputBorder.none,
-                    prefixIcon: Icon(Icons.search, color: TColor.text),
-                    hintText: "Search here",
-                    labelStyle: const TextStyle(
-                      fontSize: 15,
+                    prefixIcon: Icon(
+                      Icons.search,
+                      color: kText,
                     ),
+                    hintText: 'Search here',
+                    labelStyle: const TextStyle(fontSize: 15),
                   ),
                 ),
               ),
             ),
-            const SizedBox(
-              width: 8,
-            ),
+            const SizedBox(width: 8),
             TextButton(
-                onPressed: () {
-                  Navigator.pop(context);
-                },
-                child: Text(
-                  "Cancel",
-                  style: TextStyle(
-                    color: TColor.text,
-                    fontSize: 17,
-                  ),
-                ))
+              onPressed: () {
+                Navigator.pop(context);
+              },
+              child: Text(
+                'Cancel',
+                style: kSearchFilterCancelTextStyle,
+              ),
+            ),
           ],
         ),
       ),
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          if (txtSearch.text.isEmpty)
+          if (textSearch.text.isEmpty)
             Padding(
-              padding: const EdgeInsets.symmetric(vertical: 15, horizontal: 15),
+              padding: const EdgeInsets.symmetric(
+                vertical: 15,
+                horizontal: 15,
+              ),
               child: Text(
-                "Previous Searches",
-                style: TextStyle(
-                    color: TColor.subTitle,
-                    fontSize: 13,
-                    fontWeight: FontWeight.w700),
+                'Previous Searches',
+                style: kSearchForceViewTextStyle,
               ),
             ),
           Expanded(
             child: ListView.builder(
-              padding: const EdgeInsets.symmetric(vertical: 8, horizontal: 15),
-              itemCount: txtSearch.text.isEmpty
+              padding: const EdgeInsets.symmetric(
+                vertical: 8,
+                horizontal: 15,
+              ),
+              itemCount: textSearch.text.isEmpty
                   ? perviousArr.length
                   : resultArr.length,
               itemBuilder: (context, index) {
-                var searchResultText = (txtSearch.text.isEmpty
+                var searchResultText = (textSearch.text.isEmpty
                         ? perviousArr
                         : resultArr)[index] as String? ??
                     "";
@@ -113,33 +104,34 @@ class _SearchForceViewState extends State<SearchForceView> {
                   },
                   child: Container(
                     padding: const EdgeInsets.symmetric(
-                        vertical: 15, horizontal: 15),
+                      vertical: 15,
+                      horizontal: 15,
+                    ),
                     child: Row(
                       children: [
-                        Icon(Icons.search, color: TColor.subTitle),
-                        const SizedBox(
-                          width: 40,
+                        Icon(
+                          Icons.search,
+                          color: kSubTitle,
                         ),
+                        const SizedBox(width: 40),
                         Expanded(
-                            child: Text(
-                          searchResultText,
-                          style: TextStyle(color: TColor.text, fontSize: 15),
-                        )),
-                        const SizedBox(
-                          width: 4,
+                          child: Text(
+                            searchResultText,
+                            style: kSearchFilterItemNameTextStyle,
+                          ),
                         ),
+                        const SizedBox(width: 4),
                         Text(
-                          "times",
-                          style: TextStyle(
-                              color: TColor.primaryLight, fontSize: 15),
-                        )
+                          'times',
+                          style: kSearchForceViewTimesTextStyle,
+                        ),
                       ],
                     ),
                   ),
                 );
               },
             ),
-          )
+          ),
         ],
       ),
     );

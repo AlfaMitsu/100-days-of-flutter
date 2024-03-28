@@ -77,6 +77,7 @@ List sortByArr = [
   "Publication Date",
   "A - Z"
 ];
+
 List genreArr = [
   "Biography",
   "Business & Economics",
@@ -88,4 +89,106 @@ List genreArr = [
   "Children1",
   "Cookery1",
   "Fiction1"
+];
+
+List perviousArr = [
+  "Search 1",
+  "Search 2",
+  "Search 3",
+  "Search 4",
+  "Search 5",
+];
+
+List resultArr = [
+  "Gross Anatomy",
+  "When To Rob A Bank",
+  "The Bite In The Apple",
+  "The Ignorant Maestro"
+];
+
+List tagsArr = [
+  "Genre",
+  "New Release",
+  "The Art",
+  "Genre1",
+  "New Release1",
+  "The Art1"
+];
+
+List searchArr = [
+  {
+    "name": "Biography",
+    "img": "lib/src/resources/assets/images/b1.jpg",
+  },
+  {
+    "name": "Business",
+    "img": "lib/src/resources/assets/images/b2.jpg",
+  },
+  {
+    "name": "Children",
+    "img": "lib/src/resources/assets/images/b3.jpg",
+  },
+  {
+    "name": "Cookery",
+    "img": "lib/src/resources/assets/images/b4.jpg",
+  },
+  {
+    "name": "Fiction",
+    "img": "lib/src/resources/assets/images/b5.jpg",
+  },
+  {
+    "name": "Graphic Novels",
+    "img": "lib/src/resources/assets/images/b6.jpg",
+  },
+  {
+    "name": "Biography",
+    "img": "lib/src/resources/assets/images/b1.jpg",
+  },
+  {
+    "name": "Business",
+    "img": "lib/src/resources/assets/images/b2.jpg",
+  },
+  {
+    "name": "Children",
+    "img": "lib/src/resources/assets/images/b3.jpg",
+  },
+  {
+    "name": "Cookery",
+    "img": "lib/src/resources/assets/images/b4.jpg",
+  },
+  {
+    "name": "Fiction",
+    "img": "lib/src/resources/assets/images/b5.jpg",
+  },
+  {
+    "name": "Graphic Novels",
+    "img": "lib/src/resources/assets/images/b6.jpg",
+  }
+];
+
+List sResultArr = [
+  {
+    "name": "The Heart of Hell",
+    "img": "lib/src/resources/assets/images/h1.jpg",
+    "author": "Mitch Weiss",
+    "description":
+        "The untold story of courage and sacrifice in the shadow of Iwo Jima.",
+    "rate": 5.0
+  },
+  {
+    "name": "Adrennes 1944",
+    "img": "lib/src/resources/assets/images/h2.jpg",
+    "author": "Antony Beevor",
+    "description":
+        "#1 international bestseller and award winning history book.",
+    "rate": 4.0
+  },
+  {
+    "name": "War on the Gothic Line",
+    "img": "lib/src/resources/assets/images/h3.jpg",
+    "author": "Christian Jennings",
+    "description":
+        "Through the eyes of thirteen men and women from seven different nations",
+    "rate": 3.0
+  }
 ];

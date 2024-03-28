@@ -42,6 +42,11 @@ TextStyle kSearchFilterItemNameTextStyle = TextStyle(
   fontSize: 15,
 );
 
+TextStyle kSearchForceViewTimesTextStyle = TextStyle(
+  color: kPrimaryLight,
+  fontSize: 15,
+);
+
 TextStyle kSearchFilterSortTextStyle = TextStyle(
   color: kSubTitle,
   fontSize: 13,
@@ -50,6 +55,12 @@ TextStyle kSearchFilterSortTextStyle = TextStyle(
 TextStyle kSignUpTextStyle = TextStyle(
   color: kSubTitle.withOpacity(0.3),
   fontSize: 13,
+);
+
+TextStyle kSearchForceViewTextStyle = TextStyle(
+  color: kSubTitle,
+  fontSize: 13,
+  fontWeight: FontWeight.w700,
 );
 
 TextStyle kMonthlyNewsletter = TextStyle(
