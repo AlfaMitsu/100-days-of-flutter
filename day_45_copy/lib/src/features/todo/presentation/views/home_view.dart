@@ -11,7 +11,7 @@ import '../widgets/round_button.dart';
 import '../widgets/round_text_field.dart';
 import '../widgets/top_picks_cell.dart';
 import 'book_reading_view.dart';
-import 'login/sing_uv_view.dart';
+import 'login/sign_up_view.dart';
 import 'main_tab_view.dart';
 
 class HomeView extends StatefulWidget {

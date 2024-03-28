@@ -69,3 +69,23 @@ List recentArr = [
     "img": "lib/src/resources/assets/images/12.jpg"
   }
 ];
+
+List sortByArr = [
+  "Featured Titles",
+  "Price: Low to High",
+  "Price: High to Low",
+  "Publication Date",
+  "A - Z"
+];
+List genreArr = [
+  "Biography",
+  "Business & Economics",
+  "Children",
+  "Cookery",
+  "Fiction",
+  "Biography1",
+  "Business & Economics1",
+  "Children1",
+  "Cookery1",
+  "Fiction1"
+];
