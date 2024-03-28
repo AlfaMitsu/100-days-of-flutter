@@ -2,16 +2,26 @@ import 'package:flutter/material.dart';
 
 // Brand Colors
 
-const kCoffeeShopBrandColor = Color(0xFF0D0F14);
-const kCoffeeShopBrandColor2 = Color(0xFF342520);
-const kCoffeeShopBrandColor3 = Color(0xFF1A1819);
-const kCoffeeShopBrandColor4 = Color(0xFF14181D);
-const kCoffeeShopBrandColor5 = Color(0xFF322B2E);
-const kCoffeeShopBrandColor6 = Color(0xFF0F1419);
-const kCoffeeShopBrandColor7 = Color(0xFF909193);
-const kCoffeeShopBrandColor8 = Color(0xFF999A9B);
-const kCoffeeShopBrandColor9 = Color(0xFF0D0F14);
-const kCoffeeShopBrandColor10 = Color(0xFFADADAD);
+Color get kPrimary => const Color(0xFF5ABD8C);
+Color get kPrimaryLight => const Color(0xFFAFDFC7);
+Color get kText => const Color(0xFF212121);
+Color get kSubTitle => const Color(0xFF212121).withOpacity(0.4);
+Color get kColor1 => const Color(0xFF1C4A7E);
+Color get kColor2 => const Color(0xFFC65135);
+Color get kDColor => const Color(0xFFF3F3F3);
+Color get kTextbox => const Color(0xFFEFEFEF).withOpacity(0.6);
+List<Color> get kButton => const [
+      Color(0xFF5ABD8C),
+      Color(0xFF00FF81),
+    ];
+List<Color> get kSearchBGColor => const [
+      Color(0xFFB7143C),
+      Color(0xFFE6A500),
+      Color(0xFFEF4C45),
+      Color(0xFFF46217),
+      Color(0xFF09ADE2),
+      Color(0xFFD36A43),
+    ];
 
 // Common Colors
 
@@ -36,9 +46,6 @@ const kBlackTextColor = kBlackColor;
 // Widgets Colors
 
 const kBlueGreyColor = Color(0xFF7393B3);
-const kIconColor = Color(0xFF4E4F53);
-const kCardColor = Color.fromRGBO(35, 60, 103, 1);
-const kCardSettingsSwitch = Color.fromRGBO(50, 172, 121, 1);
 
 // Gradient Colors
 

@@ -1,9 +1,10 @@
 import 'package:carousel_slider/carousel_slider.dart';
+import 'package:day_45_copy/src/constants/colors.dart';
 import 'package:flutter/material.dart';
 
+import '../../../../constants/styles.dart';
 import '../../data/data_sources/arrays.dart';
 import '../widgets/best_seller_cell.dart';
-import '../widgets/color_extension.dart';
 import '../widgets/genres_cell.dart';
 import '../widgets/recently_cell.dart';
 import '../widgets/round_button.dart';
@@ -21,14 +22,14 @@ class HomeView extends StatefulWidget {
 }
 
 class _HomeViewState extends State<HomeView> {
-  TextEditingController txtName = TextEditingController();
-  TextEditingController txtEmail = TextEditingController();
+  TextEditingController textName = TextEditingController();
+  TextEditingController textEmail = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
-    var media = MediaQuery.of(context).size;
+    var size = MediaQuery.of(context).size;
     return Scaffold(
-      backgroundColor: Colors.white,
+      backgroundColor: kWhiteColor,
       body: SingleChildScrollView(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -39,14 +40,14 @@ class _HomeViewState extends State<HomeView> {
                 Align(
                   child: Transform.scale(
                     scale: 1.5,
-                    origin: Offset(0, media.width * 0.8),
+                    origin: Offset(0, size.width * 0.8),
                     child: Container(
-                      width: media.width,
-                      height: media.width,
+                      width: size.width,
+                      height: size.width,
                       decoration: BoxDecoration(
-                          color: TColor.primary,
-                          borderRadius:
-                              BorderRadius.circular(media.width * 0.5)),
+                        color: kPrimary,
+                        borderRadius: BorderRadius.circular(size.width * 0.5),
+                      ),
                     ),
                   ),
                 ),
@@ -54,34 +55,32 @@ class _HomeViewState extends State<HomeView> {
                   mainAxisAlignment: MainAxisAlignment.start,
                   mainAxisSize: MainAxisSize.min,
                   children: [
-                    SizedBox(
-                      height: media.width * 0.1,
-                    ),
+                    SizedBox(height: size.width * 0.1),
                     AppBar(
-                      backgroundColor: Colors.transparent,
+                      backgroundColor: kTransparent,
                       elevation: 0,
-                      title: const Row(children: [
-                        Text(
-                          "Our Top Picks",
-                          style: TextStyle(
-                              color: Colors.white,
-                              fontSize: 22,
-                              fontWeight: FontWeight.w700),
-                        )
-                      ]),
+                      title: const Row(
+                        children: [
+                          Text(
+                            'Our Top Picks',
+                            style: kTopPicksTextStyle,
+                          ),
+                        ],
+                      ),
                       leading: Container(),
                       leadingWidth: 1,
                       actions: [
                         IconButton(
-                            onPressed: () {
-                              sideMenuScaffoldKey.currentState?.openEndDrawer();
-                            },
-                            icon: const Icon(Icons.menu))
+                          onPressed: () {
+                            sideMenuScaffoldKey.currentState?.openEndDrawer();
+                          },
+                          icon: const Icon(Icons.menu),
+                        ),
                       ],
                     ),
                     SizedBox(
-                      width: media.width,
-                      height: media.width * 0.8,
+                      width: size.width,
+                      height: size.width * 0.8,
                       child: CarouselSlider.builder(
                         itemCount: topPicksArr.length,
                         itemBuilder: (BuildContext context, int itemIndex,
@@ -103,176 +102,172 @@ class _HomeViewState extends State<HomeView> {
                     ),
                     Container(
                       padding: const EdgeInsets.symmetric(horizontal: 20),
-                      child: Row(children: [
-                        Text(
-                          "Bestsellers",
-                          style: TextStyle(
-                              color: TColor.text,
-                              fontSize: 22,
-                              fontWeight: FontWeight.w700),
-                        )
-                      ]),
+                      child: Row(
+                        children: [
+                          Text(
+                            'Bestsellers',
+                            style: kCategoryTextStyle,
+                          ),
+                        ],
+                      ),
                     ),
                     SizedBox(
-                      height: media.width * 0.9,
+                      height: size.width * 0.9,
                       child: ListView.builder(
-                          padding: const EdgeInsets.symmetric(
-                              vertical: 15, horizontal: 8),
-                          scrollDirection: Axis.horizontal,
-                          itemCount: bestArr.length,
-                          itemBuilder: ((context, index) {
-                            var bObj = bestArr[index] as Map? ?? {};
+                        padding: const EdgeInsets.symmetric(
+                          vertical: 15,
+                          horizontal: 8,
+                        ),
+                        scrollDirection: Axis.horizontal,
+                        itemCount: bestArr.length,
+                        itemBuilder: ((context, index) {
+                          var bObj = bestArr[index] as Map? ?? {};
 
-                            return GestureDetector(
-                              onTap: () {
-                                Navigator.push(
-                                    context,
-                                    MaterialPageRoute(
-                                        builder: (context) => BookReadingView(
-                                              bObj: bObj,
-                                            )));
-                              },
-                              child: BestSellerCell(
-                                bObj: bObj,
-                              ),
-                            );
-                          })),
-                    ),
-                    Container(
-                      padding: const EdgeInsets.symmetric(horizontal: 20),
-                      child: Row(children: [
-                        Text(
-                          "Genres",
-                          style: TextStyle(
-                              color: TColor.text,
-                              fontSize: 22,
-                              fontWeight: FontWeight.w700),
-                        )
-                      ]),
-                    ),
-                    SizedBox(
-                      height: media.width * 0.6,
-                      child: ListView.builder(
-                          padding: const EdgeInsets.symmetric(
-                              vertical: 15, horizontal: 8),
-                          scrollDirection: Axis.horizontal,
-                          itemCount: genresArr.length,
-                          itemBuilder: ((context, index) {
-                            var bObj = genresArr[index] as Map? ?? {};
-
-                            return GenresCell(
+                          return GestureDetector(
+                            onTap: () {
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) => BookReadingView(
+                                    bObj: bObj,
+                                  ),
+                                ),
+                              );
+                            },
+                            child: BestSellerCell(
                               bObj: bObj,
-                              bgcolor: index % 2 == 0
-                                  ? TColor.color1
-                                  : TColor.color2,
-                            );
-                          })),
-                    ),
-                    SizedBox(
-                      height: media.width * 0.1,
+                            ),
+                          );
+                        }),
+                      ),
                     ),
                     Container(
                       padding: const EdgeInsets.symmetric(horizontal: 20),
-                      child: Row(children: [
-                        Text(
-                          "Recently Viewed",
-                          style: TextStyle(
-                              color: TColor.text,
-                              fontSize: 22,
-                              fontWeight: FontWeight.w700),
-                        )
-                      ]),
+                      child: Row(
+                        children: [
+                          Text(
+                            'Genres',
+                            style: kCategoryTextStyle,
+                          ),
+                        ],
+                      ),
                     ),
                     SizedBox(
-                      height: media.width * 0.7,
+                      height: size.width * 0.6,
                       child: ListView.builder(
-                          padding: const EdgeInsets.symmetric(
-                              vertical: 15, horizontal: 8),
-                          scrollDirection: Axis.horizontal,
-                          itemCount: recentArr.length,
-                          itemBuilder: ((context, index) {
-                            var bObj = recentArr[index] as Map? ?? {};
+                        padding: const EdgeInsets.symmetric(
+                          vertical: 15,
+                          horizontal: 8,
+                        ),
+                        scrollDirection: Axis.horizontal,
+                        itemCount: genresArr.length,
+                        itemBuilder: ((context, index) {
+                          var bObj = genresArr[index] as Map? ?? {};
 
-                            return RecentlyCell(
-                              iObj: bObj,
-                            );
-                          })),
+                          return GenresCell(
+                            bObj: bObj,
+                            bgcolor: index % 2 == 0 ? kColor1 : kColor2,
+                          );
+                        }),
+                      ),
                     ),
-                    SizedBox(
-                      height: media.width * 0.1,
-                    ),
+                    SizedBox(height: size.width * 0.1),
                     Container(
                       padding: const EdgeInsets.symmetric(horizontal: 20),
-                      child: Row(children: [
-                        Text(
-                          "Monthly Newsletter",
-                          style: TextStyle(
-                              color: TColor.text,
-                              fontSize: 22,
-                              fontWeight: FontWeight.w700),
-                        )
-                      ]),
+                      child: Row(
+                        children: [
+                          Text(
+                            'Recently Viewed',
+                            style: kCategoryTextStyle,
+                          ),
+                        ],
+                      ),
+                    ),
+                    SizedBox(
+                      height: size.width * 0.7,
+                      child: ListView.builder(
+                        padding: const EdgeInsets.symmetric(
+                          vertical: 15,
+                          horizontal: 8,
+                        ),
+                        scrollDirection: Axis.horizontal,
+                        itemCount: recentArr.length,
+                        itemBuilder: ((context, index) {
+                          var bObj = recentArr[index] as Map? ?? {};
+
+                          return RecentlyCell(
+                            iObj: bObj,
+                          );
+                        }),
+                      ),
+                    ),
+                    SizedBox(height: size.width * 0.1),
+                    Container(
+                      padding: const EdgeInsets.symmetric(horizontal: 20),
+                      child: Row(
+                        children: [
+                          Text(
+                            'Monthly Newsletter',
+                            style: kCategoryTextStyle,
+                          )
+                        ],
+                      ),
                     ),
                     Container(
                       width: double.maxFinite,
                       margin: const EdgeInsets.symmetric(
-                          vertical: 20, horizontal: 20),
+                        vertical: 20,
+                        horizontal: 20,
+                      ),
                       padding: const EdgeInsets.symmetric(
-                          vertical: 15, horizontal: 15),
+                        vertical: 15,
+                        horizontal: 15,
+                      ),
                       decoration: BoxDecoration(
-                          color: TColor.textbox.withOpacity(0.4),
+                          color: kTextbox.withOpacity(0.4),
                           borderRadius: BorderRadius.circular(15)),
                       child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Text(
-                              "Receive our monthly newsletter and receive updates on new stock, books and the occasional promotion.",
-                              style: TextStyle(
-                                color: TColor.subTitle,
-                                fontSize: 12,
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(
+                            'Receive our monthly newsletter and receive updates on new stock, books and the occasional promotion.',
+                            style: kMonthlyNewsletter,
+                          ),
+                          const SizedBox(height: 15),
+                          RoundTextField(
+                            controller: textName,
+                            hintText: 'Name',
+                          ),
+                          const SizedBox(height: 15),
+                          RoundTextField(
+                            controller: textEmail,
+                            hintText: 'Email Address',
+                          ),
+                          const SizedBox(height: 15),
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.end,
+                            children: [
+                              MiniRoundButton(
+                                title: 'Sign Up',
+                                onPressed: () {
+                                  Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                      builder: (context) => const SignUpView(),
+                                    ),
+                                  );
+                                },
                               ),
-                            ),
-                            const SizedBox(
-                              height: 15,
-                            ),
-                            RoundTextField(
-                              controller: txtName,
-                              hintText: "Name",
-                            ),
-                            const SizedBox(
-                              height: 15,
-                            ),
-                            RoundTextField(
-                              controller: txtEmail,
-                              hintText: "Email Address",
-                            ),
-                            const SizedBox(
-                              height: 15,
-                            ),
-                            Row(
-                              mainAxisAlignment: MainAxisAlignment.end,
-                              children: [
-                                MiniRoundButton(
-                                  title: "Sign Up",
-                                  onPressed: () {
-                                    Navigator.push(
-                                        context,
-                                        MaterialPageRoute(
-                                            builder: (context) =>
-                                                const SignUpView()));
-                                  },
-                                )
-                              ],
-                            )
-                          ]),
+                            ],
+                          ),
+                        ],
+                      ),
                     ),
-                    SizedBox(
-                      height: media.width * 0.1,
-                    ),
+                    SizedBox(height: size.width * 0.1),
                   ],
-                )
+                ),
               ],
-            )
+            ),
           ],
         ),
       ),

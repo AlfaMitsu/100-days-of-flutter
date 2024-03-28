@@ -1,6 +1,7 @@
+import 'package:day_45_copy/src/constants/colors.dart';
 import 'package:flutter/material.dart';
 
-import '../../widgets/color_extension.dart';
+import '../../../../../constants/styles.dart';
 import '../main_tab_view.dart';
 
 class HelpUsView extends StatefulWidget {
@@ -14,9 +15,9 @@ class _HelpUsViewState extends State<HelpUsView> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white,
+      backgroundColor: kWhiteColor,
       appBar: AppBar(
-        backgroundColor: Colors.white,
+        backgroundColor: kWhiteColor,
         elevation: 0,
         leading: IconButton(
           onPressed: () {
@@ -24,7 +25,7 @@ class _HelpUsViewState extends State<HelpUsView> {
           },
           icon: Icon(
             Icons.arrow_back_ios,
-            color: TColor.primary,
+            color: kPrimary,
           ),
         ),
       ),
@@ -35,44 +36,34 @@ class _HelpUsViewState extends State<HelpUsView> {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(
-                "Help Up Help You",
-                style: TextStyle(
-                    color: TColor.text,
-                    fontSize: 24,
-                    fontWeight: FontWeight.w700),
+                'Help Up Help You',
+                style: kHelpUsTextStyle,
               ),
-              const SizedBox(
-                height: 25,
-              ),
+              const SizedBox(height: 25),
               Text(
-                "It seems as this is your first time using our app, please enter your location so we can filter our results and stock accordingly to your local store.",
-                style: TextStyle(color: TColor.subTitle, fontSize: 15),
+                'It seems as this is your first time using our app, please enter your location so we can filter our results and stock accordingly to your local store.',
+                style: kLongTextTextStyle,
               ),
-              const SizedBox(
-                height: 20,
-              ),
+              const SizedBox(height: 20),
               Text(
-                "If you choose to skip, you can change your location at any time in your account settings.",
-                style: TextStyle(color: TColor.subTitle, fontSize: 15),
+                'If you choose to skip, you can change your location at any time in your account settings.',
+                style: kLongTextTextStyle,
               ),
-              const SizedBox(
-                height: 15,
-              ),
-              const Text("Chanch Click"),
-              const SizedBox(
-                height: 15,
-              ),
+              const SizedBox(height: 15),
+              const Text('Chanch Click'),
+              const SizedBox(height: 15),
               Container(
                 height: 50,
                 padding: const EdgeInsets.symmetric(horizontal: 15),
                 decoration: BoxDecoration(
-                    color: TColor.textbox,
-                    borderRadius: BorderRadius.circular(20)),
+                  color: kTextbox,
+                  borderRadius: BorderRadius.circular(20),
+                ),
                 child: DropdownButton(
                   isExpanded: true,
-                  hint: const Text("State"),
+                  hint: const Text('State'),
                   underline: Container(),
-                  items: ["State1", "State2"].map((name) {
+                  items: ['State1', 'State2'].map((name) {
                     return DropdownMenuItem(
                       value: name,
                       child: Text(name),
@@ -81,20 +72,19 @@ class _HelpUsViewState extends State<HelpUsView> {
                   onChanged: (selectVal) {},
                 ),
               ),
-              const SizedBox(
-                height: 15,
-              ),
+              const SizedBox(height: 15),
               Container(
                 height: 50,
                 padding: const EdgeInsets.symmetric(horizontal: 15),
                 decoration: BoxDecoration(
-                    color: TColor.textbox,
-                    borderRadius: BorderRadius.circular(20)),
+                  color: kTextbox,
+                  borderRadius: BorderRadius.circular(20),
+                ),
                 child: DropdownButton(
                   isExpanded: true,
-                  hint: const Text("City"),
+                  hint: const Text('City'),
                   underline: Container(),
-                  items: ["City1", "City2"].map((name) {
+                  items: ['City1', 'City2'].map((name) {
                     return DropdownMenuItem(
                       value: name,
                       child: Text(name),
@@ -103,26 +93,26 @@ class _HelpUsViewState extends State<HelpUsView> {
                   onChanged: (selectVal) {},
                 ),
               ),
-              const SizedBox(
-                height: 15,
-              ),
+              const SizedBox(height: 15),
               Row(
                 mainAxisAlignment: MainAxisAlignment.end,
                 children: [
                   TextButton(
                     onPressed: () {
                       Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                              builder: (context) => const MainTabView()));
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => const MainTabView(),
+                        ),
+                      );
                     },
                     child: Text(
-                      "Skip",
-                      style: TextStyle(color: TColor.primary),
+                      'Skip',
+                      style: TextStyle(color: kPrimary),
                     ),
                   ),
                 ],
-              )
+              ),
             ],
           ),
         ),
