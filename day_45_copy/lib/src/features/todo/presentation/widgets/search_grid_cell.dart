@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 
+import '../../../../constants/colors.dart';
+import '../../../../constants/styles.dart';
+
 class SearchGridCell extends StatelessWidget {
   final Map sObj;
   final int index;
@@ -12,33 +15,34 @@ class SearchGridCell extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    var media = MediaQuery.of(context).size;
+    var size = MediaQuery.of(context).size;
     return Container(
       decoration: BoxDecoration(
-          color: TColor.searchBGColor[index % TColor.searchBGColor.length],
-          borderRadius: BorderRadius.circular(15)),
-      padding: const EdgeInsets.symmetric(vertical: 20, horizontal: 4),
+        color: kSearchBGColor[index % kSearchBGColor.length],
+        borderRadius: BorderRadius.circular(15),
+      ),
+      padding: const EdgeInsets.symmetric(
+        vertical: 20,
+        horizontal: 4,
+      ),
       child: Column(
         children: [
           Text(
-            sObj["name"].toString(),
+            sObj['name'].toString(),
             maxLines: 1,
             textAlign: TextAlign.center,
-            style: const TextStyle(
-                color: Colors.white, fontSize: 17, fontWeight: FontWeight.w700),
+            style: kSearchGridCellTextStyle,
           ),
-          const SizedBox(
-            height: 15,
-          ),
+          const SizedBox(height: 15),
           ClipRRect(
             borderRadius: BorderRadius.circular(10),
             child: Image.asset(
-              sObj["img"].toString(),
-              width: media.width * 0.23,
-              height: media.width * 0.23 * 1.6,
+              sObj['img'].toString(),
+              width: size.width * 0.23,
+              height: size.width * 0.23 * 1.6,
               fit: BoxFit.cover,
             ),
-          )
+          ),
         ],
       ),
     );

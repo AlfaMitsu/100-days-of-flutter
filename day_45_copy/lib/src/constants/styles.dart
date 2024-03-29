@@ -61,6 +61,12 @@ TextStyle kRoundButtonTextStyle = const TextStyle(
   fontWeight: FontWeight.w500,
 );
 
+TextStyle kSearchGridCellTextStyle = const TextStyle(
+  color: kWhiteColor,
+  fontSize: 17,
+  fontWeight: FontWeight.w700,
+);
+
 TextStyle kLongTextTextStyle = TextStyle(
   color: kSubTitle,
   fontSize: 15,
@@ -76,10 +82,8 @@ TextStyle kSearchForceViewTimesTextStyle = TextStyle(
   fontSize: 15,
 );
 
-TextStyle kRoundButton2TextStyle = const TextStyle(
-  fontSize: 14,
-  fontWeight: FontWeight.w500
-);
+TextStyle kRoundButton2TextStyle =
+    const TextStyle(fontSize: 14, fontWeight: FontWeight.w500);
 
 TextStyle kSearchFilterSortTextStyle = TextStyle(
   color: kSubTitle,
@@ -102,11 +106,8 @@ TextStyle kAccountViewTextStyle = TextStyle(
   fontSize: 13,
 );
 
-TextStyle kBestSellerTextStyle = TextStyle(
-  color: kText,
-  fontSize: 13,
-  fontWeight: FontWeight.w700
-);
+TextStyle kBestSellerTextStyle =
+    TextStyle(color: kText, fontSize: 13, fontWeight: FontWeight.w700);
 
 TextStyle kMonthlyNewsletterTextStyle = TextStyle(
   color: kSubTitle,
