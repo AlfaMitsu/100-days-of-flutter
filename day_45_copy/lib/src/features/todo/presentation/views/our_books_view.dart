@@ -1,6 +1,8 @@
+import 'package:day_45_copy/src/constants/colors.dart';
 import 'package:flutter/material.dart';
 
-import '../widgets/color_extension.dart';
+import '../../../../constants/assets.dart';
+import '../../data/data_sources/arrays.dart';
 
 class OurBooksView extends StatefulWidget {
   const OurBooksView({super.key});
@@ -10,17 +12,11 @@ class OurBooksView extends StatefulWidget {
 }
 
 class _OurBooksViewState extends State<OurBooksView> {
-  List imageArr = [
-    "lib/src/resources/assets/images/ob1.png",
-    "lib/src/resources/assets/images/ob2.png",
-    "lib/src/resources/assets/images/ob3.png"
-  ];
-
   @override
   Widget build(BuildContext context) {
-    var media = MediaQuery.of(context).size;
+    var size = MediaQuery.of(context).size;
     return Scaffold(
-      backgroundColor: Colors.white,
+      backgroundColor: kWhiteColor,
       body: SingleChildScrollView(
         child: Column(
           children: [
@@ -28,12 +24,12 @@ class _OurBooksViewState extends State<OurBooksView> {
               alignment: Alignment.topCenter,
               children: [
                 Image.asset(
-                  "lib/src/resources/assets/images/our_books_top.png",
-                  width: media.width,
+                  kImgOurBooksViewTopDesign,
+                  width: size.width,
                   fit: BoxFit.fitWidth,
                 ),
                 AppBar(
-                  backgroundColor: Colors.transparent,
+                  backgroundColor: kTransparent,
                   elevation: 0,
                   leading: IconButton(
                     onPressed: () {
@@ -41,40 +37,45 @@ class _OurBooksViewState extends State<OurBooksView> {
                     },
                     icon: const Icon(
                       Icons.arrow_back_ios,
-                      color: Colors.white,
+                      color: kWhiteColor,
                     ),
                   ),
                 ),
                 Container(
-                  height: media.width * 0.9,
+                  height: size.width * 0.9,
                   alignment: Alignment.bottomLeft,
                   child: SingleChildScrollView(
                     scrollDirection: Axis.horizontal,
                     child: Row(
-                      children: imageArr.map((iName) {
-                        var isFirst = imageArr.first == iName;
-                        var isLast = imageArr.last == iName;
-                        return Container(
-                          margin: const EdgeInsets.symmetric(horizontal: 8),
-                          padding: isFirst
-                              ? const EdgeInsets.only(left: 15)
-                              : (isLast
-                                  ? const EdgeInsets.only(right: 15)
-                                  : null),
-                          child: Image.asset(
-                            iName,
-                            height: 120,
-                            fit: BoxFit.fitHeight,
-                          ),
-                        );
-                      }).toList(),
+                      children: imageArr.map(
+                        (iName) {
+                          var isFirst = imageArr.first == iName;
+                          var isLast = imageArr.last == iName;
+                          return Container(
+                            margin: const EdgeInsets.symmetric(horizontal: 8),
+                            padding: isFirst
+                                ? const EdgeInsets.only(left: 15)
+                                : (isLast
+                                    ? const EdgeInsets.only(right: 15)
+                                    : null),
+                            child: Image.asset(
+                              iName,
+                              height: 120,
+                              fit: BoxFit.fitHeight,
+                            ),
+                          );
+                        },
+                      ).toList(),
                     ),
                   ),
-                )
+                ),
               ],
             ),
             Padding(
-              padding: const EdgeInsets.symmetric(vertical: 25, horizontal: 20),
+              padding: const EdgeInsets.symmetric(
+                vertical: 25,
+                horizontal: 20,
+              ),
               child: Text(
                 """The Book Grocer online offers a broad and ever increasing range of discounted remainder and secondhand books.
             
@@ -88,9 +89,12 @@ class _OurBooksViewState extends State<OurBooksView> {
             
             Our staff also love reading and recommending books to others and we are proud of the role they play in demonstrating to our customers how good discount books can be.""",
                 textAlign: TextAlign.center,
-                style: TextStyle(color: TColor.subTitle, fontSize: 15),
+                style: TextStyle(
+                  color: kSubTitle,
+                  fontSize: 15,
+                ),
               ),
-            )
+            ),
           ],
         ),
       ),

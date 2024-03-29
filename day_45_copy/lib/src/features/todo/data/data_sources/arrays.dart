@@ -214,12 +214,18 @@ List purArr = [
 ];
 
 List menuArr = [
-    {"name": "Home", "icon": Icons.home},
-    {"name": "Our Books", "icon": Icons.book},
-    {"name": "Our Stores", "icon": Icons.storefront},
-    {"name": "Careers", "icon": Icons.business_center},
-    {"name": "Sell With Us", "icon": Icons.attach_money},
-    {"name": "Newsletter", "icon": Icons.newspaper},
-    {"name": "Pop-up Leasing", "icon": Icons.open_in_new},
-    {"name": "Account", "icon": Icons.account_circle}
-  ];
+  {"name": "Home", "icon": Icons.home},
+  {"name": "Our Books", "icon": Icons.book},
+  {"name": "Our Stores", "icon": Icons.storefront},
+  {"name": "Careers", "icon": Icons.business_center},
+  {"name": "Sell With Us", "icon": Icons.attach_money},
+  {"name": "Newsletter", "icon": Icons.newspaper},
+  {"name": "Pop-up Leasing", "icon": Icons.open_in_new},
+  {"name": "Account", "icon": Icons.account_circle}
+];
+
+List imageArr = [
+  "lib/src/resources/assets/images/ob1.png",
+  "lib/src/resources/assets/images/ob2.png",
+  "lib/src/resources/assets/images/ob3.png"
+];
