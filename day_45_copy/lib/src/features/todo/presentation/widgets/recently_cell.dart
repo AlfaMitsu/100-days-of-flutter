@@ -35,12 +35,12 @@ class RecentlyCell extends StatelessWidget {
               child: Image.asset(
                 iObj['img'].toString(),
                 width: size.width * 0.32,
-                height: size.width * 0.50,
+                height: size.width * 0.5,
                 fit: BoxFit.cover,
               ),
             ),
           ),
-          const SizedBox(height: 15),
+          const SizedBox(height: 10),
           Text(
             iObj['name'].toString(),
             maxLines: 3,

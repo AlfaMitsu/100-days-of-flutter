@@ -48,7 +48,7 @@ class _MainTabViewState extends State<MainTabView>
               BoxShadow(
                 color: Colors.black54,
                 blurRadius: 15,
-              )
+              ),
             ],
           ),
           child: SingleChildScrollView(

@@ -55,7 +55,6 @@ class _HomeViewState extends State<HomeView> {
                   mainAxisAlignment: MainAxisAlignment.start,
                   mainAxisSize: MainAxisSize.min,
                   children: [
-                    SizedBox(height: size.width * 0.1),
                     AppBar(
                       backgroundColor: kTransparent,
                       elevation: 0,
@@ -78,6 +77,7 @@ class _HomeViewState extends State<HomeView> {
                         ),
                       ],
                     ),
+                    SizedBox(height: size.width * 0.1),
                     SizedBox(
                       width: size.width,
                       height: size.width * 0.8,
@@ -263,7 +263,6 @@ class _HomeViewState extends State<HomeView> {
                         ],
                       ),
                     ),
-                    SizedBox(height: size.width * 0.1),
                   ],
                 ),
               ],

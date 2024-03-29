@@ -1,20 +1,22 @@
 import 'package:flutter/material.dart';
 
+import '../../../../constants/assets.dart';
+
 List topPicksArr = [
   {
     "name": "The Dissapearance of Emila Zola",
     "author": "Michael Rosen",
-    "img": "lib/src/resources/assets/images/1.jpg"
+    "img": kImgBook1,
   },
   {
     "name": "Fatherhood",
     "author": "Marcus Berkmann",
-    "img": "lib/src/resources/assets/images/2.jpg"
+    "img": kImgBook2,
   },
   {
     "name": "The Time Travellers Handbook",
     "author": "Stride Lottie",
-    "img": "lib/src/resources/assets/images/3.jpg"
+    "img": kImgBook3,
   }
 ];
 
@@ -22,35 +24,35 @@ List bestArr = [
   {
     "name": "Fatherhood",
     "author": "by Christopher Wilson",
-    "img": "lib/src/resources/assets/images/4.jpg",
-    "rating": 5.0
+    "img": kImgBook4,
+    "rating": 5.0,
   },
   {
     "name": "In A Land Of Paper Gods",
     "author": "by Rebecca Mackenzie",
-    "img": "lib/src/resources/assets/images/5.jpg",
-    "rating": 4.0
+    "img": kImgBook5,
+    "rating": 4.0,
   },
   {
     "name": "Tattletale",
     "author": "by Sarah J. Noughton",
-    "img": "lib/src/resources/assets/images/6.jpg",
-    "rating": 3.0
+    "img": kImgBook6,
+    "rating": 3.0,
   }
 ];
 
 List genresArr = [
   {
     "name": "Graphic Novels",
-    "img": "lib/src/resources/assets/images/g1.png",
+    "img": kImgGenre1,
   },
   {
     "name": "Graphic Novels",
-    "img": "lib/src/resources/assets/images/g1.png",
+    "img": kImgGenre1,
   },
   {
     "name": "Graphic Novels",
-    "img": "lib/src/resources/assets/images/g1.png",
+    "img": kImgGenre1,
   }
 ];
 
@@ -58,17 +60,17 @@ List recentArr = [
   {
     "name": "The Fatal Tree",
     "author": "by Jake Arnott",
-    "img": "lib/src/resources/assets/images/10.jpg"
+    "img": kImgBook10,
   },
   {
     "name": "Day Four",
     "author": "by LOTZ, SARAH",
-    "img": "lib/src/resources/assets/images/11.jpg"
+    "img": kImgBook11,
   },
   {
     "name": "Door to Door",
     "author": "by Edward Humes",
-    "img": "lib/src/resources/assets/images/12.jpg"
+    "img": kImgBook12,
   }
 ];
 
@@ -77,7 +79,7 @@ List sortByArr = [
   "Price: Low to High",
   "Price: High to Low",
   "Publication Date",
-  "A - Z"
+  "A - Z",
 ];
 
 List genreArr = [
@@ -90,7 +92,7 @@ List genreArr = [
   "Business & Economics1",
   "Children1",
   "Cookery1",
-  "Fiction1"
+  "Fiction1",
 ];
 
 List perviousArr = [
@@ -105,7 +107,7 @@ List resultArr = [
   "Gross Anatomy",
   "When To Rob A Bank",
   "The Bite In The Apple",
-  "The Ignorant Maestro"
+  "The Ignorant Maestro",
 ];
 
 List tagsArr = [
@@ -114,103 +116,79 @@ List tagsArr = [
   "The Art",
   "Genre1",
   "New Release1",
-  "The Art1"
+  "The Art1",
 ];
 
 List searchArr = [
   {
     "name": "Biography",
-    "img": "lib/src/resources/assets/images/b1.jpg",
+    "img": kImgBiography,
   },
   {
     "name": "Business",
-    "img": "lib/src/resources/assets/images/b2.jpg",
+    "img": kImgBusiness,
   },
   {
     "name": "Children",
-    "img": "lib/src/resources/assets/images/b3.jpg",
+    "img": kImgChildren,
   },
   {
-    "name": "Cookery",
-    "img": "lib/src/resources/assets/images/b4.jpg",
-  },
-  {
-    "name": "Fiction",
-    "img": "lib/src/resources/assets/images/b5.jpg",
-  },
-  {
-    "name": "Graphic Novels",
-    "img": "lib/src/resources/assets/images/b6.jpg",
-  },
-  {
-    "name": "Biography",
-    "img": "lib/src/resources/assets/images/b1.jpg",
-  },
-  {
-    "name": "Business",
-    "img": "lib/src/resources/assets/images/b2.jpg",
-  },
-  {
-    "name": "Children",
-    "img": "lib/src/resources/assets/images/b3.jpg",
-  },
-  {
-    "name": "Cookery",
-    "img": "lib/src/resources/assets/images/b4.jpg",
+    "name": "Culinary",
+    "img": kImgCulinary,
   },
   {
     "name": "Fiction",
-    "img": "lib/src/resources/assets/images/b5.jpg",
+    "img": kImgFiction,
   },
   {
     "name": "Graphic Novels",
-    "img": "lib/src/resources/assets/images/b6.jpg",
-  }
+    "img": kImgGraphicNovels,
+  },
 ];
 
 List sResultArr = [
   {
     "name": "The Heart of Hell",
-    "img": "lib/src/resources/assets/images/h1.jpg",
+    "img": kImgReview1,
     "author": "Mitch Weiss",
     "description":
         "The untold story of courage and sacrifice in the shadow of Iwo Jima.",
-    "rate": 5.0
+    "rate": 5.0,
   },
   {
     "name": "Adrennes 1944",
-    "img": "lib/src/resources/assets/images/h2.jpg",
+    "img": kImgReview2,
     "author": "Antony Beevor",
     "description":
         "#1 international bestseller and award winning history book.",
-    "rate": 4.0
+    "rate": 4.0,
   },
   {
     "name": "War on the Gothic Line",
-    "img": "lib/src/resources/assets/images/h3.jpg",
+    "img": kImgReview3,
     "author": "Christian Jennings",
     "description":
         "Through the eyes of thirteen men and women from seven different nations",
-    "rate": 3.0
+    "rate": 3.0,
   },
   {
-    "img": "lib/src/resources/assets/images/p1.jpg",
+    "img": kImgPurchase1,
     "description":
         "A must read for everybody. This book taught me so many things about...",
-    "rate": 5.0
+    "rate": 5.0,
   },
   {
-    "img": "lib/src/resources/assets/images/p2.jpg",
+    "img": kImgPurchase2,
     "description":
         "#1 international bestseller and award winning history book.",
-    "rate": 4.0
+    "rate": 4.0,
   }
 ];
 
 List purArr = [
-  "lib/src/resources/assets/images/p1.jpg",
-  "lib/src/resources/assets/images/p2.jpg",
-  "lib/src/resources/assets/images/p3.jpg"
+  kImgPurchase1,
+  kImgPurchase2,
+  kImgPurchase3,
 ];
 
 List menuArr = [
@@ -221,11 +199,11 @@ List menuArr = [
   {"name": "Sell With Us", "icon": Icons.attach_money},
   {"name": "Newsletter", "icon": Icons.newspaper},
   {"name": "Pop-up Leasing", "icon": Icons.open_in_new},
-  {"name": "Account", "icon": Icons.account_circle}
+  {"name": "Account", "icon": Icons.account_circle},
 ];
 
 List imageArr = [
-  "lib/src/resources/assets/images/ob1.png",
-  "lib/src/resources/assets/images/ob2.png",
-  "lib/src/resources/assets/images/ob3.png"
+  kImgOurBooks1,
+  kImgOurBooks2,
+  kImgOurBooks3,
 ];
