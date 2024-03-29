@@ -8,7 +8,11 @@ import '../../widgets/round_button.dart';
 
 class SearchFilterView extends StatefulWidget {
   final Function(Map)? didFilter;
-  const SearchFilterView({super.key, this.didFilter});
+  
+  const SearchFilterView({
+    super.key,
+    this.didFilter,
+  });
 
   @override
   State<SearchFilterView> createState() => _SearchFilterViewState();

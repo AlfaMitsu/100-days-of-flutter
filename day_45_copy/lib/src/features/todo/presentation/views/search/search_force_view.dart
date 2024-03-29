@@ -6,7 +6,11 @@ import '../../../data/data_sources/arrays.dart';
 
 class SearchForceView extends StatefulWidget {
   final Function(String)? didSearch;
-  const SearchForceView({super.key, this.didSearch});
+  
+  const SearchForceView({
+    super.key,
+    this.didSearch,
+  });
 
   @override
   State<SearchForceView> createState() => _SearchForceViewState();
