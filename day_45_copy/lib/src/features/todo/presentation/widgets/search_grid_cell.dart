@@ -1,11 +1,14 @@
 import 'package:flutter/material.dart';
 
-import 'color_extension.dart';
-
 class SearchGridCell extends StatelessWidget {
   final Map sObj;
   final int index;
-  const SearchGridCell({super.key, required this.sObj, required this.index});
+
+  const SearchGridCell({
+    super.key,
+    required this.sObj,
+    required this.index,
+  });
 
   @override
   Widget build(BuildContext context) {

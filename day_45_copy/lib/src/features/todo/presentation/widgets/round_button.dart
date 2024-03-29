@@ -1,24 +1,32 @@
+import 'package:day_45_copy/src/constants/colors.dart';
 import 'package:flutter/material.dart';
 
-import 'color_extension.dart';
+import '../../../../constants/styles.dart';
 
 class RoundButton extends StatelessWidget {
   final String title;
   final VoidCallback onPressed;
-  const RoundButton({super.key, required this.title, required this.onPressed});
+
+  const RoundButton({
+    super.key,
+    required this.title,
+    required this.onPressed,
+  });
 
   @override
   Widget build(BuildContext context) {
     return MaterialButton(
       onPressed: onPressed,
-      textColor: Colors.white,
-      color: TColor.primary,
+      textColor: kWhiteColor,
+      color: kPrimary,
       height: 50,
       minWidth: double.maxFinite,
-      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20.0)),
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(20.0),
+      ),
       child: Text(
         title,
-        style: const TextStyle(fontSize: 17, fontWeight: FontWeight.w500),
+        style: kRoundButtonTextStyle,
       ),
     );
   }
@@ -27,36 +35,47 @@ class RoundButton extends StatelessWidget {
 class RoundLineButton extends StatelessWidget {
   final String title;
   final VoidCallback onPressed;
-  const RoundLineButton(
-      {super.key, required this.title, required this.onPressed});
+
+  const RoundLineButton({
+    super.key,
+    required this.title,
+    required this.onPressed,
+  });
 
   @override
   Widget build(BuildContext context) {
     return ElevatedButton(
       onPressed: onPressed,
       style: ButtonStyle(
-        backgroundColor: getColor(Colors.white, TColor.primary),
-        foregroundColor: getColor(TColor.primary, Colors.white),
-        shadowColor:
-            MaterialStateProperty.resolveWith((states) => TColor.primary),
+        backgroundColor: getColor(
+          kWhiteColor,
+          kPrimary,
+        ),
+        foregroundColor: getColor(
+          kPrimary,
+          kWhiteColor,
+        ),
+        shadowColor: MaterialStateProperty.resolveWith((states) => kPrimary),
         minimumSize: MaterialStateProperty.resolveWith(
-            (states) => const Size(double.maxFinite, 50)),
+          (states) => const Size(double.maxFinite, 50),
+        ),
         elevation: MaterialStateProperty.resolveWith(
             (states) => states.contains(MaterialState.pressed) ? 1 : 0),
         shape: MaterialStateProperty.resolveWith(
           (states) => RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(20),
             side: BorderSide(
-                width: 1,
-                color: states.contains(MaterialState.pressed)
-                    ? Colors.transparent
-                    : TColor.primary),
+              width: 1,
+              color: states.contains(MaterialState.pressed)
+                  ? kTransparent
+                  : kPrimary,
+            ),
           ),
         ),
       ),
       child: Text(
         title,
-        style: const TextStyle(fontSize: 17, fontWeight: FontWeight.w500),
+        style: kRoundButtonTextStyle,
       ),
     );
   }
@@ -70,8 +89,12 @@ class RoundLineButton extends StatelessWidget {
 class MiniRoundButton extends StatelessWidget {
   final String title;
   final VoidCallback onPressed;
-  const MiniRoundButton(
-      {super.key, required this.title, required this.onPressed});
+
+  const MiniRoundButton({
+    super.key,
+    required this.title,
+    required this.onPressed,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -79,13 +102,16 @@ class MiniRoundButton extends StatelessWidget {
       onPressed: onPressed,
       style: ButtonStyle(
         backgroundColor:
-            MaterialStateProperty.resolveWith((states) => TColor.primary),
+            MaterialStateProperty.resolveWith((states) => kPrimary),
         foregroundColor:
-            MaterialStateProperty.resolveWith((states) => Colors.white),
-        shadowColor:
-            MaterialStateProperty.resolveWith((states) => TColor.primary),
-        minimumSize:
-            MaterialStateProperty.resolveWith((states) => const Size(150, 35)),
+            MaterialStateProperty.resolveWith((states) => kWhiteColor),
+        shadowColor: MaterialStateProperty.resolveWith((states) => kPrimary),
+        minimumSize: MaterialStateProperty.resolveWith(
+          (states) => const Size(
+            150,
+            35,
+          ),
+        ),
         shape: MaterialStateProperty.resolveWith(
           (states) => RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(10),
@@ -94,7 +120,7 @@ class MiniRoundButton extends StatelessWidget {
       ),
       child: Text(
         title,
-        style: const TextStyle(fontSize: 14, fontWeight: FontWeight.w500),
+        style: kRoundButton2TextStyle,
       ),
     );
   }

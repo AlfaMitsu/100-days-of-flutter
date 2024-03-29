@@ -50,6 +50,17 @@ TextStyle kMainTabViewTabButtonTextTextStyle = TextStyle(
   fontWeight: FontWeight.w700,
 );
 
+TextStyle kHistoryRowTextStyle = TextStyle(
+  color: kText,
+  fontSize: 17,
+  fontWeight: FontWeight.w700,
+);
+
+TextStyle kRoundButtonTextStyle = const TextStyle(
+  fontSize: 17,
+  fontWeight: FontWeight.w500,
+);
+
 TextStyle kLongTextTextStyle = TextStyle(
   color: kSubTitle,
   fontSize: 15,
@@ -63,6 +74,11 @@ TextStyle kSearchFilterItemNameTextStyle = TextStyle(
 TextStyle kSearchForceViewTimesTextStyle = TextStyle(
   color: kPrimaryLight,
   fontSize: 15,
+);
+
+TextStyle kRoundButton2TextStyle = const TextStyle(
+  fontSize: 14,
+  fontWeight: FontWeight.w500
 );
 
 TextStyle kSearchFilterSortTextStyle = TextStyle(
@@ -94,6 +110,11 @@ TextStyle kBestSellerTextStyle = TextStyle(
 
 TextStyle kMonthlyNewsletterTextStyle = TextStyle(
   color: kSubTitle,
+  fontSize: 12,
+);
+
+TextStyle kHistoryRowWishlistTextStyle = TextStyle(
+  color: kText,
   fontSize: 12,
 );
 
