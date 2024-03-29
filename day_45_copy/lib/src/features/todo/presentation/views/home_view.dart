@@ -231,7 +231,7 @@ class _HomeViewState extends State<HomeView> {
                         children: [
                           Text(
                             'Receive our monthly newsletter and receive updates on new stock, books and the occasional promotion.',
-                            style: kMonthlyNewsletter,
+                            style: kMonthlyNewsletterTextStyle,
                           ),
                           const SizedBox(height: 15),
                           RoundTextField(
