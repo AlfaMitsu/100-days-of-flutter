@@ -190,5 +190,23 @@ List sResultArr = [
     "description":
         "Through the eyes of thirteen men and women from seven different nations",
     "rate": 3.0
+  },
+  {
+    "img": "lib/src/resources/assets/images/p1.jpg",
+    "description":
+        "A must read for everybody. This book taught me so many things about...",
+    "rate": 5.0
+  },
+  {
+    "img": "lib/src/resources/assets/images/p2.jpg",
+    "description":
+        "#1 international bestseller and award winning history book.",
+    "rate": 4.0
   }
+];
+
+List purArr = [
+  "lib/src/resources/assets/images/p1.jpg",
+  "lib/src/resources/assets/images/p2.jpg",
+  "lib/src/resources/assets/images/p3.jpg"
 ];

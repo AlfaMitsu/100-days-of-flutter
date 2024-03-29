@@ -3,6 +3,12 @@ import 'colors.dart';
 
 // TextStyle
 
+TextStyle kAccountviewNumberTextStyle = TextStyle(
+  color: kSubTitle,
+  fontSize: 30,
+  fontWeight: FontWeight.w700,
+);
+
 TextStyle kHelpUsTextStyle = TextStyle(
   color: kText,
   fontSize: 24,
@@ -23,6 +29,12 @@ TextStyle kCategoryTextStyle = TextStyle(
 
 TextStyle kSearchFilterTextStyle = TextStyle(
   color: kText,
+  fontSize: 20,
+  fontWeight: FontWeight.w700,
+);
+
+TextStyle kAccountViewPurchasesTextStyle = TextStyle(
+  color: kSubTitle,
   fontSize: 20,
   fontWeight: FontWeight.w700,
 );
@@ -63,7 +75,17 @@ TextStyle kSearchForceViewTextStyle = TextStyle(
   fontWeight: FontWeight.w700,
 );
 
-TextStyle kMonthlyNewsletter = TextStyle(
+TextStyle kAccountViewTextStyle = TextStyle(
+  color: kSubTitle,
+  fontSize: 13,
+);
+
+TextStyle kMonthlyNewsletterTextStyle = TextStyle(
   color: kSubTitle,
   fontSize: 12,
+);
+
+TextStyle kAccountViewBooksTextStyle = TextStyle(
+  color: kSubTitle,
+  fontSize: 11,
 );
