@@ -86,6 +86,12 @@ TextStyle kAccountViewTextStyle = TextStyle(
   fontSize: 13,
 );
 
+TextStyle kBestSellerTextStyle = TextStyle(
+  color: kText,
+  fontSize: 13,
+  fontWeight: FontWeight.w700
+);
+
 TextStyle kMonthlyNewsletterTextStyle = TextStyle(
   color: kSubTitle,
   fontSize: 12,
