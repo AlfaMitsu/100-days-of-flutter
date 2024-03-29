@@ -1,3 +1,5 @@
+import 'package:flutter/material.dart';
+
 List topPicksArr = [
   {
     "name": "The Dissapearance of Emila Zola",
@@ -210,3 +212,14 @@ List purArr = [
   "lib/src/resources/assets/images/p2.jpg",
   "lib/src/resources/assets/images/p3.jpg"
 ];
+
+List menuArr = [
+    {"name": "Home", "icon": Icons.home},
+    {"name": "Our Books", "icon": Icons.book},
+    {"name": "Our Stores", "icon": Icons.storefront},
+    {"name": "Careers", "icon": Icons.business_center},
+    {"name": "Sell With Us", "icon": Icons.attach_money},
+    {"name": "Newsletter", "icon": Icons.newspaper},
+    {"name": "Pop-up Leasing", "icon": Icons.open_in_new},
+    {"name": "Account", "icon": Icons.account_circle}
+  ];

@@ -44,6 +44,12 @@ TextStyle kSearchFilterCancelTextStyle = TextStyle(
   fontSize: 17,
 );
 
+TextStyle kMainTabViewTabButtonTextTextStyle = TextStyle(
+  color: kSubTitle,
+  fontSize: 17,
+  fontWeight: FontWeight.w700,
+);
+
 TextStyle kLongTextTextStyle = TextStyle(
   color: kSubTitle,
   fontSize: 15,
