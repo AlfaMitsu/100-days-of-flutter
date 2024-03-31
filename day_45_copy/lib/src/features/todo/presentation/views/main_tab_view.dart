@@ -170,10 +170,10 @@ class _MainTabViewState extends State<MainTabView>
                   ),
                 ),
                 SizedBox(
-                  height: 280,
+                  height: 211,
                   child: Image.asset(
                     kImgBackground,
-                    fit: BoxFit.fill,
+                    fit: BoxFit.contain,
                   ),
                 ),
               ],
