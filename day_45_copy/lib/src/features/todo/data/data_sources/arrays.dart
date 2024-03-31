@@ -4,72 +4,72 @@ import '../../../../constants/assets.dart';
 
 List topPicksArr = [
   {
-    "name": "The Dissapearance of Emila Zola",
-    "author": "Michael Rosen",
+    "name": "The Girl with the Dragon Tattoo",
+    "author": "Stieg Larsson",
     "img": kImgBook1,
   },
   {
-    "name": "Fatherhood",
-    "author": "Marcus Berkmann",
+    "name": "The Book Thief",
+    "author": "Markus Zusak",
     "img": kImgBook2,
   },
   {
-    "name": "The Time Travellers Handbook",
-    "author": "Stride Lottie",
+    "name": "Frankenstein",
+    "author": "Mark Shelley",
     "img": kImgBook3,
   }
 ];
 
 List bestArr = [
   {
-    "name": "Fatherhood",
-    "author": "by Christopher Wilson",
+    "name": "She: A History of Adventure",
+    "author": "by H. Rider Haggard",
     "img": kImgBook4,
-    "rating": 5.0,
+    "rating": 3.6,
   },
   {
-    "name": "In A Land Of Paper Gods",
-    "author": "by Rebecca Mackenzie",
+    "name": "The Da Vinci Code",
+    "author": "by	Dan Brown",
     "img": kImgBook5,
-    "rating": 4.0,
+    "rating": 4.3,
   },
   {
-    "name": "Tattletale",
-    "author": "by Sarah J. Noughton",
+    "name": "Harry Potter and the Chamber of Secrets",
+    "author": "by 	J. K. Rowling",
     "img": kImgBook6,
-    "rating": 3.0,
+    "rating": 4.7,
   }
 ];
 
 List genresArr = [
   {
-    "name": "Graphic Novels",
+    "name": "Romance",
     "img": kImgGenre1,
   },
   {
-    "name": "Graphic Novels",
-    "img": kImgGenre1,
+    "name": "Mystery",
+    "img": kImgGenre2,
   },
   {
-    "name": "Graphic Novels",
-    "img": kImgGenre1,
+    "name": "Thriller",
+    "img": kImgGenre3,
   }
 ];
 
 List recentArr = [
   {
-    "name": "The Fatal Tree",
-    "author": "by Jake Arnott",
+    "name": "Harry Potter and the Prisoner of Azkaban",
+    "author": "by J. K. Rowling",
     "img": kImgBook10,
   },
   {
-    "name": "Day Four",
-    "author": "by LOTZ, SARAH",
+    "name": "Harry Potter and the Goblet of Fire",
+    "author": "by	J. K. Rowling",
     "img": kImgBook11,
   },
   {
-    "name": "Door to Door",
-    "author": "by Edward Humes",
+    "name": "Harry Potter and the Order of the Phoenix",
+    "author": "by	J. K. Rowling",
     "img": kImgBook12,
   }
 ];
@@ -148,40 +148,44 @@ List searchArr = [
 
 List sResultArr = [
   {
-    "name": "The Heart of Hell",
+    "name": "The Bridges of Madison County",
     "img": kImgReview1,
-    "author": "Mitch Weiss",
+    "author": "Robert James Waller",
     "description":
-        "The untold story of courage and sacrifice in the shadow of Iwo Jima.",
-    "rate": 5.0,
+        "A lonely housewife grapples with a passionate affair that forces her to confront her desires and the life she's built.",
+    "rate": 4.7,
   },
   {
-    "name": "Adrennes 1944",
+    "name": "One Hundred Years of Solitude",
     "img": kImgReview2,
-    "author": "Antony Beevor",
+    "author": "Gabriel García Márquez",
     "description":
-        "#1 international bestseller and award winning history book.",
-    "rate": 4.0,
+        "One Hundred Years of Solitude weaves a magical tapestry of love, loss, and the cyclical nature of life through the saga of the Buendía family across generations in a fantastical Colombian village.",
+    "rate": 4.5,
   },
   {
-    "name": "War on the Gothic Line",
+    "name": "Lolita",
     "img": kImgReview3,
-    "author": "Christian Jennings",
+    "author": "Vladimir Nabokov",
     "description":
-        "Through the eyes of thirteen men and women from seven different nations",
-    "rate": 3.0,
+        "Lolita is a complex and controversial novel by Vladimir Nabokov, narrated by an unreliable and predatory character. It explores dark themes of child abuse and obsession, and while critically acclaimed for its stylistic brilliance, it's a difficult read that may be disturbing for some.",
+    "rate": 3.7,
   },
   {
+    "name": "Harry Potter and the Half-Blood Prince",
     "img": kImgPurchase1,
+    "author": "J.K. Rowling",
     "description":
-        "A must read for everybody. This book taught me so many things about...",
-    "rate": 5.0,
+        "Secrets and romance simmer as Harry uncovers a hidden clue and grapples with teenage emotions in his quest to defeat Voldemort.",
+    "rate": 4.7,
   },
   {
+    "name": "Harry Potter and the Deathly Hallows",
     "img": kImgPurchase2,
+    "author": "J.K. Rowling",
     "description":
-        "#1 international bestseller and award winning history book.",
-    "rate": 4.0,
+        "Harry and his friends face their ultimate test as they race to find and destroy Voldemort's Horcruxes in a desperate battle for the wizarding world.",
+    "rate": 4.8,
   }
 ];
 

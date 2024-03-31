@@ -48,11 +48,11 @@ class _AccountViewState extends State<AccountView> {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Text(
-                          'Will Newman',
+                          'Al-Fasheer Hadji Usop',
                           style: kSearchFilterTextStyle,
                         ),
                         Text(
-                          'Constantly travelling and keeping up to date with business related books.',
+                          'Constantly travelling and keeping up to date with programming and improving related books.',
                           style: kAccountViewTextStyle,
                         ),
                       ],
@@ -83,7 +83,7 @@ class _AccountViewState extends State<AccountView> {
                   const SizedBox(width: 8),
                   Expanded(
                     child: Text(
-                      'Newcastle - Australia',
+                      'Davao - Philippines',
                       style: kAccountViewTextStyle,
                     ),
                   ),

@@ -83,6 +83,7 @@ class HistoryRow extends StatelessWidget {
                 Row(
                   children: [
                     Expanded(
+                      flex: 6,
                       child: Container(
                         height: 30,
                         decoration: BoxDecoration(
@@ -109,8 +110,9 @@ class HistoryRow extends StatelessWidget {
                         ),
                       ),
                     ),
-                    const SizedBox(width: 8),
+                    const SizedBox(width: 10),
                     Expanded(
+                      flex: 7,
                       child: Container(
                         height: 30,
                         decoration: BoxDecoration(
@@ -127,12 +129,14 @@ class HistoryRow extends StatelessWidget {
                         child: ElevatedButton(
                           onPressed: () {},
                           style: ElevatedButton.styleFrom(
-                              backgroundColor: kTransparent,
-                              foregroundColor: kText,
-                              shadowColor: kTransparent),
+                            backgroundColor: kTransparent,
+                            foregroundColor: kText,
+                            shadowColor: kTransparent,
+                          ),
                           child: Text(
-                            'Add to wishlist',
+                            'Add to Wishlist',
                             style: kHistoryRowWishlistTextStyle,
+                            overflow: TextOverflow.ellipsis,
                           ),
                         ),
                       ),

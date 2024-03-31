@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 // Brand Colors
 
-Color get kPrimary => const Color(0xFF5ABD8C);
+Color get kPrimary => const Color(0xFF513653);
 Color get kPrimaryLight => const Color(0xFFAFDFC7);
 Color get kText => const Color(0xFF212121);
 Color get kSubTitle => const Color(0xFF212121).withOpacity(0.4);
@@ -10,17 +10,17 @@ Color get kColor1 => const Color(0xFF1C4A7E);
 Color get kColor2 => const Color(0xFFC65135);
 Color get kDColor => const Color(0xFFF3F3F3);
 Color get kTextbox => const Color(0xFFEFEFEF).withOpacity(0.6);
-List<Color> get kButton => const [
-      Color(0xFF5ABD8C),
-      Color(0xFF00FF81),
+List<Color> get kButton => [
+      kPrimaryLight,
+      kLightGreenColor,
     ];
 List<Color> get kSearchBGColor => const [
-      Color(0xFFB7143C),
-      Color(0xFFE6A500),
-      Color(0xFFEF4C45),
-      Color(0xFFF46217),
-      Color(0xFF09ADE2),
-      Color(0xFFD36A43),
+      Color(0xFF993366),
+      Color(0xFF0077C2),
+      Color(0xFFFFFF99),
+      Color(0xFFFFCC00),
+      Color(0xFF333333),
+      Color(0xFFC2C2F0),
     ];
 
 // Common Colors

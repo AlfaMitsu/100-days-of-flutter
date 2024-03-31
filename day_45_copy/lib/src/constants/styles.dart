@@ -82,8 +82,16 @@ TextStyle kSearchForceViewTimesTextStyle = TextStyle(
   fontSize: 15,
 );
 
-TextStyle kRoundButton2TextStyle =
-    const TextStyle(fontSize: 14, fontWeight: FontWeight.w500);
+TextStyle kGenresCellTextStyle = TextStyle(
+  color: kText,
+  fontSize: 15,
+  fontWeight: FontWeight.w700,
+);
+
+TextStyle kRoundButton2TextStyle = const TextStyle(
+  fontSize: 14,
+  fontWeight: FontWeight.w500,
+);
 
 TextStyle kSearchFilterSortTextStyle = TextStyle(
   color: kSubTitle,

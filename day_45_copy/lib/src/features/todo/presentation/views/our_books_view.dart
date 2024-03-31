@@ -77,17 +77,29 @@ class _OurBooksViewState extends State<OurBooksView> {
                 horizontal: 20,
               ),
               child: Text(
-                """The Book Grocer online offers a broad and ever increasing range of discounted remainder and secondhand books.
-            
-            Our specialty is sourcing discounted books of amazing quality and passing on to our customers the best possible price.
-            We take our book buying very seriously indeed. We scour the globe and the best publishers and suppliers for the best bargains, but no book simply arrives in our warehouse simply because it's cheap. It has to be something we want to read ourselves and would reccomend to others.
-            We like to be known as the business which sells discounted books yet looks and feels like a retail bookstore.
-            
-            We are an Australian, family-owned business. We have been buying and selling books since 2000, when the first Castlebooks store opened in Kingston, ACT.
-            
-            In 2007 we opened the first Book Grocer in Brunswick, Victoria. Book Grocers can now be found in a range of locations across Victoria, NSW, and of course, Canberra.
-            
-            Our staff also love reading and recommending books to others and we are proud of the role they play in demonstrating to our customers how good discount books can be.""",
+                """Unbeatable Discounted Books for Every Reader
+
+Book Grocer isn't your average discount bookstore. We offer a treasure trove of discounted remainder and secondhand books, all meticulously chosen for amazing quality and incredible value.
+
+Quality You Can Trust, Prices You'll Love
+
+We source books from all over the globe, working with publishers and suppliers to find the best bargains. But here's the thing: a cheap price isn't enough for us. Every book on our shelves is one we'd happily recommend to a friend – because we're passionate readers ourselves!
+
+Discount Prices, Bookstore Vibes
+
+We believe discounted books shouldn't mean a compromised experience. That's why we strive to create a welcoming atmosphere that feels just like your favorite retail bookstore.
+
+A Family Affair, Established in 2000
+
+Book Grocer is a proudly Australian, family-owned business. We started our journey in 2000 with the first Castlebooks store, and in 2007, Book Grocer was born! Today, you can find us in various locations across Victoria, NSW, and Canberra.
+
+Enthusiastic Staff, Expert Recommendations
+
+Our team is brimming with bookworms who love nothing more than sharing their passion with others. They're experts at recommending the perfect read, whether you're searching for a specific genre or simply looking to discover your next favorite book.
+
+Come Experience the Difference at Book Grocer!
+
+We invite you to explore our incredible selection of discounted books and rediscover the joy of getting lost in a good story.""",
                 textAlign: TextAlign.center,
                 style: TextStyle(
                   color: kSubTitle,

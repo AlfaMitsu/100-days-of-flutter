@@ -73,7 +73,10 @@ class _HomeViewState extends State<HomeView> {
                           onPressed: () {
                             sideMenuScaffoldKey.currentState?.openEndDrawer();
                           },
-                          icon: const Icon(Icons.menu),
+                          icon: const Icon(
+                            Icons.menu,
+                            color: kWhiteColor,
+                          ),
                         ),
                       ],
                     ),
@@ -184,7 +187,7 @@ class _HomeViewState extends State<HomeView> {
                       ),
                     ),
                     SizedBox(
-                      height: size.width * 0.7,
+                      height: size.width * 0.8,
                       child: ListView.builder(
                         padding: const EdgeInsets.symmetric(
                           vertical: 15,
@@ -201,7 +204,7 @@ class _HomeViewState extends State<HomeView> {
                         }),
                       ),
                     ),
-                    SizedBox(height: size.width * 0.1),
+                    SizedBox(height: size.width * 0.025),
                     Container(
                       padding: const EdgeInsets.symmetric(horizontal: 20),
                       child: Row(
