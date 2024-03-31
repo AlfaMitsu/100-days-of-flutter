@@ -29,3 +29,4 @@ const String kImgPurchase3 = "lib/src/resources/assets/images/kImgPurchase3.jpg"
 const String kImgOurBooks1 = "lib/src/resources/assets/images/kImgOurBooks1.png";
 const String kImgOurBooks2 = "lib/src/resources/assets/images/kImgOurBooks2.png";
 const String kImgOurBooks3 = "lib/src/resources/assets/images/kImgOurBooks3.png";
+const String kImgBackground = "lib/src/resources/assets/images/kImgBackground.jpg";

@@ -1,6 +1,7 @@
 import 'package:day_45_copy/src/constants/colors.dart';
 import 'package:flutter/material.dart';
 
+import '../../../../constants/assets.dart';
 import '../../../../constants/styles.dart';
 import '../../data/data_sources/arrays.dart';
 import 'account_view.dart';
@@ -37,13 +38,10 @@ class _MainTabViewState extends State<MainTabView>
       endDrawer: Drawer(
         backgroundColor: kTransparent,
         elevation: 0,
-        width: size.width * 0.8,
+        width: size.width * 0.7,
         child: Container(
           decoration: BoxDecoration(
             color: kDColor,
-            borderRadius: BorderRadius.only(
-              bottomLeft: Radius.circular(size.width * 0.7),
-            ),
             boxShadow: const [
               BoxShadow(
                 color: Colors.black54,
@@ -55,7 +53,7 @@ class _MainTabViewState extends State<MainTabView>
             child: Column(
               mainAxisAlignment: MainAxisAlignment.start,
               children: [
-                const SizedBox(height: 80),
+                const SizedBox(height: 20),
                 Column(
                     mainAxisSize: MainAxisSize.min,
                     children: menuArr.map(
@@ -156,7 +154,7 @@ class _MainTabViewState extends State<MainTabView>
                       TextButton(
                         onPressed: () {},
                         child: Text(
-                          'Terns',
+                          'Terms',
                           style: kMainTabViewTabButtonTextTextStyle,
                         ),
                       ),
@@ -169,6 +167,13 @@ class _MainTabViewState extends State<MainTabView>
                         ),
                       ),
                     ],
+                  ),
+                ),
+                SizedBox(
+                  height: 280,
+                  child: Image.asset(
+                    kImgBackground,
+                    fit: BoxFit.fill,
                   ),
                 ),
               ],
