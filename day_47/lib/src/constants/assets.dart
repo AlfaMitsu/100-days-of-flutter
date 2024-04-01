@@ -5,3 +5,6 @@ const String kImgProfile = 'lib/src/resources/assets/images/kImgProfile.png';
 const String kImgEmoji = 'lib/src/resources/assets/images/kImgEmoji.png';
 const String kImgPickerButton = 'lib/src/resources/assets/images/kImgPickerButton.png';
 const String kImgAttachmentButton = 'lib/src/resources/assets/images/kImgAttachmentButton.png';
+const String kImgSearchButton = 'lib/src/resources/assets/images/kImgSearchButton.png';
+const String kImgFilterButton = 'lib/src/resources/assets/images/kImgFilterButton.png';
+const String kImgEditButton = 'lib/src/resources/assets/images/kImgEditButton.png';

@@ -9,7 +9,11 @@ import '../../widgets/chat_text_bubbles.dart';
 
 class ChatConversationView extends StatefulWidget {
   final Map uObj;
-  const ChatConversationView({super.key, required this.uObj});
+
+  const ChatConversationView({
+    super.key,
+    required this.uObj,
+  });
 
   @override
   State<ChatConversationView> createState() => _ChatConversationViewState();
