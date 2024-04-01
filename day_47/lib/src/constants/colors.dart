@@ -2,16 +2,33 @@ import 'package:flutter/material.dart';
 
 // Brand Colors
 
-const kCoffeeShopBrandColor = Color(0xFF0D0F14);
-const kCoffeeShopBrandColor2 = Color(0xFF342520);
-const kCoffeeShopBrandColor3 = Color(0xFF1A1819);
-const kCoffeeShopBrandColor4 = Color(0xFF14181D);
-const kCoffeeShopBrandColor5 = Color(0xFF322B2E);
-const kCoffeeShopBrandColor6 = Color(0xFF0F1419);
-const kCoffeeShopBrandColor7 = Color(0xFF909193);
-const kCoffeeShopBrandColor8 = Color(0xFF999A9B);
-const kCoffeeShopBrandColor9 = Color(0xFF0D0F14);
-const kCoffeeShopBrandColor10 = Color(0xFFADADAD);
+Color get primary => const Color(0xff2676E1);
+Color get primaryEnd => const Color(0xff00B5AA);
+Color get secondary => const Color(0xffA3FEC7);
+Color get secondaryEnd => const Color(0xff6AC6FC);
+Color get primaryText => const Color(0xff434B56);
+Color get primaryTextW => const Color(0xffFFFFFF);
+Color get secondaryText => const Color(0xff7C8085);
+Color get time => const Color(0xff787C81);
+Color get base => const Color(0xff00B5AA);
+List<Color> get primaryG => [primary, primaryEnd];
+List<Color> get secondaryG => [secondary, secondaryEnd];
+Color get bg => Colors.white;
+
+extension HexColor on Color {
+  static Color fromHex(String hexString) {
+    final buffer = StringBuffer();
+    if (hexString.length == 6 || hexString.length == 7) buffer.write('ff');
+    buffer.write(hexString.replaceFirst('#', ''));
+    return Color(int.parse(buffer.toString(), radix: 16));
+  }
+
+  String toHex({bool leadingHashSign = true}) => '${leadingHashSign ? '#' : ''}'
+      '${alpha.toRadixString(16).padLeft(2, '0')}'
+      '${red.toRadixString(16).padLeft(2, '0')}'
+      '${green.toRadixString(16).padLeft(2, '0')}'
+      '${blue.toRadixString(16).padLeft(2, '0')}';
+}
 
 // Common Colors
 
