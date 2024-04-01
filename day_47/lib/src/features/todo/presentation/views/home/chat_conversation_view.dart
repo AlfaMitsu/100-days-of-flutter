@@ -1,8 +1,11 @@
+import 'package:day_47/src/constants/colors.dart';
 import 'package:flutter/material.dart';
 
+import '../../../../../constants/assets.dart';
+import '../../../../../constants/styles.dart';
+import '../../../data/data_sources/arrays.dart';
 import '../../widgets/chat_date_bubble.dart';
 import '../../widgets/chat_text_bubbles.dart';
-import '../../widgets/color_extension.dart';
 
 class ChatConversationView extends StatefulWidget {
   final Map uObj;
@@ -13,57 +16,19 @@ class ChatConversationView extends StatefulWidget {
 }
 
 class _ChatConversationViewState extends State<ChatConversationView> {
-  List chatMessageArr = [
-    {
-      "message": "Hey, nice to meet you Alex",
-      "time": "7:50 PM • Seen",
-      "is_sender": true,
-      "is_text": true,
-    },
-    {
-      "message": "Hey Jenna!! I see were both at Burning Man! huge fans",
-      "time": "7:53 PM • Seen",
-      "is_sender": false,
-      "is_text": true,
-    },
-    {
-      "message": "Mar, 7, 10:17PM",
-      "is_text": false,
-    },
-    {
-      "message":
-          "OMG me too! Totally wish the City would have more stuff like that",
-      "time": "8:00 PM • Seen",
-      "is_sender": true,
-      "is_text": true,
-    },
-    {
-      "message": "Wanna grab something to eat?",
-      "time": "8:02 PM • Seen",
-      "is_sender": false,
-      "is_text": true,
-    },
-    {
-      "message": "I'm down! That sounds aaamazing!!",
-      "time": "8:04 PM • Seen",
-      "is_sender": true,
-      "is_text": true,
-    },
-  ];
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white,
+      backgroundColor: kWhiteColor,
       appBar: AppBar(
-        backgroundColor: Colors.white,
+        backgroundColor: kWhiteColor,
         elevation: 0.5,
         leading: IconButton(
           onPressed: () {
             Navigator.pop(context);
           },
           icon: Image.asset(
-            "lib/src/resources/assets/images/back.png",
+            kImgBackButton,
             width: 25,
             height: 25,
           ),
@@ -72,50 +37,60 @@ class _ChatConversationViewState extends State<ChatConversationView> {
         title: Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Stack(alignment: Alignment.topRight, children: [
-              Container(
-                width: 40,
-                height: 40,
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(20),
-                  border: Border.all(color: Colors.white, width: 2),
-                  boxShadow: const [
-                    BoxShadow(color: Colors.black12, blurRadius: 2)
-                  ],
-                ),
-                alignment: Alignment.center,
-                child: ClipRRect(
-                  borderRadius: BorderRadius.circular(20),
-                  child: Image.asset(
-                    widget.uObj["image"] as String? ?? "",
-                    width: 40,
-                    height: 40,
-                    fit: BoxFit.cover,
+            Stack(
+              alignment: Alignment.topRight,
+              children: [
+                Container(
+                  width: 40,
+                  height: 40,
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(20),
+                    border: Border.all(
+                      color: kWhiteColor,
+                      width: 2,
+                    ),
+                    boxShadow: const [
+                      BoxShadow(
+                        color: Colors.black12,
+                        blurRadius: 2,
+                      )
+                    ],
+                  ),
+                  alignment: Alignment.center,
+                  child: ClipRRect(
+                    borderRadius: BorderRadius.circular(20),
+                    child: Image.asset(
+                      widget.uObj['image'] as String? ?? '',
+                      width: 40,
+                      height: 40,
+                      fit: BoxFit.cover,
+                    ),
                   ),
                 ),
-              ),
-              Container(
-                width: 10,
-                height: 10,
-                decoration: BoxDecoration(
-                    color: TColor.base,
-                    border: Border.all(color: Colors.white, width: 2),
+                Container(
+                  width: 10,
+                  height: 10,
+                  decoration: BoxDecoration(
+                    color: kBase,
+                    border: Border.all(
+                      color: kWhiteColor,
+                      width: 2,
+                    ),
                     borderRadius: BorderRadius.circular(5),
                     boxShadow: const [
-                      BoxShadow(color: Colors.black12, blurRadius: 2)
-                    ]),
-              )
-            ]),
-            const SizedBox(
-              width: 8,
+                      BoxShadow(
+                        color: Colors.black12,
+                        blurRadius: 2,
+                      ),
+                    ],
+                  ),
+                ),
+              ],
             ),
+            const SizedBox(width: 8),
             Text(
-              widget.uObj["name"] as String? ?? "",
-              style: TextStyle(
-                color: TColor.primaryText,
-                fontSize: 20,
-                fontWeight: FontWeight.w700,
-              ),
+              widget.uObj['name'] as String? ?? '',
+              style: kChatConversationViewTextStyle,
             ),
           ],
         ),
@@ -125,44 +100,53 @@ class _ChatConversationViewState extends State<ChatConversationView> {
             icon: ClipRRect(
               borderRadius: BorderRadius.circular(17.5),
               child: Image.asset(
-                "lib/src/resources/assets/images/info.png",
+                kImgInfoButton,
                 width: 25,
                 height: 25,
                 fit: BoxFit.cover,
               ),
             ),
-          )
+          ),
         ],
       ),
       body: ListView.builder(
-          padding: const EdgeInsets.all(15),
-          itemCount: chatMessageArr.length,
-          itemBuilder: (context, index) {
-            var cObj = chatMessageArr[index] as Map? ?? {};
-
-            if (cObj["is_text"] as bool? ?? false) {
-              //Message Row
-              return ChatTextBubbles(
-                cObj: cObj,
-                uObj: (cObj["is_sender"] as bool? ?? false)
-                    ? {"image": "lib/src/resources/assets/images/user_profile.png"}
-                    : widget.uObj,
-                isLeft: cObj["is_sender"] as bool? ?? false,
-              );
-            } else {
-              // Date Row
-              return ChatDateBubble(
-                date: cObj["message"] as String? ?? "",
-              );
-            }
-          }),
+        padding: const EdgeInsets.all(15),
+        itemCount: chatMessageArr.length,
+        itemBuilder: (context, index) {
+          var cObj = chatMessageArr[index] as Map? ?? {};
+          if (cObj['is_text'] as bool? ?? false) {
+            return ChatTextBubbles(
+              cObj: cObj,
+              uObj: (cObj['is_sender'] as bool? ?? false)
+                  ? {
+                      'image': kImgProfile,
+                    }
+                  : widget.uObj,
+              isLeft: cObj['is_sender'] as bool? ?? false,
+            );
+          } else {
+            return ChatDateBubble(
+              date: cObj['message'] as String? ?? '',
+            );
+          }
+        },
+      ),
       bottomNavigationBar: Container(
-        padding: const EdgeInsets.symmetric(vertical: 8, horizontal: 15),
+        padding: const EdgeInsets.symmetric(
+          vertical: 8,
+          horizontal: 15,
+        ),
         decoration: const BoxDecoration(
-          color: Colors.white,
+          color: kWhiteColor,
           boxShadow: [
             BoxShadow(
-                color: Colors.black12, blurRadius: 2, offset: Offset(0, -2))
+              color: Colors.black12,
+              blurRadius: 2,
+              offset: Offset(
+                0,
+                -2,
+              ),
+            ),
           ],
         ),
         child: BottomAppBar(
@@ -173,7 +157,7 @@ class _ChatConversationViewState extends State<ChatConversationView> {
               IconButton(
                 onPressed: () {},
                 icon: Image.asset(
-                  "lib/src/resources/assets/images/emoji.png",
+                  kImgEmoji,
                   width: 30,
                   height: 30,
                 ),
@@ -182,27 +166,27 @@ class _ChatConversationViewState extends State<ChatConversationView> {
                 child: Container(
                   padding: const EdgeInsets.symmetric(horizontal: 15),
                   decoration: BoxDecoration(
-                    color: Colors.white,
+                    color: kWhiteColor,
                     borderRadius: BorderRadius.circular(25),
                     border: Border.all(
-                      color: TColor.primaryText.withOpacity(0.8),
+                      color: kPrimaryText.withOpacity(0.8),
                       width: 0.5,
                     ),
                   ),
-                  child: const TextField(
+                  child: TextField(
                     decoration: InputDecoration(
-                        focusedBorder: InputBorder.none,
-                        enabledBorder: InputBorder.none,
-                        hintText: "Type a message....",
-                        hintStyle: TextStyle(
-                            fontSize: 13, fontWeight: FontWeight.w500)),
+                      focusedBorder: InputBorder.none,
+                      enabledBorder: InputBorder.none,
+                      hintText: 'Type a message....',
+                      hintStyle: kChatConversationViewTypeAMessageTextStyle,
+                    ),
                   ),
                 ),
               ),
               IconButton(
                 onPressed: () {},
                 icon: Image.asset(
-                  "lib/src/resources/assets/images/image_picker.png",
+                  kImgPickerButton,
                   width: 30,
                   height: 30,
                 ),
@@ -210,7 +194,7 @@ class _ChatConversationViewState extends State<ChatConversationView> {
               IconButton(
                 onPressed: () {},
                 icon: Image.asset(
-                  "lib/src/resources/assets/images/att.png",
+                  kImgAttachmentButton,
                   width: 25,
                   height: 25,
                 ),

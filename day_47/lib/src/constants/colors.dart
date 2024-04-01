@@ -2,18 +2,18 @@ import 'package:flutter/material.dart';
 
 // Brand Colors
 
-Color get primary => const Color(0xff2676E1);
-Color get primaryEnd => const Color(0xff00B5AA);
-Color get secondary => const Color(0xffA3FEC7);
-Color get secondaryEnd => const Color(0xff6AC6FC);
-Color get primaryText => const Color(0xff434B56);
-Color get primaryTextW => const Color(0xffFFFFFF);
-Color get secondaryText => const Color(0xff7C8085);
-Color get time => const Color(0xff787C81);
-Color get base => const Color(0xff00B5AA);
-List<Color> get primaryG => [primary, primaryEnd];
-List<Color> get secondaryG => [secondary, secondaryEnd];
-Color get bg => Colors.white;
+Color get kPrimary => const Color(0xff2676E1);
+Color get kPrimaryEnd => const Color(0xff00B5AA);
+Color get kSecondary => const Color(0xffA3FEC7);
+Color get kSecondaryEnd => const Color(0xff6AC6FC);
+Color get kPrimaryText => const Color(0xff434B56);
+Color get kPrimaryTextW => const Color(0xffFFFFFF);
+Color get kSecondaryText => const Color(0xff7C8085);
+Color get kTime => const Color(0xff787C81);
+Color get kBase => const Color(0xff00B5AA);
+List<Color> get primaryG => [kPrimary, kPrimaryEnd];
+List<Color> get secondaryG => [kSecondary, kSecondaryEnd];
+Color get kBg => Colors.white;
 
 extension HexColor on Color {
   static Color fromHex(String hexString) {

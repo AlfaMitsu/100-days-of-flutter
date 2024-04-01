@@ -3,9 +3,13 @@ import 'colors.dart';
 
 // TextStyle
 
-const TextStyle kWalletBalanceTextStyle = TextStyle(
-  color: kWhiteTextColor,
-  fontSize: 36,
+TextStyle kChatConversationViewTextStyle = TextStyle(
+  color: kPrimaryText,
+  fontSize: 20,
   fontWeight: FontWeight.w700,
 );
 
+TextStyle kChatConversationViewTypeAMessageTextStyle = const TextStyle(
+  fontSize: 13,
+  fontWeight: FontWeight.w500,
+);

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
+import 'src/constants/colors.dart';
 import 'src/features/todo/presentation/views/main_tab_view.dart';
-import 'src/features/todo/presentation/widgets/color_extension.dart';
 
 void main() {
   runApp(const MyApp());
@@ -16,7 +16,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(
-          seedColor: TColor.primary,
+          seedColor: kPrimary,
         ),
         useMaterial3: false,
       ),
