@@ -130,3 +130,18 @@ List myGroupArr = [
     "comments": "192"
   }
 ];
+
+List imagesArr = [
+  "lib/src/resources/assets/images/d1.png",
+  "lib/src/resources/assets/images/d2.png",
+  "lib/src/resources/assets/images/d3.png",
+  "lib/src/resources/assets/images/d4.png",
+  "lib/src/resources/assets/images/d5.png",
+  "lib/src/resources/assets/images/d6.png",
+  "lib/src/resources/assets/images/d7.png",
+  "lib/src/resources/assets/images/d8.png",
+  "lib/src/resources/assets/images/d9.png",
+  "lib/src/resources/assets/images/d10.png",
+  "lib/src/resources/assets/images/d11.png",
+  "lib/src/resources/assets/images/d12.png"
+];

@@ -8,3 +8,4 @@ const String kImgAttachmentButton = 'lib/src/resources/assets/images/kImgAttachm
 const String kImgSearchButton = 'lib/src/resources/assets/images/kImgSearchButton.png';
 const String kImgFilterButton = 'lib/src/resources/assets/images/kImgFilterButton.png';
 const String kImgEditButton = 'lib/src/resources/assets/images/kImgEditButton.png';
+const String kImgChat = 'lib/src/resources/assets/images/kImgChat.png';

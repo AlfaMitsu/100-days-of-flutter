@@ -3,6 +3,12 @@ import 'colors.dart';
 
 // TextStyle
 
+TextStyle kDetailsViewTextStyle = TextStyle(
+  color: kPrimaryText,
+  fontSize: 26,
+  fontWeight: FontWeight.w700,
+);
+
 TextStyle kChatConversationViewTextStyle = TextStyle(
   color: kPrimaryText,
   fontSize: 20,
@@ -14,11 +20,33 @@ TextStyle kChatViewMyChatsTextStyle = TextStyle(
   fontSize: 19,
   fontWeight: FontWeight.w600,
 );
+TextStyle kDetailsViewNumberTextStyle = const TextStyle(
+  color: kWhiteColor,
+  fontSize: 17,
+  fontWeight: FontWeight.w700,
+);
 
 TextStyle kChatViewActiveTextStyle = TextStyle(
   color: kPrimaryText,
   fontSize: 16,
   fontWeight: FontWeight.w700,
+);
+
+TextStyle kDetailsViewPostsTextStyle = TextStyle(
+  color: kSecondaryText,
+  fontSize: 15,
+  fontWeight: FontWeight.w700,
+);
+
+TextStyle kDetailsViewFriendRequestsTextStyle = const TextStyle(
+  color: kWhiteColor,
+  fontSize: 15,
+  fontWeight: FontWeight.w500,
+);
+
+TextStyle kDetailsViewBioTextStyle = TextStyle(
+  color: kPrimaryText,
+  fontSize: 14,
 );
 
 TextStyle kChatConversationViewTypeAMessageTextStyle = const TextStyle(
