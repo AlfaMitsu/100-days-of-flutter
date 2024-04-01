@@ -145,3 +145,60 @@ List imagesArr = [
   "lib/src/resources/assets/images/d11.png",
   "lib/src/resources/assets/images/d12.png"
 ];
+
+List recommendationsArr = [
+  {"name": "James McL..", "image": "lib/src/resources/assets/images/r1.png"},
+  {"name": "Bessie Sima...", "image": "lib/src/resources/assets/images/r2.png"},
+  {"name": "Jeffery Hall", "image": "lib/src/resources/assets/images/r3.png"},
+  {"name": "Judy Adler", "image": "lib/src/resources/assets/images/r4.png"}
+];
+List allArr = [
+  {
+    "name": "Georgia Bates",
+    "image": "lib/src/resources/assets/images/u1.png",
+    "status": "Toronto, Ontario",
+    "is_online": false,
+    "time": "30s ago",
+    "images": [
+      "lib/src/resources/assets/images/p1.png",
+      "lib/src/resources/assets/images/p2.png",
+      "lib/src/resources/assets/images/p3.png"
+    ]
+  },
+  {
+    "name": "Johny Vino",
+    "image": "lib/src/resources/assets/images/u2.png",
+    "status": "Mississauga, Ontario",
+    "time": "5mins ago",
+    "is_online": false,
+    "images": [
+      "lib/src/resources/assets/images/p4.png",
+      "lib/src/resources/assets/images/p5.png",
+      "lib/src/resources/assets/images/p6.png"
+    ]
+  },
+  {
+    "name": "Scott Horsfall",
+    "image": "lib/src/resources/assets/images/u3.png",
+    "status": "Markham, Ontario",
+    "time": "10mins ago",
+    "is_online": true,
+    "images": [
+      "lib/src/resources/assets/images/p7.png",
+      "lib/src/resources/assets/images/p8.png",
+      "lib/src/resources/assets/images/p9.png"
+    ]
+  },
+  {
+    "name": "Meagan Ryan",
+    "image": "lib/src/resources/assets/images/u4.png",
+    "status": "Oakvill Ontario",
+    "time": "2days ago",
+    "is_online": false,
+    "images": [
+      "lib/src/resources/assets/images/p10.png",
+      "lib/src/resources/assets/images/p11.png",
+      "lib/src/resources/assets/images/p12.png"
+    ]
+  }
+];
