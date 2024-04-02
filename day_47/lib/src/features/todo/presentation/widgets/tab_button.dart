@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'color_extension.dart';
+import '../../../../constants/colors.dart';
 
 class TabButton extends StatelessWidget {
   final String title;
@@ -28,18 +28,17 @@ class TabButton extends StatelessWidget {
               icon,
               width: 30,
               height: 30,
-              color: isSelect ? TColor.primary : null,
+              color: isSelect ? kPrimary : null,
             ),
-            const SizedBox(
-              height: 4,
-            ),
+            const SizedBox(height: 4),
             Text(
               title,
               style: TextStyle(
-                  color: isSelect ? TColor.primary : TColor.secondaryText,
-                  fontSize: 8,
-                  fontWeight: FontWeight.w500),
-            )
+                color: isSelect ? kPrimary : kSecondaryText,
+                fontSize: 8,
+                fontWeight: FontWeight.w500,
+              ),
+            ),
           ],
         ),
       ),
