@@ -1,10 +1,14 @@
 import 'package:flutter/material.dart';
 
-import 'color_extension.dart';
+import '../../../../constants/styles.dart';
 
 class UserStoryCell extends StatelessWidget {
   final Map sObj;
-  const UserStoryCell({super.key, required this.sObj});
+
+  const UserStoryCell({
+    super.key,
+    required this.sObj,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -16,7 +20,7 @@ class UserStoryCell extends StatelessWidget {
           child: AspectRatio(
             aspectRatio: 1 / 1.02,
             child: Image.asset(
-              sObj["image"] as String? ?? "",
+              sObj['image'] as String? ?? '',
               fit: BoxFit.cover,
               width: double.maxFinite,
               height: double.maxFinite,
@@ -31,19 +35,19 @@ class UserStoryCell extends StatelessWidget {
             ClipRRect(
               borderRadius: BorderRadius.circular(15),
               child: Image.asset(
-                sObj["user_image"] as String? ?? "",
+                sObj['user_image'] as String? ?? '',
                 fit: BoxFit.cover,
                 width: 30,
                 height: 30,
               ),
             ),
             Text(
-              sObj["name"] as String? ?? "",
+              sObj['name'] as String? ?? '',
               maxLines: 1,
-              style: TextStyle(color: TColor.secondaryText, fontSize: 13),
-            )
+              style: kCommentViewTextStyle,
+            ),
           ],
-        )
+        ),
       ],
     );
   }
