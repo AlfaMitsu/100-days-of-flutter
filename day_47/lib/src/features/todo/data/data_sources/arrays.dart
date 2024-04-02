@@ -460,3 +460,10 @@ List storiesArr = [
     "user_image": "lib/src/resources/assets/images/u4.png"
   }
 ];
+
+List friendsArr = [
+  {"name": "James McL..", "image": "lib/src/resources/assets/images/r1.png"},
+  {"name": "Bessie Sima...", "image": "lib/src/resources/assets/images/r2.png"},
+  {"name": "Jeffery Hall", "image": "lib/src/resources/assets/images/r3.png"},
+  {"name": "Judy Adler", "image": "lib/src/resources/assets/images/r4.png"}
+];
