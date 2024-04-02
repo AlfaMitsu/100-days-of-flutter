@@ -20,10 +20,17 @@ TextStyle kChatViewMyChatsTextStyle = TextStyle(
   fontSize: 19,
   fontWeight: FontWeight.w600,
 );
+
 TextStyle kDetailsViewNumberTextStyle = const TextStyle(
   color: kWhiteColor,
   fontSize: 17,
   fontWeight: FontWeight.w700,
+);
+
+TextStyle kUserChatRowTextStyle = TextStyle(
+  color: kPrimaryText,
+  fontSize: 17,
+  fontWeight: FontWeight.w600,
 );
 
 TextStyle kChatViewActiveTextStyle = TextStyle(
@@ -57,6 +64,11 @@ TextStyle kDetailsViewFriendRequestsTextStyle = const TextStyle(
 
 TextStyle kChatTextBubblesTextStyle = const TextStyle(
   color: kWhiteColor,
+  fontSize: 15,
+);
+
+TextStyle kUserChatRowLastMessageTextStyle = TextStyle(
+  color: kSecondaryText,
   fontSize: 15,
 );
 
@@ -110,5 +122,10 @@ TextStyle kCommentRowCommentsTextStyle = TextStyle(
 
 TextStyle kGroupCellTimeTextStyle = TextStyle(
   color: kSecondaryText,
+  fontSize: 11,
+);
+
+TextStyle kUserChatRowActiveTextStyle = TextStyle(
+  color: kBase,
   fontSize: 11,
 );
