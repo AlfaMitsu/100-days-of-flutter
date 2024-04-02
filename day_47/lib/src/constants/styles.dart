@@ -37,6 +37,12 @@ TextStyle kCreatePostViewTextStyle = TextStyle(
   fontSize: 16,
 );
 
+TextStyle kPostDetailViewTextStyle = TextStyle(
+  color: kPrimaryText,
+  fontSize: 16,
+  fontWeight: FontWeight.w600,
+);
+
 TextStyle kDetailsViewPostsTextStyle = TextStyle(
   color: kSecondaryText,
   fontSize: 15,

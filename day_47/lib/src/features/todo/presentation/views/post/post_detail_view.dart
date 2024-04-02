@@ -1,8 +1,11 @@
 import 'package:avatar_stack/avatar_stack.dart';
 import 'package:avatar_stack/positions.dart';
+import 'package:day_47/src/constants/assets.dart';
+import 'package:day_47/src/constants/colors.dart';
 import 'package:flutter/material.dart';
 
-import '../../widgets/color_extension.dart';
+import '../../../../../constants/styles.dart';
+import '../../../data/data_sources/arrays.dart';
 import '../../widgets/comment_row.dart';
 import 'comment_view.dart';
 
@@ -14,42 +17,9 @@ class PostDetailView extends StatefulWidget {
 }
 
 class _PostDetailViewState extends State<PostDetailView> {
-  List commentArr = [
-    {
-      "name": "Ronald Shores",
-      "comment": "Impressive set up",
-      "time": "14m ago",
-      "image": "lib/src/resources/assets/images/u1.png"
-    },
-    {
-      "name": "Jimmy Love",
-      "comment": "Where's you office?",
-      "time": "30m ago",
-      "image": "lib/src/resources/assets/images/u2.png"
-    },
-    {
-      "name": "Sha Gaines",
-      "comment": "I remember being away that day",
-      "time": "31m ago",
-      "image": "lib/src/resources/assets/images/u3.png"
-    },
-    {
-      "name": "Ivey Wilson",
-      "comment": "Hahaha you made me clean your...",
-      "time": "35m ago",
-      "image": "lib/src/resources/assets/images/u4.png"
-    },
-    {
-      "name": "Bradley Dame",
-      "comment": "That was the day we got nothing...",
-      "time": "1h ago",
-      "image": "lib/src/resources/assets/images/u1.png"
-    }
-  ];
-
   @override
   Widget build(BuildContext context) {
-    var media = MediaQuery.sizeOf(context);
+    var size = MediaQuery.sizeOf(context);
 
     final settings = RestrictedPositions(
       maxCoverage: 0.3,
@@ -60,24 +30,20 @@ class _PostDetailViewState extends State<PostDetailView> {
 
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.white,
+        backgroundColor: kWhiteColor,
         elevation: 0.5,
         leading: IconButton(
           onPressed: () {},
           icon: Image.asset(
-            "lib/src/resources/assets/images/back.png",
+            kImgBackButton,
             width: 25,
             height: 25,
           ),
         ),
         centerTitle: false,
         title: Text(
-          "Post",
-          style: TextStyle(
-            color: TColor.primaryText,
-            fontSize: 26,
-            fontWeight: FontWeight.w700,
-          ),
+          'Post',
+          style: kDetailsViewTextStyle,
         ),
         actions: [
           IconButton(
@@ -85,45 +51,46 @@ class _PostDetailViewState extends State<PostDetailView> {
             icon: ClipRRect(
               borderRadius: BorderRadius.circular(17.5),
               child: Image.asset(
-                "lib/src/resources/assets/images/user_profile.png",
+                kImgProfile,
                 width: 35,
                 height: 35,
                 fit: BoxFit.cover,
               ),
             ),
-          )
+          ),
         ],
       ),
-      backgroundColor: Colors.white,
+      backgroundColor: kWhiteColor,
       body: SingleChildScrollView(
         child: Stack(
           alignment: Alignment.topCenter,
           children: [
             Image.asset(
-              "lib/src/resources/assets/images/post_detail.png",
-              width: media.width,
+              kImgPostDetail,
+              width: size.width,
               fit: BoxFit.fitWidth,
             ),
             Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                SizedBox(
-                  height: media.width * 0.9,
-                ),
+                SizedBox(height: size.width * 0.9),
                 Container(
                   margin: const EdgeInsets.only(top: 20),
-                  width: media.width,
+                  width: size.width,
                   decoration: const BoxDecoration(
-                      color: Colors.white,
-                      borderRadius: BorderRadius.only(
-                          topLeft: Radius.circular(50),
-                          topRight: Radius.circular(50)),
-                      boxShadow: [
-                        BoxShadow(
-                            color: Colors.black54,
-                            blurRadius: 10,
-                            offset: Offset(0, -15))
-                      ]),
+                    color: kWhiteColor,
+                    borderRadius: BorderRadius.only(
+                      topLeft: Radius.circular(50),
+                      topRight: Radius.circular(50),
+                    ),
+                    boxShadow: [
+                      BoxShadow(
+                        color: Colors.black54,
+                        blurRadius: 10,
+                        offset: Offset(0, -15),
+                      ),
+                    ],
+                  ),
                   child: Padding(
                     padding: const EdgeInsets.symmetric(horizontal: 25),
                     child: Column(
@@ -135,7 +102,7 @@ class _PostDetailViewState extends State<PostDetailView> {
                             IconButton(
                               onPressed: () {},
                               icon: Image.asset(
-                                "lib/src/resources/assets/images/fav.png",
+                                kImgFavoriteButton,
                                 width: 25,
                                 height: 25,
                               ),
@@ -150,7 +117,7 @@ class _PostDetailViewState extends State<PostDetailView> {
                                 );
                               },
                               icon: Image.asset(
-                                "lib/src/resources/assets/images/chat.png",
+                                kImgChat,
                                 width: 25,
                                 height: 25,
                               ),
@@ -158,7 +125,7 @@ class _PostDetailViewState extends State<PostDetailView> {
                             IconButton(
                               onPressed: () {},
                               icon: Image.asset(
-                                "lib/src/resources/assets/images/more.png",
+                                kImgMoreButton,
                                 width: 20,
                                 height: 20,
                               ),
@@ -179,69 +146,65 @@ class _PostDetailViewState extends State<PostDetailView> {
                                     "lib/src/resources/assets/images/u1.png",
                                     "lib/src/resources/assets/images/u2.png"
                                   ]
-                                      .map((img) => Container(
-                                            width: 45,
-                                            height: 45,
-                                            decoration: BoxDecoration(
-                                                borderRadius:
-                                                    BorderRadius.circular(25),
-                                                border: Border.all(
-                                                    color: Colors.white,
-                                                    width: 2),
-                                                color: Colors.white,
-                                                boxShadow: const [
-                                                  BoxShadow(
-                                                    color: Colors.black12,
-                                                    blurRadius: 2,
-                                                  )
-                                                ]),
-                                            child: ClipRRect(
-                                              borderRadius:
-                                                  BorderRadius.circular(25),
-                                              child: Image.asset(
-                                                img as String? ?? "",
-                                                width: 45,
-                                                height: 45,
-                                                fit: BoxFit.cover,
-                                              ),
+                                      .map(
+                                        (img) => Container(
+                                          width: 45,
+                                          height: 45,
+                                          decoration: BoxDecoration(
+                                            borderRadius:
+                                                BorderRadius.circular(25),
+                                            border: Border.all(
+                                              color: kWhiteColor,
+                                              width: 2,
                                             ),
-                                          ))
+                                            color: kWhiteColor,
+                                            boxShadow: const [
+                                              BoxShadow(
+                                                color: Colors.black12,
+                                                blurRadius: 2,
+                                              ),
+                                            ],
+                                          ),
+                                          child: ClipRRect(
+                                            borderRadius:
+                                                BorderRadius.circular(25),
+                                            child: Image.asset(
+                                              img as String? ?? '',
+                                              width: 45,
+                                              height: 45,
+                                              fit: BoxFit.cover,
+                                            ),
+                                          ),
+                                        ),
+                                      )
                                       .toList(),
                                   buildInfoWidget: (surplus) {
                                     return Center(
-                                        child: Text(
-                                      '+$surplus',
-                                    ));
+                                      child: Text(
+                                        '+$surplus',
+                                      ),
+                                    );
                                   },
                                 ),
                               ),
-                              const SizedBox(
-                                width: 8,
-                              ),
+                              const SizedBox(width: 8),
                               Expanded(
                                 child: Column(
                                   mainAxisAlignment: MainAxisAlignment.center,
                                   crossAxisAlignment: CrossAxisAlignment.start,
                                   children: [
                                     Text(
-                                      "Liked by",
+                                      'Liked by',
                                       textAlign: TextAlign.left,
                                       maxLines: 1,
-                                      style: TextStyle(
-                                        color: TColor.secondaryText,
-                                        fontSize: 13,
-                                      ),
+                                      style: kCommentViewTextStyle,
                                     ),
                                     Text(
-                                      "Earl Garcia, Nancy Maio",
+                                      'Earl Garcia, Nancy Maio',
                                       textAlign: TextAlign.left,
                                       maxLines: 1,
-                                      style: TextStyle(
-                                        color: TColor.primaryText,
-                                        fontSize: 16,
-                                        fontWeight: FontWeight.w600,
-                                      ),
-                                    )
+                                      style: kPostDetailViewTextStyle,
+                                    ),
                                   ],
                                 ),
                               ),
@@ -251,67 +214,50 @@ class _PostDetailViewState extends State<PostDetailView> {
                         const Divider(),
                         Text.rich(
                           TextSpan(
-                              text:
-                                  "Obsessed with my desk at work. All cleaned & organized after 5 years ",
-                              style: TextStyle(
-                                color: TColor.primaryText,
-                                fontSize: 14,
+                            text:
+                                'Obsessed with my desk at work. All cleaned & organized after 5 years ',
+                            style: kDetailsViewBioTextStyle,
+                            children: [
+                              TextSpan(
+                                text: '#workdesk',
+                                style: kDetailsViewBioTextStyle,
                               ),
-                              children: [
-                                TextSpan(
-                                  text: "#workdesk",
-                                  style: TextStyle(
-                                    color: TColor.primary,
-                                    fontSize: 14,
-                                  ),
-                                ),
-                                TextSpan(
-                                  text: " #worklife",
-                                  style: TextStyle(
-                                    color: TColor.primary,
-                                    fontSize: 14,
-                                  ),
-                                ),
-                                TextSpan(
-                                  text: " #agency",
-                                  style: TextStyle(
-                                    color: TColor.primary,
-                                    fontSize: 14,
-                                  ),
-                                )
-                              ]),
-                        ),
-                        const SizedBox(
-                          height: 4,
-                        ),
-                        Text(
-                          "22 hours ago",
-                          style: TextStyle(
-                            color: TColor.secondaryText,
-                            fontSize: 13,
+                              TextSpan(
+                                text: ' #worklife',
+                                style: kDetailsViewBioTextStyle,
+                              ),
+                              TextSpan(
+                                text: ' #agency',
+                                style: kDetailsViewBioTextStyle,
+                              ),
+                            ],
                           ),
+                        ),
+                        const SizedBox(height: 4),
+                        Text(
+                          '22 hours ago',
+                          style: kCommentViewTextStyle,
                         ),
                         const Divider(),
                         ListView.builder(
-                            padding: EdgeInsets.zero,
-                            physics: const NeverScrollableScrollPhysics(),
-                            shrinkWrap: true,
-                            itemCount: commentArr.length,
-                            itemBuilder: (context, index) {
-                              var cObj = commentArr[index] as Map? ?? {};
-                              return CommentRow(
-                                cObj: cObj,
-                              );
-                            }),
-                        const SizedBox(
-                          height: 50,
+                          padding: EdgeInsets.zero,
+                          physics: const NeverScrollableScrollPhysics(),
+                          shrinkWrap: true,
+                          itemCount: commentArr.length,
+                          itemBuilder: (context, index) {
+                            var cObj = commentArr[index] as Map? ?? {};
+                            return CommentRow(
+                              cObj: cObj,
+                            );
+                          },
                         ),
+                        const SizedBox(height: 50),
                       ],
                     ),
                   ),
-                )
+                ),
               ],
-            )
+            ),
           ],
         ),
       ),

@@ -10,3 +10,6 @@ const String kImgFilterButton = 'lib/src/resources/assets/images/kImgFilterButto
 const String kImgEditButton = 'lib/src/resources/assets/images/kImgEditButton.png';
 const String kImgChat = 'lib/src/resources/assets/images/kImgChat.png';
 const String kImgLocationButton = 'lib/src/resources/assets/images/kImgLocationButton.png';
+const String kImgPostDetail = 'lib/src/resources/assets/images/kImgPostDetail.png';
+const String kImgFavoriteButton = 'lib/src/resources/assets/images/kImgFavoriteButton.png';
+const String kImgMoreButton = 'lib/src/resources/assets/images/kImgMoreButton.png';
