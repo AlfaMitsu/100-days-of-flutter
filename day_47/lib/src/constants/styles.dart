@@ -71,6 +71,12 @@ TextStyle kCommentRowTextStyle = TextStyle(
   fontWeight: FontWeight.w700,
 );
 
+TextStyle kGroupCellTextStyle = TextStyle(
+  color: kPrimaryText,
+  fontSize: 14,
+  fontWeight: FontWeight.w600,
+);
+
 TextStyle kChatConversationViewTypeAMessageTextStyle = const TextStyle(
   fontSize: 13,
   fontWeight: FontWeight.w500,
@@ -95,4 +101,9 @@ TextStyle kChatTextBubblesTimeTextStyle = const TextStyle(
 TextStyle kCommentRowCommentsTextStyle = TextStyle(
   color: kSecondaryText,
   fontSize: 12,
+);
+
+TextStyle kGroupCellTimeTextStyle = TextStyle(
+  color: kSecondaryText,
+  fontSize: 11,
 );
