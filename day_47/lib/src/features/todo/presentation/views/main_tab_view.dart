@@ -1,6 +1,7 @@
+import 'package:day_47/src/constants/assets.dart';
 import 'package:flutter/material.dart';
 
-import '../widgets/color_extension.dart';
+import '../../../../constants/colors.dart';
 import '../widgets/tab_button.dart';
 import 'home/home_view.dart';
 import 'notifications_view.dart';
@@ -56,20 +57,30 @@ class _MainTabViewState extends State<MainTabView>
           width: 65,
           height: 65,
           decoration: BoxDecoration(
-              gradient: LinearGradient(
-                colors: TColor.primaryG,
-                begin: Alignment.topCenter,
-                end: Alignment.bottomCenter,
+            gradient: LinearGradient(
+              colors: kPrimaryG,
+              begin: Alignment.topCenter,
+              end: Alignment.bottomCenter,
+            ),
+            border: Border.all(
+              color: kWhiteColor,
+              width: 4,
+            ),
+            borderRadius: BorderRadius.circular(35),
+            boxShadow: const [
+              BoxShadow(
+                color: Colors.black26,
+                blurRadius: 10,
+                offset: Offset(
+                  0,
+                  5,
+                ),
               ),
-              border: Border.all(color: Colors.white, width: 4),
-              borderRadius: BorderRadius.circular(35),
-              boxShadow: const [
-                BoxShadow(
-                    color: Colors.black26, blurRadius: 10, offset: Offset(0, 5))
-              ]),
+            ],
+          ),
           alignment: Alignment.center,
           child: Image.asset(
-            "lib/src/resources/assets/images/photo_center.png",
+            kImgPhotoCenter,
             width: 30,
             height: 30,
           ),
@@ -77,7 +88,7 @@ class _MainTabViewState extends State<MainTabView>
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
       bottomNavigationBar: BottomAppBar(
-        color: Colors.white,
+        color: kWhiteColor,
         elevation: 1,
         child: Padding(
           padding: const EdgeInsets.symmetric(vertical: 10),
@@ -85,8 +96,8 @@ class _MainTabViewState extends State<MainTabView>
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: [
               TabButton(
-                title: "HOME",
-                icon: "lib/src/resources/assets/images/home_tab.png",
+                title: 'HOME',
+                icon: kImgHomeTabButton,
                 isSelect: selectTab == 0,
                 onPressed: () {
                   setState(() {
@@ -95,36 +106,40 @@ class _MainTabViewState extends State<MainTabView>
                 },
               ),
               TabButton(
-                title: "STORIES",
-                icon: "lib/src/resources/assets/images/store_tab.png",
+                title: 'STORIES',
+                icon: kImgStoriesTabButton,
                 isSelect: selectTab == 1,
                 onPressed: () {
-                  setState(() {
-                    controller?.index = 1;
-                  });
+                  setState(
+                    () {
+                      controller?.index = 1;
+                    },
+                  );
                 },
               ),
-              const SizedBox(
-                width: 20,
-              ),
+              const SizedBox(width: 20),
               TabButton(
-                title: "NOTIFICATIONS",
-                icon: "lib/src/resources/assets/images/notification_tab.png",
+                title: 'NOTIFICATIONS',
+                icon: kImgNotificationTabButton,
                 isSelect: selectTab == 2,
                 onPressed: () {
-                  setState(() {
-                    controller?.index = 2;
-                  });
+                  setState(
+                    () {
+                      controller?.index = 2;
+                    },
+                  );
                 },
               ),
               TabButton(
-                title: "SEARCH",
-                icon: "lib/src/resources/assets/images/search_tab.png",
+                title: 'SEARCH',
+                icon: kImgSearchTabButton,
                 isSelect: selectTab == 3,
                 onPressed: () {
-                  setState(() {
-                    controller?.index = 3;
-                  });
+                  setState(
+                    () {
+                      controller?.index = 3;
+                    },
+                  );
                 },
               ),
             ],

@@ -244,3 +244,219 @@ List imageArr = [
   "lib/src/resources/assets/images/po_4.png",
   "lib/src/resources/assets/images/po_5.png"
 ];
+
+List notificationArr = [
+  {
+    "name": "New",
+    "list": [
+      {
+        "name": "Cathy Lerner",
+        "image": "lib/src/resources/assets/images/u1.png",
+        "message": "liked your post",
+        "time": "7s ago"
+      },
+      {
+        "name": "Marvin Anderson",
+        "image": "lib/src/resources/assets/images/u2.png",
+        "message": "Started following you",
+        "time": "30s ago"
+      },
+      {
+        "name": "Timothy Coffey",
+        "image": "lib/src/resources/assets/images/u3.png",
+        "message": "Commented: Impressive App design",
+        "time": "6m ago"
+      }
+    ]
+  },
+  {
+    "name": "Today",
+    "list": [
+      {
+        "name": "Jimmy Love",
+        "image": "lib/src/resources/assets/images/u4.png",
+        "message": "liked your post",
+        "time": "14m ago"
+      },
+      {
+        "name": "Sha Gaines",
+        "image": "lib/src/resources/assets/images/u1.png",
+        "message": "Started following you",
+        "time": "30m ago"
+      },
+      {
+        "name": "Ronald Shores",
+        "image": "lib/src/resources/assets/images/u2.png",
+        "message": "Commented: Impressive App design",
+        "time": "1h ago"
+      },
+      {
+        "name": "Eileen Conners",
+        "image": "lib/src/resources/assets/images/u3.png",
+        "message": "liked your post",
+        "time": "2h ago"
+      },
+      {
+        "name": "Earl Garcia",
+        "image": "lib/src/resources/assets/images/u4.png",
+        "message": "Started following you",
+        "time": "6h ago"
+      }
+    ]
+  },
+  {
+    "name": "This Week",
+    "list": [
+      {
+        "name": "Ivey Wilson",
+        "image": "lib/src/resources/assets/images/u1.png",
+        "message": "Started following you",
+        "time": "2d ago"
+      },
+      {
+        "name": "Bradley Dame",
+        "image": "lib/src/resources/assets/images/u2.png",
+        "message": "Started following you",
+        "time": "3d ago"
+      }
+    ]
+  },
+  {
+    "name": "This Month",
+    "list": [
+      {
+        "name": "Tom Joy",
+        "image": "lib/src/resources/assets/images/u3.png",
+        "message": "Started following you",
+        "time": "2w ago"
+      },
+      {
+        "name": "Francis Fidler",
+        "image": "alib/src/resources/assets/images/u4.png",
+        "message": "Started following you",
+        "time": "3w ago"
+      }
+    ]
+  }
+];
+
+List searchArr = [
+  {
+    "name": "Emily Lerner",
+    "image": "lib/src/resources/assets/images/u1.png",
+    "tag": "@loveemily"
+  },
+  {
+    "name": "Erin Anderson",
+    "image": "lib/src/resources/assets/images/u2.png",
+    "tag": "@erin4life"
+  },
+  {
+    "name": "Ewan Coffey",
+    "image": "lib/src/resources/assets/images/u3.png",
+    "tag": "@ewancoffey"
+  },
+  {
+    "name": "Elis Jimmy",
+    "image": "lib/src/resources/assets/images/u4.png",
+    "tag": "@its_me_jimmy"
+  },
+  {
+    "name": "Elisha Gaines",
+    "image": "lib/src/resources/assets/images/u1.png",
+    "tag": "@elisha22"
+  },
+  {
+    "name": "Eamon Shores",
+    "image": "lib/src/resources/assets/images/u2.png",
+    "tag": "@eamon_shores"
+  },
+  {
+    "name": "Eileen Conners",
+    "image": "lib/src/resources/assets/images/u3.png",
+    "tag": "@eileen"
+  },
+  {
+    "name": "Earl Garcia",
+    "image": "lib/src/resources/assets/images/u4.png",
+    "tag": "@earl-design"
+  },
+  {
+    "name": "Elliemay Maio",
+    "image": "lib/src/resources/assets/images/u1.png",
+    "tag": "@elliemay_ny"
+  },
+  {
+    "name": "Eathen Joy",
+    "image": "lib/src/resources/assets/images/u2.png",
+    "tag": "@eathen_12"
+  },
+  {
+    "name": "Ebenezer Fidler",
+    "image": "lib/src/resources/assets/images/u3.png",
+    "tag": "@ebenezerfidler_"
+  }
+];
+
+List storiesArr = [
+  {
+    "name": "Megan Rae",
+    "image": "lib/src/resources/assets/images/s1.png",
+    "user_image": "lib/src/resources/assets/images/u1.png"
+  },
+  {
+    "name": "Charles Dixon",
+    "image": "lib/src/resources/assets/images/s2.png",
+    "user_image": "lib/src/resources/assets/images/u2.png"
+  },
+  {
+    "name": "Rebecca Taylor",
+    "image": "lib/src/resources/assets/images/s3.png",
+    "user_image": "lib/src/resources/assets/images/u3.png"
+  },
+  {
+    "name": "Deanna Walser",
+    "image": "lib/src/resources/assets/images/s4.png",
+    "user_image": "lib/src/resources/assets/images/u4.png"
+  },
+  {
+    "name": "Janice Williams",
+    "image": "lib/src/resources/assets/images/s5.png",
+    "user_image": "lib/src/resources/assets/images/u1.png"
+  },
+  {
+    "name": "Adam Neumann",
+    "image": "lib/src/resources/assets/images/s6.png",
+    "user_image": "lib/src/resources/assets/images/u2.png"
+  },
+  {
+    "name": "Mary Hennen",
+    "image": "lib/src/resources/assets/images/s7.png",
+    "user_image": "lib/src/resources/assets/images/u3.png"
+  },
+  {
+    "name": "Joe Terpstra",
+    "image": "lib/src/resources/assets/images/s8.png",
+    "user_image": "lib/src/resources/assets/images/u4.png"
+  },
+  {
+    "name": "William Yoshioka",
+    "image": "lib/src/resources/assets/images/s9.png",
+    "user_image": "lib/src/resources/assets/images/u1.png"
+  },
+  {
+    "name": "Megan Rae",
+    "image": "lib/src/resources/assets/images/s10.png",
+    "user_image": "lib/src/resources/assets/images/u2.png"
+  },
+  {
+    "name": "Charles Dixon",
+    "image": "lib/src/resources/assets/images/s11.png",
+    "user_image": "lib/src/resources/assets/images/u3.png"
+  },
+  {
+    "name": "Rebecca Taylor",
+    "image": "lib/src/resources/assets/images/s12.png",
+    "user_image": "lib/src/resources/assets/images/u4.png"
+  }
+];

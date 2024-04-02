@@ -10,9 +10,9 @@ Color get kPrimaryText => const Color(0xff434B56);
 Color get kPrimaryTextW => const Color(0xffFFFFFF);
 Color get kSecondaryText => const Color(0xff7C8085);
 Color get kTime => const Color(0xff787C81);
-Color get kBase => const Color(0xff00B5AA);
-List<Color> get primaryG => [kPrimary, kPrimaryEnd];
-List<Color> get secondaryG => [kSecondary, kSecondaryEnd];
+Color get kBase => const Color.fromARGB(255, 58, 58, 58);
+List<Color> get kPrimaryG => [kPrimary, kPrimaryEnd];
+List<Color> get kSecondaryG => [kSecondary, kSecondaryEnd];
 Color get kBg => Colors.white;
 
 extension HexColor on Color {

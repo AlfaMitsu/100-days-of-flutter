@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 
-import '../widgets/color_extension.dart';
 import '../widgets/user_row.dart';
 import '../widgets/user_story_cell.dart';
 import 'home/details_view.dart';
