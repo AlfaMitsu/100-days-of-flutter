@@ -55,6 +55,11 @@ TextStyle kDetailsViewFriendRequestsTextStyle = const TextStyle(
   fontWeight: FontWeight.w500,
 );
 
+TextStyle kChatTextBubblesTextStyle = const TextStyle(
+  color: kWhiteColor,
+  fontSize: 15,
+);
+
 TextStyle kDetailsViewBioTextStyle = TextStyle(
   color: kPrimaryText,
   fontSize: 14,
@@ -74,4 +79,9 @@ TextStyle kChatViewTextStyle = TextStyle(
 TextStyle kCommentViewTextStyle = TextStyle(
   color: kSecondaryText,
   fontSize: 13,
+);
+
+TextStyle kChatTextBubblesTimeTextStyle = const TextStyle(
+  color: Colors.white70,
+  fontSize: 12,
 );
