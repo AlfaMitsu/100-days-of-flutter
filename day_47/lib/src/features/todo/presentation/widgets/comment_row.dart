@@ -1,6 +1,7 @@
+import 'package:day_47/src/constants/assets.dart';
 import 'package:flutter/material.dart';
 
-import 'color_extension.dart';
+import '../../../../constants/styles.dart';
 
 class CommentRow extends StatelessWidget {
   final Map cObj;
@@ -9,21 +10,19 @@ class CommentRow extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.symmetric(vertical: 4.0),
+      padding: const EdgeInsets.symmetric(vertical: 4),
       child: Row(
         children: [
           ClipRRect(
             borderRadius: BorderRadius.circular(20),
             child: Image.asset(
-              cObj["image"] as String? ?? "",
+              cObj['image'] as String? ?? '',
               width: 40,
               height: 40,
               fit: BoxFit.cover,
             ),
           ),
-          const SizedBox(
-            width: 8,
-          ),
+          const SizedBox(width: 8),
           Expanded(
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
@@ -33,37 +32,25 @@ class CommentRow extends StatelessWidget {
                   alignment: WrapAlignment.start,
                   children: [
                     Text(
-                      cObj["name"] as String? ?? "",
+                      cObj['name'] as String? ?? '',
                       textAlign: TextAlign.left,
                       maxLines: 1,
-                      style: TextStyle(
-                        color: TColor.primaryText,
-                        fontSize: 14,
-                        fontWeight: FontWeight.w700,
-                      ),
+                      style: kCommentRowTextStyle,
                     ),
                     Text(
-                      " | ${cObj["time"] as String? ?? ""} ",
+                      ' | ${cObj['time'] as String? ?? ''} ',
                       textAlign: TextAlign.left,
                       maxLines: 1,
-                      style: TextStyle(
-                        color: TColor.secondaryText,
-                        fontSize: 13,
-                      ),
+                      style: kCommentViewTextStyle,
                     ),
                   ],
                 ),
-                const SizedBox(
-                  height: 2,
-                ),
+                const SizedBox(height: 2),
                 Text(
-                  cObj["comment"] as String? ?? "",
+                  cObj['comment'] as String? ?? '',
                   textAlign: TextAlign.left,
                   maxLines: 1,
-                  style: TextStyle(
-                    color: TColor.secondaryText,
-                    fontSize: 12,
-                  ),
+                  style: kCommentRowCommentsTextStyle,
                 ),
               ],
             ),
@@ -73,18 +60,19 @@ class CommentRow extends StatelessWidget {
             child: TextButton(
               onPressed: () {},
               child: Text(
-                "Replay",
-                style: TextStyle(color: TColor.secondaryText, fontSize: 13),
+                'Reply',
+                style: kCommentViewTextStyle,
               ),
             ),
           ),
           IconButton(
-              onPressed: () {},
-              icon: Image.asset(
-                "lib/src/resources/assets/images/fav.png",
-                width: 20,
-                height: 20,
-              ))
+            onPressed: () {},
+            icon: Image.asset(
+              kImgFavoriteButton,
+              width: 20,
+              height: 20,
+            ),
+          ),
         ],
       ),
     );

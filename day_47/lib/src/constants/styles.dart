@@ -65,6 +65,12 @@ TextStyle kDetailsViewBioTextStyle = TextStyle(
   fontSize: 14,
 );
 
+TextStyle kCommentRowTextStyle = TextStyle(
+  color: kPrimaryText,
+  fontSize: 14,
+  fontWeight: FontWeight.w700,
+);
+
 TextStyle kChatConversationViewTypeAMessageTextStyle = const TextStyle(
   fontSize: 13,
   fontWeight: FontWeight.w500,
@@ -83,5 +89,10 @@ TextStyle kCommentViewTextStyle = TextStyle(
 
 TextStyle kChatTextBubblesTimeTextStyle = const TextStyle(
   color: Colors.white70,
+  fontSize: 12,
+);
+
+TextStyle kCommentRowCommentsTextStyle = TextStyle(
+  color: kSecondaryText,
   fontSize: 12,
 );
