@@ -77,6 +77,11 @@ TextStyle kGroupCellTextStyle = TextStyle(
   fontWeight: FontWeight.w600,
 );
 
+TextStyle kHomeRowTextStyle = TextStyle(
+  color: kSecondaryText,
+  fontSize: 14,
+);
+
 TextStyle kChatConversationViewTypeAMessageTextStyle = const TextStyle(
   fontSize: 13,
   fontWeight: FontWeight.w500,
