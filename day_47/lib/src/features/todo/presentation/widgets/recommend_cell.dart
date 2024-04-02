@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
 
-import 'color_extension.dart';
+import '../../../../constants/colors.dart';
+import '../../../../constants/styles.dart';
 
 class RecommendCell extends StatelessWidget {
   final Map rObj;
   final bool isActive;
   final VoidCallback onPressed;
+
   const RecommendCell(
       {super.key,
       required this.rObj,
@@ -17,7 +19,7 @@ class RecommendCell extends StatelessWidget {
     return InkWell(
       onTap: onPressed,
       child: Container(
-        margin: const EdgeInsets.symmetric(horizontal: 8.0),
+        margin: const EdgeInsets.symmetric(horizontal: 8),
         width: 80,
         alignment: Alignment.center,
         child: Column(
@@ -29,7 +31,7 @@ class RecommendCell extends StatelessWidget {
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(40),
                   gradient: LinearGradient(
-                    colors: TColor.secondaryG,
+                    colors: kSecondaryG,
                     begin: Alignment.topLeft,
                     end: Alignment.bottomRight,
                   ),
@@ -38,7 +40,7 @@ class RecommendCell extends StatelessWidget {
                 child: ClipRRect(
                   borderRadius: BorderRadius.circular(35),
                   child: Image.asset(
-                    rObj["image"] as String? ?? "",
+                    rObj['image'] as String? ?? '',
                     width: 70,
                     height: 70,
                     fit: BoxFit.cover,
@@ -50,23 +52,23 @@ class RecommendCell extends StatelessWidget {
                   width: 20,
                   height: 20,
                   decoration: BoxDecoration(
-                      color: TColor.base,
-                      border: Border.all(color: Colors.white, width: 2),
+                      color: kBase,
+                      border: Border.all(
+                        color: kWhiteColor,
+                        width: 2,
+                      ),
                       borderRadius: BorderRadius.circular(10),
                       boxShadow: const [
-                        BoxShadow(color: Colors.black12, blurRadius: 2)
-                      ]),
-                )
-            ]),
+                        BoxShadow(color: Colors.black12, blurRadius: 2,),
+                      ],),
+                ),
+            ],),
             Text(
-              rObj["name"] as String? ?? "",
+              rObj['name'] as String? ?? '',
               textAlign: TextAlign.left,
               maxLines: 1,
-              style: TextStyle(
-                color: TColor.secondaryText,
-                fontSize: 13,
-              ),
-            )
+              style: kCommentViewTextStyle,
+            ),
           ],
         ),
       ),
