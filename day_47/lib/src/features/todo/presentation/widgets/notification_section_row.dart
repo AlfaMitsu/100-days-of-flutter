@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'color_extension.dart';
+import '../../../../constants/styles.dart';
 import 'user_notification_row.dart';
 
 class NotificationSectionRow extends StatelessWidget {
@@ -9,30 +9,28 @@ class NotificationSectionRow extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    var nArr = sObj["list"] as List? ?? [];
+    var nArr = sObj['list'] as List? ?? [];
     return Padding(
-      padding: const EdgeInsets.symmetric(vertical: 8.0),
+      padding: const EdgeInsets.symmetric(vertical: 8),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         mainAxisSize: MainAxisSize.min,
         children: [
           Text(
-            sObj["name"] as String? ?? "",
-            style: TextStyle(
-                color: TColor.primaryText,
-                fontSize: 19,
-                fontWeight: FontWeight.w600),
+            sObj['name'] as String? ?? '',
+            style: kChatViewMyChatsTextStyle,
           ),
           ListView.builder(
-              physics: const NeverScrollableScrollPhysics(),
-              shrinkWrap: true,
-              itemCount: nArr.length,
-              itemBuilder: (context, index) {
-                var nObj = nArr[index] as Map? ?? {};
-                return UserNotificationRow(
-                  nObj: nObj,
-                );
-              }),
+            physics: const NeverScrollableScrollPhysics(),
+            shrinkWrap: true,
+            itemCount: nArr.length,
+            itemBuilder: (context, index) {
+              var nObj = nArr[index] as Map? ?? {};
+              return UserNotificationRow(
+                nObj: nObj,
+              );
+            },
+          ),
           const Divider()
         ],
       ),
