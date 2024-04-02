@@ -32,6 +32,11 @@ TextStyle kChatViewActiveTextStyle = TextStyle(
   fontWeight: FontWeight.w700,
 );
 
+TextStyle kCreatePostViewTextStyle = TextStyle(
+  color: kPrimaryText,
+  fontSize: 16,
+);
+
 TextStyle kDetailsViewPostsTextStyle = TextStyle(
   color: kSecondaryText,
   fontSize: 15,
