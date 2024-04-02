@@ -152,6 +152,7 @@ List recommendationsArr = [
   {"name": "Jeffery Hall", "image": "lib/src/resources/assets/images/r3.png"},
   {"name": "Judy Adler", "image": "lib/src/resources/assets/images/r4.png"}
 ];
+
 List allArr = [
   {
     "name": "Georgia Bates",
@@ -200,5 +201,38 @@ List allArr = [
       "lib/src/resources/assets/images/p11.png",
       "lib/src/resources/assets/images/p12.png"
     ]
+  }
+];
+
+List commentArr = [
+  {
+    "name": "Ronald Shores",
+    "comment": "Impressive set up",
+    "time": "14m ago",
+    "image": "lib/src/resources/assets/images/u1.png"
+  },
+  {
+    "name": "Jimmy Love",
+    "comment": "Where's you office?",
+    "time": "30m ago",
+    "image": "lib/src/resources/assets/images/u2.png"
+  },
+  {
+    "name": "Sha Gaines",
+    "comment": "I remember being away that day",
+    "time": "31m ago",
+    "image": "lib/src/resources/assets/images/u3.png"
+  },
+  {
+    "name": "Ivey Wilson",
+    "comment": "Hahaha you made me clean your...",
+    "time": "35m ago",
+    "image": "lib/src/resources/assets/images/u4.png"
+  },
+  {
+    "name": "Bradley Dame",
+    "comment": "That was the day we got nothing...",
+    "time": "1h ago",
+    "image": "lib/src/resources/assets/images/u1.png"
   }
 ];

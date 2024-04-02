@@ -59,3 +59,8 @@ TextStyle kChatViewTextStyle = TextStyle(
   fontSize: 13,
   fontWeight: FontWeight.w500,
 );
+
+TextStyle kCommentViewTextStyle = TextStyle(
+  color: kSecondaryText,
+  fontSize: 13,
+);
