@@ -1,7 +1,9 @@
 import 'package:fbroadcast/fbroadcast.dart';
 import 'package:flutter/material.dart';
 
-import '../widgets/color_extension.dart';
+import '../../../../constants/assets.dart';
+import '../../../../constants/colors.dart';
+import '../../../../constants/styles.dart';
 import 'download_view.dart';
 import 'home/home_view.dart';
 import 'profile_view.dart';
@@ -23,17 +25,22 @@ class _MainTabViewState extends State<MainTabView>
   void initState() {
     super.initState();
     controller = TabController(length: 4, vsync: this);
-    controller?.addListener(() {
-      selectTab = controller?.index ?? 0;
-      if (mounted) {
-        setState(() {});
-      }
-    });
-    FBroadcast.instance().register("change_mode", (value, callback) {
-      if (mounted) {
-        setState(() {});
-      }
-    });
+    controller?.addListener(
+      () {
+        selectTab = controller?.index ?? 0;
+        if (mounted) {
+          setState(() {});
+        }
+      },
+    );
+    FBroadcast.instance().register(
+      'change_mode',
+      (value, callback) {
+        if (mounted) {
+          setState(() {});
+        }
+      },
+    );
   }
 
   @override
@@ -45,89 +52,87 @@ class _MainTabViewState extends State<MainTabView>
         DownloadView(),
         ProfileView(),
       ]),
-      backgroundColor: TColor.bg,
+      backgroundColor: kBg,
       floatingActionButton: FloatingActionButton(
-        backgroundColor: TColor.primary1,
+        backgroundColor: kPrimary1,
         onPressed: () {
-          TColor.tModeDark = !TColor.tModeDark;
-          FBroadcast.instance().broadcast("change_mode");
+          kTModeDark = !kTModeDark;
+          FBroadcast.instance().broadcast('change_mode');
           if (mounted) {
             setState(() {});
           }
         },
         child: Icon(
-          TColor.tModeDark ? Icons.light_mode : Icons.dark_mode,
-          color: TColor.text,
+          kTModeDark ? Icons.light_mode : Icons.dark_mode,
+          color: kText,
         ),
       ),
       bottomNavigationBar: Container(
         decoration: BoxDecoration(
-          color: TColor.tabBG,
+          color: kTabBG,
           boxShadow: const [
             BoxShadow(
               color: Colors.black12,
               blurRadius: 4,
-              offset: Offset(0, -3),
+              offset: Offset(
+                0,
+                -3,
+              ),
             ),
           ],
         ),
         child: BottomAppBar(
-          color: Colors.transparent,
+          color: kTransparent,
           elevation: 0,
           child: TabBar(
-              controller: controller,
-              indicatorWeight: 0.01,
-              indicatorColor: Colors.transparent,
-              dividerColor: Colors.transparent,
-              overlayColor: const MaterialStatePropertyAll(Colors.transparent),
-              unselectedLabelStyle: TextStyle(
-                  color: TColor.subtext,
-                  fontSize: 8,
-                  fontWeight: FontWeight.w700),
-              labelColor: TColor.primary2,
-              unselectedLabelColor: TColor.subtext,
-              labelStyle: TextStyle(
-                  color: TColor.primary2,
-                  fontSize: 8,
-                  fontWeight: FontWeight.w700),
-              tabs: [
-                Tab(
-                  text: "HOME",
-                  icon: Image.asset(
-                    "lib/src/resources/assets/images/tab_home.png",
-                    width: 30,
-                    height: 30,
-                    color: selectTab == 0 ? TColor.primary2 : TColor.subtext,
-                  ),
+            controller: controller,
+            indicatorWeight: 0.01,
+            indicatorColor: kTransparent,
+            dividerColor: kTransparent,
+            overlayColor: const MaterialStatePropertyAll(kTransparent),
+            unselectedLabelStyle: kMainTablViewUnselectedTextStyle,
+            labelColor: kPrimary2,
+            unselectedLabelColor: kSubtext,
+            labelStyle: kMainTablViewSelectedTextStyle,
+            tabs: [
+              Tab(
+                text: 'HOME',
+                icon: Image.asset(
+                  kImgTabHomeButton,
+                  width: 30,
+                  height: 30,
+                  color: selectTab == 0 ? kPrimary2 : kSubtext,
                 ),
-                Tab(
-                  text: "SEARCH",
-                  icon: Image.asset(
-                    "lib/src/resources/assets/images/tab_search-2.png",
-                    width: 30,
-                    height: 30,
-                    color: selectTab == 1 ? TColor.primary2 : TColor.subtext,
-                  ),
+              ),
+              Tab(
+                text: 'SEARCH',
+                icon: Image.asset(
+                  kImgTabSearchButton,
+                  width: 30,
+                  height: 30,
+                  color: selectTab == 1 ? kPrimary2 : kSubtext,
                 ),
-                Tab(
-                  text: "DOWNLOAD",
-                  icon: Image.asset(
-                    "lib/src/resources/assets/images/tab_download.png",
-                    width: 30,
-                    height: 30,
-                    color: selectTab == 2 ? TColor.primary2 : TColor.subtext,
-                  ),
+              ),
+              Tab(
+                text: 'DOWNLOAD',
+                icon: Image.asset(
+                  kImgTabDownloadButton,
+                  width: 30,
+                  height: 30,
+                  color: selectTab == 2 ? kPrimary2 : kSubtext,
                 ),
-                Tab(
-                  text: "PROFILE",
-                  icon: Image.asset(
-                    "lib/src/resources/assets/images/tab_user.png",
-                    width: 30,
-                    height: 30,
-                    color: selectTab == 3 ? TColor.primary2 : TColor.subtext,
-                  ),
+              ),
+              Tab(
+                text: 'PROFILE',
+                icon: Image.asset(
+                  kImgTabUserButton,
+                  width: 30,
+                  height: 30,
+                  color: selectTab == 3 ? kPrimary2 : kSubtext,
                 ),
-              ]),
+              ),
+            ],
+          ),
         ),
       ),
     );

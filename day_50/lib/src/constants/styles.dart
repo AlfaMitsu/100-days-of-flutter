@@ -70,3 +70,15 @@ TextStyle kTvShowDetailsViewDownloadTextStyle = TextStyle(
   fontSize: 12,
   fontWeight: FontWeight.w500,
 );
+
+TextStyle kMainTablViewUnselectedTextStyle = TextStyle(
+  color: kSubtext,
+  fontSize: 8,
+  fontWeight: FontWeight.w700,
+);
+
+TextStyle kMainTablViewSelectedTextStyle = TextStyle(
+  color: kPrimary2,
+  fontSize: 8,
+  fontWeight: FontWeight.w700,
+);

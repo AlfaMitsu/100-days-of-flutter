@@ -10,3 +10,6 @@ const String kImgMovieDetailPicture = 'lib/src/resources/assets/images/kImgMovie
 const String kImgPlayButton = 'lib/src/resources/assets/images/kImgPlayButton.png';
 const String kImgTvShow = 'lib/src/resources/assets/images/kImgTvShow.png';
 const String kImgTabDownloadButton = 'lib/src/resources/assets/images/kImgTabDownloadButton.png';
+const String kImgTabHomeButton = 'lib/src/resources/assets/images/kImgTabHomeButton.png';
+const String kImgTabSearchButton = 'lib/src/resources/assets/images/kImgTabSearchButton.png';
+const String kImgTabUserButton = 'lib/src/resources/assets/images/kImgTabUserButton.png';
