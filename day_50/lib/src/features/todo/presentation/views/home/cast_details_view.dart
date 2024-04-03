@@ -1,7 +1,10 @@
+import 'package:day_50/src/constants/assets.dart';
 import 'package:fbroadcast/fbroadcast.dart';
 import 'package:flutter/material.dart';
 
-import '../../widgets/color_extension.dart';
+import '../../../../../constants/colors.dart';
+import '../../../../../constants/styles.dart';
+import '../../../data/data_sources/arrays.dart';
 
 class CastDetailsView extends StatefulWidget {
   const CastDetailsView({super.key});
@@ -11,41 +14,24 @@ class CastDetailsView extends StatefulWidget {
 }
 
 class _CastDetailsViewState extends State<CastDetailsView> {
-  List moviesArr = [
-    {
-      "name": "Ant Man",
-      "image": "lib/src/resources/assets/images/ant_man.png",
-    },
-    {
-      "name": "End of Watch",
-      "image": "lib/src/resources/assets/images/end_of_wactch.png",
-    },
-    {
-      "name": "American Hustle",
-      "image": "lib/src/resources/assets/images/american_hustle.png",
-    },
-    {
-      "name": "Crash",
-      "image": "lib/src/resources/assets/images/crash.png",
-    },
-  ];
-
   @override
   void initState() {
     super.initState();
-    FBroadcast.instance().register("change_mode", (value, callback) {
-      if (mounted) {
-        setState(() {});
-      }
-    });
+    FBroadcast.instance().register(
+      'change_mode',
+      (value, callback) {
+        if (mounted) {
+          setState(() {});
+        }
+      },
+    );
   }
 
   @override
   Widget build(BuildContext context) {
-    var media = MediaQuery.of(context).size;
-
+    var size = MediaQuery.of(context).size;
     return Scaffold(
-      backgroundColor: TColor.bg,
+      backgroundColor: kBg,
       body: Stack(
         alignment: Alignment.topCenter,
         children: [
@@ -57,133 +43,115 @@ class _CastDetailsViewState extends State<CastDetailsView> {
                   alignment: Alignment.bottomCenter,
                   children: [
                     SizedBox(
-                      width: media.width,
-                      height: media.width * 1.1,
+                      width: size.width,
+                      height: size.width * 1.1,
                       child: ClipRect(
                         child: Image.asset(
-                          TColor.tModeDark
-                              ? "lib/src/resources/assets/images/michael_dark.png"
-                              : "lib/src/resources/assets/images/michael_light.png",
-                          width: media.width,
-                          height: media.width,
+                          kTModeDark ? kImgActorDark : kImgActorLight,
+                          width: size.width,
+                          height: size.width,
                           fit: BoxFit.cover,
                         ),
                       ),
                     ),
                     Container(
-                      width: media.width,
-                      height: media.width * 1.1,
+                      width: size.width,
+                      height: size.width * 1.1,
                       decoration: BoxDecoration(
-                          gradient: LinearGradient(
-                              colors: [
-                            TColor.bgDark,
-                            TColor.bgDark.withOpacity(0),
-                            TColor.bg.withOpacity(0),
-                            TColor.bg
+                        gradient: LinearGradient(
+                          colors: [
+                            kBgDark,
+                            kBgDark.withOpacity(0),
+                            kBg.withOpacity(0),
+                            kBg
                           ],
-                              begin: Alignment.topCenter,
-                              end: Alignment.bottomCenter)),
+                          begin: Alignment.topCenter,
+                          end: Alignment.bottomCenter,
+                        ),
+                      ),
                     ),
                     Padding(
                       padding: const EdgeInsets.symmetric(
-                          vertical: 20, horizontal: 15),
+                        vertical: 20,
+                        horizontal: 15,
+                      ),
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.center,
                         children: [
                           Text(
-                            "Michael",
-                            style: TextStyle(
-                                color: TColor.bgText,
-                                fontSize: 37,
-                                fontWeight: FontWeight.w500),
+                            'Michael',
+                            style: kCarDetailsViewFirstNameTextStyle,
                           ),
-                          const SizedBox(
-                            height: 8,
-                          ),
+                          const SizedBox(height: 8),
                           Text(
-                            "Peña",
-                            style: TextStyle(
-                                color: TColor.bgText,
-                                fontSize: 25,
-                                fontWeight: FontWeight.w500),
+                            'Peña',
+                            style: kCarDetailsViewSurnameTextStyle,
                           ),
                         ],
                       ),
-                    )
+                    ),
                   ],
                 ),
-                const SizedBox(
-                  height: 15,
-                ),
+                const SizedBox(height: 15),
                 Padding(
                   padding: const EdgeInsets.all(15),
                   child: Text(
-                    "Michael Peña was born and raised in Chicago, to Nicolasa, a social worker, and Eleuterio Peña, who worked at a button factory. His parents were originally from Mexico.",
-                    style: TextStyle(
-                      color: TColor.text,
-                      fontSize: 15,
-                    ),
+                    'Michael Peña was born and raised in Chicago, to Nicolasa, a social worker, and Eleuterio Peña, who worked at a button factory. His parents were originally from Mexico.',
+                    style: kCarDetailsViewDescriptionTextStyle,
                   ),
                 ),
-                const SizedBox(
-                  height: 15,
-                ),
+                const SizedBox(height: 15),
                 Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 15),
                   child: Row(
-                      mainAxisAlignment: MainAxisAlignment.start,
-                      children: [
-                        Text(
-                          "Known for",
-                          style: TextStyle(
-                              color: TColor.text,
-                              fontSize: 15,
-                              fontWeight: FontWeight.w700),
-                        ),
-                      ]),
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    children: [
+                      Text(
+                        'Known for',
+                        style: kCarDetailsViewKnownForTextStyle,
+                      ),
+                    ],
+                  ),
                 ),
                 SizedBox(
-                  height: (media.width * 0.34) + 40,
+                  height: (size.width * 0.34) + 40,
                   child: ListView.builder(
-                      padding: const EdgeInsets.symmetric(
-                          horizontal: 10, vertical: 10),
-                      scrollDirection: Axis.horizontal,
-                      itemCount: moviesArr.length,
-                      itemBuilder: (context, index) {
-                        var cObj = moviesArr[index] as Map? ?? {};
-                        var image = cObj["image"].toString();
-
-                        return Column(
-                          children: [
-                            Container(
-                              margin: const EdgeInsets.symmetric(horizontal: 6),
-                              color: TColor.castBG,
-                              width: media.width * 0.25,
-                              height: media.width * 0.32,
-                              child: image != ""
-                                  ? ClipRect(
-                                      child: Image.asset(
-                                        image,
-                                        width: media.width * 0.25,
-                                        height: media.width * 0.32,
-                                        fit: BoxFit.contain,
-                                      ),
-                                    )
-                                  : null,
-                            ),
-                            const SizedBox(
-                              height: 4,
-                            ),
-                            Text(
-                              cObj["name"].toString(),
-                              style: TextStyle(
-                                color: TColor.text,
-                                fontSize: 12,
-                              ),
-                            ),
-                          ],
-                        );
-                      }),
+                    padding: const EdgeInsets.symmetric(
+                      horizontal: 10,
+                      vertical: 10,
+                    ),
+                    scrollDirection: Axis.horizontal,
+                    itemCount: moviesArr.length,
+                    itemBuilder: (context, index) {
+                      var cObj = moviesArr[index] as Map? ?? {};
+                      var image = cObj['image'].toString();
+                      return Column(
+                        children: [
+                          Container(
+                            margin: const EdgeInsets.symmetric(horizontal: 6),
+                            color: kCastBG,
+                            width: size.width * 0.25,
+                            height: size.width * 0.32,
+                            child: image != ''
+                                ? ClipRect(
+                                    child: Image.asset(
+                                      image,
+                                      width: size.width * 0.25,
+                                      height: size.width * 0.32,
+                                      fit: BoxFit.contain,
+                                    ),
+                                  )
+                                : null,
+                          ),
+                          const SizedBox(height: 4),
+                          Text(
+                            cObj['name'].toString(),
+                            style: kCarDetailsViewNameTextStyle,
+                          ),
+                        ],
+                      );
+                    },
+                  ),
                 ),
               ],
             ),
@@ -192,7 +160,7 @@ class _CastDetailsViewState extends State<CastDetailsView> {
             child: Column(
               children: [
                 AppBar(
-                  backgroundColor: Colors.transparent,
+                  backgroundColor: kTransparent,
                   elevation: 0,
                   leadingWidth: 100,
                   leading: InkWell(
@@ -205,21 +173,16 @@ class _CastDetailsViewState extends State<CastDetailsView> {
                         mainAxisSize: MainAxisSize.min,
                         children: [
                           Image.asset(
-                            "lib/src/resources/assets/images/back_btn.png",
+                            kImgBackButton,
                             width: 13,
                             height: 13,
-                            color: Colors.white,
+                            color: kWhiteColor,
                           ),
-                          const SizedBox(
-                            width: 8,
-                          ),
+                          const SizedBox(width: 8),
                           const Text(
-                            "BACK",
-                            style: TextStyle(
-                                color: Colors.white,
-                                fontSize: 14,
-                                fontWeight: FontWeight.w700),
-                          )
+                            'BACK',
+                            style: kCarDetailsViewBackTextStyle,
+                          ),
                         ],
                       ),
                     ),
@@ -227,21 +190,21 @@ class _CastDetailsViewState extends State<CastDetailsView> {
                 ),
               ],
             ),
-          )
+          ),
         ],
       ),
       floatingActionButton: FloatingActionButton(
-        backgroundColor: TColor.primary1,
+        backgroundColor: kPrimary1,
         onPressed: () {
-          TColor.tModeDark = !TColor.tModeDark;
-          FBroadcast.instance().broadcast("change_mode");
+          kTModeDark = !kTModeDark;
+          FBroadcast.instance().broadcast('change_mode');
           if (mounted) {
             setState(() {});
           }
         },
         child: Icon(
-          TColor.tModeDark ? Icons.light_mode : Icons.dark_mode,
-          color: TColor.text,
+          kTModeDark ? Icons.light_mode : Icons.dark_mode,
+          color: kText,
         ),
       ),
     );

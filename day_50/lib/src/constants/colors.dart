@@ -2,16 +2,30 @@ import 'package:flutter/material.dart';
 
 // Brand Colors
 
-const kCoffeeShopBrandColor = Color(0xFF0D0F14);
-const kCoffeeShopBrandColor2 = Color(0xFF342520);
-const kCoffeeShopBrandColor3 = Color(0xFF1A1819);
-const kCoffeeShopBrandColor4 = Color(0xFF14181D);
-const kCoffeeShopBrandColor5 = Color(0xFF322B2E);
-const kCoffeeShopBrandColor6 = Color(0xFF0F1419);
-const kCoffeeShopBrandColor7 = Color(0xFF909193);
-const kCoffeeShopBrandColor8 = Color(0xFF999A9B);
-const kCoffeeShopBrandColor9 = Color(0xFF0D0F14);
-const kCoffeeShopBrandColor10 = Color(0xFFADADAD);
+bool kTModeDark = true;
+Color get kPrimary1 => const Color(0xFFFFBB3B);
+Color get kPrimary2 => const Color(0xFFFFA90A);
+List<Color> get kPrimaryG => [kPrimary1, kPrimary2];
+Color get kBgDark => const Color(0xFF000000);
+Color get kBgLight => const Color(0xFFF5F5F5);
+Color get kBg => kTModeDark ? kBgDark : kBgLight;
+Color get kBgText => kTModeDark ? kBgLight : kBgDark;
+Color get kCardDark => const Color(0xFF212121);
+Color get kCardLight => const Color(0xFFFFFFFF);
+Color get kCardLightGry => const Color(0xFFE8E8E8);
+Color get kCard => kTModeDark ? kCardDark : kCardLight;
+Color get kCastBG => kTModeDark ? kCardDark : kCardLightGry;
+Color get kTabBGDark => const Color(0xFF1A1A1A);
+Color get kTabBGLight => const Color(0xFFFFFFFF);
+Color get kTabBG => kTModeDark ? kTabBGDark : kTabBGLight;
+Color get kTextDark => const Color(0xFFFFFFFF);
+Color get kTextLight => const Color(0xFF5A5A5A);
+Color get kText => kTModeDark ? kTextDark : kTextLight;
+Color get kBtnText => kTModeDark ? kBgDark : kCardLight;
+Color get kTextOpacity => (kText).withOpacity(0.6);
+Color get kSubtextDark => const Color(0xFFA2A2A2);
+Color get kSubtextLight => const Color(0xFFA2A2A2);
+Color get kSubtext => kTModeDark ? kSubtextDark : kSubtextLight;
 
 // Common Colors
 

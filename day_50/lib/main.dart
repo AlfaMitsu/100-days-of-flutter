@@ -14,7 +14,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        fontFamily: "Gotham",
+        fontFamily: 'Gotham',
         useMaterial3: true,
       ),
       home: const MainTabView(),
