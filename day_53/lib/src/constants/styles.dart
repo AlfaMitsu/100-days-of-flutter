@@ -15,6 +15,12 @@ TextStyle kHomeViewLivingRoomTextStyle = TextStyle(
   fontWeight: FontWeight.w700,
 );
 
+TextStyle kDevicesCellButtonTextStyle = TextStyle(
+  color: kText,
+  fontSize: 17,
+  fontWeight: FontWeight.w700,
+);
+
 TextStyle kHomeViewDevicesTextStyle = TextStyle(
   color: kUnselect,
   fontSize: 13,
