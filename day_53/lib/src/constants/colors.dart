@@ -2,16 +2,16 @@ import 'package:flutter/material.dart';
 
 // Brand Colors
 
-const kCoffeeShopBrandColor = Color(0xFF0D0F14);
-const kCoffeeShopBrandColor2 = Color(0xFF342520);
-const kCoffeeShopBrandColor3 = Color(0xFF1A1819);
-const kCoffeeShopBrandColor4 = Color(0xFF14181D);
-const kCoffeeShopBrandColor5 = Color(0xFF322B2E);
-const kCoffeeShopBrandColor6 = Color(0xFF0F1419);
-const kCoffeeShopBrandColor7 = Color(0xFF909193);
-const kCoffeeShopBrandColor8 = Color(0xFF999A9B);
-const kCoffeeShopBrandColor9 = Color(0xFF0D0F14);
-const kCoffeeShopBrandColor10 = Color(0xFFADADAD);
+Color get kPrimary => const Color(0xFF6695FF);
+Color get kPrimaryLight => const Color(0xFFEBF1FF);
+Color get kColor1 => const Color(0xFFFFCF4C);
+Color get kColor2 => const Color(0xFF81A1FF);
+Color get kColor3 => const Color(0xFFFF808E);
+Color get kColor4 => const Color(0xFF77D977);
+Color get kColor5 => const Color(0xFF33AEFE);
+Color get kColor6 => const Color(0xFF7367FF);
+Color get kUnselect => const Color(0xFF61688B);
+Color get kText => const Color(0xFF161B3A);
 
 // Common Colors
 

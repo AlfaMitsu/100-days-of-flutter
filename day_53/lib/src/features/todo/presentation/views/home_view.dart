@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 
-import '../widgets/color_extension.dart';
+import '../../../../constants/assets.dart';
+import '../../../../constants/colors.dart';
+import '../../../../constants/styles.dart';
 import '../widgets/devices_cell_button.dart';
 import '../widgets/round_icon_button.dart';
 import 'detail_view.dart';
@@ -17,7 +19,7 @@ class _HomeViewState extends State<HomeView> {
 
   @override
   Widget build(BuildContext context) {
-    var media = MediaQuery.of(context).size;
+    var size = MediaQuery.of(context).size;
 
     return Scaffold(
       appBar: AppBar(
@@ -25,150 +27,126 @@ class _HomeViewState extends State<HomeView> {
           onPressed: () {},
           icon: Icon(
             Icons.sort,
-            color: TColor.unselect,
+            color: kUnselect,
             size: 25,
           ),
         ),
-        backgroundColor: Colors.transparent,
+        backgroundColor: kTransparent,
         elevation: 0,
         actions: [
           Padding(
             padding: const EdgeInsets.only(right: 15),
             child: CircleAvatar(
               radius: 25,
-              child: Image.asset('lib/src/resources/assets/images/1.png'),
+              child: Image.asset(kImgProfile),
             ),
-          )
+          ),
         ],
       ),
       body: SingleChildScrollView(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            const SizedBox(
-              height: 15,
-            ),
+            const SizedBox(height: 15),
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 25),
               child: Text(
-                "My Smart Home",
-                style: TextStyle(
-                    color: TColor.text,
-                    fontSize: 28,
-                    fontWeight: FontWeight.w700),
+                'My Smart Home',
+                style: kHomeViewTitleTextStyle,
               ),
             ),
-            const SizedBox(
-              height: 30,
-            ),
+            const SizedBox(height: 30),
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 25),
               child: Row(
                 children: [
                   Expanded(
                     child: RoundIconButton(
-                        name: "Light",
-                        icon: Icons.lightbulb,
-                        bgColor: TColor.color1,
-                        onPressed: () {}),
+                      name: 'Light',
+                      icon: Icons.lightbulb,
+                      bgColor: kColor1,
+                      onPressed: () {},
+                    ),
                   ),
-                  const SizedBox(
-                    width: 25,
-                  ),
+                  const SizedBox(width: 25),
                   Expanded(
                     child: RoundIconButton(
-                        name: "Media",
-                        icon: Icons.smart_display,
-                        bgColor: TColor.color2,
-                        onPressed: () {}),
-                  )
+                      name: 'Media',
+                      icon: Icons.smart_display,
+                      bgColor: kColor2,
+                      onPressed: () {},
+                    ),
+                  ),
                 ],
               ),
             ),
-            const SizedBox(
-              height: 25,
-            ),
+            const SizedBox(height: 25),
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 25),
               child: Row(
                 children: [
                   Expanded(
                     child: RoundIconButton(
-                        name: "Camera",
-                        icon: Icons.videocam,
-                        bgColor: TColor.color3,
-                        onPressed: () {}),
+                      name: 'Camera',
+                      icon: Icons.videocam,
+                      bgColor: kColor3,
+                      onPressed: () {},
+                    ),
                   ),
-                  const SizedBox(
-                    width: 25,
-                  ),
+                  const SizedBox(width: 25),
                   Expanded(
                     child: RoundIconButton(
-                        name: "Wi-fi",
-                        icon: Icons.wifi,
-                        bgColor: TColor.color4,
-                        onPressed: () {}),
-                  )
+                      name: 'Wi-fi',
+                      icon: Icons.wifi,
+                      bgColor: kColor4,
+                      onPressed: () {},
+                    ),
+                  ),
                 ],
               ),
             ),
-            const SizedBox(
-              height: 30,
-            ),
+            const SizedBox(height: 30),
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 25),
               child: Text(
-                "Living Room",
-                style: TextStyle(
-                    color: TColor.text,
-                    fontSize: 22,
-                    fontWeight: FontWeight.w700),
+                'Living Room',
+                style: kHomeViewLivingRoomTextStyle,
               ),
             ),
-            const SizedBox(
-              height: 8,
-            ),
+            const SizedBox(height: 8),
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 25),
-              child: Text(
-                "2 devices",
-                style: TextStyle(
-                  color: TColor.unselect,
-                  fontSize: 13,
-                ),
-              ),
+              child: Text('2 devices', style: kHomeViewDevicesTextStyle),
             ),
-            const SizedBox(
-              height: 30,
-            ),
+            const SizedBox(height: 30),
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 25),
               child: SizedBox(
-                height: media.width * 0.5,
+                height: size.width * 0.5,
                 child: Row(
                   children: [
                     Expanded(
                       child: DevicesCellButton(
-                          name: "Netgear\nWiFi Router",
-                          img: "lib/src/resources/assets/images/wifi_router.png",
-                          onPressed: () {
-                            Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                builder: (context) => const DetailView(),
-                              ),
-                            );
-                          }),
+                        name: 'Netgear\nWiFi Router',
+                        img: kImgWifiRouter,
+                        onPressed: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => const DetailView(),
+                            ),
+                          );
+                        },
+                      ),
                     ),
-                    const SizedBox(
-                      width: 25,
-                    ),
+                    const SizedBox(width: 25),
                     Expanded(
                       child: DevicesCellButton(
-                          name: "Living Room\nSpeaker",
-                          img: "lib/src/resources/assets/images/room_speaker.png",
-                          onPressed: () {}),
-                    )
+                        name: 'Living Room\nSpeaker',
+                        img: kImgRoomSpeaker,
+                        onPressed: () {},
+                      ),
+                    ),
                   ],
                 ),
               ),
@@ -184,28 +162,32 @@ class _HomeViewState extends State<HomeView> {
           children: [
             IconButton(
               onPressed: () {
-                setState(() {
-                  selectPage = 0;
-                });
+                setState(
+                  () {
+                    selectPage = 0;
+                  },
+                );
               },
               icon: Icon(
                 Icons.home_filled,
                 size: 30,
-                color: selectPage == 0 ? TColor.primary : TColor.unselect,
+                color: selectPage == 0 ? kPrimary : kUnselect,
               ),
             ),
             IconButton(
               onPressed: () {
-                setState(() {
-                  selectPage = 1;
-                });
+                setState(
+                  () {
+                    selectPage = 1;
+                  },
+                );
               },
               icon: Icon(
                 Icons.settings,
                 size: 30,
-                color: selectPage == 1 ? TColor.primary : TColor.unselect,
+                color: selectPage == 1 ? kPrimary : kUnselect,
               ),
-            )
+            ),
           ],
         ),
       ),
@@ -218,7 +200,7 @@ class _HomeViewState extends State<HomeView> {
             onPressed: () {},
             child: const Icon(
               Icons.mic,
-              color: Colors.white,
+              color: kWhiteColor,
             ),
           ),
         ),
