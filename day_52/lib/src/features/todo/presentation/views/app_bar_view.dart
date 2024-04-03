@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
-import '../widgets/color_extension.dart';
+import '../../../../constants/colors.dart';
+import '../../../../constants/styles.dart';
 
 class AppBarView extends StatelessWidget implements PreferredSizeWidget {
   const AppBarView({super.key});
@@ -9,19 +10,15 @@ class AppBarView extends StatelessWidget implements PreferredSizeWidget {
   Widget build(BuildContext context) {
     return AppBar(
       title: Text(
-        "Jipool",
-        style: TextStyle(
-          color: TColor.primary,
-          fontWeight: FontWeight.w700,
-          fontSize: 25,
-        ),
+        'Jipool',
+        style: kHomeViewAddMoneyTextStyle,
       ),
       leading: TextButton(
         onPressed: () {},
         child: Icon(
           Icons.more_vert,
           size: 30,
-          color: TColor.primary,
+          color: kPrimary,
         ),
       ),
       actions: [
@@ -33,21 +30,25 @@ class AppBarView extends StatelessWidget implements PreferredSizeWidget {
               child: Icon(
                 Icons.notifications_outlined,
                 size: 30,
-                color: TColor.primary,
+                color: kPrimary,
               ),
             ),
             Container(
-              margin: const EdgeInsets.only(top: 15, right: 22),
+              margin: const EdgeInsets.only(
+                top: 15,
+                right: 22,
+              ),
               width: 10,
               height: 10,
               decoration: BoxDecoration(
-                  color: TColor.notificationActive,
-                  borderRadius: BorderRadius.circular(5)),
-            )
+                color: kNotificationActive,
+                borderRadius: BorderRadius.circular(5),
+              ),
+            ),
           ],
-        )
+        ),
       ],
-      backgroundColor: TColor.appBarBg,
+      backgroundColor: kAppBarBg,
     );
   }
 
