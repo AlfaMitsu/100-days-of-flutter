@@ -50,6 +50,12 @@ TextStyle kTransactionRowDateAndTimeTextStyle = TextStyle(
   fontSize: 14,
 );
 
+TextStyle kTabIconTextButtonTextStyle = TextStyle(
+  color: kTabIconTextButton,
+  fontSize: 13,
+  fontWeight: FontWeight.w500,
+);
+
 const TextStyle kBarViewNameTextStyle = TextStyle(
   color: kGreyColor,
   fontSize: 12,
