@@ -2,11 +2,17 @@ import 'package:flutter/material.dart';
 
 // Brand Colors
 
-Color get kPrimary => const Color(0xff4530B3);
-Color get kSecondary => const Color(0xff1FD2FF);
+Color get kPrimary => const Color(0xFF4530B3);
+Color get kSecondary => const Color(0xFF1FD2FF);
 Color get kBg => kWhiteColor;
 Color get kAppBarBg => kWhiteColor;
-Color get kNotificationActive => const Color(0xffFAAC38);
+Color get kNotificationActive => const Color(0xFFFAAC38);
+Color get kTransactionCellBg => const Color(0xFFECE9FF);
+Color get kIncome => const Color(0xFF958BCE);
+Color get kDropDownIconColor => const Color(0xFF02C487);
+Color get kBox => const Color(0xFFEBFBFF);
+Color get kExpense => const Color(0xFF71C1D5);
+Color get kDropUpIconColor => const Color(0xFFFC6158);
 
 // Common Colors
 

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'color_extension.dart';
+import '../../../../constants/colors.dart';
 
 class SelectionButton extends StatelessWidget {
   final String title;
@@ -19,18 +19,22 @@ class SelectionButton extends StatelessWidget {
       height: 40,
       decoration: isSelect
           ? BoxDecoration(
-              color: TColor.primary, borderRadius: BorderRadius.circular(10))
+              color: kPrimary,
+              borderRadius: BorderRadius.circular(10),
+            )
           : BoxDecoration(
-              border: Border.all(color: TColor.primary),
-              borderRadius: BorderRadius.circular(10)),
+              border: Border.all(color: kPrimary),
+              borderRadius: BorderRadius.circular(10),
+            ),
       child: MaterialButton(
         onPressed: onPressed,
         child: Text(
           title,
           style: TextStyle(
-              color: isSelect ? Colors.white : TColor.primary,
-              fontSize: 15,
-              fontWeight: FontWeight.bold),
+            color: isSelect ? kWhiteColor : kPrimary,
+            fontSize: 15,
+            fontWeight: FontWeight.bold,
+          ),
         ),
       ),
     );
