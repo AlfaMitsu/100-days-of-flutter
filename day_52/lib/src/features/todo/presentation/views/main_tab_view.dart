@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../widgets/color_extension.dart';
+import '../../../../constants/colors.dart';
 import '../widgets/tab_button.dart';
 import 'app_bar_view.dart';
 import 'blank_view.dart';
@@ -43,15 +43,20 @@ class _MainTabViewState extends State<MainTabView> {
       bottomNavigationBar: Container(
         padding: const EdgeInsets.only(top: 10),
         decoration: BoxDecoration(
-          color: TColor.primary,
+          color: kPrimary,
           borderRadius: const BorderRadius.only(
-              topLeft: Radius.circular(35), topRight: Radius.circular(35)),
+            topLeft: Radius.circular(35),
+            topRight: Radius.circular(35),
+          ),
           boxShadow: [
             BoxShadow(
               blurRadius: 3,
-              color: Colors.grey.withOpacity(0.5),
-              offset: const Offset(0, -1),
-            )
+              color: kGreyColor.withOpacity(0.5),
+              offset: const Offset(
+                0,
+                -1,
+              ),
+            ),
           ],
         ),
         child: SafeArea(
@@ -60,57 +65,69 @@ class _MainTabViewState extends State<MainTabView> {
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               TabButton(
-                  icon: Icons.home_outlined,
-                  isSelect: selectTab == 0,
-                  onPressed: () {
-                    setState(() {
+                icon: Icons.home_outlined,
+                isSelect: selectTab == 0,
+                onPressed: () {
+                  setState(
+                    () {
                       currentTab = const HomeView();
                       selectTab = 0;
-                    });
-                  }),
+                    },
+                  );
+                },
+              ),
               TabButton(
-                  icon: Icons.sync_alt,
-                  isSelect: selectTab == 1,
-                  onPressed: () {
-                    setState(() {
+                icon: Icons.sync_alt,
+                isSelect: selectTab == 1,
+                onPressed: () {
+                  setState(
+                    () {
                       currentTab = const TransactionView();
                       selectTab = 1;
-                    });
-                  }),
+                    },
+                  );
+                },
+              ),
               Container(
                 width: 50,
                 height: 50,
                 decoration: BoxDecoration(
-                  color: TColor.secondary,
+                  color: kSecondary,
                   borderRadius: BorderRadius.circular(25),
                 ),
                 child: InkWell(
                   onTap: () {},
                   child: Icon(
                     Icons.add,
-                    color: TColor.primary,
+                    color: kPrimary,
                     size: 35,
                   ),
                 ),
               ),
               TabButton(
-                  icon: Icons.pie_chart_outline,
-                  isSelect: selectTab == 2,
-                  onPressed: () {
-                    setState(() {
+                icon: Icons.pie_chart_outline,
+                isSelect: selectTab == 2,
+                onPressed: () {
+                  setState(
+                    () {
                       currentTab = const BlankView();
                       selectTab = 2;
-                    });
-                  }),
+                    },
+                  );
+                },
+              ),
               TabButton(
-                  icon: Icons.settings_outlined,
-                  isSelect: selectTab == 3,
-                  onPressed: () {
-                    setState(() {
+                icon: Icons.settings_outlined,
+                isSelect: selectTab == 3,
+                onPressed: () {
+                  setState(
+                    () {
                       currentTab = const BlankView();
                       selectTab = 3;
-                    });
-                  }),
+                    },
+                  );
+                },
+              ),
             ],
           ),
         ),
