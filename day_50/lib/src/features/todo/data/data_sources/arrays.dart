@@ -16,3 +16,14 @@ List moviesArr = [
     "image": "lib/src/resources/assets/images/crash.png",
   },
 ];
+
+List watchArr = [
+  "lib/src/resources/assets/images/mov_1.png",
+  "lib/src/resources/assets/images/mov_2.png",
+  "lib/src/resources/assets/images/mov_3.png",
+  "lib/src/resources/assets/images/mov_4.png",
+  "lib/src/resources/assets/images/mov_1.png",
+  "lib/src/resources/assets/images/mov_2.png",
+  "lib/src/resources/assets/images/mov_3.png",
+  "lib/src/resources/assets/images/mov_4.png",
+];

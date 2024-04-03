@@ -80,12 +80,12 @@ class _CastDetailsViewState extends State<CastDetailsView> {
                         children: [
                           Text(
                             'Michael',
-                            style: kCarDetailsViewFirstNameTextStyle,
+                            style: kCastDetailsViewFirstNameTextStyle,
                           ),
                           const SizedBox(height: 8),
                           Text(
                             'Peña',
-                            style: kCarDetailsViewSurnameTextStyle,
+                            style: kCastDetailsViewSurnameTextStyle,
                           ),
                         ],
                       ),
@@ -97,7 +97,7 @@ class _CastDetailsViewState extends State<CastDetailsView> {
                   padding: const EdgeInsets.all(15),
                   child: Text(
                     'Michael Peña was born and raised in Chicago, to Nicolasa, a social worker, and Eleuterio Peña, who worked at a button factory. His parents were originally from Mexico.',
-                    style: kCarDetailsViewDescriptionTextStyle,
+                    style: kCastDetailsViewDescriptionTextStyle,
                   ),
                 ),
                 const SizedBox(height: 15),
@@ -108,7 +108,7 @@ class _CastDetailsViewState extends State<CastDetailsView> {
                     children: [
                       Text(
                         'Known for',
-                        style: kCarDetailsViewKnownForTextStyle,
+                        style: kCastDetailsViewKnownForTextStyle,
                       ),
                     ],
                   ),
@@ -146,7 +146,7 @@ class _CastDetailsViewState extends State<CastDetailsView> {
                           const SizedBox(height: 4),
                           Text(
                             cObj['name'].toString(),
-                            style: kCarDetailsViewNameTextStyle,
+                            style: kCastDetailsViewNameTextStyle,
                           ),
                         ],
                       );
@@ -181,7 +181,7 @@ class _CastDetailsViewState extends State<CastDetailsView> {
                           const SizedBox(width: 8),
                           const Text(
                             'BACK',
-                            style: kCarDetailsViewBackTextStyle,
+                            style: kCastDetailsViewBackTextStyle,
                           ),
                         ],
                       ),

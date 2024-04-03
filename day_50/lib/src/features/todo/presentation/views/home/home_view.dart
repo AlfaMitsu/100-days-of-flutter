@@ -1,9 +1,12 @@
+import 'package:day_50/src/constants/assets.dart';
 import 'package:fbroadcast/fbroadcast.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 
-import '../../widgets/color_extension.dart';
+import '../../../../../constants/colors.dart';
+import '../../../../../constants/styles.dart';
+import '../../../data/data_sources/arrays.dart';
 import 'movie_details_view.dart';
 import 'tv_show_details_view.dart';
 
@@ -15,25 +18,17 @@ class HomeView extends StatefulWidget {
 }
 
 class _HomeViewState extends State<HomeView> {
-  List watchArr = [
-    "lib/src/resources/assets/images/mov_1.png",
-    "lib/src/resources/assets/images/mov_2.png",
-    "lib/src/resources/assets/images/mov_3.png",
-    "lib/src/resources/assets/images/mov_4.png",
-    "lib/src/resources/assets/images/mov_1.png",
-    "lib/src/resources/assets/images/mov_2.png",
-    "lib/src/resources/assets/images/mov_3.png",
-    "lib/src/resources/assets/images/mov_4.png",
-  ];
-
   @override
   void initState() {
     super.initState();
-    FBroadcast.instance().register("change_mode", (value, callback) {
-      if (mounted) {
-        setState(() {});
-      }
-    });
+    FBroadcast.instance().register(
+      'change_mode',
+      (value, callback) {
+        if (mounted) {
+          setState(() {});
+        }
+      },
+    );
   }
 
   @override
@@ -41,7 +36,7 @@ class _HomeViewState extends State<HomeView> {
     var media = MediaQuery.of(context).size;
 
     return Scaffold(
-      backgroundColor: TColor.bg,
+      backgroundColor: kBg,
       body: SingleChildScrollView(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
@@ -49,9 +44,11 @@ class _HomeViewState extends State<HomeView> {
             GestureDetector(
               onTap: () {
                 Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                        builder: (context) => const MovieDetailsView()));
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => const MovieDetailsView(),
+                  ),
+                );
               },
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.center,
@@ -64,9 +61,7 @@ class _HomeViewState extends State<HomeView> {
                         height: media.width * 1.35,
                         child: ClipRect(
                           child: Image.asset(
-                            TColor.tModeDark
-                                ? "lib/src/resources/assets/images/home_image_dark.png"
-                                : "lib/src/resources/assets/images/home_image_light.png",
+                            kTModeDark ? kImgHomeImageDark : kImgHomeImageLight,
                             width: media.width,
                             height: media.width,
                             fit: BoxFit.cover,
@@ -76,11 +71,8 @@ class _HomeViewState extends State<HomeView> {
                     ],
                   ),
                   Text(
-                    "4.0",
-                    style: TextStyle(
-                      color: TColor.text,
-                      fontSize: 33,
-                    ),
+                    '4.0',
+                    style: kHomeViewRatingTextStyle,
                   ),
                   IgnorePointer(
                     ignoring: true,
@@ -91,11 +83,11 @@ class _HomeViewState extends State<HomeView> {
                       allowHalfRating: true,
                       itemCount: 5,
                       itemSize: 18,
-                      itemPadding: const EdgeInsets.symmetric(horizontal: 4.0),
+                      itemPadding: const EdgeInsets.symmetric(horizontal: 4),
                       ratingWidget: RatingWidget(
-                        full: Image.asset("lib/src/resources/assets/images/star_fill.png"),
-                        half: Image.asset("lib/src/resources/assets/images/star.png"),
-                        empty: Image.asset("lib/src/resources/assets/images/star.png"),
+                        full: Image.asset(kImgStar),
+                        half: Image.asset(kImgStarFill),
+                        empty: Image.asset(kImgStarFill),
                       ),
                       onRatingUpdate: (rating) {
                         if (kDebugMode) {
@@ -104,198 +96,185 @@ class _HomeViewState extends State<HomeView> {
                       },
                     ),
                   ),
-                  const SizedBox(
-                    height: 15,
-                  ),
+                  const SizedBox(height: 15),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Text(
-                        "Movie",
-                        style: TextStyle(
-                            color: TColor.text,
-                            fontSize: 12,
-                            fontWeight: FontWeight.w500),
+                        'Movie',
+                        style: kHomeViewMovieGenreTextStyle,
                       ),
                       Text(
-                        " | ",
-                        style: TextStyle(
-                            color: TColor.text,
-                            fontSize: 12,
-                            fontWeight: FontWeight.w500),
+                        ' | ',
+                        style: kHomeViewMovieGenreTextStyle,
                       ),
                       Text(
-                        "Adventure",
-                        style: TextStyle(
-                            color: TColor.text,
-                            fontSize: 12,
-                            fontWeight: FontWeight.w500),
+                        'Adventure',
+                        style: kHomeViewMovieGenreTextStyle,
                       ),
                       Text(
-                        " | ",
-                        style: TextStyle(
-                            color: TColor.text,
-                            fontSize: 12,
-                            fontWeight: FontWeight.w500),
+                        ' | ',
+                        style: kHomeViewMovieGenreTextStyle,
                       ),
                       Text(
-                        "Comedy",
-                        style: TextStyle(
-                            color: TColor.text,
-                            fontSize: 12,
-                            fontWeight: FontWeight.w500),
+                        'Comedy',
+                        style: kHomeViewMovieGenreTextStyle,
                       ),
                       Text(
-                        " | ",
-                        style: TextStyle(
-                            color: TColor.text,
-                            fontSize: 12,
-                            fontWeight: FontWeight.w500),
+                        ' | ',
+                        style: kHomeViewMovieGenreTextStyle,
                       ),
                       Text(
-                        "Family",
-                        style: TextStyle(
-                            color: TColor.text,
-                            fontSize: 12,
-                            fontWeight: FontWeight.w500),
+                        'Family',
+                        style: kHomeViewMovieGenreTextStyle,
                       ),
                     ],
                   ),
                 ],
               ),
             ),
-            const SizedBox(
-              height: 15,
-            ),
+            const SizedBox(height: 15),
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 15),
-              child: Row(mainAxisAlignment: MainAxisAlignment.start, children: [
-                Text(
-                  "Watching",
-                  style: TextStyle(
-                      color: TColor.text,
-                      fontSize: 15,
-                      fontWeight: FontWeight.w700),
-                ),
-              ]),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.start,
+                children: [
+                  Text(
+                    'Watching',
+                    style: kCastDetailsViewKnownForTextStyle,
+                  ),
+                ],
+              ),
             ),
             SizedBox(
               height: media.width * 0.46,
               child: ListView.builder(
-                  padding:
-                      const EdgeInsets.symmetric(horizontal: 10, vertical: 10),
-                  scrollDirection: Axis.horizontal,
-                  itemCount: watchArr.length,
-                  itemBuilder: (context, index) {
-                    return InkWell(
-                      onTap: () {
-                        Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) =>
-                                    const TvShowDetailsView()));
-                      },
-                      child: Container(
-                        margin: const EdgeInsets.symmetric(horizontal: 6),
-                        color: TColor.card,
-                        child: ClipRect(
-                          child: Image.asset(
-                            watchArr[index].toString(),
-                            width: media.width * 0.33,
-                            height: media.width * 0.45,
-                            fit: BoxFit.cover,
-                          ),
+                padding: const EdgeInsets.symmetric(
+                  horizontal: 10,
+                  vertical: 10,
+                ),
+                scrollDirection: Axis.horizontal,
+                itemCount: watchArr.length,
+                itemBuilder: (context, index) {
+                  return InkWell(
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => const TvShowDetailsView(),
+                        ),
+                      );
+                    },
+                    child: Container(
+                      margin: const EdgeInsets.symmetric(horizontal: 6),
+                      color: kCard,
+                      child: ClipRect(
+                        child: Image.asset(
+                          watchArr[index].toString(),
+                          width: media.width * 0.33,
+                          height: media.width * 0.45,
+                          fit: BoxFit.cover,
                         ),
                       ),
-                    );
-                  }),
+                    ),
+                  );
+                },
+              ),
             ),
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 15),
-              child: Row(mainAxisAlignment: MainAxisAlignment.start, children: [
-                Text(
-                  "New & Upcoming",
-                  style: TextStyle(
-                      color: TColor.text,
-                      fontSize: 15,
-                      fontWeight: FontWeight.w700),
-                ),
-              ]),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.start,
+                children: [
+                  Text(
+                    'New & Upcoming',
+                    style: kCastDetailsViewKnownForTextStyle,
+                  ),
+                ],
+              ),
             ),
             SizedBox(
               height: media.width * 0.46,
               child: ListView.builder(
-                  padding:
-                      const EdgeInsets.symmetric(horizontal: 10, vertical: 10),
-                  scrollDirection: Axis.horizontal,
-                  itemCount: watchArr.length,
-                  itemBuilder: (context, index) {
-                    return InkWell(
-                      onTap: () {
-                        Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) =>
-                                    const TvShowDetailsView()));
-                      },
-                      child: Container(
-                        margin: const EdgeInsets.symmetric(horizontal: 6),
-                        color: TColor.card,
-                        child: ClipRect(
-                          child: Image.asset(
-                            watchArr[index].toString(),
-                            width: media.width * 0.33,
-                            height: media.width * 0.45,
-                            fit: BoxFit.cover,
-                          ),
+                padding: const EdgeInsets.symmetric(
+                  horizontal: 10,
+                  vertical: 10,
+                ),
+                scrollDirection: Axis.horizontal,
+                itemCount: watchArr.length,
+                itemBuilder: (context, index) {
+                  return InkWell(
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => const TvShowDetailsView(),
+                        ),
+                      );
+                    },
+                    child: Container(
+                      margin: const EdgeInsets.symmetric(horizontal: 6),
+                      color: kCard,
+                      child: ClipRect(
+                        child: Image.asset(
+                          watchArr[index].toString(),
+                          width: media.width * 0.33,
+                          height: media.width * 0.45,
+                          fit: BoxFit.cover,
                         ),
                       ),
-                    );
-                  }),
+                    ),
+                  );
+                },
+              ),
             ),
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 15),
-              child: Row(mainAxisAlignment: MainAxisAlignment.start, children: [
-                Text(
-                  "Action",
-                  style: TextStyle(
-                      color: TColor.text,
-                      fontSize: 15,
-                      fontWeight: FontWeight.w700),
-                ),
-              ]),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.start,
+                children: [
+                  Text(
+                    'Action',
+                    style: kCastDetailsViewKnownForTextStyle,
+                  ),
+                ],
+              ),
             ),
             SizedBox(
               height: media.width * 0.46,
               child: ListView.builder(
-                  padding:
-                      const EdgeInsets.symmetric(horizontal: 10, vertical: 10),
-                  scrollDirection: Axis.horizontal,
-                  itemCount: watchArr.length,
-                  itemBuilder: (context, index) {
-                    return InkWell(
-                      onTap: () {
-                        Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) =>
-                                    const TvShowDetailsView()));
-                      },
-                      child: Container(
-                        margin: const EdgeInsets.symmetric(horizontal: 6),
-                        color: TColor.card,
-                        child: ClipRect(
-                          child: Image.asset(
-                            watchArr[index].toString(),
-                            width: media.width * 0.33,
-                            height: media.width * 0.45,
-                            fit: BoxFit.cover,
-                          ),
+                padding: const EdgeInsets.symmetric(
+                  horizontal: 10,
+                  vertical: 10,
+                ),
+                scrollDirection: Axis.horizontal,
+                itemCount: watchArr.length,
+                itemBuilder: (context, index) {
+                  return InkWell(
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => const TvShowDetailsView(),
+                        ),
+                      );
+                    },
+                    child: Container(
+                      margin: const EdgeInsets.symmetric(horizontal: 6),
+                      color: kCard,
+                      child: ClipRect(
+                        child: Image.asset(
+                          watchArr[index].toString(),
+                          width: media.width * 0.33,
+                          height: media.width * 0.45,
+                          fit: BoxFit.cover,
                         ),
                       ),
-                    );
-                  }),
-            )
+                    ),
+                  );
+                },
+              ),
+            ),
           ],
         ),
       ),
