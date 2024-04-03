@@ -43,6 +43,11 @@ const TextStyle kCastDetailsViewBackTextStyle = TextStyle(
   fontWeight: FontWeight.w700,
 );
 
+TextStyle kTvShowDetailsViewDurationTextStyle = TextStyle(
+  color: kSubtext,
+  fontSize: 13,
+);
+
 TextStyle kCastDetailsViewNameTextStyle = TextStyle(
   color: kText,
   fontSize: 12,
@@ -50,6 +55,12 @@ TextStyle kCastDetailsViewNameTextStyle = TextStyle(
 
 TextStyle kHomeViewMovieGenreTextStyle = TextStyle(
   color: kText,
+  fontSize: 12,
+  fontWeight: FontWeight.w500,
+);
+
+TextStyle kTvShowDetailsViewDownloadTextStyle = TextStyle(
+  color: kPrimary2,
   fontSize: 12,
   fontWeight: FontWeight.w500,
 );

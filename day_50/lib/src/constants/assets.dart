@@ -8,3 +8,5 @@ const String kImgStar = 'lib/src/resources/assets/images/kImgStar.png';
 const String kImgStarFill = 'lib/src/resources/assets/images/kImgStarFill.png';
 const String kImgMovieDetailPicture = 'lib/src/resources/assets/images/kImgMovieDetailPicture.png';
 const String kImgPlayButton = 'lib/src/resources/assets/images/kImgPlayButton.png';
+const String kImgTvShow = 'lib/src/resources/assets/images/kImgTvShow.png';
+const String kImgTabDownloadButton = 'lib/src/resources/assets/images/kImgTabDownloadButton.png';

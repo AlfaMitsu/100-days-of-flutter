@@ -46,3 +46,46 @@ List castArr = [
     "image": "",
   },
 ];
+
+List epArr = [
+  {
+    "name": "1. The Kingpin Strategy",
+    "image": "lib/src/resources/assets/images/ep_thum_1.png",
+    "duration": "54 min"
+  },
+  {
+    "name": "2. The Cali KBG",
+    "image": "lib/src/resources/assets/images/ep_thum_2.png",
+    "duration": "55 min"
+  },
+  {
+    "name": "3. The Kingpin Strategy",
+    "image": "lib/src/resources/assets/images/ep_thum_1.png",
+    "duration": "50 min"
+  },
+  {
+    "name": "4. The Cali KBG",
+    "image": "lib/src/resources/assets/images/ep_thum_2.png",
+    "duration": "54 min"
+  },
+  {
+    "name": "5. The Kingpin Strategy",
+    "image": "lib/src/resources/assets/images/ep_thum_1.png",
+    "duration": "54 min"
+  },
+  {
+    "name": "6. The Cali KBG",
+    "image": "lib/src/resources/assets/images/ep_thum_2.png",
+    "duration": "55 min"
+  },
+  {
+    "name": "7. The Kingpin Strategy",
+    "image": "lib/src/resources/assets/images/ep_thum_1.png",
+    "duration": "50 min"
+  },
+  {
+    "name": "8. The Cali KBG",
+    "image": "lib/src/resources/assets/images/ep_thum_2.png",
+    "duration": "54 min"
+  },
+];
