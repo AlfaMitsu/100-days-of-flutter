@@ -1,4 +1,7 @@
+import 'package:day_53/src/constants/colors.dart';
 import 'package:flutter/material.dart';
+
+import '../../../../constants/styles.dart';
 
 class DetailCellButton extends StatelessWidget {
   final String name;
@@ -6,6 +9,7 @@ class DetailCellButton extends StatelessWidget {
   final IconData icon;
   final Color bgColor;
   final VoidCallback onPressed;
+
   const DetailCellButton(
       {super.key,
       required this.name,
@@ -19,19 +23,21 @@ class DetailCellButton extends StatelessWidget {
     return InkWell(
       onTap: onPressed,
       child: Container(
-        padding: const EdgeInsets.symmetric(vertical: 20, horizontal: 20),
+        padding: const EdgeInsets.symmetric(
+          vertical: 20,
+          horizontal: 20,
+        ),
         decoration: BoxDecoration(
-            color: bgColor, borderRadius: BorderRadius.circular(25)),
+          color: bgColor,
+          borderRadius: BorderRadius.circular(25),
+        ),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text(
               name,
               textAlign: TextAlign.left,
-              style: const TextStyle(
-                  color: Colors.white,
-                  fontSize: 15,
-                  fontWeight: FontWeight.w700),
+              style: kDetailCellButtonNameTextStyle,
             ),
             const Spacer(),
             Row(
@@ -40,10 +46,7 @@ class DetailCellButton extends StatelessWidget {
                   child: Text(
                     val,
                     textAlign: TextAlign.left,
-                    style: const TextStyle(
-                        color: Colors.white,
-                        fontSize: 18,
-                        fontWeight: FontWeight.w800),
+                    style: kDetailCellButtonValueTextStyle,
                   ),
                 ),
                 Container(
@@ -51,8 +54,9 @@ class DetailCellButton extends StatelessWidget {
                   height: 35,
                   padding: const EdgeInsets.all(4),
                   decoration: BoxDecoration(
-                      color: Colors.white,
-                      borderRadius: BorderRadius.circular(15)),
+                    color: kWhiteColor,
+                    borderRadius: BorderRadius.circular(15),
+                  ),
                   child: Icon(
                     icon,
                     size: 20,
@@ -60,7 +64,7 @@ class DetailCellButton extends StatelessWidget {
                   ),
                 ),
               ],
-            )
+            ),
           ],
         ),
       ),

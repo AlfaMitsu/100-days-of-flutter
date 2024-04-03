@@ -27,6 +27,18 @@ TextStyle kDetailViewDevicesConnectedTextStyle = TextStyle(
   fontWeight: FontWeight.w700,
 );
 
+TextStyle kDeviceRowNameTextStyle = TextStyle(
+  color: kText,
+  fontSize: 18,
+  fontWeight: FontWeight.w500,
+);
+
+const TextStyle kDetailCellButtonValueTextStyle = TextStyle(
+  color: kWhiteTextColor,
+  fontSize: 18,
+  fontWeight: FontWeight.w800,
+);
+
 TextStyle kDevicesCellButtonTextStyle = TextStyle(
   color: kText,
   fontSize: 17,
@@ -44,7 +56,25 @@ TextStyle kDetailViewStatusTextStyle = TextStyle(
   fontSize: 15,
 );
 
+const TextStyle kDetailCellButtonNameTextStyle = TextStyle(
+  color: kWhiteTextColor,
+  fontSize: 15,
+  fontWeight: FontWeight.w700,
+);
+
 TextStyle kHomeViewDevicesTextStyle = TextStyle(
   color: kUnselect,
   fontSize: 13,
+);
+
+TextStyle kDeviceRowSubNameTextStyle = TextStyle(
+  color: kUnselect.withOpacity(0.5),
+  fontSize: 13,
+  fontWeight: FontWeight.w500,
+);
+
+TextStyle kDeviceRowSpeedTextStyle = TextStyle(
+  color: kUnselect,
+  fontSize: 13,
+  fontWeight: FontWeight.w700,
 );
