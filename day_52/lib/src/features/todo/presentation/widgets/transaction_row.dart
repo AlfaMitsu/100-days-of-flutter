@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
-import 'color_extension.dart';
+import '../../../../constants/colors.dart';
+import '../../../../constants/styles.dart';
 
 class TransactionRow extends StatelessWidget {
   const TransactionRow({super.key});
@@ -11,60 +12,59 @@ class TransactionRow extends StatelessWidget {
       margin: const EdgeInsets.symmetric(vertical: 10),
       padding: const EdgeInsets.all(20),
       decoration: BoxDecoration(
-          color: Colors.white,
-          borderRadius: BorderRadius.circular(15),
-          boxShadow: const [
-            BoxShadow(
-                color: Color(0xFFD4CEFE), offset: Offset(0, 7), blurRadius: 15)
-          ]),
+        color: kWhiteColor,
+        borderRadius: BorderRadius.circular(15),
+        boxShadow: [
+          BoxShadow(
+            color: kTransactionRowShadow,
+            offset: const Offset(
+              0,
+              7,
+            ),
+            blurRadius: 15,
+          ),
+        ],
+      ),
       child: Row(
         children: [
           Container(
             width: 50,
             height: 50,
-            decoration: const BoxDecoration(
-                color: Color(0xffFFE5F3),
-                borderRadius: BorderRadius.all(Radius.circular(10))),
+            decoration: BoxDecoration(
+              color: kTransactionRowCellBg,
+              borderRadius: const BorderRadius.all(
+                Radius.circular(10),
+              ),
+            ),
             child: Icon(
               Icons.shopping_bag_outlined,
-              color: TColor.primary,
+              color: kPrimary,
               size: 25,
             ),
           ),
-          const SizedBox(
-            width: 15,
-          ),
-          const Expanded(
+          const SizedBox(width: 15),
+          Expanded(
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
-                  "Buyinf Blue Dress",
+                  'Buying Blue Dress',
                   maxLines: 1,
-                  style: TextStyle(
-                      color: Color(0xff5C5C5C),
-                      fontSize: 16,
-                      fontWeight: FontWeight.w700),
+                  style: kTransactionRowInfoTextStyle,
                 ),
                 Text(
-                  "6/5/2021 4:20pm",
+                  '6/5/2021 4:20pm',
                   maxLines: 1,
-                  style: TextStyle(
-                    color: Color(0xff5C5C5C),
-                    fontSize: 14,
-                  ),
+                  style: kTransactionRowDateAndTimeTextStyle,
                 ),
               ],
             ),
           ),
-          const SizedBox(
-            width: 15,
-          ),
+          const SizedBox(width: 15),
           const Text(
-            "-54\$",
+            '-54\$',
             maxLines: 1,
-            style: TextStyle(
-                color: Colors.red, fontSize: 18, fontWeight: FontWeight.w700),
+            style: kTransactionRowExpenseTextStyle,
           ),
         ],
       ),

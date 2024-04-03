@@ -13,6 +13,10 @@ Color get kDropDownIconColor => const Color(0xFF02C487);
 Color get kBox => const Color(0xFFEBFBFF);
 Color get kExpense => const Color(0xFF71C1D5);
 Color get kDropUpIconColor => const Color(0xFFFC6158);
+Color get kTransactionRowShadow => const Color(0xFFD4CEFE);
+Color get kTransactionRowCellBg => const Color(0xFFFFE5F3);
+Color get kTransactionRowText => const Color(0xFF5C5C5C);
+Color get kTransactionRowDateAndTime => const Color(0xFF5C5C5C);
 
 // Common Colors
 

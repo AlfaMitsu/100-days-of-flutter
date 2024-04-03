@@ -21,6 +21,12 @@ TextStyle kHomeViewTransactionTextStyle = TextStyle(
   fontWeight: FontWeight.w700,
 );
 
+const TextStyle kTransactionRowExpenseTextStyle = TextStyle(
+  color: kRedColor,
+  fontSize: 18,
+  fontWeight: FontWeight.w700,
+);
+
 TextStyle kHomeViewIncomeCellTextStyle = TextStyle(
   color: kIncome,
   fontSize: 16,
@@ -31,4 +37,15 @@ TextStyle kHomeViewExpenseCellTextStyle = TextStyle(
   color: kExpense,
   fontSize: 16,
   fontWeight: FontWeight.w700,
+);
+
+TextStyle kTransactionRowInfoTextStyle = TextStyle(
+  color: kTransactionRowText,
+  fontSize: 16,
+  fontWeight: FontWeight.w700,
+);
+
+TextStyle kTransactionRowDateAndTimeTextStyle = TextStyle(
+  color: kTransactionRowDateAndTime,
+  fontSize: 14,
 );
