@@ -16,7 +16,7 @@ class _HomeViewState extends State<HomeView> {
     return Scaffold(
       appBar: AppBar(
         title: const Text(
-          "Home",
+          'Home',
           style: TextStyle(fontWeight: FontWeight.w700),
         ),
       ),
@@ -30,11 +30,13 @@ class _HomeViewState extends State<HomeView> {
                 onPressed: () {
                   Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (context) => const ItemsView()),
+                    MaterialPageRoute(
+                      builder: (context) => const ItemsView(),
+                    ),
                   );
                 },
                 child: const Text(
-                  "Items List",
+                  'Items List',
                   style: TextStyle(fontWeight: FontWeight.w700),
                 ),
               ),
@@ -47,11 +49,13 @@ class _HomeViewState extends State<HomeView> {
                 onPressed: () {
                   Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (context) => const UserView()),
+                    MaterialPageRoute(
+                      builder: (context) => const UserView(),
+                    ),
                   );
                 },
                 child: const Text(
-                  "User List",
+                  'User List',
                   style: TextStyle(fontWeight: FontWeight.w700),
                 ),
               ),

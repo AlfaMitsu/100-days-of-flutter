@@ -11,17 +11,19 @@ import 'src/features/todo/presentation/views/home_view.dart';
 void main() {
   Bloc.observer = MyBlocObserver();
 
-  runApp(MultiRepositoryProvider(
-    providers: [
-      RepositoryProvider(
-        create: (context) => ItemsRepo(),
-      ),
-      RepositoryProvider(
-        create: (context) => UserRepo(),
-      ),
-    ],
-    child: const MyApp(),
-  ));
+  runApp(
+    MultiRepositoryProvider(
+      providers: [
+        RepositoryProvider(
+          create: (context) => ItemsRepo(),
+        ),
+        RepositoryProvider(
+          create: (context) => UserRepo(),
+        ),
+      ],
+      child: const MyApp(),
+    ),
+  );
 }
 
 class MyApp extends StatelessWidget {
