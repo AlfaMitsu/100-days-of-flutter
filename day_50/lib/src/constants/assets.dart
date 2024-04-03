@@ -6,3 +6,5 @@ const String kImgHomeImageDark = 'lib/src/resources/assets/images/kImgHomeImageD
 const String kImgHomeImageLight = 'lib/src/resources/assets/images/kImgHomeImageLight.png';
 const String kImgStar = 'lib/src/resources/assets/images/kImgStar.png';
 const String kImgStarFill = 'lib/src/resources/assets/images/kImgStarFill.png';
+const String kImgMovieDetailPicture = 'lib/src/resources/assets/images/kImgMovieDetailPicture.png';
+const String kImgPlayButton = 'lib/src/resources/assets/images/kImgPlayButton.png';

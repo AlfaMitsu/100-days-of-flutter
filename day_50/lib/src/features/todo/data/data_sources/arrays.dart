@@ -27,3 +27,22 @@ List watchArr = [
   "lib/src/resources/assets/images/mov_3.png",
   "lib/src/resources/assets/images/mov_4.png",
 ];
+
+List castArr = [
+  {
+    "name": "Isabela Moner",
+    "image": "",
+  },
+  {
+    "name": "Michael Peña",
+    "image": "lib/src/resources/assets/images/Michael Pena.png",
+  },
+  {
+    "name": "Eva Longoria",
+    "image": "lib/src/resources/assets/images/Eva Longoria.png",
+  },
+  {
+    "name": "Eugenio Derbez",
+    "image": "",
+  },
+];

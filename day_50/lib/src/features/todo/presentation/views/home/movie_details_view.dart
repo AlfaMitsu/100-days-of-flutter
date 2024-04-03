@@ -3,8 +3,12 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 
-import '../../widgets/color_extension.dart';
+import '../../../../../constants/assets.dart';
+import '../../../../../constants/colors.dart';
+import '../../../../../constants/styles.dart';
+import '../../../data/data_sources/arrays.dart';
 import '../../widgets/round_button.dart';
+import '../main_tab_view.dart';
 import 'cast_details_view.dart';
 
 class MovieDetailsView extends StatefulWidget {
@@ -15,41 +19,25 @@ class MovieDetailsView extends StatefulWidget {
 }
 
 class _MovieDetailsViewState extends State<MovieDetailsView> {
-  List castArr = [
-    {
-      "name": "Isabela Moner",
-      "image": "",
-    },
-    {
-      "name": "Michael Peña",
-      "image": "lib/src/resources/assets/images/Michael Pena.png",
-    },
-    {
-      "name": "Eva Longoria",
-      "image": "lib/src/resources/assets/images/Eva Longoria.png",
-    },
-    {
-      "name": "Eugenio Derbez",
-      "image": "",
-    },
-  ];
-
   @override
   void initState() {
     super.initState();
-    FBroadcast.instance().register("change_mode", (value, callback) {
-      if (mounted) {
-        setState(() {});
-      }
-    });
+    FBroadcast.instance().register(
+      'change_mode',
+      (value, callback) {
+        if (mounted) {
+          setState(() {});
+        }
+      },
+    );
   }
 
   @override
   Widget build(BuildContext context) {
-    var media = MediaQuery.of(context).size;
+    var size = MediaQuery.of(context).size;
 
     return Scaffold(
-      backgroundColor: TColor.bg,
+      backgroundColor: kBg,
       body: Stack(
         alignment: Alignment.topCenter,
         children: [
@@ -61,122 +49,100 @@ class _MovieDetailsViewState extends State<MovieDetailsView> {
                   alignment: Alignment.bottomCenter,
                   children: [
                     SizedBox(
-                      width: media.width,
-                      height: media.width * 0.8,
+                      width: size.width,
+                      height: size.width * 0.8,
                       child: ClipRect(
                         child: Image.asset(
-                          "lib/src/resources/assets/images/mov_detail.png",
-                          width: media.width,
-                          height: media.width,
+                          kImgMovieDetailPicture,
+                          width: size.width,
+                          height: size.width,
                           fit: BoxFit.cover,
                         ),
                       ),
                     ),
                     Container(
-                      width: media.width,
-                      height: media.width * 0.8,
+                      width: size.width,
+                      height: size.width * 0.8,
                       decoration: BoxDecoration(
-                          gradient: LinearGradient(
-                              colors: [
-                            TColor.bgDark,
-                            TColor.bgDark.withOpacity(0),
-                            TColor.bg.withOpacity(0),
-                            TColor.bg
+                        gradient: LinearGradient(
+                          colors: [
+                            kBgDark,
+                            kBgDark.withOpacity(0),
+                            kBg.withOpacity(0),
+                            kBg
                           ],
-                              begin: Alignment.topCenter,
-                              end: Alignment.bottomCenter)),
+                          begin: Alignment.topCenter,
+                          end: Alignment.bottomCenter,
+                        ),
+                      ),
                     ),
                     Container(
-                      width: media.width,
-                      height: media.width * 0.8,
+                      width: size.width,
+                      height: size.width * 0.8,
                       alignment: Alignment.center,
                       child: InkWell(
                         onTap: () {},
-                        child: Image.asset("lib/src/resources/assets/images/play-button.png",
-                            width: 55, height: 55),
+                        child: Image.asset(
+                          kImgPlayButton,
+                          width: 55,
+                          height: 55,
+                        ),
                       ),
                     ),
                     Padding(
                       padding: const EdgeInsets.symmetric(
-                          vertical: 20, horizontal: 15),
+                        vertical: 20,
+                        horizontal: 15,
+                      ),
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Text(
-                            "Dora and the lost city of gold",
-                            style: TextStyle(
-                                color: TColor.bgText,
-                                fontSize: 19,
-                                fontWeight: FontWeight.w500),
+                            'Dora and the lost city of gold',
+                            style: kMovieDetailsViewMovieName,
                           ),
-                          const SizedBox(
-                            height: 8,
-                          ),
+                          const SizedBox(height: 8),
                           Row(
                             mainAxisAlignment: MainAxisAlignment.start,
                             children: [
                               Text(
-                                "Movie",
-                                style: TextStyle(
-                                    color: TColor.bgText,
-                                    fontSize: 12,
-                                    fontWeight: FontWeight.w500),
+                                'Movie',
+                                style: kHomeViewMovieGenreTextStyle,
                               ),
                               Text(
-                                " | ",
-                                style: TextStyle(
-                                    color: TColor.bgText,
-                                    fontSize: 12,
-                                    fontWeight: FontWeight.w500),
+                                ' | ',
+                                style: kHomeViewMovieGenreTextStyle,
                               ),
                               Text(
-                                "Adventure",
-                                style: TextStyle(
-                                    color: TColor.bgText,
-                                    fontSize: 12,
-                                    fontWeight: FontWeight.w500),
+                                'Adventure',
+                                style: kHomeViewMovieGenreTextStyle,
                               ),
                               Text(
-                                " | ",
-                                style: TextStyle(
-                                    color: TColor.bgText,
-                                    fontSize: 12,
-                                    fontWeight: FontWeight.w500),
+                                ' | ',
+                                style: kHomeViewMovieGenreTextStyle,
                               ),
                               Text(
-                                "Comedy",
-                                style: TextStyle(
-                                    color: TColor.bgText,
-                                    fontSize: 12,
-                                    fontWeight: FontWeight.w500),
+                                'Comedy',
+                                style: kHomeViewMovieGenreTextStyle,
                               ),
                               Text(
-                                " | ",
-                                style: TextStyle(
-                                    color: TColor.bgText,
-                                    fontSize: 12,
-                                    fontWeight: FontWeight.w500),
+                                ' | ',
+                                style: kHomeViewMovieGenreTextStyle,
                               ),
                               Text(
-                                "Family",
-                                style: TextStyle(
-                                    color: TColor.bgText,
-                                    fontSize: 12,
-                                    fontWeight: FontWeight.w500),
+                                'Family',
+                                style: kHomeViewMovieGenreTextStyle,
                               ),
                             ],
                           ),
                         ],
                       ),
-                    )
+                    ),
                   ],
                 ),
                 Text(
-                  "4.0",
-                  style: TextStyle(
-                    color: TColor.bgText,
-                    fontSize: 33,
-                  ),
+                  '4.0',
+                  style: kHomeViewRatingTextStyle,
                 ),
                 IgnorePointer(
                   ignoring: true,
@@ -187,11 +153,11 @@ class _MovieDetailsViewState extends State<MovieDetailsView> {
                     allowHalfRating: true,
                     itemCount: 5,
                     itemSize: 18,
-                    itemPadding: const EdgeInsets.symmetric(horizontal: 4.0),
+                    itemPadding: const EdgeInsets.symmetric(horizontal: 4),
                     ratingWidget: RatingWidget(
-                      full: Image.asset("lib/src/resources/assets/images/star_fill.png"),
-                      half: Image.asset("lib/src/resources/assets/images/star.png"),
-                      empty: Image.asset("lib/src/resources/assets/images/star.png"),
+                      full: Image.asset(kImgStarFill),
+                      half: Image.asset(kImgStar),
+                      empty: Image.asset(kImgStar),
                     ),
                     onRatingUpdate: (rating) {
                       if (kDebugMode) {
@@ -200,105 +166,92 @@ class _MovieDetailsViewState extends State<MovieDetailsView> {
                     },
                   ),
                 ),
-                const SizedBox(
-                  height: 15,
-                ),
+                const SizedBox(height: 15),
                 Padding(
                   padding: const EdgeInsets.all(15),
                   child: Text(
-                    "Having spent most of her life exploring the jungle, nothing could prepare Dora for her most dangerous adventure yet — high school. ",
-                    style: TextStyle(
-                      color: TColor.text,
-                      fontSize: 15,
-                    ),
+                    'Having spent most of her life exploring the jungle, nothing could prepare Dora for her most dangerous adventure yet — high school. ',
+                    style: kCastDetailsViewDescriptionTextStyle,
                   ),
                 ),
-                const SizedBox(
-                  height: 15,
-                ),
+                const SizedBox(height: 15),
                 SizedBox(
                   width: 150,
                   child: RoundButton(
-                    title: "WATCH NOW",
+                    title: 'WATCH NOW',
                     height: 40,
                     onPressed: () {
-                      //  Navigator.push(
-                      //     context,
-                      //     MaterialPageRoute(
-                      //         builder: (context) =>
-                      //             const MainTabView()));
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => const MainTabView(),
+                        ),
+                      );
                     },
                   ),
                 ),
-                const SizedBox(
-                  height: 25,
-                ),
+                const SizedBox(height: 25),
                 Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 15),
                   child: Row(
-                      mainAxisAlignment: MainAxisAlignment.start,
-                      children: [
-                        Text(
-                          "Cast",
-                          style: TextStyle(
-                              color: TColor.text,
-                              fontSize: 15,
-                              fontWeight: FontWeight.w700),
-                        ),
-                      ]),
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    children: [
+                      Text(
+                        'Cast',
+                        style: kCastDetailsViewKnownForTextStyle,
+                      ),
+                    ],
+                  ),
                 ),
                 SizedBox(
-                  height: (media.width * 0.34) + 40,
+                  height: (size.width * 0.34) + 40,
                   child: ListView.builder(
-                      padding: const EdgeInsets.symmetric(
-                          horizontal: 10, vertical: 10),
-                      scrollDirection: Axis.horizontal,
-                      itemCount: castArr.length,
-                      itemBuilder: (context, index) {
-                        var cObj = castArr[index] as Map? ?? {};
-                        var image = cObj["image"].toString();
-
-                        return InkWell(
-                          onTap: () {
-                            Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                    builder: (context) =>
-                                        const CastDetailsView()));
-                          },
-                          child: Column(
-                            children: [
-                              Container(
-                                margin:
-                                    const EdgeInsets.symmetric(horizontal: 6),
-                                color: TColor.castBG,
-                                width: media.width * 0.25,
-                                height: media.width * 0.32,
-                                child: image != ""
-                                    ? ClipRect(
-                                        child: Image.asset(
-                                          image,
-                                          width: media.width * 0.25,
-                                          height: media.width * 0.32,
-                                          fit: BoxFit.contain,
-                                        ),
-                                      )
-                                    : null,
-                              ),
-                              const SizedBox(
-                                height: 4,
-                              ),
-                              Text(
-                                cObj["name"].toString(),
-                                style: TextStyle(
-                                  color: TColor.text,
-                                  fontSize: 12,
-                                ),
-                              ),
-                            ],
-                          ),
-                        );
-                      }),
+                    padding: const EdgeInsets.symmetric(
+                      horizontal: 10,
+                      vertical: 10,
+                    ),
+                    scrollDirection: Axis.horizontal,
+                    itemCount: castArr.length,
+                    itemBuilder: (context, index) {
+                      var cObj = castArr[index] as Map? ?? {};
+                      var image = cObj['image'].toString();
+                      return InkWell(
+                        onTap: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => const CastDetailsView(),
+                            ),
+                          );
+                        },
+                        child: Column(
+                          children: [
+                            Container(
+                              margin: const EdgeInsets.symmetric(horizontal: 6),
+                              color: kCastBG,
+                              width: size.width * 0.25,
+                              height: size.width * 0.32,
+                              child: image != ''
+                                  ? ClipRect(
+                                      child: Image.asset(
+                                        image,
+                                        width: size.width * 0.25,
+                                        height: size.width * 0.32,
+                                        fit: BoxFit.contain,
+                                      ),
+                                    )
+                                  : null,
+                            ),
+                            const SizedBox(height: 4),
+                            Text(
+                              cObj['name'].toString(),
+                              style: kCastDetailsViewNameTextStyle,
+                            ),
+                          ],
+                        ),
+                      );
+                    },
+                  ),
                 ),
               ],
             ),
@@ -307,7 +260,7 @@ class _MovieDetailsViewState extends State<MovieDetailsView> {
             child: Column(
               children: [
                 AppBar(
-                  backgroundColor: Colors.transparent,
+                  backgroundColor: kTransparent,
                   elevation: 0,
                   leadingWidth: 100,
                   leading: InkWell(
@@ -320,21 +273,16 @@ class _MovieDetailsViewState extends State<MovieDetailsView> {
                         mainAxisSize: MainAxisSize.min,
                         children: [
                           Image.asset(
-                            "lib/src/resources/assets/images/back_btn.png",
+                            kImgBackButton,
                             width: 13,
                             height: 13,
                             color: Colors.white,
                           ),
-                          const SizedBox(
-                            width: 8,
-                          ),
+                          const SizedBox(width: 8),
                           const Text(
-                            "BACK",
-                            style: TextStyle(
-                                color: Colors.white,
-                                fontSize: 14,
-                                fontWeight: FontWeight.w700),
-                          )
+                            'BACK',
+                            style: kCastDetailsViewBackTextStyle,
+                          ),
                         ],
                       ),
                     ),
@@ -342,21 +290,21 @@ class _MovieDetailsViewState extends State<MovieDetailsView> {
                 ),
               ],
             ),
-          )
+          ),
         ],
       ),
       floatingActionButton: FloatingActionButton(
-        backgroundColor: TColor.primary1,
+        backgroundColor: kPrimary1,
         onPressed: () {
-          TColor.tModeDark = !TColor.tModeDark;
-          FBroadcast.instance().broadcast("change_mode");
+          kTModeDark = !kTModeDark;
+          FBroadcast.instance().broadcast('change_mode');
           if (mounted) {
             setState(() {});
           }
         },
         child: Icon(
-          TColor.tModeDark ? Icons.light_mode : Icons.dark_mode,
-          color: TColor.text,
+          kTModeDark ? Icons.light_mode : Icons.dark_mode,
+          color: kText,
         ),
       ),
     );

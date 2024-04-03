@@ -33,7 +33,7 @@ class _HomeViewState extends State<HomeView> {
 
   @override
   Widget build(BuildContext context) {
-    var media = MediaQuery.of(context).size;
+    var size = MediaQuery.of(context).size;
 
     return Scaffold(
       backgroundColor: kBg,
@@ -57,13 +57,13 @@ class _HomeViewState extends State<HomeView> {
                     alignment: Alignment.bottomCenter,
                     children: [
                       SizedBox(
-                        width: media.width,
-                        height: media.width * 1.35,
+                        width: size.width,
+                        height: size.width * 1.35,
                         child: ClipRect(
                           child: Image.asset(
                             kTModeDark ? kImgHomeImageDark : kImgHomeImageLight,
-                            width: media.width,
-                            height: media.width,
+                            width: size.width,
+                            height: size.width,
                             fit: BoxFit.cover,
                           ),
                         ),
@@ -147,7 +147,7 @@ class _HomeViewState extends State<HomeView> {
               ),
             ),
             SizedBox(
-              height: media.width * 0.46,
+              height: size.width * 0.46,
               child: ListView.builder(
                 padding: const EdgeInsets.symmetric(
                   horizontal: 10,
@@ -171,8 +171,8 @@ class _HomeViewState extends State<HomeView> {
                       child: ClipRect(
                         child: Image.asset(
                           watchArr[index].toString(),
-                          width: media.width * 0.33,
-                          height: media.width * 0.45,
+                          width: size.width * 0.33,
+                          height: size.width * 0.45,
                           fit: BoxFit.cover,
                         ),
                       ),
@@ -194,7 +194,7 @@ class _HomeViewState extends State<HomeView> {
               ),
             ),
             SizedBox(
-              height: media.width * 0.46,
+              height: size.width * 0.46,
               child: ListView.builder(
                 padding: const EdgeInsets.symmetric(
                   horizontal: 10,
@@ -218,8 +218,8 @@ class _HomeViewState extends State<HomeView> {
                       child: ClipRect(
                         child: Image.asset(
                           watchArr[index].toString(),
-                          width: media.width * 0.33,
-                          height: media.width * 0.45,
+                          width: size.width * 0.33,
+                          height: size.width * 0.45,
                           fit: BoxFit.cover,
                         ),
                       ),
@@ -241,7 +241,7 @@ class _HomeViewState extends State<HomeView> {
               ),
             ),
             SizedBox(
-              height: media.width * 0.46,
+              height: size.width * 0.46,
               child: ListView.builder(
                 padding: const EdgeInsets.symmetric(
                   horizontal: 10,
@@ -265,8 +265,8 @@ class _HomeViewState extends State<HomeView> {
                       child: ClipRect(
                         child: Image.asset(
                           watchArr[index].toString(),
-                          width: media.width * 0.33,
-                          height: media.width * 0.45,
+                          width: size.width * 0.33,
+                          height: size.width * 0.45,
                           fit: BoxFit.cover,
                         ),
                       ),

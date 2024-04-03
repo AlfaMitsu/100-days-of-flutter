@@ -20,6 +20,12 @@ TextStyle kCastDetailsViewSurnameTextStyle = TextStyle(
   fontWeight: FontWeight.w500,
 );
 
+TextStyle kMovieDetailsViewMovieName = TextStyle(
+  color: kBgText,
+  fontSize: 19,
+  fontWeight: FontWeight.w500,
+);
+
 TextStyle kCastDetailsViewDescriptionTextStyle = TextStyle(
   color: kText,
   fontSize: 15,
@@ -45,5 +51,5 @@ TextStyle kCastDetailsViewNameTextStyle = TextStyle(
 TextStyle kHomeViewMovieGenreTextStyle = TextStyle(
   color: kText,
   fontSize: 12,
-  fontWeight: FontWeight.w500
+  fontWeight: FontWeight.w500,
 );
