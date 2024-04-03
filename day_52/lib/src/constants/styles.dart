@@ -49,3 +49,8 @@ TextStyle kTransactionRowDateAndTimeTextStyle = TextStyle(
   color: kTransactionRowDateAndTime,
   fontSize: 14,
 );
+
+const TextStyle kBarViewNameTextStyle = TextStyle(
+  color: kGreyColor,
+  fontSize: 12,
+);

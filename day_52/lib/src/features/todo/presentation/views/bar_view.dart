@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
-import '../widgets/color_extension.dart';
+import '../../../../constants/colors.dart';
+import '../../../../constants/styles.dart';
 
 class BarView extends StatelessWidget {
   final Map cObj;
@@ -16,8 +17,8 @@ class BarView extends StatelessWidget {
   Widget build(BuildContext context) {
     var height = 180 - 16 - 16;
 
-    var incomeVal = double.tryParse(cObj["income"].toString()) ?? 0.0;
-    var expenseVal = double.tryParse(cObj["expense"].toString()) ?? 0.0;
+    var incomeVal = double.tryParse(cObj['income'].toString()) ?? 0.0;
+    var expenseVal = double.tryParse(cObj['expense'].toString()) ?? 0.0;
 
     return Column(
       mainAxisAlignment: MainAxisAlignment.end,
@@ -27,28 +28,24 @@ class BarView extends StatelessWidget {
             width: barWidth,
             height: expenseVal * height / maxVal,
             decoration: BoxDecoration(
-                color: TColor.secondary,
-                borderRadius: BorderRadius.circular(5)),
+              color: kSecondary,
+              borderRadius: BorderRadius.circular(5),
+            ),
           ),
-        const SizedBox(
-          height: 4,
-        ),
+        const SizedBox(height: 4),
         if (incomeVal != 0.0)
           Container(
             width: barWidth,
             height: incomeVal * height / maxVal,
             decoration: BoxDecoration(
-                color: TColor.primary, borderRadius: BorderRadius.circular(5)),
+              color: kPrimary,
+              borderRadius: BorderRadius.circular(5),
+            ),
           ),
-        const SizedBox(
-          height: 4,
-        ),
+        const SizedBox(height: 4),
         Text(
-          cObj["name"].toString(),
-          style: const TextStyle(
-            color: Colors.grey,
-            fontSize: 12,
-          ),
+          cObj['name'].toString(),
+          style: kBarViewNameTextStyle,
         ),
       ],
     );
