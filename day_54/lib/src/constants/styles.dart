@@ -38,3 +38,9 @@ TextStyle kHomeViewInfoTextStyle = TextStyle(
   fontSize: 14,
   fontWeight: FontWeight.w700,
 );
+
+TextStyle kTasksRowDTimeTextStyle = TextStyle(
+  fontSize: 14,
+  color: kPrimary,
+  fontWeight: FontWeight.w700,
+);

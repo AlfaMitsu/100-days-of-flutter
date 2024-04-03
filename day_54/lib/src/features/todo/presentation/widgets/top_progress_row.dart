@@ -6,12 +6,14 @@ class TopProgressRow extends StatelessWidget {
   final Color bgColor;
   final Color textColor;
   final bool isActivePadding;
-  const TopProgressRow(
-      {super.key,
-      required this.tObj,
-      required this.bgColor,
-      required this.textColor,
-      this.isActivePadding = false});
+
+  const TopProgressRow({
+    super.key,
+    required this.tObj,
+    required this.bgColor,
+    required this.textColor,
+    this.isActivePadding = false,
+  });
 
   @override
   Widget build(BuildContext context) {
