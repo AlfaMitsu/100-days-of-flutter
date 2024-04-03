@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../../../../constants/colors.dart';
+
 class BlankView extends StatefulWidget {
   const BlankView({super.key});
 
@@ -10,8 +12,8 @@ class BlankView extends StatefulWidget {
 class _BlankViewState extends State<BlankView> {
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
-        // backgroundColor: TColor.primary,
-        );
+    return Scaffold(
+      backgroundColor: kPrimary,
+    );
   }
 }
