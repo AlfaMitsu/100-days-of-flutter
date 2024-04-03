@@ -45,6 +45,11 @@ TextStyle kTransactionRowInfoTextStyle = TextStyle(
   fontWeight: FontWeight.w700,
 );
 
+TextStyle kUserNameTextStyle = TextStyle(
+  color: kUserName,
+  fontSize: 15,
+);
+
 TextStyle kTransactionRowDateAndTimeTextStyle = TextStyle(
   color: kTransactionRowDateAndTime,
   fontSize: 14,

@@ -18,6 +18,8 @@ Color get kTransactionRowCellBg => const Color(0xFFFFE5F3);
 Color get kTransactionRowText => const Color(0xFF5C5C5C);
 Color get kTransactionRowDateAndTime => const Color(0xFF5C5C5C);
 Color get kTabIconTextButton => const Color(0xFF747474);
+Color get kUserName => const Color(0xFF5C5C5C);
+Color get kTransactionListRowBox => const Color(0xFFEFEEFC);
 
 // Common Colors
 
