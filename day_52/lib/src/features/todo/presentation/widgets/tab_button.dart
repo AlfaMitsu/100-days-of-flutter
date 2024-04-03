@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'color_extension.dart';
+import '../../../../constants/colors.dart';
 
 class TabButton extends StatelessWidget {
   final IconData icon;
@@ -21,7 +21,7 @@ class TabButton extends StatelessWidget {
         onTap: onPressed,
         child: Icon(
           icon,
-          color: isSelect ? TColor.secondary : Colors.white,
+          color: isSelect ? kSecondary : kWhiteColor,
           size: 32,
         ),
       ),
