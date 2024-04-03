@@ -18,20 +18,34 @@ class _SegmentedButtonMultipleChoiceState
   Widget build(BuildContext context) {
     return SegmentedButton<Sizes>(
       segments: const <ButtonSegment<Sizes>>[
-        ButtonSegment<Sizes>(value: Sizes.extraSmall, label: Text('XS')),
-        ButtonSegment<Sizes>(value: Sizes.small, label: Text('S')),
-        ButtonSegment<Sizes>(value: Sizes.medium, label: Text('M')),
+        ButtonSegment<Sizes>(
+          value: Sizes.extraSmall,
+          label: Text('XS'),
+        ),
+        ButtonSegment<Sizes>(
+          value: Sizes.small,
+          label: Text('S'),
+        ),
+        ButtonSegment<Sizes>(
+          value: Sizes.medium,
+          label: Text('M'),
+        ),
         ButtonSegment<Sizes>(
           value: Sizes.large,
           label: Text('L'),
         ),
-        ButtonSegment<Sizes>(value: Sizes.extraLarge, label: Text('XL')),
+        ButtonSegment<Sizes>(
+          value: Sizes.extraLarge,
+          label: Text('XL'),
+        ),
       ],
       selected: selection,
       onSelectionChanged: (Set<Sizes> newSelection) {
-        setState(() {
-          selection = newSelection;
-        });
+        setState(
+          () {
+            selection = newSelection;
+          },
+        );
       },
       multiSelectionEnabled: true,
     );
