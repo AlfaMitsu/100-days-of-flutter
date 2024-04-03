@@ -32,6 +32,12 @@ TextStyle kMovieDetailsViewMovieName = TextStyle(
   fontWeight: FontWeight.w500,
 );
 
+TextStyle kRoundTextFieldHintTextTextStyle = TextStyle(
+  color: kSubtext,
+  fontSize: 17,
+  fontWeight: FontWeight.w400,
+);
+
 TextStyle kCastDetailsViewDescriptionTextStyle = TextStyle(
   color: kText,
   fontSize: 15,
@@ -60,10 +66,19 @@ const TextStyle kCastDetailsViewBackTextStyle = TextStyle(
   fontWeight: FontWeight.w700,
 );
 
+TextStyle kRoundButtonTextStyle = TextStyle(
+  color: kBtnText,
+  fontSize: 14,
+  fontWeight: FontWeight.w700,
+);
+
 TextStyle kTvShowDetailsViewDurationTextStyle = TextStyle(
   color: kSubtext,
   fontSize: 13,
 );
+
+TextStyle kRoundTextFieldTextStyle =
+    TextStyle(color: kText, fontSize: 13, fontWeight: FontWeight.w700);
 
 TextStyle kCastDetailsViewNameTextStyle = TextStyle(
   color: kText,

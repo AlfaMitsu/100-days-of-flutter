@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
-import 'color_extension.dart';
+import '../../../../constants/colors.dart';
+import '../../../../constants/styles.dart';
 
 class RoundTextField extends StatelessWidget {
   final TextEditingController? controller;
@@ -11,15 +12,16 @@ class RoundTextField extends StatelessWidget {
   final Widget? left;
   final Widget? right;
 
-  const RoundTextField(
-      {super.key,
-      required this.title,
-      this.controller,
-      this.hintText,
-      this.keyboardType,
-      this.obscureText = false,
-      this.left,
-      this.right});
+  const RoundTextField({
+    super.key,
+    required this.title,
+    this.controller,
+    this.hintText,
+    this.keyboardType,
+    this.obscureText = false,
+    this.left,
+    this.right,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -28,19 +30,22 @@ class RoundTextField extends StatelessWidget {
       children: [
         Text(
           title,
-          style: TextStyle(
-              color: TColor.text, fontSize: 13, fontWeight: FontWeight.w700),
+          style: kRoundTextFieldTextStyle,
         ),
-        const SizedBox(
-          height: 8,
-        ),
+        const SizedBox(height: 8),
         Container(
           decoration: BoxDecoration(
-            color: TColor.card,
+            color: kCard,
             borderRadius: BorderRadius.circular(9),
             boxShadow: const [
               BoxShadow(
-                  color: Colors.black12, blurRadius: 6, offset: Offset(0, 4))
+                color: Colors.black12,
+                blurRadius: 6,
+                offset: Offset(
+                  0,
+                  4,
+                ),
+              ),
             ],
           ),
           child: Row(
@@ -54,22 +59,21 @@ class RoundTextField extends StatelessWidget {
                   obscureText: obscureText,
                   keyboardType: keyboardType,
                   decoration: InputDecoration(
-                    contentPadding:
-                        const EdgeInsets.symmetric(vertical: 0, horizontal: 15),
+                    contentPadding: const EdgeInsets.symmetric(
+                      vertical: 0,
+                      horizontal: 15,
+                    ),
                     enabledBorder: InputBorder.none,
                     focusedBorder: InputBorder.none,
                     hintText: hintText,
-                    hintStyle: TextStyle(
-                        color: TColor.subtext,
-                        fontSize: 17,
-                        fontWeight: FontWeight.w400),
+                    hintStyle: kRoundTextFieldHintTextTextStyle,
                   ),
                 ),
               ),
               right ?? const SizedBox()
             ],
           ),
-        )
+        ),
       ],
     );
   }
