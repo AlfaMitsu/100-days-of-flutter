@@ -37,6 +37,12 @@ TextStyle kCastDetailsViewKnownForTextStyle = TextStyle(
   fontWeight: FontWeight.w700,
 );
 
+TextStyle kDownloadViewNameTextStyle = TextStyle(
+  color: kText,
+  fontSize: 15,
+  fontWeight: FontWeight.w700,
+);
+
 const TextStyle kCastDetailsViewBackTextStyle = TextStyle(
   color: kWhiteColor,
   fontSize: 14,
