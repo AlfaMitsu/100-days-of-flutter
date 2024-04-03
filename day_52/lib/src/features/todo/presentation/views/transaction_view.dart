@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import '../../data/data_sources/data.dart';
 import '../widgets/selection_button.dart';
 import '../widgets/tab_icon_text_button.dart';
 import '../widgets/transaction_list_row.dart';
@@ -16,13 +17,6 @@ class _TransactionViewState extends State<TransactionView> {
 
   int selectType = 0;
 
-  List selectTypeList = [
-    {"name": "Send", "tag": 0, "icon": Icons.arrow_upward_outlined},
-    {"name": "Recived", "tag": 1, "icon": Icons.arrow_downward_outlined},
-    {"name": "Transaction", "tag": 2, "icon": Icons.compare_arrows_outlined},
-    {"name": "Categories", "tag": 3, "icon": Icons.apps}
-  ];
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -30,76 +24,91 @@ class _TransactionViewState extends State<TransactionView> {
         mainAxisAlignment: MainAxisAlignment.start,
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          const SizedBox(
-            height: 20,
-          ),
+          const SizedBox(height: 20),
           Container(
             padding: const EdgeInsets.symmetric(horizontal: 15),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 SelectionButton(
-                    title: "Today",
-                    isSelect: selectButton == 0,
-                    onPressed: () {
-                      setState(() {
+                  title: 'Today',
+                  isSelect: selectButton == 0,
+                  onPressed: () {
+                    setState(
+                      () {
                         selectButton = 0;
-                      });
-                    }),
+                      },
+                    );
+                  },
+                ),
                 SelectionButton(
-                    title: "Week",
-                    isSelect: selectButton == 1,
-                    onPressed: () {
-                      setState(() {
+                  title: 'Week',
+                  isSelect: selectButton == 1,
+                  onPressed: () {
+                    setState(
+                      () {
                         selectButton = 1;
-                      });
-                    }),
+                      },
+                    );
+                  },
+                ),
                 SelectionButton(
-                    title: "Month",
-                    isSelect: selectButton == 2,
-                    onPressed: () {
-                      setState(() {
+                  title: 'Month',
+                  isSelect: selectButton == 2,
+                  onPressed: () {
+                    setState(
+                      () {
                         selectButton = 2;
-                      });
-                    }),
+                      },
+                    );
+                  },
+                ),
                 SelectionButton(
-                    title: "Year",
-                    isSelect: selectButton == 3,
-                    onPressed: () {
-                      setState(() {
+                  title: 'Year',
+                  isSelect: selectButton == 3,
+                  onPressed: () {
+                    setState(
+                      () {
                         selectButton = 3;
-                      });
-                    })
+                      },
+                    );
+                  },
+                ),
               ],
             ),
           ),
-          const SizedBox(
-            height: 20,
-          ),
+          const SizedBox(height: 20),
           Container(
             padding: const EdgeInsets.symmetric(horizontal: 15),
             child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: selectTypeList.map((sObj) {
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: selectTypeList.map(
+                (sObj) {
                   return TabIconTextButton(
-                    title: sObj["name"] as String? ?? "",
-                    icon: sObj["icon"] as IconData? ??
+                    title: sObj['name'] as String? ?? '',
+                    icon: sObj['icon'] as IconData? ??
                         Icons.arrow_upward_outlined,
-                    isSelect: selectType == (sObj["tag"] as int? ?? 0),
+                    isSelect: selectType == (sObj['tag'] as int? ?? 0),
                     onPressed: () {
-                      setState(() {
-                        selectType = sObj["tag"] as int? ?? 0;
-                      });
+                      setState(
+                        () {
+                          selectType = sObj['tag'] as int? ?? 0;
+                        },
+                      );
                     },
                   );
-                }).toList()),
+                },
+              ).toList(),
+            ),
           ),
           Expanded(
-              child: ListView.builder(
-                  padding: const EdgeInsets.symmetric(horizontal: 20),
-                  itemBuilder: (context, index) {
-                    return const TransactionListRow();
-                  }))
+            child: ListView.builder(
+              padding: const EdgeInsets.symmetric(horizontal: 20),
+              itemBuilder: (context, index) {
+                return const TransactionListRow();
+              },
+            ),
+          ),
         ],
       ),
     );
