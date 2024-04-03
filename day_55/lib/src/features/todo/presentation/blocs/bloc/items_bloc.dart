@@ -11,14 +11,20 @@ class ItemsBloc extends Bloc<ItemsLoadedEvent, ItemsState> {
   final ItemsRepo itemRepo;
 
   ItemsBloc(this.itemRepo) : super(ItemsLoadingState()) {
-    on<ItemsLoadedEvent>((event, emit) async {
-      try {
-        emit(ItemsLoadingState());
-        var data = await itemRepo.getItems();
-        emit(ItemsLoadedState(data));
-      } catch (e) {
-        emit(ItemsErrorState(e.toString()));
-      }
-    });
+    on<ItemsLoadedEvent>(
+      (event, emit) async {
+        try {
+          emit(ItemsLoadingState());
+          var data = await itemRepo.getItems();
+          emit(ItemsLoadedState(data));
+        } catch (e) {
+          emit(
+            ItemsErrorState(
+              e.toString(),
+            ),
+          );
+        }
+      },
+    );
   }
 }

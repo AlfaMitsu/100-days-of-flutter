@@ -8,15 +8,27 @@ part 'user_state.dart';
 
 class UserCubit extends Cubit<UserState> {
   final UserRepo userRepo;
-  UserCubit(this.userRepo) : super(UserLoadingState());
+
+  UserCubit(this.userRepo)
+      : super(
+          UserLoadingState(),
+        );
 
   void dataLoad() async {
     try {
-      emit(UserLoadingState());
+      emit(
+        UserLoadingState(),
+      );
       var data = await userRepo.getUsers();
-      emit(UserLoadedState(data));
+      emit(
+        UserLoadedState(data),
+      );
     } catch (e) {
-      emit(UserErrorState(e.toString()));
+      emit(
+        UserErrorState(
+          e.toString(),
+        ),
+      );
     }
   }
 }

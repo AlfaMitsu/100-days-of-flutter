@@ -4,12 +4,14 @@ import '../../data/models/user_model.dart';
 
 class UserRepo {
   Future<UserModel> getUsers() async {
-    var response = await http.get(Uri.parse("https://dummyjson.com/users"));
+    var response = await http.get(
+      Uri.parse('https://dummyjson.com/users'),
+    );
 
     if (response.statusCode == 200) {
       return userModelFromJson(response.body);
     } else {
-      throw Exception("Failed No Data get");
+      throw Exception('Failed No Data get');
     }
   }
 }
