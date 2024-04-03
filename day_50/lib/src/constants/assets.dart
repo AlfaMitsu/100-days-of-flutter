@@ -13,3 +13,4 @@ const String kImgTabDownloadButton = 'lib/src/resources/assets/images/kImgTabDow
 const String kImgTabHomeButton = 'lib/src/resources/assets/images/kImgTabHomeButton.png';
 const String kImgTabSearchButton = 'lib/src/resources/assets/images/kImgTabSearchButton.png';
 const String kImgTabUserButton = 'lib/src/resources/assets/images/kImgTabUserButton.png';
+const String kImgUserPlaceholder = 'lib/src/resources/assets/images/kImgUserPlaceholder.png';

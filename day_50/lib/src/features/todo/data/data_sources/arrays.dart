@@ -134,3 +134,40 @@ List downloadArr = [
     "is_movie": true,
   }
 ];
+
+List menuArr = [
+  {
+    "image": "lib/src/resources/assets/images/pr_user.png",
+    "name": "Account",
+  },
+  {
+    "image": "lib/src/resources/assets/images/pr_notification.png",
+    "name": "Notification",
+  },
+  {
+    "image": "lib/src/resources/assets/images/pr_settings.png",
+    "name": "Setting",
+  },
+  {
+    "image": "lib/src/resources/assets/images/pr_help.png",
+    "name": "Help",
+  },
+  {
+    "image": "lib/src/resources/assets/images/pr_logout.png",
+    "name": "Logout",
+  }
+];
+
+List searchArr = [
+  {
+    "name": "TV SHOWS",
+    "list": ["lib/src/resources/assets/images/search_1.png"]
+  },
+  {
+    "name": "MOVIES",
+    "list": [
+      "lib/src/resources/assets/images/search_2.png",
+      "lib/src/resources/assets/images/search_3.png"
+    ]
+  }
+];

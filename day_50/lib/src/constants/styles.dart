@@ -14,6 +14,12 @@ TextStyle kHomeViewRatingTextStyle = TextStyle(
   fontSize: 33,
 );
 
+TextStyle kProfileViewTextStyle = TextStyle(
+  color: kBgText,
+  fontSize: 27,
+  fontWeight: FontWeight.w500,
+);
+
 TextStyle kCastDetailsViewSurnameTextStyle = TextStyle(
   color: kBgText,
   fontSize: 25,
@@ -41,6 +47,11 @@ TextStyle kDownloadViewNameTextStyle = TextStyle(
   color: kText,
   fontSize: 15,
   fontWeight: FontWeight.w700,
+);
+
+TextStyle kProfileViewProfileStatusTextStyle = TextStyle(
+  color: kPrimary2,
+  fontSize: 15,
 );
 
 const TextStyle kCastDetailsViewBackTextStyle = TextStyle(
