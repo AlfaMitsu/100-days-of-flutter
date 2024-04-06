@@ -32,8 +32,46 @@ const TextStyle kCardNameTextStyle = TextStyle(
   fontWeight: FontWeight.w800,
 );
 
+const TextStyle kDashboardTitleTextStyle = TextStyle(
+  fontSize: 35,
+  color: kWhiteTextColor,
+  fontWeight: FontWeight.w600,
+);
+
+TextStyle kCurrencyTextStyle = GoogleFonts.ubuntu(
+  fontSize: 30,
+  color: kWhiteTextColor,
+  fontWeight: FontWeight.w800,
+);
+
+TextStyle kBalanceTextStyle = GoogleFonts.ubuntu(
+  fontSize: 25,
+  color: kWhiteTextColor,
+  fontWeight: FontWeight.w600,
+);
+
+
+TextStyle kGetStartedTextStyle = GoogleFonts.ubuntu(
+  fontSize: 20,
+  color: kWhiteTextColor,
+  fontWeight: FontWeight.w600,
+);
+
 TextStyle kCardNumberTextStyle = GoogleFonts.ubuntu(
   fontSize: 18,
   color: kBlackTextColor,
   fontWeight: FontWeight.w200,
+);
+
+const TextStyle kAppDetailsTextStyle = TextStyle(
+  height: 1,
+  fontSize: 18,
+  color: kWhiteColor,
+  fontWeight: FontWeight.w800,
+);
+
+const TextStyle kCartesianTextStyle = TextStyle(
+  fontSize: 16,
+  color: kBlackTextColor,
+  fontWeight: FontWeight.w900,
 );

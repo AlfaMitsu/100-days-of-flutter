@@ -36,12 +36,13 @@ const kBlackTextColor = kBlackColor;
 // Gradient Colors
 
 LinearGradient kLineGradientColor = const LinearGradient(
-  begin: Alignment.topCenter,
-  end: Alignment.bottomCenter,
-  stops: [0.5, 1],
+  stops: [
+    0.0,
+    1,
+  ],
   colors: [
-    Colors.redAccent,
-    Colors.orangeAccent,
+    Color.fromARGB(255, 150, 93, 140),
+    Color.fromARGB(255, 188, 137, 173),
   ],
 );
 

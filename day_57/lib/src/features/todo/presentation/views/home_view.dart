@@ -5,6 +5,7 @@ import '../../../../constants/assets.dart';
 import '../../../../constants/colors.dart';
 import '../../../../constants/dimensions.dart';
 import '../../../../constants/styles.dart';
+import 'dash_board_view.dart';
 
 class HomeView extends StatefulWidget {
   const HomeView({super.key});
@@ -21,7 +22,10 @@ class _HomeViewState extends State<HomeView> {
       body: SingleChildScrollView(
         child: Container(
           width: double.infinity,
-          padding: const EdgeInsets.only(top: defaultPadding * 7),
+          padding: const EdgeInsets.only(
+            top: defaultPadding * 7,
+            bottom: defaultPadding * 5,
+          ),
           child: Column(
             children: [
               Column(
@@ -52,6 +56,7 @@ class _HomeViewState extends State<HomeView> {
                     width: 300,
                     margin: const EdgeInsets.only(top: 30),
                     transform: Matrix4.rotationZ(-0.1),
+                    transformAlignment: Alignment.bottomLeft,
                     decoration: const BoxDecoration(
                       borderRadius: BorderRadius.all(
                         Radius.circular(defaultBorderRadius),
@@ -80,7 +85,7 @@ class _HomeViewState extends State<HomeView> {
                           Radius.circular(defaultBorderRadius),
                         ),
                         shape: BoxShape.rectangle,
-                        color: kPurpleColor,
+                        color: kLightGreenColor,
                       ),
                       child: Stack(
                         children: [
@@ -148,9 +153,53 @@ class _HomeViewState extends State<HomeView> {
                   ),
                 ],
               ),
-              const Text(
-                'Al-Fasheer\nHadji Usop',
-                style: kCardNameTextStyle,
+              const SizedBox(height: defaultPadding * 4),
+              const Padding(
+                padding: EdgeInsets.symmetric(horizontal: defaultPadding * 2.5),
+                child: Text(
+                  maxLines: 4,
+                  textAlign: TextAlign.center,
+                  'Instantly get cash for Crypto, Spend it to your bank account, or spend online and in-store with your BEta visa Debit Card',
+                  style: kAppDetailsTextStyle,
+                ),
+              ),
+              const SizedBox(height: 100),
+              InkWell(
+                borderRadius: const BorderRadius.all(
+                  Radius.circular(defaultBorderRadius * 4),
+                ),
+                onTap: () {
+                  Navigator.of(context).push(
+                    MaterialPageRoute(
+                      builder: (context) => const DashBoardView(),
+                    ),
+                  );
+                },
+                child: Container(
+                  height: 60,
+                  width: 250,
+                  decoration: BoxDecoration(
+                    borderRadius: const BorderRadius.all(
+                      Radius.circular(40),
+                    ),
+                    gradient: kLineGradientColor,
+                  ),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceAround,
+                    children: [
+                      const Spacer(),
+                      Padding(
+                        padding: const EdgeInsets.only(right: 10),
+                        child: Text(
+                          'Get Started',
+                          style: kGetStartedTextStyle,
+                        ),
+                      ),
+                      const Icon(Icons.arrow_forward),
+                      const Spacer(),
+                    ],
+                  ),
+                ),
               ),
             ],
           ),
