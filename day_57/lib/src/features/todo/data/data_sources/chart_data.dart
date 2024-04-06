@@ -21,3 +21,17 @@ final List<ChartSplineData> chartData2 = <ChartSplineData>[
   ChartSplineData('JUL', 10),
   ChartSplineData('AUG', 7),
 ];
+
+final List<ChartSplineData> chartData3 = <ChartSplineData>[
+  ChartSplineData('JAN', 3),
+  ChartSplineData('FEB', 8),
+  ChartSplineData('MAR', 5),
+  ChartSplineData('APR', 5.5),
+  ChartSplineData('MAY', 9),
+  ChartSplineData('JUN', 6),
+  ChartSplineData('JUL', 14),
+  ChartSplineData('AUG', 8),
+  ChartSplineData('SEPT', 12),
+  ChartSplineData('OCT', 6),
+  ChartSplineData('NOV', 12),
+];

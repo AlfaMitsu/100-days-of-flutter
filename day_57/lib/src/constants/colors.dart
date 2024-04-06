@@ -46,6 +46,19 @@ LinearGradient kLineGradientColor = const LinearGradient(
   ],
 );
 
+LinearGradient kLineGradientContainerCardColor = LinearGradient(
+  stops: const [
+    0.1,
+    0.9,
+  ],
+  begin: Alignment.topCenter,
+  end: Alignment.bottomCenter,
+  colors: [
+    const Color.fromARGB(255, 255, 209, 150),
+    const Color(0xFF383846).withAlpha(150),
+  ],
+);
+
 // Color shades
 
 const kGrey200Color = Color(0xFFE6E6E6);

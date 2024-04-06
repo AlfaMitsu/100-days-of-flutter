@@ -44,12 +44,23 @@ TextStyle kCurrencyTextStyle = GoogleFonts.ubuntu(
   fontWeight: FontWeight.w800,
 );
 
+TextStyle kActivityTextStyle = GoogleFonts.ubuntu(
+  fontSize: 30,
+  color: kWhiteTextColor,
+  fontWeight: FontWeight.w600,
+);
+
 TextStyle kBalanceTextStyle = GoogleFonts.ubuntu(
   fontSize: 25,
   color: kWhiteTextColor,
   fontWeight: FontWeight.w600,
 );
 
+TextStyle kProfitTextStyle = GoogleFonts.ubuntu(
+  fontSize: 22,
+  color: Colors.greenAccent,
+  fontWeight: FontWeight.w600,
+);
 
 TextStyle kGetStartedTextStyle = GoogleFonts.ubuntu(
   fontSize: 20,
@@ -66,12 +77,37 @@ TextStyle kCardNumberTextStyle = GoogleFonts.ubuntu(
 const TextStyle kAppDetailsTextStyle = TextStyle(
   height: 1,
   fontSize: 18,
-  color: kWhiteColor,
+  color: kWhiteTextColor,
   fontWeight: FontWeight.w800,
 );
 
+const TextStyle kBitcoinTextStyle = TextStyle(
+  fontSize: 18,
+  color: kWhiteTextColor,
+  fontWeight: FontWeight.w800,
+);
+
+const TextStyle kMasterCardTextStyle = TextStyle(
+  fontSize: 18,
+  color: kWhiteTextColor,
+  fontWeight: FontWeight.w600,
+);
+
+
 const TextStyle kCartesianTextStyle = TextStyle(
   fontSize: 16,
-  color: kBlackTextColor,
+  color: kWhiteTextColor,
   fontWeight: FontWeight.w900,
+);
+
+const TextStyle kBTCTextStyle = TextStyle(
+  fontSize: 14,
+  color: Colors.white38,
+  fontWeight: FontWeight.w800,
+);
+
+TextStyle kAllTextStyle = GoogleFonts.ubuntu(
+  fontSize: 14,
+  color: kWhiteTextColor,
+  fontWeight: FontWeight.w600,
 );
