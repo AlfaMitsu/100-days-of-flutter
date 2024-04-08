@@ -1,7 +1,7 @@
 const String kImgSample = 'lib/src/resources/assets/images/kImgSample.jpg';
 const String kImgBackButton = 'lib/src/resources/assets/images/kImgBackButton.png';
 const String kImgInfoButton = 'lib/src/resources/assets/images/kImgInfoButton.png';
-const String kImgProfile = 'lib/src/resources/assets/images/kImgProfile.png';
+const String kImgProfile = 'lib/src/resources/assets/images/kImgProfile.jpg';
 const String kImgEmoji = 'lib/src/resources/assets/images/kImgEmoji.png';
 const String kImgPickerButton = 'lib/src/resources/assets/images/kImgPickerButton.png';
 const String kImgAttachmentButton = 'lib/src/resources/assets/images/kImgAttachmentButton.png';
@@ -23,3 +23,7 @@ const String kImgActive2 = 'lib/src/resources/assets/images/kImgActive2.jpg';
 const String kImgActive3 = 'lib/src/resources/assets/images/kImgActive3.jpg';
 const String kImgActive4 = 'lib/src/resources/assets/images/kImgActive4.jpg';
 const String kImgUser1 = 'lib/src/resources/assets/images/kImgUser1.jpg';
+const String kImgUser2 = 'lib/src/resources/assets/images/kImgUser2.jpg';
+const String kImgUser3 = 'lib/src/resources/assets/images/kImgUser3.jpg';
+const String kImgUser4 = 'lib/src/resources/assets/images/kImgUser4.jpg';
+const String kImgProfilePosts1 = 'lib/src/resources/assets/images/kImgUser4.jpg';

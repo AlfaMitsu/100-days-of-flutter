@@ -18,8 +18,9 @@ class _DetailsViewState extends State<DetailsView> {
     var media = MediaQuery.sizeOf(context);
 
     return Scaffold(
+      
       appBar: AppBar(
-        backgroundColor: Colors.white,
+        backgroundColor: kWhiteColor,
         elevation: 0.5,
         leading: IconButton(
           onPressed: () {},
@@ -49,7 +50,7 @@ class _DetailsViewState extends State<DetailsView> {
           ),
         ],
       ),
-      backgroundColor: Colors.white,
+      backgroundColor: kBlackColor,
       body: SingleChildScrollView(
         child: Stack(
           alignment: Alignment.topCenter,
@@ -162,19 +163,19 @@ class _DetailsViewState extends State<DetailsView> {
                           children: [
                             Text('Creative Designer ',
                                 style: kDetailsViewBioTextStyle),
-                            Text('@ArgoRadius',
+                            Text('@AlfaMitsu',
                                 style: kDetailsViewBioTextStyle),
                           ],
                         ),
                         const SizedBox(height: 10),
                         Text.rich(
                           TextSpan(
-                            text:
-                                "Obsessed with Fahim MD's YouTube channel, love to go shopping on weekends and loveee food ",
+                            text: 
+                                "Obsessed with Programming, Anime, and Sports ",
                             style: kDetailsViewBioTextStyle,
                             children: [
                               TextSpan(
-                                text: '#foodielife',
+                                text: '#sportsfanatic',
                                 style: kDetailsViewBioTextStyle,
                               ),
                             ],

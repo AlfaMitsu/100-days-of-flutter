@@ -97,46 +97,43 @@ List myChatArr = [
 
 List myGroupArr = [
   {
-    "name": "Parties in Toronto downtown",
+    "name": "Banquets in Wano",
     "image": [
-      "lib/src/resources/assets/images/u1.png",
-      "lib/src/resources/assets/images/u2.png",
-      "lib/src/resources/assets/images/u3.png",
-      "lib/src/resources/assets/images/u2.png",
-      "lib/src/resources/assets/images/u1.png",
-      "lib/src/resources/assets/images/u4.png",
-      "lib/src/resources/assets/images/u1.png",
-      "lib/src/resources/assets/images/u2.png",
-      "lib/src/resources/assets/images/u3.png"
+      kImgActive1,
+      kImgActive2,
+      kImgActive3,
+      kImgActive4,
+      kImgUser2,
+      kImgUser3,
+      kImgUser4,
     ],
     "time": "3 days ago",
     "members": "381",
     "comments": "210"
   },
   {
-    "name": "Thoughts on F45 classes?",
+    "name": "Thought on Seraphims?",
     "image": [
-      "lib/src/resources/assets/images/u2.png",
-      "lib/src/resources/assets/images/u3.png",
-      "lib/src/resources/assets/images/u1.png",
-      "lib/src/resources/assets/images/u3.png",
-      "lib/src/resources/assets/images/u1.png",
-      "lib/src/resources/assets/images/u2.png",
-      "lib/src/resources/assets/images/u3.png"
+      kImgUser1,
+      kImgUser2,
+      kImgUser3,
+      kImgUser4,
+      kImgActive3,
     ],
     "time": "8 days ago",
     "members": "651",
     "comments": "192"
   },
   {
-    "name": "UX Meet ups and coffee",
+    "name": "Sabaody Meetup",
     "image": [
-      "lib/src/resources/assets/images/u1.png",
-      "lib/src/resources/assets/images/u2.png",
-      "lib/src/resources/assets/images/u3.png",
-      "lib/src/resources/assets/images/u1.png",
-      "lib/src/resources/assets/images/u2.png",
-      "lib/src/resources/assets/images/u3.png"
+      kImgActive1,
+      kImgActive2,
+      kImgActive3,
+      kImgActive4,
+      kImgUser2,
+      kImgUser3,
+      kImgUser4,
     ],
     "time": "10 days ago",
     "members": "540",
@@ -145,18 +142,7 @@ List myGroupArr = [
 ];
 
 List imagesArr = [
-  "lib/src/resources/assets/images/d1.png",
-  "lib/src/resources/assets/images/d2.png",
-  "lib/src/resources/assets/images/d3.png",
-  "lib/src/resources/assets/images/d4.png",
-  "lib/src/resources/assets/images/d5.png",
-  "lib/src/resources/assets/images/d6.png",
-  "lib/src/resources/assets/images/d7.png",
-  "lib/src/resources/assets/images/d8.png",
-  "lib/src/resources/assets/images/d9.png",
-  "lib/src/resources/assets/images/d10.png",
-  "lib/src/resources/assets/images/d11.png",
-  "lib/src/resources/assets/images/d12.png"
+  
 ];
 
 List recommendationsArr = [
