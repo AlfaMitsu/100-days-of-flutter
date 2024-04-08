@@ -1,23 +1,24 @@
+import 'package:day_47/src/constants/assets.dart';
+
 List chatMessageArr = [
   {
-    "message": "Hey, nice to meet you Alex",
+    "message": "Hey, nice to meet you Trishia",
     "time": "7:50 PM • Seen",
     "is_sender": true,
     "is_text": true,
   },
   {
-    "message": "Hey Jenna!! I see were both at Burning Man! huge fans",
+    "message": "Hey Al-Fa!! I see were both Filipino!",
     "time": "7:53 PM • Seen",
     "is_sender": false,
     "is_text": true,
   },
   {
-    "message": "Mar, 7, 10:17PM",
+    "message": "Mar, 7, 7:58PM",
     "is_text": false,
   },
   {
-    "message":
-        "OMG me too! Totally wish the City would have more stuff like that",
+    "message": "OMG me too! Would you want to see each other in person?",
     "time": "8:00 PM • Seen",
     "is_sender": true,
     "is_text": true,
@@ -29,7 +30,7 @@ List chatMessageArr = [
     "is_text": true,
   },
   {
-    "message": "I'm down! That sounds aaamazing!!",
+    "message": "I'm down! That sounds aaamazing!",
     "time": "8:04 PM • Seen",
     "is_sender": true,
     "is_text": true,
@@ -37,47 +38,59 @@ List chatMessageArr = [
 ];
 
 List activeArr = [
-  {"name": "James McL..", "image": "lib/src/resources/assets/images/r1.png"},
-  {"name": "Bessie Sima...", "image": "lib/src/resources/assets/images/r2.png"},
-  {"name": "Jeffery Hall", "image": "alib/src/resources/assets/images/r3.png"},
-  {"name": "Judy Adler", "image": "lib/src/resources/assets/images/r4.png"}
+  {
+    "name": "Monkey D...",
+    "image": kImgActive1,
+  },
+  {
+    "name": "Roronoa Zoro",
+    "image": kImgActive2,
+  },
+  {
+    "name": "Vinsmoke...",
+    "image": kImgActive3,
+  },
+  {
+    "name": "Usopp",
+    "image": kImgActive4,
+  }
 ];
 
 List myChatArr = [
   {
-    "name": "Alex Fish",
-    "last_message": "Hey, nice shoes where are...",
-    "image": "lib/src/resources/assets/images/u1.png",
+    "name": "Trishia Tibooc",
+    "last_message": "Don't forget to drink your water",
+    "image": kImgUser1,
     "is_online": true,
     "time": "7s ago",
     "is_group": false,
   },
   {
-    "name": "Johny Vino",
-    "last_message": "I'm at Batch bar waiting to...",
-    "image": "lib/src/resources/assets/images/u2.png",
-    "time": "20mins ago",
+    "name": "Monkey D. Luffy",
+    "last_message": "I'm at the bar waiting to for...",
+    "image": kImgActive1,
+    "time": "20 mins ago",
     "is_online": false,
     "is_group": false,
   },
   {
-    "name": "Scott Horsfall",
+    "name": "Roronoa Zoro",
     "last_message": "I can't find the location.",
-    "image": "lib/src/resources/assets/images/u3.png",
-    "time": "30 days ago",
+    "image": kImgActive2,
+    "time": "1 day ago",
     "is_online": true,
     "is_group": false,
   },
   {
-    "name": "Group:",
-    "last_message": "Andrew, Rob, +21",
+    "name": "Strawhat Pirates",
+    "last_message": "Luffy, Zorro, +7",
     "image": [
-      "lib/src/resources/assets/images/p10.png",
-      "lib/src/resources/assets/images/p11.png",
-      "lib/src/resources/assets/images/p12.png"
+      kImgActive1,
+      kImgActive2,
+      kImgActive3,
     ],
-    "time": "20 days ago",
-    "is_online": false,
+    "time": "2 days ago",
+    "is_online": true,
     "is_group": true,
   }
 ];
@@ -147,10 +160,22 @@ List imagesArr = [
 ];
 
 List recommendationsArr = [
-  {"name": "James McL..", "image": "lib/src/resources/assets/images/r1.png"},
-  {"name": "Bessie Sima...", "image": "lib/src/resources/assets/images/r2.png"},
-  {"name": "Jeffery Hall", "image": "lib/src/resources/assets/images/r3.png"},
-  {"name": "Judy Adler", "image": "lib/src/resources/assets/images/r4.png"}
+  {
+    "name": "Monkey D...",
+    "image": kImgActive1,
+  },
+  {
+    "name": "Roronoa Zoro",
+    "image": kImgActive2,
+  },
+  {
+    "name": "Vinsmoke...",
+    "image": kImgActive3,
+  },
+  {
+    "name": "Usopp",
+    "image": kImgActive4,
+  }
 ];
 
 List allArr = [
@@ -332,7 +357,7 @@ List notificationArr = [
       },
       {
         "name": "Francis Fidler",
-        "image": "alib/src/resources/assets/images/u4.png",
+        "image": "lib/src/resources/assets/images/u4.png",
         "message": "Started following you",
         "time": "3w ago"
       }

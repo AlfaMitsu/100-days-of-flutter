@@ -90,7 +90,7 @@ class _HomeViewState extends State<HomeView> {
                   Padding(
                     padding: const EdgeInsets.all(20),
                     child: Text(
-                      'Recommendations',
+                      'Stories',
                       style: kChatViewActiveTextStyle,
                     ),
                   ),

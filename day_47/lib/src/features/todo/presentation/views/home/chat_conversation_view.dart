@@ -57,7 +57,7 @@ class _ChatConversationViewState extends State<ChatConversationView> {
                       BoxShadow(
                         color: Colors.black12,
                         blurRadius: 2,
-                      )
+                      ),
                     ],
                   ),
                   alignment: Alignment.center,
