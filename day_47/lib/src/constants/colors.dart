@@ -2,23 +2,23 @@ import 'package:flutter/material.dart';
 
 // Brand Colors
 
-Color get kPrimary => const Color(0xff2676E1);
-Color get kPrimaryEnd => const Color(0xff00B5AA);
-Color get kSecondary => const Color(0xffA3FEC7);
-Color get kSecondaryEnd => const Color(0xff6AC6FC);
-Color get kPrimaryText => const Color(0xff434B56);
-Color get kPrimaryTextW => const Color(0xffFFFFFF);
-Color get kSecondaryText => const Color(0xff7C8085);
-Color get kTime => const Color(0xff787C81);
+Color get kPrimary => kBlueColor;
+Color get kPrimaryEnd => kPurpleColor;
+Color get kSecondary => kPinkColor;
+Color get kSecondaryEnd => kTealColor;
+Color get kPrimaryText => const Color(0xFF434B56);
+Color get kPrimaryTextW => const Color(0xFFFFFFFF);
+Color get kSecondaryText => const Color(0xFF7C8085);
+Color get kTime => const Color(0xFF787C81);
 Color get kBase => const Color.fromARGB(255, 58, 58, 58);
 List<Color> get kPrimaryG => [kPrimary, kPrimaryEnd];
 List<Color> get kSecondaryG => [kSecondary, kSecondaryEnd];
-Color get kBg => Colors.white;
+Color get kBg => kWhiteColor;
 
 extension HexColor on Color {
   static Color fromHex(String hexString) {
     final buffer = StringBuffer();
-    if (hexString.length == 6 || hexString.length == 7) buffer.write('ff');
+    if (hexString.length == 6 || hexString.length == 7) buffer.write('FF');
     buffer.write(hexString.replaceFirst('#', ''));
     return Color(int.parse(buffer.toString(), radix: 16));
   }
@@ -43,6 +43,7 @@ const kRedColor = Color(0xFFFF0000);
 const kTransparent = Colors.transparent;
 const kYellowColor = Color(0xFFFFFF00);
 const kBrownColor = Color(0xFF964B00);
+const kPurpleColor = Color(0xFFA020F0);
 
 // Text Colors
 
