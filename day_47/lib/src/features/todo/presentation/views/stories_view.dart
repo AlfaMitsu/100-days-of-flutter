@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 
 import '../../../../constants/styles.dart';
 import '../../data/data_sources/arrays.dart';
-import '../widgets/recommend_cell.dart';
+import '../widgets/stories_cell.dart';
 import '../widgets/user_story_cell.dart';
 import 'home/details_view.dart';
 
@@ -124,7 +124,7 @@ class _StoriesViewState extends State<StoriesView> {
                       itemCount: friendsArr.length,
                       itemBuilder: (context, index) {
                         var rObj = friendsArr[index] as Map? ?? {};
-                        return RecommendCell(
+                        return StoriesCell(
                           rObj: rObj,
                           isActive: true,
                           onPressed: () {},

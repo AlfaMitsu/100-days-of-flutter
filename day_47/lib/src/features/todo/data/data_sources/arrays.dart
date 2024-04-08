@@ -142,7 +142,18 @@ List myGroupArr = [
 ];
 
 List imagesArr = [
-  
+  kImgProfilePosts1,
+  kImgProfilePosts2,
+  kImgProfilePosts3,
+  kImgProfilePosts4,
+  kImgProfilePosts5,
+  kImgProfilePosts6,
+  kImgProfilePosts7,
+  kImgProfilePosts8,
+  kImgProfilePosts9,
+  kImgProfilePosts10,
+  kImgProfilePosts11,
+  kImgProfilePosts12,
 ];
 
 List recommendationsArr = [
@@ -166,51 +177,51 @@ List recommendationsArr = [
 
 List allArr = [
   {
-    "name": "Georgia Bates",
-    "image": "lib/src/resources/assets/images/u1.png",
-    "status": "Toronto, Ontario",
+    "name": "Trishia Tibooc",
+    "image": kImgUser1,
+    "status": "Cebu, Cebu City",
     "is_online": false,
     "time": "30s ago",
     "images": [
-      "lib/src/resources/assets/images/p1.png",
-      "lib/src/resources/assets/images/p2.png",
-      "lib/src/resources/assets/images/p3.png"
+      kImgPost1,
+      kImgPost2,
+      kImgPost3,
     ]
   },
   {
-    "name": "Johny Vino",
-    "image": "lib/src/resources/assets/images/u2.png",
-    "status": "Mississauga, Ontario",
+    "name": "Nami",
+    "image": kImgUser2,
+    "status": "Cocoyashi Village",
     "time": "5mins ago",
     "is_online": false,
     "images": [
-      "lib/src/resources/assets/images/p4.png",
-      "lib/src/resources/assets/images/p5.png",
-      "lib/src/resources/assets/images/p6.png"
+      kImgPost4,
+      kImgPost5,
+      kImgPost6,
     ]
   },
   {
-    "name": "Scott Horsfall",
-    "image": "lib/src/resources/assets/images/u3.png",
-    "status": "Markham, Ontario",
-    "time": "10mins ago",
+    "name": "Tony Tony Chopper",
+    "image": kImgUser3,
+    "status": "Winter Island Drum",
+    "time": "1 day ago",
     "is_online": true,
     "images": [
-      "lib/src/resources/assets/images/p7.png",
-      "lib/src/resources/assets/images/p8.png",
-      "lib/src/resources/assets/images/p9.png"
+      kImgPost7,
+      kImgPost8,
+      kImgPost9,
     ]
   },
   {
-    "name": "Meagan Ryan",
-    "image": "lib/src/resources/assets/images/u4.png",
-    "status": "Oakvill Ontario",
-    "time": "2days ago",
+    "name": "Nico Robin",
+    "image": kImgUser4,
+    "status": "Ohara",
+    "time": "2 days ago",
     "is_online": false,
     "images": [
-      "lib/src/resources/assets/images/p10.png",
-      "lib/src/resources/assets/images/p11.png",
-      "lib/src/resources/assets/images/p12.png"
+      kImgPost10,
+      kImgPost11,
+      kImgPost12,
     ]
   }
 ];
@@ -220,31 +231,31 @@ List commentArr = [
     "name": "Ronald Shores",
     "comment": "Impressive set up",
     "time": "14m ago",
-    "image": "lib/src/resources/assets/images/u1.png"
+    "image": kImgUser1,
   },
   {
     "name": "Jimmy Love",
     "comment": "Where's you office?",
     "time": "30m ago",
-    "image": "lib/src/resources/assets/images/u2.png"
+    "image": kImgUser1,
   },
   {
     "name": "Sha Gaines",
     "comment": "I remember being away that day",
     "time": "31m ago",
-    "image": "lib/src/resources/assets/images/u3.png"
+    "image": kImgUser1,
   },
   {
     "name": "Ivey Wilson",
     "comment": "Hahaha you made me clean your...",
     "time": "35m ago",
-    "image": "lib/src/resources/assets/images/u4.png"
+    "image": kImgUser1,
   },
   {
     "name": "Bradley Dame",
     "comment": "That was the day we got nothing...",
     "time": "1h ago",
-    "image": "lib/src/resources/assets/images/u1.png"
+    "image": kImgUser1,
   }
 ];
 
@@ -262,19 +273,19 @@ List notificationArr = [
     "list": [
       {
         "name": "Cathy Lerner",
-        "image": "lib/src/resources/assets/images/u1.png",
+        "image": kImgActive1,
         "message": "liked your post",
         "time": "7s ago"
       },
       {
         "name": "Marvin Anderson",
-        "image": "lib/src/resources/assets/images/u2.png",
+        "image": kImgActive1,
         "message": "Started following you",
         "time": "30s ago"
       },
       {
         "name": "Timothy Coffey",
-        "image": "lib/src/resources/assets/images/u3.png",
+        "image": kImgActive1,
         "message": "Commented: Impressive App design",
         "time": "6m ago"
       }
@@ -285,31 +296,31 @@ List notificationArr = [
     "list": [
       {
         "name": "Jimmy Love",
-        "image": "lib/src/resources/assets/images/u4.png",
+        "image": kImgActive1,
         "message": "liked your post",
         "time": "14m ago"
       },
       {
         "name": "Sha Gaines",
-        "image": "lib/src/resources/assets/images/u1.png",
+        "image": kImgActive1,
         "message": "Started following you",
         "time": "30m ago"
       },
       {
         "name": "Ronald Shores",
-        "image": "lib/src/resources/assets/images/u2.png",
+        "image": kImgActive1,
         "message": "Commented: Impressive App design",
         "time": "1h ago"
       },
       {
         "name": "Eileen Conners",
-        "image": "lib/src/resources/assets/images/u3.png",
+        "image": kImgActive1,
         "message": "liked your post",
         "time": "2h ago"
       },
       {
         "name": "Earl Garcia",
-        "image": "lib/src/resources/assets/images/u4.png",
+        "image": kImgActive1,
         "message": "Started following you",
         "time": "6h ago"
       }
@@ -320,13 +331,13 @@ List notificationArr = [
     "list": [
       {
         "name": "Ivey Wilson",
-        "image": "lib/src/resources/assets/images/u1.png",
+        "image": kImgActive1,
         "message": "Started following you",
         "time": "2d ago"
       },
       {
         "name": "Bradley Dame",
-        "image": "lib/src/resources/assets/images/u2.png",
+        "image": kImgActive1,
         "message": "Started following you",
         "time": "3d ago"
       }
@@ -337,15 +348,15 @@ List notificationArr = [
     "list": [
       {
         "name": "Tom Joy",
-        "image": "lib/src/resources/assets/images/u3.png",
+        "image": kImgActive1,
         "message": "Started following you",
-        "time": "2w ago"
+        "time": "2w ago",
       },
       {
         "name": "Francis Fidler",
-        "image": "lib/src/resources/assets/images/u4.png",
+        "image": kImgActive1,
         "message": "Started following you",
-        "time": "3w ago"
+        "time": "3w ago",
       }
     ]
   }
@@ -354,57 +365,57 @@ List notificationArr = [
 List searchArr = [
   {
     "name": "Emily Lerner",
-    "image": "lib/src/resources/assets/images/u1.png",
+    "image": kImgActive1,
     "tag": "@loveemily"
   },
   {
     "name": "Erin Anderson",
-    "image": "lib/src/resources/assets/images/u2.png",
+    "image": kImgActive1,
     "tag": "@erin4life"
   },
   {
     "name": "Ewan Coffey",
-    "image": "lib/src/resources/assets/images/u3.png",
+    "image": kImgActive1,
     "tag": "@ewancoffey"
   },
   {
     "name": "Elis Jimmy",
-    "image": "lib/src/resources/assets/images/u4.png",
+    "image": kImgActive1,
     "tag": "@its_me_jimmy"
   },
   {
     "name": "Elisha Gaines",
-    "image": "lib/src/resources/assets/images/u1.png",
+    "image": kImgActive1,
     "tag": "@elisha22"
   },
   {
     "name": "Eamon Shores",
-    "image": "lib/src/resources/assets/images/u2.png",
+    "image": kImgActive1,
     "tag": "@eamon_shores"
   },
   {
     "name": "Eileen Conners",
-    "image": "lib/src/resources/assets/images/u3.png",
+    "image": kImgActive1,
     "tag": "@eileen"
   },
   {
     "name": "Earl Garcia",
-    "image": "lib/src/resources/assets/images/u4.png",
+    "image": kImgActive1,
     "tag": "@earl-design"
   },
   {
     "name": "Elliemay Maio",
-    "image": "lib/src/resources/assets/images/u1.png",
+    "image": kImgActive1,
     "tag": "@elliemay_ny"
   },
   {
     "name": "Eathen Joy",
-    "image": "lib/src/resources/assets/images/u2.png",
+    "image": kImgActive1,
     "tag": "@eathen_12"
   },
   {
     "name": "Ebenezer Fidler",
-    "image": "lib/src/resources/assets/images/u3.png",
+    "image": kImgActive1,
     "tag": "@ebenezerfidler_"
   }
 ];
@@ -413,68 +424,68 @@ List storiesArr = [
   {
     "name": "Megan Rae",
     "image": "lib/src/resources/assets/images/s1.png",
-    "user_image": "lib/src/resources/assets/images/u1.png"
+    "user_image": kImgActive1,
   },
   {
     "name": "Charles Dixon",
     "image": "lib/src/resources/assets/images/s2.png",
-    "user_image": "lib/src/resources/assets/images/u2.png"
+    "user_image": kImgActive1,
   },
   {
     "name": "Rebecca Taylor",
     "image": "lib/src/resources/assets/images/s3.png",
-    "user_image": "lib/src/resources/assets/images/u3.png"
+    "user_image": kImgActive1,
   },
   {
     "name": "Deanna Walser",
     "image": "lib/src/resources/assets/images/s4.png",
-    "user_image": "lib/src/resources/assets/images/u4.png"
+    "user_image": kImgActive1,
   },
   {
     "name": "Janice Williams",
     "image": "lib/src/resources/assets/images/s5.png",
-    "user_image": "lib/src/resources/assets/images/u1.png"
+    "user_image": kImgActive1,
   },
   {
     "name": "Adam Neumann",
     "image": "lib/src/resources/assets/images/s6.png",
-    "user_image": "lib/src/resources/assets/images/u2.png"
+    "user_image": kImgActive1,
   },
   {
     "name": "Mary Hennen",
     "image": "lib/src/resources/assets/images/s7.png",
-    "user_image": "lib/src/resources/assets/images/u3.png"
+    "user_image": kImgActive1,
   },
   {
     "name": "Joe Terpstra",
     "image": "lib/src/resources/assets/images/s8.png",
-    "user_image": "lib/src/resources/assets/images/u4.png"
+    "user_image": kImgActive1,
   },
   {
     "name": "William Yoshioka",
     "image": "lib/src/resources/assets/images/s9.png",
-    "user_image": "lib/src/resources/assets/images/u1.png"
+    "user_image": kImgActive1,
   },
   {
     "name": "Megan Rae",
     "image": "lib/src/resources/assets/images/s10.png",
-    "user_image": "lib/src/resources/assets/images/u2.png"
+    "user_image": kImgActive1,
   },
   {
     "name": "Charles Dixon",
     "image": "lib/src/resources/assets/images/s11.png",
-    "user_image": "lib/src/resources/assets/images/u3.png"
+    "user_image": kImgActive1,
   },
   {
     "name": "Rebecca Taylor",
     "image": "lib/src/resources/assets/images/s12.png",
-    "user_image": "lib/src/resources/assets/images/u4.png"
+    "user_image": kImgActive1,
   }
 ];
 
 List friendsArr = [
-  {"name": "James McL..", "image": "lib/src/resources/assets/images/r1.png"},
-  {"name": "Bessie Sima...", "image": "lib/src/resources/assets/images/r2.png"},
-  {"name": "Jeffery Hall", "image": "lib/src/resources/assets/images/r3.png"},
-  {"name": "Judy Adler", "image": "lib/src/resources/assets/images/r4.png"}
+  {"name": "James McL..", "image": kImgActive1,},
+  {"name": "Bessie Sima...", "image": kImgActive2,},
+  {"name": "Jeffery Hall", "image": kImgActive3,},
+  {"name": "Judy Adler", "image": kImgActive4,}
 ];

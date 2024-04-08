@@ -5,7 +5,7 @@ import '../../../../../constants/colors.dart';
 import '../../../../../constants/styles.dart';
 import '../../../data/data_sources/arrays.dart';
 import '../../widgets/group_cell.dart';
-import '../../widgets/recommend_cell.dart';
+import '../../widgets/stories_cell.dart';
 import '../../widgets/user_chat_row.dart';
 import 'chat_conversation_view.dart';
 import 'details_view.dart';
@@ -134,7 +134,7 @@ class _ChatViewState extends State<ChatView> {
                       itemCount: activeArr.length,
                       itemBuilder: (context, index) {
                         var rObj = activeArr[index] as Map? ?? {};
-                        return RecommendCell(
+                        return StoriesCell(
                           rObj: rObj,
                           isActive: true,
                           onPressed: () {},

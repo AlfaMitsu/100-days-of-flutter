@@ -143,8 +143,8 @@ class _PostDetailViewState extends State<PostDetailView> {
                                 child: WidgetStack(
                                   positions: settings,
                                   stackedWidgets: [
-                                    "lib/src/resources/assets/images/u1.png",
-                                    "lib/src/resources/assets/images/u2.png"
+                                    kImgActive1,
+                                    kImgActive1,
                                   ]
                                       .map(
                                         (img) => Container(
