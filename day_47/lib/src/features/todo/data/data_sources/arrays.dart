@@ -228,43 +228,43 @@ List allArr = [
 
 List commentArr = [
   {
-    "name": "Ronald Shores",
+    "name": "Brook",
     "comment": "Impressive set up",
     "time": "14m ago",
-    "image": kImgUser1,
+    "image": kImgCommenter1,
   },
   {
-    "name": "Jimmy Love",
+    "name": "Jinbe",
     "comment": "Where's you office?",
     "time": "30m ago",
-    "image": kImgUser1,
+    "image": kImgCommenter2,
   },
   {
-    "name": "Sha Gaines",
+    "name": "Dellinger",
     "comment": "I remember being away that day",
     "time": "31m ago",
-    "image": kImgUser1,
+    "image": kImgCommenter3,
   },
   {
-    "name": "Ivey Wilson",
+    "name": "Viola",
     "comment": "Hahaha you made me clean your...",
     "time": "35m ago",
-    "image": kImgUser1,
+    "image": kImgCommenter4,
   },
   {
-    "name": "Bradley Dame",
+    "name": "Kin'emon",
     "comment": "That was the day we got nothing...",
     "time": "1h ago",
-    "image": kImgUser1,
+    "image": kImgCommenter5,
   }
 ];
 
 List imageArr = [
-  "lib/src/resources/assets/images/po_1.png",
-  "lib/src/resources/assets/images/po_2.png",
-  "lib/src/resources/assets/images/po_3.png",
-  "lib/src/resources/assets/images/po_4.png",
-  "lib/src/resources/assets/images/po_5.png"
+  kImgVideoUpload,
+  kImgPictureUpload,
+  kImgPostRecommend1,
+  kImgPostRecommend2,
+  kImgPostRecommend3,
 ];
 
 List notificationArr = [

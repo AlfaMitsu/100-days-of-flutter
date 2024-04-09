@@ -60,7 +60,7 @@ class _PostDetailViewState extends State<PostDetailView> {
           ),
         ],
       ),
-      backgroundColor: kWhiteColor,
+      backgroundColor: kBlackColor,
       body: SingleChildScrollView(
         child: Stack(
           alignment: Alignment.topCenter,
@@ -143,8 +143,8 @@ class _PostDetailViewState extends State<PostDetailView> {
                                 child: WidgetStack(
                                   positions: settings,
                                   stackedWidgets: [
-                                    kImgActive1,
-                                    kImgActive1,
+                                    kImgLikedBy1,
+                                    kImgUser4,
                                   ]
                                       .map(
                                         (img) => Container(
@@ -200,7 +200,7 @@ class _PostDetailViewState extends State<PostDetailView> {
                                       style: kCommentViewTextStyle,
                                     ),
                                     Text(
-                                      'Earl Garcia, Nancy Maio',
+                                      'Franky, Nico Robin',
                                       textAlign: TextAlign.left,
                                       maxLines: 1,
                                       style: kPostDetailViewTextStyle,
@@ -227,7 +227,7 @@ class _PostDetailViewState extends State<PostDetailView> {
                                 style: kDetailsViewBioTextStyle,
                               ),
                               TextSpan(
-                                text: ' #agency',
+                                text: ' #strawhats',
                                 style: kDetailsViewBioTextStyle,
                               ),
                             ],
