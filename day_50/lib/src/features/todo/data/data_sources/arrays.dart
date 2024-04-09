@@ -54,89 +54,85 @@ List epArr = [
   {
     "name": "2. The Cali KBG",
     "image": kImgEpisodeThumbnail2,
-    "duration": "49 mins"
+    "duration": "49 mins",
   },
   {
     "name": "3. Follow the Money",
     "image": kImgEpisodeThumbnail1,
-    "duration": "59 mins"
+    "duration": "59 mins",
   },
   {
     "name": "4. Checkmate",
     "image": kImgEpisodeThumbnail2,
-    "duration": "52 mins"
+    "duration": "52 mins",
   },
   {
     "name": "5. MRO",
     "image": kImgEpisodeThumbnail1,
-    "duration": "1 hour"
+    "duration": "1 hour",
   },
   {
     "name": "6. Best Laid Plans",
     "image": kImgEpisodeThumbnail2,
-    "duration": "57 mins"
+    "duration": "57 mins",
   },
   {
     "name": "7. Sin Salida",
     "image": kImgEpisodeThumbnail1,
-    "duration": "50 min"
+    "duration": "50 min",
   },
-  {
-    "name": "8. Convivir",
-    "image": kImgEpisodeThumbnail2,
-    "duration": "51 min"
-  },
+  {"name": "8. Convivir", "image": kImgEpisodeThumbnail2, "duration": "51 min"},
   {
     "name": "9. Todos los Hombres del Presidente",
     "image": kImgEpisodeThumbnail1,
-    "duration": "47 min"
+    "duration": "47 min",
   },
   {
     "name": "10. Going Back to Cali",
     "image": kImgEpisodeThumbnail2,
-    "duration": "50 min"
+    "duration": "50 min",
   },
 ];
 
 List downloadArr = [
   {
     "name": "Narcos",
-    "image": "lib/src/resources/assets/images/down_1.png",
+    "image": kImgDownload1,
     "size": "5.02GB",
     "episodes": "4",
     "is_movie": false,
   },
   {
     "name": "Alita Battle Angel",
-    "image": "lib/src/resources/assets/images/down_2.png",
+    "image": kImgDownload2,
     "size": "1.45GB",
     "episodes": "",
     "is_movie": true,
   },
   {
     "name": "Gotham",
-    "image": "lib/src/resources/assets/images/down_3.png",
+    "image": kImgDownload3,
     "size": "10.04GB",
     "episodes": "8",
     "is_movie": false,
   },
   {
     "name": "Sacred Games",
-    "image": "lib/src/resources/assets/images/down_4.png",
+    "image": kImgDownload4,
     "size": "2.02GB",
     "episodes": "3",
     "is_movie": true,
   },
   {
     "name": "Shazam",
-    "image": "lib/src/resources/assets/images/down_5.png",
+    "image": kImgDownload5,
     "size": "2.32GB",
     "episodes": "",
     "is_movie": true,
   },
   {
     "name": "Toy Story 4",
-    "image": "lib/src/resources/assets/images/down_6.png",
+    "image": kImgDownload6,
     "size": "3.45GB",
     "episodes": "",
     "is_movie": true,
@@ -145,23 +141,23 @@ List downloadArr = [
 
 List menuArr = [
   {
-    "image": "lib/src/resources/assets/images/pr_user.png",
+    "image": kImgUser,
     "name": "Account",
   },
   {
-    "image": "lib/src/resources/assets/images/pr_notification.png",
+    "image": kImgNotification,
     "name": "Notification",
   },
   {
-    "image": "lib/src/resources/assets/images/pr_settings.png",
+    "image": kImgSettings,
     "name": "Setting",
   },
   {
-    "image": "lib/src/resources/assets/images/pr_help.png",
+    "image": kImgHelp,
     "name": "Help",
   },
   {
-    "image": "lib/src/resources/assets/images/pr_logout.png",
+    "image": kImgLogout,
     "name": "Logout",
   }
 ];
@@ -169,13 +165,13 @@ List menuArr = [
 List searchArr = [
   {
     "name": "TV SHOWS",
-    "list": ["lib/src/resources/assets/images/search_1.png"]
+    "list": [kImgSearch1]
   },
   {
     "name": "MOVIES",
     "list": [
-      "lib/src/resources/assets/images/search_2.png",
-      "lib/src/resources/assets/images/search_3.png"
+      kImgSearch2,
+      kImgSearch3,
     ]
   }
 ];
