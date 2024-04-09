@@ -272,21 +272,21 @@ List notificationArr = [
     "name": "New",
     "list": [
       {
-        "name": "Cathy Lerner",
-        "image": kImgActive1,
+        "name": "Trafalgar D. Water Law",
+        "image": kImgNotification1,
         "message": "liked your post",
         "time": "7s ago"
       },
       {
-        "name": "Marvin Anderson",
-        "image": kImgActive1,
+        "name": "Shanks",
+        "image": kImgNotification2,
         "message": "Started following you",
         "time": "30s ago"
       },
       {
-        "name": "Timothy Coffey",
-        "image": kImgActive1,
-        "message": "Commented: Impressive App design",
+        "name": "Gol D. Roger",
+        "image": kImgNotification3,
+        "message": "Commented: Impressive work young blood",
         "time": "6m ago"
       }
     ]
@@ -295,32 +295,32 @@ List notificationArr = [
     "name": "Today",
     "list": [
       {
-        "name": "Jimmy Love",
-        "image": kImgActive1,
+        "name": "Edward Newgate",
+        "image": kImgNotification4,
         "message": "liked your post",
         "time": "14m ago"
       },
       {
-        "name": "Sha Gaines",
-        "image": kImgActive1,
+        "name": "Portgas D. Ace",
+        "image": kImgNotification5,
         "message": "Started following you",
         "time": "30m ago"
       },
       {
-        "name": "Ronald Shores",
-        "image": kImgActive1,
+        "name": "Boa Hancock",
+        "image": kImgNotification6,
         "message": "Commented: Impressive App design",
         "time": "1h ago"
       },
       {
-        "name": "Eileen Conners",
-        "image": kImgActive1,
+        "name": "Sabo",
+        "image": kImgNotification7,
         "message": "liked your post",
         "time": "2h ago"
       },
       {
-        "name": "Earl Garcia",
-        "image": kImgActive1,
+        "name": "Silvers Rayleigh",
+        "image": kImgNotification8,
         "message": "Started following you",
         "time": "6h ago"
       }
@@ -330,14 +330,14 @@ List notificationArr = [
     "name": "This Week",
     "list": [
       {
-        "name": "Ivey Wilson",
-        "image": kImgActive1,
+        "name": "Marco",
+        "image": kImgNotification9,
         "message": "Started following you",
         "time": "2d ago"
       },
       {
-        "name": "Bradley Dame",
-        "image": kImgActive1,
+        "name": "Edward Teach",
+        "image": kImgNotification10,
         "message": "Started following you",
         "time": "3d ago"
       }
@@ -347,14 +347,14 @@ List notificationArr = [
     "name": "This Month",
     "list": [
       {
-        "name": "Tom Joy",
-        "image": kImgActive1,
+        "name": "Kozuki Oden",
+        "image": kImgNotification11,
         "message": "Started following you",
         "time": "2w ago",
       },
       {
-        "name": "Francis Fidler",
-        "image": kImgActive1,
+        "name": "Donquixote Doflamingo",
+        "image": kImgNotification12,
         "message": "Started following you",
         "time": "3w ago",
       }
@@ -363,79 +363,123 @@ List notificationArr = [
 ];
 
 List searchArr = [
-  {"name": "Emily Lerner", "image": kImgActive1, "tag": "@loveemily"},
-  {"name": "Erin Anderson", "image": kImgActive1, "tag": "@erin4life"},
-  {"name": "Ewan Coffey", "image": kImgActive1, "tag": "@ewancoffey"},
-  {"name": "Elis Jimmy", "image": kImgActive1, "tag": "@its_me_jimmy"},
-  {"name": "Elisha Gaines", "image": kImgActive1, "tag": "@elisha22"},
-  {"name": "Eamon Shores", "image": kImgActive1, "tag": "@eamon_shores"},
-  {"name": "Eileen Conners", "image": kImgActive1, "tag": "@eileen"},
-  {"name": "Earl Garcia", "image": kImgActive1, "tag": "@earl-design"},
-  {"name": "Elliemay Maio", "image": kImgActive1, "tag": "@elliemay_ny"},
-  {"name": "Eathen Joy", "image": kImgActive1, "tag": "@eathen_12"},
-  {"name": "Ebenezer Fidler", "image": kImgActive1, "tag": "@ebenezerfidler_"}
+  {
+    "name": "Monkey D. Luffy",
+    "image": kImgActive1,
+    "tag": "@StrawHatKing",
+  },
+  {
+    "name": "Roronoa Zoro",
+    "image": kImgActive2,
+    "tag": "@WorldsGreatestSwordsman",
+  },
+  {
+    "name": "Vinsmoke Sanjo",
+    "image": kImgActive3,
+    "tag": "@MrLoveCook",
+  },
+  {
+    "name": "Trafalgar D Water Law",
+    "image": kImgNotification1,
+    "tag": "@Corazon_D_Surgeon",
+  },
+  {
+    "name": "Shanks",
+    "image": kImgNotification2,
+    "tag": "@RedHairedHAos",
+  },
+  {
+    "name": "Gol D. Roger",
+    "image": kImgNotification3,
+    "tag": "@PirateKingRoger",
+  },
+  {
+    "name": "Nami",
+    "image": kImgUser2,
+    "tag": "@NavigatorNami",
+  },
+  {
+    "name": "Edward Newgate",
+    "image": kImgNotification4,
+    "tag": "@StrongestManInTheWorld",
+  },
+  {
+    "name": "Nico Robin",
+    "image": kImgUser4,
+    "tag": "@HistoryHunterRobin",
+  },
+  {
+    "name": "Portgas D. Ace",
+    "image": kImgNotification5,
+    "tag": "@FireFistAce",
+  },
+  {
+    "name": "Boa Hancock",
+    "image": kImgNotification6,
+    "tag": "@PirateEmpressHancock",
+  }
 ];
 
 List storiesArr = [
   {
-    "name": "Megan Rae",
-    "image": "lib/src/resources/assets/images/s1.png",
+    "name": "Monkey D. Luffy",
+    "image": kImgStories1,
     "user_image": kImgActive1,
   },
   {
-    "name": "Charles Dixon",
-    "image": "lib/src/resources/assets/images/s2.png",
-    "user_image": kImgActive1,
+    "name": "Roronoa Zoro",
+    "image": kImgStories2,
+    "user_image": kImgActive2,
   },
   {
-    "name": "Rebecca Taylor",
-    "image": "lib/src/resources/assets/images/s3.png",
-    "user_image": kImgActive1,
+    "name": "Vinsmoke Sanji",
+    "image": kImgStories3,
+    "user_image": kImgActive3,
   },
   {
-    "name": "Deanna Walser",
-    "image": "lib/src/resources/assets/images/s4.png",
-    "user_image": kImgActive1,
+    "name": "Trafalgar D. Water Law",
+    "image": kImgStories4,
+    "user_image": kImgNotification1,
   },
   {
-    "name": "Janice Williams",
-    "image": "lib/src/resources/assets/images/s5.png",
-    "user_image": kImgActive1,
+    "name": "Shanks",
+    "image": kImgStories5,
+    "user_image": kImgNotification2,
   },
   {
-    "name": "Adam Neumann",
-    "image": "lib/src/resources/assets/images/s6.png",
-    "user_image": kImgActive1,
+    "name": "Edward Newgate",
+    "image": kImgStories6,
+    "user_image": kImgNotification4,
   },
   {
-    "name": "Mary Hennen",
-    "image": "lib/src/resources/assets/images/s7.png",
-    "user_image": kImgActive1,
+    "name": "Nami",
+    "image": kImgStories7,
+    "user_image": kImgUser2,
   },
   {
-    "name": "Joe Terpstra",
-    "image": "lib/src/resources/assets/images/s8.png",
-    "user_image": kImgActive1,
+    "name": "Portgas D. Ace",
+    "image": kImgStories8,
+    "user_image": kImgNotification5,
   },
   {
-    "name": "William Yoshioka",
-    "image": "lib/src/resources/assets/images/s9.png",
-    "user_image": kImgActive1,
+    "name": "Nico Robin",
+    "image": kImgStories9,
+    "user_image": kImgUser4,
   },
   {
-    "name": "Megan Rae",
-    "image": "lib/src/resources/assets/images/s10.png",
-    "user_image": kImgActive1,
+    "name": "Boa Hancock",
+    "image": kImgStories10,
+    "user_image": kImgNotification6,
   },
   {
-    "name": "Charles Dixon",
-    "image": "lib/src/resources/assets/images/s11.png",
-    "user_image": kImgActive1,
+    "name": "Sabo",
+    "image": kImgStories11,
+    "user_image": kImgNotification7,
   },
   {
-    "name": "Rebecca Taylor",
-    "image": "lib/src/resources/assets/images/s12.png",
-    "user_image": kImgActive1,
+    "name": "Silvers Rayleigh",
+    "image": kImgStories12,
+    "user_image": kImgNotification8,
   }
 ];
 
