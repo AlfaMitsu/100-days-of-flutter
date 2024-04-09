@@ -77,7 +77,7 @@ class _HomeViewState extends State<HomeView> {
                   IgnorePointer(
                     ignoring: true,
                     child: RatingBar(
-                      initialRating: 2,
+                      initialRating: 4,
                       minRating: 1,
                       direction: Axis.horizontal,
                       allowHalfRating: true,
@@ -85,9 +85,9 @@ class _HomeViewState extends State<HomeView> {
                       itemSize: 18,
                       itemPadding: const EdgeInsets.symmetric(horizontal: 4),
                       ratingWidget: RatingWidget(
-                        full: Image.asset(kImgStar),
-                        half: Image.asset(kImgStarFill),
-                        empty: Image.asset(kImgStarFill),
+                        full: Image.asset(kImgStarFill),
+                        half: Image.asset(kImgStar),
+                        empty: Image.asset(kImgStar),
                       ),
                       onRatingUpdate: (rating) {
                         if (kDebugMode) {

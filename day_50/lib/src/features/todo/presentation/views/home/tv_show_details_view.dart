@@ -95,7 +95,7 @@ class _TvShowDetailsViewState extends State<TvShowDetailsView> {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Text(
-                            'Narcos',
+                            'Narcos Season 3',
                             style: kMovieDetailsViewMovieName,
                           ),
                           const SizedBox(height: 8),
@@ -138,7 +138,7 @@ class _TvShowDetailsViewState extends State<TvShowDetailsView> {
                   ],
                 ),
                 Text(
-                  '9.0',
+                  '4.0',
                   style: kHomeViewRatingTextStyle,
                 ),
                 IgnorePointer(
@@ -322,7 +322,7 @@ class _TvShowDetailsViewState extends State<TvShowDetailsView> {
         backgroundColor: kPrimary1,
         onPressed: () {
           kTModeDark = !kTModeDark;
-          FBroadcast.instance().broadcast("change_mode");
+          FBroadcast.instance().broadcast('change_mode');
           if (mounted) {
             setState(() {});
           }

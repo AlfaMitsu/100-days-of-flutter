@@ -1,92 +1,100 @@
+import '../../../../constants/assets.dart';
+
 List moviesArr = [
   {
     "name": "Ant Man",
-    "image": "lib/src/resources/assets/images/ant_man.png",
+    "image": kImgMovie1,
   },
   {
     "name": "End of Watch",
-    "image": "lib/src/resources/assets/images/end_of_wactch.png",
+    "image": kImgMovie2,
   },
   {
     "name": "American Hustle",
-    "image": "lib/src/resources/assets/images/american_hustle.png",
+    "image": kImgMovie3,
   },
   {
     "name": "Crash",
-    "image": "lib/src/resources/assets/images/crash.png",
+    "image": kImgMovie4,
   },
 ];
 
 List watchArr = [
-  "lib/src/resources/assets/images/mov_1.png",
-  "lib/src/resources/assets/images/mov_2.png",
-  "lib/src/resources/assets/images/mov_3.png",
-  "lib/src/resources/assets/images/mov_4.png",
-  "lib/src/resources/assets/images/mov_1.png",
-  "lib/src/resources/assets/images/mov_2.png",
-  "lib/src/resources/assets/images/mov_3.png",
-  "lib/src/resources/assets/images/mov_4.png",
+  kImgPoster1,
+  kImgPoster2,
+  kImgPoster3,
+  kImgPoster4,
 ];
 
 List castArr = [
   {
     "name": "Isabela Moner",
-    "image": "",
+    "image": kImgCelebrity1,
   },
   {
     "name": "Michael Peña",
-    "image": "lib/src/resources/assets/images/Michael Pena.png",
+    "image": kImgCelebrity2,
   },
   {
     "name": "Eva Longoria",
-    "image": "lib/src/resources/assets/images/Eva Longoria.png",
+    "image": kImgCelebrity3,
   },
   {
     "name": "Eugenio Derbez",
-    "image": "",
+    "image": kImgCelebrity4,
   },
 ];
 
 List epArr = [
   {
     "name": "1. The Kingpin Strategy",
-    "image": "lib/src/resources/assets/images/ep_thum_1.png",
-    "duration": "54 min"
+    "image": kImgEpisodeThumbnail1,
+    "duration": "54 mins"
   },
   {
     "name": "2. The Cali KBG",
-    "image": "lib/src/resources/assets/images/ep_thum_2.png",
-    "duration": "55 min"
+    "image": kImgEpisodeThumbnail2,
+    "duration": "49 mins"
   },
   {
-    "name": "3. The Kingpin Strategy",
-    "image": "lib/src/resources/assets/images/ep_thum_1.png",
+    "name": "3. Follow the Money",
+    "image": kImgEpisodeThumbnail1,
+    "duration": "59 mins"
+  },
+  {
+    "name": "4. Checkmate",
+    "image": kImgEpisodeThumbnail2,
+    "duration": "52 mins"
+  },
+  {
+    "name": "5. MRO",
+    "image": kImgEpisodeThumbnail1,
+    "duration": "1 hour"
+  },
+  {
+    "name": "6. Best Laid Plans",
+    "image": kImgEpisodeThumbnail2,
+    "duration": "57 mins"
+  },
+  {
+    "name": "7. Sin Salida",
+    "image": kImgEpisodeThumbnail1,
     "duration": "50 min"
   },
   {
-    "name": "4. The Cali KBG",
-    "image": "lib/src/resources/assets/images/ep_thum_2.png",
-    "duration": "54 min"
+    "name": "8. Convivir",
+    "image": kImgEpisodeThumbnail2,
+    "duration": "51 min"
   },
   {
-    "name": "5. The Kingpin Strategy",
-    "image": "lib/src/resources/assets/images/ep_thum_1.png",
-    "duration": "54 min"
+    "name": "9. Todos los Hombres del Presidente",
+    "image": kImgEpisodeThumbnail1,
+    "duration": "47 min"
   },
   {
-    "name": "6. The Cali KBG",
-    "image": "lib/src/resources/assets/images/ep_thum_2.png",
-    "duration": "55 min"
-  },
-  {
-    "name": "7. The Kingpin Strategy",
-    "image": "lib/src/resources/assets/images/ep_thum_1.png",
+    "name": "10. Going Back to Cali",
+    "image": kImgEpisodeThumbnail2,
     "duration": "50 min"
-  },
-  {
-    "name": "8. The Cali KBG",
-    "image": "lib/src/resources/assets/images/ep_thum_2.png",
-    "duration": "54 min"
   },
 ];
 

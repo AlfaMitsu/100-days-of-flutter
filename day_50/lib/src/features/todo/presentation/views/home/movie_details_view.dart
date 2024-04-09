@@ -147,7 +147,7 @@ class _MovieDetailsViewState extends State<MovieDetailsView> {
                 IgnorePointer(
                   ignoring: true,
                   child: RatingBar(
-                    initialRating: 2,
+                    initialRating: 4,
                     minRating: 1,
                     direction: Axis.horizontal,
                     allowHalfRating: true,

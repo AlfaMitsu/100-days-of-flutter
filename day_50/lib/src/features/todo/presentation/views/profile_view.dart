@@ -23,7 +23,7 @@ class _ProfileViewState extends State<ProfileView> {
   @override
   void initState() {
     super.initState();
-    FBroadcast.instance().register("change_mode", (value, callback) {
+    FBroadcast.instance().register('change_mode', (value, callback) {
       if (mounted) {
         setState(() {});
       }
@@ -114,11 +114,11 @@ class _ProfileViewState extends State<ProfileView> {
                     ),
                     const SizedBox(height: 25),
                     Text(
-                      'Code For Any',
+                      'Alfa Mitsu',
                       style: kProfileViewTextStyle,
                     ),
                     Text(
-                      'Premium',
+                      'Unlocked',
                       style: kProfileViewProfileStatusTextStyle,
                     ),
                   ],
