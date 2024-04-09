@@ -24,9 +24,7 @@ class _StoriesViewState extends State<StoriesView> {
         backgroundColor: kWhiteColor,
         elevation: 0,
         leading: IconButton(
-          onPressed: () {
-            Navigator.pop(context);
-          },
+          onPressed: () {},
           icon: Image.asset(
             kImgBackButton,
             width: 25,

@@ -4,6 +4,7 @@ import '../../../../../constants/assets.dart';
 import '../../../../../constants/colors.dart';
 import '../../../../../constants/styles.dart';
 import '../../../data/data_sources/arrays.dart';
+import 'chat_view.dart';
 
 class DetailsView extends StatefulWidget {
   const DetailsView({super.key});
@@ -18,12 +19,18 @@ class _DetailsViewState extends State<DetailsView> {
     var media = MediaQuery.sizeOf(context);
 
     return Scaffold(
-      
       appBar: AppBar(
         backgroundColor: kWhiteColor,
         elevation: 0.5,
         leading: IconButton(
-          onPressed: () {},
+          onPressed: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) => const ChatView(),
+              ),
+            );
+          },
           icon: Image.asset(
             kImgChat,
             width: 35,
@@ -163,14 +170,13 @@ class _DetailsViewState extends State<DetailsView> {
                           children: [
                             Text('Creative Designer ',
                                 style: kDetailsViewBioTextStyle),
-                            Text('@AlfaMitsu',
-                                style: kDetailsViewBioTextStyle),
+                            Text('@AlfaMitsu', style: kDetailsViewBioTextStyle),
                           ],
                         ),
                         const SizedBox(height: 10),
                         Text.rich(
                           TextSpan(
-                            text: 
+                            text:
                                 "Obsessed with Programming, Anime, and Sports ",
                             style: kDetailsViewBioTextStyle,
                             children: [

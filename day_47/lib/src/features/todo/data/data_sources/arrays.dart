@@ -363,61 +363,17 @@ List notificationArr = [
 ];
 
 List searchArr = [
-  {
-    "name": "Emily Lerner",
-    "image": kImgActive1,
-    "tag": "@loveemily"
-  },
-  {
-    "name": "Erin Anderson",
-    "image": kImgActive1,
-    "tag": "@erin4life"
-  },
-  {
-    "name": "Ewan Coffey",
-    "image": kImgActive1,
-    "tag": "@ewancoffey"
-  },
-  {
-    "name": "Elis Jimmy",
-    "image": kImgActive1,
-    "tag": "@its_me_jimmy"
-  },
-  {
-    "name": "Elisha Gaines",
-    "image": kImgActive1,
-    "tag": "@elisha22"
-  },
-  {
-    "name": "Eamon Shores",
-    "image": kImgActive1,
-    "tag": "@eamon_shores"
-  },
-  {
-    "name": "Eileen Conners",
-    "image": kImgActive1,
-    "tag": "@eileen"
-  },
-  {
-    "name": "Earl Garcia",
-    "image": kImgActive1,
-    "tag": "@earl-design"
-  },
-  {
-    "name": "Elliemay Maio",
-    "image": kImgActive1,
-    "tag": "@elliemay_ny"
-  },
-  {
-    "name": "Eathen Joy",
-    "image": kImgActive1,
-    "tag": "@eathen_12"
-  },
-  {
-    "name": "Ebenezer Fidler",
-    "image": kImgActive1,
-    "tag": "@ebenezerfidler_"
-  }
+  {"name": "Emily Lerner", "image": kImgActive1, "tag": "@loveemily"},
+  {"name": "Erin Anderson", "image": kImgActive1, "tag": "@erin4life"},
+  {"name": "Ewan Coffey", "image": kImgActive1, "tag": "@ewancoffey"},
+  {"name": "Elis Jimmy", "image": kImgActive1, "tag": "@its_me_jimmy"},
+  {"name": "Elisha Gaines", "image": kImgActive1, "tag": "@elisha22"},
+  {"name": "Eamon Shores", "image": kImgActive1, "tag": "@eamon_shores"},
+  {"name": "Eileen Conners", "image": kImgActive1, "tag": "@eileen"},
+  {"name": "Earl Garcia", "image": kImgActive1, "tag": "@earl-design"},
+  {"name": "Elliemay Maio", "image": kImgActive1, "tag": "@elliemay_ny"},
+  {"name": "Eathen Joy", "image": kImgActive1, "tag": "@eathen_12"},
+  {"name": "Ebenezer Fidler", "image": kImgActive1, "tag": "@ebenezerfidler_"}
 ];
 
 List storiesArr = [
@@ -484,8 +440,20 @@ List storiesArr = [
 ];
 
 List friendsArr = [
-  {"name": "James McL..", "image": kImgActive1,},
-  {"name": "Bessie Sima...", "image": kImgActive2,},
-  {"name": "Jeffery Hall", "image": kImgActive3,},
-  {"name": "Judy Adler", "image": kImgActive4,}
+  {
+    "name": "Monkey D...",
+    "image": kImgActive1,
+  },
+  {
+    "name": "Roronoa Zoro",
+    "image": kImgActive2,
+  },
+  {
+    "name": "Vinsmoke...",
+    "image": kImgActive3,
+  },
+  {
+    "name": "Usopp",
+    "image": kImgActive4,
+  }
 ];
