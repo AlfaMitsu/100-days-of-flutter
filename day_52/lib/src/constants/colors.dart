@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 
 // Brand Colors
 
-Color get kPrimary => const Color(0xFF4530B3);
-Color get kSecondary => const Color(0xFF1FD2FF);
+Color get kPrimary => kPurpleColor;
+Color get kSecondary => kBlueColor;
 Color get kBg => kWhiteColor;
 Color get kAppBarBg => kWhiteColor;
 Color get kNotificationActive => const Color(0xFFFAAC38);
@@ -34,6 +34,7 @@ const kRedColor = Color(0xFFFF0000);
 const kTransparent = Colors.transparent;
 const kYellowColor = Color(0xFFFFFF00);
 const kBrownColor = Color(0xFF964B00);
+const kPurpleColor = Color(0xFFA020F0);
 
 // Text Colors
 

@@ -10,7 +10,7 @@ class AppBarView extends StatelessWidget implements PreferredSizeWidget {
   Widget build(BuildContext context) {
     return AppBar(
       title: Text(
-        'Jipool',
+        'Expense Tracker',
         style: kHomeViewAddMoneyTextStyle,
       ),
       leading: TextButton(
