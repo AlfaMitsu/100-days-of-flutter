@@ -465,10 +465,11 @@ class _HomeViewState extends State<HomeView> with TickerProviderStateMixin {
   Widget getLeftSide() {
     if (MediaQuery.of(context).size.width < 800) {
       return IconButton.filled(
-          onPressed: () {
-            _key.currentState?.openDrawer();
-          },
-          icon: const Icon(Icons.menu));
+        onPressed: () {
+          _key.currentState?.openDrawer();
+        },
+        icon: const Icon(Icons.menu),
+      );
     } else {
       return leftSideContent();
     }
@@ -485,10 +486,11 @@ class _HomeViewState extends State<HomeView> with TickerProviderStateMixin {
   Widget getRightSide() {
     if (MediaQuery.of(context).size.width < 800) {
       return IconButton.filled(
-          onPressed: () {
-            _key.currentState?.openEndDrawer();
-          },
-          icon: const Icon(Icons.menu));
+        onPressed: () {
+          _key.currentState?.openEndDrawer();
+        },
+        icon: const Icon(Icons.menu),
+      );
     } else {
       return rightSideContent();
     }
