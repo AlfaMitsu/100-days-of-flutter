@@ -7,6 +7,9 @@ import 'package:flutter_earth_globe/point_connection.dart';
 import 'package:flutter_earth_globe/point_connection_style.dart';
 import 'package:flutter_earth_globe/sphere_style.dart';
 
+import '../../../../constants/assets.dart';
+import '../../../../constants/colors.dart';
+
 class HomeView extends StatefulWidget {
   const HomeView({super.key});
 
@@ -21,18 +24,18 @@ class _HomeViewState extends State<HomeView> with TickerProviderStateMixin {
   GlobeCoordinates? _clickCoordinates;
   late FlutterEarthGlobeController _controller;
   final List<String> _textures = [
-    'lib/src/resources/assets/images/2k_earth-day.jpg',
-    'lib/src/resources/assets/images/2k_earth-night.jpg',
-    'lib/src/resources/assets/images/2k_jupiter.jpg',
-    'lib/src/resources/assets/images/2k_mars.jpg',
-    'lib/src/resources/assets/images/2k_mercury.jpg',
-    'lib/src/resources/assets/images/2k_moon.jpg',
-    'lib/src/resources/assets/images/2k_neptune.jpg',
-    'lib/src/resources/assets/images/2k_saturn.jpg',
-    'lib/src/resources/assets/images/2k_stars.jpg',
-    'lib/src/resources/assets/images/2k_sun.jpg',
-    'lib/src/resources/assets/images/2k_uranus.jpg',
-    'lib/src/resources/assets/images/2k_venus_surface.jpg'
+    kImgEarthEvening,
+    kImgEarthMorning,
+    kImgJupiter,
+    kImgMars,
+    kImgMercury,
+    kImgMoon,
+    kImgNeptune,
+    kImgSaturn,
+    kImgStars,
+    kImgSun,
+    kImgUranus,
+    kImgVenus,
   ];
 
   late List<Point> points;
@@ -44,20 +47,23 @@ class _HomeViewState extends State<HomeView> with TickerProviderStateMixin {
     return Container(
       padding: const EdgeInsets.all(8),
       decoration: BoxDecoration(
-          color: isHovering
-              ? Colors.blueAccent.withOpacity(0.8)
-              : Colors.blueAccent.withOpacity(0.5),
-          borderRadius: BorderRadius.circular(8),
-          boxShadow: [
-            BoxShadow(
-                color: Colors.black.withOpacity(0.2),
-                blurRadius: 10,
-                spreadRadius: 2)
-          ]),
-      child: Text(point.label ?? '',
-          style: Theme.of(context).textTheme.titleMedium?.copyWith(
-                color: Colors.white,
-              )),
+        color: isHovering ? kPrimaryColor : kSecondaryColor,
+        borderRadius: BorderRadius.circular(8),
+        boxShadow: [
+          BoxShadow(
+            color: kBox,
+            blurRadius: 10,
+            spreadRadius: 2,
+          ),
+        ],
+      ),
+      child: Text(
+        point.label ?? '',
+        style: Theme.of(context)
+            .textTheme
+            .titleMedium
+            ?.copyWith(color: kWhiteColor),
+      ),
     );
   }
 
@@ -92,8 +98,10 @@ class _HomeViewState extends State<HomeView> with TickerProviderStateMixin {
         zoom: 0.5,
         isRotating: false,
         isBackgroundFollowingSphereRotation: true,
-        background: Image.asset('lib/src/resources/assets/images/2k_stars.jpg').image,
-        surface: Image.asset('lib/src/resources/assets/images/2k_earth-day.jpg').image);
+        background:
+            Image.asset('lib/src/resources/assets/images/2k_stars.jpg').image,
+        surface: Image.asset('lib/src/resources/assets/images/2k_earth-day.jpg')
+            .image);
     points = [
       Point(
           id: '1',
@@ -259,7 +267,8 @@ class _HomeViewState extends State<HomeView> with TickerProviderStateMixin {
                           width: 10,
                         ),
                         Text(texture
-                            .replaceFirst('lib/src/resources/assets/images/', '')
+                            .replaceFirst(
+                                'lib/src/resources/assets/images/', '')
                             .split('.')[0]
                             .replaceAll('_', ' ')
                             .split(' ')[1]
