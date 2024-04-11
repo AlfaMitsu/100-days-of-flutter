@@ -244,68 +244,78 @@ class _HomeViewState extends State<HomeView> with TickerProviderStateMixin {
 
   getTextures() {
     return ListView(
-        shrinkWrap: true,
-        children: _textures
-            .map((texture) => Card(
-                  clipBehavior: Clip.hardEdge,
-                  color: _selectedSurface == texture
-                      ? kCardPrimaryColor
-                      : kCardSecondaryColor,
-                  child: InkWell(
-                    onTap: () {
-                      _controller.loadSurface(Image.asset(
-                        texture,
-                      ).image);
+      shrinkWrap: true,
+      children: _textures
+          .map(
+            (texture) => Card(
+              clipBehavior: Clip.hardEdge,
+              color: _selectedSurface == texture
+                  ? kCardPrimaryColor
+                  : kCardSecondaryColor,
+              child: InkWell(
+                onTap: () {
+                  _controller.loadSurface(Image.asset(
+                    texture,
+                  ).image);
 
-                      if (texture.contains('sun') ||
-                          texture.contains('venus') ||
-                          texture.contains('mars')) {
-                        _controller.setSphereStyle(
-                          SphereStyle(
-                            shadowColor: kSphereColor,
-                            shadowBlurSigma: 20,
-                          ),
-                        );
-                      } else {
-                        _controller.setSphereStyle(const SphereStyle());
-                      }
-                      setState(() {
-                        _selectedSurface = texture;
-                      });
+                  if (texture.contains('sun') ||
+                      texture.contains('venus') ||
+                      texture.contains('mars')) {
+                    _controller.setSphereStyle(
+                      SphereStyle(
+                        shadowColor: kSphereColor,
+                        shadowBlurSigma: 20,
+                      ),
+                    );
+                  } else {
+                    _controller.setSphereStyle(const SphereStyle());
+                  }
+                  setState(
+                    () {
+                      _selectedSurface = texture;
                     },
-                    child: Row(
-                      mainAxisSize: MainAxisSize.min,
-                      children: [
-                        Padding(
-                            padding: const EdgeInsets.all(2),
-                            child: ClipRRect(
-                              borderRadius: BorderRadius.circular(12),
-                              child: Image.asset(
-                                texture,
-                                width: 100,
-                              ),
-                            )),
-                        const SizedBox(
-                          width: 10,
+                  );
+                },
+                child: Row(
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    Padding(
+                      padding: const EdgeInsets.all(2),
+                      child: ClipRRect(
+                        borderRadius: BorderRadius.circular(12),
+                        child: Image.asset(
+                          texture,
+                          width: 100,
                         ),
-                        Text(texture
-                            .replaceFirst(
-                                'lib/src/resources/assets/images/', '')
-                            .split('.')[0]
-                            .replaceAll('_', ' ')
-                            .split(' ')[1]
-                            .toUpperCase())
-                      ],
+                      ),
                     ),
-                  ),
-                ))
-            .toList());
+                    const SizedBox(
+                      width: 10,
+                    ),
+                    Text(
+                      texture
+                          .replaceFirst('lib/src/resources/assets/images/', '')
+                          .split('.')[0]
+                          .replaceAll('_', ' ')
+                          .split(' ')[1]
+                          .toUpperCase(),
+                    ),
+                  ],
+                ),
+              ),
+            ),
+          )
+          .toList(),
+    );
   }
 
   Widget getListAction(String label, Widget child, {Widget? secondary}) {
     return Card(
       child: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 8.0, vertical: 4),
+        padding: const EdgeInsets.symmetric(
+          horizontal: 8,
+          vertical: 4,
+        ),
         child: Column(
           mainAxisSize: MainAxisSize.min,
           children: [
@@ -314,10 +324,7 @@ class _HomeViewState extends State<HomeView> with TickerProviderStateMixin {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Text(label),
-                const SizedBox(
-                  width: 10,
-                ),
-                child
+                const SizedBox(width: 10),
               ],
             ),
             secondary ?? const SizedBox(),
