@@ -347,20 +347,22 @@ class _HomeViewState extends State<HomeView> with TickerProviderStateMixin {
               mainAxisSize: MainAxisSize.min,
               children: [
                 Switch(
-                    value: _controller.isRotating,
-                    onChanged: (value) {
-                      if (value) {
-                        _controller.startRotation();
-                      } else {
-                        _controller.stopRotation();
-                      }
-                      setState(() {});
-                    }),
+                  value: _controller.isRotating,
+                  onChanged: (value) {
+                    if (value) {
+                      _controller.startRotation();
+                    } else {
+                      _controller.stopRotation();
+                    }
+                    setState(() {});
+                  },
+                ),
                 IconButton(
-                    onPressed: () {
-                      _controller.resetRotation();
-                    },
-                    icon: const Icon(Icons.refresh)),
+                  onPressed: () {
+                    _controller.resetRotation();
+                  },
+                  icon: const Icon(Icons.refresh),
+                ),
               ],
             ),
           ),
@@ -373,16 +375,20 @@ class _HomeViewState extends State<HomeView> with TickerProviderStateMixin {
                           setState(() {});
                         }
                       : null)),
-          getListAction('Zoom', Container(),
-              secondary: Slider(
-                  min: _controller.minZoom,
-                  max: _controller.maxZoom,
-                  value: _controller.zoom,
-                  divisions: 8,
-                  onChanged: (value) {
-                    _controller.setZoom(value);
-                    setState(() {});
-                  })),
+          getListAction(
+            'Zoom',
+            Container(),
+            secondary: Slider(
+              min: _controller.minZoom,
+              max: _controller.maxZoom,
+              value: _controller.zoom,
+              divisions: 8,
+              onChanged: (value) {
+                _controller.setZoom(value);
+                setState(() {});
+              },
+            ),
+          ),
           getDividerText('Points'),
           ...points.map((e) => getListAction(
               e.label ?? '',
@@ -402,15 +408,14 @@ class _HomeViewState extends State<HomeView> with TickerProviderStateMixin {
                       setState(() {});
                     },
                   ),
-                  const SizedBox(
-                    width: 10,
-                  ),
+                  const SizedBox(width: 10),
                   IconButton(
-                      onPressed: () {
-                        _controller.focusOnCoordinates(e.coordinates,
-                            animate: true);
-                      },
-                      icon: const Icon(Icons.location_on))
+                    onPressed: () {
+                      _controller.focusOnCoordinates(e.coordinates,
+                          animate: true);
+                    },
+                    icon: const Icon(Icons.location_on),
+                  ),
                 ],
               ),
               secondary: _controller.points
@@ -419,19 +424,23 @@ class _HomeViewState extends State<HomeView> with TickerProviderStateMixin {
                   ? Row(
                       children: [
                         Slider(
-                            value: e.style.size / 30,
-                            onChanged: (value) {
-                              value = value * 30;
-                              _controller.updatePoint(e.id,
-                                  style: e.style.copyWith(size: value));
-                              e.style = e.style.copyWith(size: value);
-                              setState(() {});
-                            }),
+                          value: e.style.size / 30,
+                          onChanged: (value) {
+                            value = value * 30;
+                            _controller.updatePoint(
+                              e.id,
+                              style: e.style.copyWith(size: value),
+                            );
+                            e.style = e.style.copyWith(size: value);
+                            setState(() {});
+                          },
+                        ),
                       ],
                     )
                   : null)),
           getDividerText('Connections'),
-          ...connections.map((e) => getListAction(
+          ...connections.map(
+            (e) => getListAction(
               e.label ?? '',
               Checkbox(
                 value: _controller.connections
@@ -445,7 +454,9 @@ class _HomeViewState extends State<HomeView> with TickerProviderStateMixin {
                   }
                   setState(() {});
                 },
-              ))),
+              ),
+            ),
+          ),
         ],
       ),
     );
