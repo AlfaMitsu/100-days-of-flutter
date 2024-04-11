@@ -1,11 +1,12 @@
-import 'package:day_61/src/constants/dimensions.dart';
 import 'package:flutter/material.dart';
 import 'package:syncfusion_flutter_charts/charts.dart';
 
 import '../../../../constants/assets.dart';
 import '../../../../constants/colors.dart';
+import '../../../../constants/dimensions.dart';
 import '../../../../constants/styles.dart';
 import '../../data/data_sources/chart_data.dart';
+import '../../data/models/main_side_favorite_league_model.dart';
 import '../../data/models/main_side_model.dart';
 
 class HomeView extends StatefulWidget {
@@ -163,7 +164,7 @@ class _HomeViewState extends State<HomeView> {
                   SizedBox(
                     height: 200,
                     child: ListView.builder(
-                      itemCount: 4,
+                      itemCount: mainSide.length,
                       itemBuilder: (context, index) {
                         return dashboardListTile(
                           index,
@@ -173,11 +174,96 @@ class _HomeViewState extends State<HomeView> {
                     ),
                   ),
                   const SizedBox(height: defaultPadding * 2),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Text(
+                        'Favorite League',
+                        style: kHomeViewFavoriteTextStyle,
+                      ),
+                      const SizedBox(height: defaultPadding * 2),
+                      Container(
+                        height: 15,
+                        width: 15,
+                        decoration: const BoxDecoration(
+                          color: kSecondaryColor,
+                          shape: BoxShape.circle,
+                        ),
+                        child: const Center(
+                          child: Icon(
+                            Icons.add,
+                            color: kWhiteColor,
+                            size: 12,
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                  const SizedBox(height: defaultPadding),
+                  SizedBox(
+                    height: 150,
+                    child: ListView.builder(
+                      itemCount: 3,
+                      itemBuilder: (context, index) {
+                        return FavoriteListTile(
+                          index,
+                          mainSideFavoriteLeague[index],
+                        );
+                      },
+                    ),
+                  ),
+                  const SizedBox(height: defaultPadding),
                 ],
               ),
             ),
           ),
+          Expanded(
+            flex: 4,
+            child: Row(
+              children: [
+                Expanded(
+                  flex: 2,
+                  child: Container(),
+                ),
+                Expanded(
+                  flex: 1,
+                  child: Container(),
+                ),
+              ],
+            ),
+          ),
         ],
+      ),
+    );
+  }
+
+  Container FavoriteListTile(
+      int index, MainSideFavoriteLeagueModel mainSideFavoriteLeague) {
+    return Container(
+      color: index != null && _selectedIndex == index + 4
+          ? kBgColor
+          : kTransparent,
+      child: ListTile(
+        hoverColor: kHoverColor,
+        onTap: () {
+          setState(() {
+            _selectedIndex = mainSideFavoriteLeague.index;
+          });
+        },
+        leading: Padding(
+          padding: const EdgeInsets.only(left: defaultPadding * 1.5),
+          child: SizedBox(
+            height: 30,
+            width: 30,
+            child: ClipOval(
+              child: Image.asset(mainSideFavoriteLeague.image),
+            ),
+          ),
+        ),
+        title: Text(
+          mainSideFavoriteLeague.title,
+          style: kHomeViewTitleTextStyle,
+        ),
       ),
     );
   }

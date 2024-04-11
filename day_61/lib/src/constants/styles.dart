@@ -10,6 +10,12 @@ TextStyle kHomeViewUserNameTextStyle = GoogleFonts.ubuntu(
   fontWeight: FontWeight.w800,
 );
 
+TextStyle kHomeViewFavoriteTextStyle = GoogleFonts.ubuntu(
+  color: kBlackTextColor,
+  fontSize: 16,
+  fontWeight: FontWeight.w800,
+);
+
 TextStyle kHomeViewTitleTextStyle = GoogleFonts.ubuntu(
   color: kBlackTextColor,
   fontSize: 14,

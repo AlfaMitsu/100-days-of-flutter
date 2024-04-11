@@ -1,3 +1,5 @@
+import 'package:day_61/src/constants/assets.dart';
+
 class MainSideFavoriteLeagueModel {
   final String title, image;
   final int index;
@@ -9,19 +11,19 @@ class MainSideFavoriteLeagueModel {
   });
 }
 
-List mainSideFavouriteLeague = [
+List mainSideFavoriteLeague = [
   MainSideFavoriteLeagueModel(
-      image: "assets/images/premier_league.png",
-      title: "Premier League",
-      index: 4),
+      image: kImgPremierLeague,
+      title: 'Premier League',
+      index: 4,),
   MainSideFavoriteLeagueModel(
-    image: "assets/images/la_liga.png",
-    title: "La Liga",
+    image: kImgLaLiga,
+    title: 'La Liga',
     index: 5,
   ),
   MainSideFavoriteLeagueModel(
-    image: "assets/images/Italian_Serie_A.png",
-    title: "Serie A",
+    image: kImgSerieA,
+    title: 'Serie A',
     index: 6,
   ),
 ];
