@@ -507,13 +507,13 @@ class _HomeViewState extends State<HomeView> with TickerProviderStateMixin {
       endDrawerEnableOpenDragGesture: true,
       drawer: MediaQuery.of(context).size.width < 800
           ? Container(
-              color: Colors.white38,
+              color: kContainer2,
               child: leftSideContent(),
             )
           : null,
       endDrawer: MediaQuery.of(context).size.width < 800
           ? Container(
-              color: Colors.white38,
+              color: kContainer2,
               child: rightSideContent(),
             )
           : null,
@@ -526,16 +526,20 @@ class _HomeViewState extends State<HomeView> with TickerProviderStateMixin {
                 setState(() {});
               },
               onTap: (coordinates) {
-                setState(() {
-                  _clickCoordinates = coordinates;
-                });
+                setState(
+                  () {
+                    _clickCoordinates = coordinates;
+                  },
+                );
               },
               onHover: (coordinates) {
                 if (coordinates == null) return;
 
-                setState(() {
-                  _hoverCoordinates = coordinates;
-                });
+                setState(
+                  () {
+                    _hoverCoordinates = coordinates;
+                  },
+                );
               },
               controller: _controller,
               radius: radius,
@@ -543,67 +547,77 @@ class _HomeViewState extends State<HomeView> with TickerProviderStateMixin {
             Container(
               padding: const EdgeInsets.all(12),
               decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(12),
-                  color: Colors.blue.withOpacity(0.5)),
+                borderRadius: BorderRadius.circular(12),
+                color: kBoxDecoration,
+              ),
               child: Text(
                 'Flutter Earth Globe',
                 style: Theme.of(context)
                     .textTheme
                     .titleMedium
-                    ?.copyWith(color: Colors.white),
+                    ?.copyWith(color: kWhiteColor),
               ),
             ),
-            Positioned(top: 10, left: 10, child: getLeftSide()),
-            Positioned(top: 10, right: 10, child: getRightSide()),
             Positioned(
-                bottom: 0,
-                width: MediaQuery.of(context).size.width,
-                child: Wrap(
-                  alignment: WrapAlignment.center,
-                  spacing: 10,
-                  children: [
-                    SizedBox(
-                      width: 250,
-                      child: Card(
-                        child: Padding(
-                          padding: const EdgeInsets.all(8.0),
-                          child: Column(
-                            children: [
-                              Text(
-                                'Hover coordinates',
-                                style: Theme.of(context).textTheme.titleMedium,
-                              ),
-                              Text(
-                                  'Latitude: ${_hoverCoordinates?.latitude ?? 0}'),
-                              Text(
-                                  'Longitude: ${_hoverCoordinates?.longitude ?? 0}'),
-                            ],
-                          ),
+              top: 10,
+              left: 10,
+              child: getLeftSide(),
+            ),
+            Positioned(
+              top: 10,
+              right: 10,
+              child: getRightSide(),
+            ),
+            Positioned(
+              bottom: 0,
+              width: MediaQuery.of(context).size.width,
+              child: Wrap(
+                alignment: WrapAlignment.center,
+                spacing: 10,
+                children: [
+                  SizedBox(
+                    width: 250,
+                    child: Card(
+                      child: Padding(
+                        padding: const EdgeInsets.all(8),
+                        child: Column(
+                          children: [
+                            Text(
+                              'Hover coordinates',
+                              style: Theme.of(context).textTheme.titleMedium,
+                            ),
+                            Text(
+                                'Latitude: ${_hoverCoordinates?.latitude ?? 0}'),
+                            Text(
+                                'Longitude: ${_hoverCoordinates?.longitude ?? 0}'),
+                          ],
                         ),
                       ),
                     ),
-                    SizedBox(
-                      width: 250,
-                      child: Card(
-                        child: Padding(
-                          padding: const EdgeInsets.all(8.0),
-                          child: Column(
-                            children: [
-                              Text(
-                                'Click coordinates',
-                                style: Theme.of(context).textTheme.titleMedium,
-                              ),
-                              Text(
-                                  'Latitude: ${_clickCoordinates?.latitude ?? 0}'),
-                              Text(
-                                  'Longitude: ${_clickCoordinates?.longitude ?? 0}'),
-                            ],
-                          ),
+                  ),
+                  SizedBox(
+                    width: 250,
+                    child: Card(
+                      child: Padding(
+                        padding: const EdgeInsets.all(8),
+                        child: Column(
+                          children: [
+                            Text(
+                              'Click coordinates',
+                              style: Theme.of(context).textTheme.titleMedium,
+                            ),
+                            Text(
+                                'Latitude: ${_clickCoordinates?.latitude ?? 0}'),
+                            Text(
+                                'Longitude: ${_clickCoordinates?.longitude ?? 0}'),
+                          ],
                         ),
                       ),
-                    )
-                  ],
-                ))
+                    ),
+                  ),
+                ],
+              ),
+            ),
           ],
         ),
       ),

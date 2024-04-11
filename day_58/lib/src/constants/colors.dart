@@ -9,6 +9,8 @@ const kContainer = Colors.black38;
 final kCardPrimaryColor = Colors.cyan.withOpacity(0.5);
 final kCardSecondaryColor = Colors.white.withOpacity(0.5);
 final kSphereColor = Colors.orange.withOpacity(0.8);
+const kContainer2 = Colors.white38;
+final kBoxDecoration = Colors.blue.withOpacity(0.5);
 
 // Common Colors
 
