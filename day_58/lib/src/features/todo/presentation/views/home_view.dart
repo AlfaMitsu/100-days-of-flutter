@@ -72,21 +72,22 @@ class _HomeViewState extends State<HomeView> with TickerProviderStateMixin {
     return Container(
       padding: const EdgeInsets.all(8),
       decoration: BoxDecoration(
-          color: isHovering
-              ? Colors.blueAccent.withOpacity(0.8)
-              : Colors.blueAccent.withOpacity(0.5),
-          borderRadius: BorderRadius.circular(8),
-          boxShadow: [
-            BoxShadow(
-                color: Colors.black.withOpacity(0.2),
-                blurRadius: 10,
-                spreadRadius: 2)
-          ]),
+        color: isHovering ? kPrimaryColor : kSecondaryColor,
+        borderRadius: BorderRadius.circular(8),
+        boxShadow: [
+          BoxShadow(
+            color: kBox,
+            blurRadius: 10,
+            spreadRadius: 2,
+          ),
+        ],
+      ),
       child: Text(
         connection.label ?? '',
-        style: Theme.of(context).textTheme.titleMedium?.copyWith(
-              color: Colors.white,
-            ),
+        style: Theme.of(context)
+            .textTheme
+            .titleMedium
+            ?.copyWith(color: kWhiteColor),
       ),
     );
   }
