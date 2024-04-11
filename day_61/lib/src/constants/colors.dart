@@ -8,7 +8,8 @@ const kBgColor = Color.fromARGB(255, 243, 243, 243);
 const kElevatedButtonColor = Color(0xFF183b37);
 const kFavoriteIconColor = Color.fromARGB(255, 252, 220, 178);
 const kSplineColor = Color.fromARGB(255, 210, 163, 96);
-const kSecondarybgColor = Color.fromARGB(255, 238, 240, 242);
+const kSecondaryBgColor = Color.fromARGB(255, 238, 240, 242);
+const kHoverColor = Color(0xFFCCEDD0);
 
 // Common Colors
 
