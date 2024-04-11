@@ -5,6 +5,10 @@ import 'package:flutter/material.dart';
 final kPrimaryColor = Colors.blueAccent.withOpacity(0.8);
 final kSecondaryColor = Colors.blueAccent.withOpacity(0.5);
 final kBox = Colors.black.withOpacity(0.2);
+const kContainer = Colors.black38;
+final kCardPrimaryColor = Colors.cyan.withOpacity(0.5);
+final kCardSecondaryColor = Colors.white.withOpacity(0.5);
+final kSphereColor = Colors.orange.withOpacity(0.8);
 
 // Common Colors
 

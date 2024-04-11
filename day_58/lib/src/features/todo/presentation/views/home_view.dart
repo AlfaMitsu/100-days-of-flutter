@@ -222,7 +222,7 @@ class _HomeViewState extends State<HomeView> with TickerProviderStateMixin {
               Flexible(
                 child: Container(
                   margin: const EdgeInsets.symmetric(horizontal: 8),
-                  color: Colors.black38,
+                  color: kContainer,
                   height: 2,
                 ),
               ),
@@ -233,7 +233,7 @@ class _HomeViewState extends State<HomeView> with TickerProviderStateMixin {
               Flexible(
                 child: Container(
                   margin: const EdgeInsets.symmetric(horizontal: 8),
-                  color: Colors.black38,
+                  color: kContainer,
                   height: 2,
                 ),
               ),
@@ -249,8 +249,8 @@ class _HomeViewState extends State<HomeView> with TickerProviderStateMixin {
             .map((texture) => Card(
                   clipBehavior: Clip.hardEdge,
                   color: _selectedSurface == texture
-                      ? Colors.cyan.withOpacity(0.5)
-                      : Colors.white.withOpacity(0.5),
+                      ? kCardPrimaryColor
+                      : kCardSecondaryColor,
                   child: InkWell(
                     onTap: () {
                       _controller.loadSurface(Image.asset(
@@ -260,16 +260,18 @@ class _HomeViewState extends State<HomeView> with TickerProviderStateMixin {
                       if (texture.contains('sun') ||
                           texture.contains('venus') ||
                           texture.contains('mars')) {
-                        _controller.setSphereStyle(SphereStyle(
-                            shadowColor: Colors.orange.withOpacity(0.8),
-                            shadowBlurSigma: 20));
+                        _controller.setSphereStyle(
+                          SphereStyle(
+                            shadowColor: kSphereColor,
+                            shadowBlurSigma: 20,
+                          ),
+                        );
                       } else {
                         _controller.setSphereStyle(const SphereStyle());
                       }
                       setState(() {
                         _selectedSurface = texture;
                       });
-                      // _controller.changeSurface(textures[i]);
                     },
                     child: Row(
                       mainAxisSize: MainAxisSize.min,
