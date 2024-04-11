@@ -297,7 +297,7 @@ class _HomeViewState extends State<HomeView> with TickerProviderStateMixin {
                           .replaceFirst('lib/src/resources/assets/images/', '')
                           .split('.')[0]
                           .replaceAll('_', ' ')
-                          .split(' ')[1]
+                          .split(' ')[0]
                           .toUpperCase(),
                     ),
                   ],
