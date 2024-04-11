@@ -99,61 +99,76 @@ class _HomeViewState extends State<HomeView> with TickerProviderStateMixin {
         zoom: 0.5,
         isRotating: false,
         isBackgroundFollowingSphereRotation: true,
-        background:
-            Image.asset('lib/src/resources/assets/images/2k_stars.jpg').image,
-        surface: Image.asset('lib/src/resources/assets/images/2k_earth-day.jpg')
-            .image);
+        background: Image.asset(kImgStars).image,
+        surface: Image.asset(kImgEarthMorning).image);
     points = [
       Point(
-          id: '1',
-          coordinates: const GlobeCoordinates(51.5072, 0.1276),
-          label: 'London',
-          // labelBuilder: pointLabelBuilder,
-          style: const PointStyle(color: Colors.red, size: 6)),
+        id: '1',
+        coordinates: const GlobeCoordinates(
+          51.5072,
+          0.1276,
+        ),
+        label: 'London',
+        labelBuilder: pointLabelBuilder,
+        style: const PointStyle(
+          color: kRedColor,
+          size: 6,
+        ),
+      ),
       Point(
-          id: '2',
-          // showTitleOnHover: true,
-          // labelBuilder: pointLabelBuilder,
-          coordinates: const GlobeCoordinates(40.7128, -74.0060),
-          style: const PointStyle(color: Colors.green),
-          onHover: () {},
-          label: 'New York'),
+        id: '2',
+        labelBuilder: pointLabelBuilder,
+        coordinates: const GlobeCoordinates(40.7128, -74.0060),
+        style: const PointStyle(color: kLightGreenColor),
+        onHover: () {},
+        label: 'New York',
+      ),
       Point(
-          id: '3',
-          // labelBuilder: pointLabelBuilder,
-          coordinates: const GlobeCoordinates(35.6895, 139.6917),
-          style: const PointStyle(color: Colors.blue),
-          onHover: () {},
-          label: 'Tokyo'),
+        id: '3',
+        labelBuilder: pointLabelBuilder,
+        coordinates: const GlobeCoordinates(35.6895, 139.6917),
+        style: const PointStyle(color: kBlueColor),
+        onHover: () {},
+        label: 'Tokyo',
+      ),
       Point(
-          id: '4',
-          isLabelVisible: false,
-          // labelBuilder: pointLabelBuilder,
-          onTap: () {
-            Future.delayed(Duration.zero, () {
+        id: '4',
+        isLabelVisible: false,
+        labelBuilder: pointLabelBuilder,
+        onTap: () {
+          Future.delayed(
+            Duration.zero,
+            () {
               showDialog(
-                  context: context,
-                  builder: (context) => const AlertDialog(
-                        title: Text('Center'),
-                        content: Text('This is the center of the globe'),
-                      ));
-            });
-          },
-          coordinates: const GlobeCoordinates(0, 0),
-          style: const PointStyle(color: Colors.yellow),
-          label: 'Center'),
+                context: context,
+                builder: (context) => const AlertDialog(
+                  title: Text('Center'),
+                  content: Text('This is the center of the globe'),
+                ),
+              );
+            },
+          );
+        },
+        coordinates: const GlobeCoordinates(
+          0,
+          0,
+        ),
+        style: const PointStyle(color: kYellowColor),
+        label: 'Center',
+      ),
     ];
     connections = [
       PointConnection(
           id: '1',
           onTap: () {
             showDialog(
-                context: context,
-                builder: (context) => const AlertDialog(
-                      title: Text('London to New York'),
-                      content: Text(
-                          'This is a connection between London and New York'),
-                    ));
+              context: context,
+              builder: (context) => const AlertDialog(
+                title: Text('London to New York'),
+                content:
+                    Text('This is a connection between London and New York'),
+              ),
+            );
           },
           start: points[0].coordinates,
           end: points[1].coordinates,
@@ -161,11 +176,12 @@ class _HomeViewState extends State<HomeView> with TickerProviderStateMixin {
           labelBuilder: connectionLabelBuilder,
           isLabelVisible: false,
           style: const PointConnectionStyle(
-              type: PointConnectionType.dotted,
-              color: Colors.red,
-              lineWidth: 2,
-              dashSize: 6,
-              spacing: 10),
+            type: PointConnectionType.dotted,
+            color: kRedColor,
+            lineWidth: 2,
+            dashSize: 6,
+            spacing: 10,
+          ),
           label: 'London to New York'),
       PointConnection(
           start: points[1].coordinates,
@@ -176,16 +192,19 @@ class _HomeViewState extends State<HomeView> with TickerProviderStateMixin {
           style: const PointConnectionStyle(type: PointConnectionType.dashed),
           label: 'New York to Center'),
       PointConnection(
-          label: 'Tokyo to Center',
-          labelBuilder: connectionLabelBuilder,
-          start: points[2].coordinates,
-          end: points[3].coordinates,
-          id: '3')
+        label: 'Tokyo to Center',
+        labelBuilder: connectionLabelBuilder,
+        start: points[2].coordinates,
+        end: points[3].coordinates,
+        id: '3',
+      ),
     ];
     _controller.onLoaded = () {
-      setState(() {
-        _selectedSurface = _textures[0];
-      });
+      setState(
+        () {
+          _selectedSurface = _textures[0];
+        },
+      );
     };
 
     for (var point in points) {
