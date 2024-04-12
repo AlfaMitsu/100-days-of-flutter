@@ -51,6 +51,12 @@ TextStyle kHomeViewDropdownMenuTextStyle = GoogleFonts.ubuntu(
   fontWeight: FontWeight.w800,
 );
 
+TextStyle kHomeViewGameDateTextStyle = GoogleFonts.ubuntu(
+  color: Colors.black54,
+  fontSize: 14,
+  fontWeight: FontWeight.w800,
+);
+
 TextStyle kHomeViewLevelStatusTextStyle = GoogleFonts.ubuntu(
   color: kBlackTextColor,
   fontSize: 12,
@@ -73,4 +79,16 @@ TextStyle kHomeViewGameStatusTextStyle = GoogleFonts.ubuntu(
   color: kWhiteTextColor,
   fontSize: 12,
   fontWeight: FontWeight.w600,
+);
+
+TextStyle kHomeViewLiveTextStyle = GoogleFonts.ubuntu(
+  color: kWhiteTextColor,
+  fontSize: 12,
+  fontWeight: FontWeight.w400,
+);
+
+TextStyle kHomeViewScoreTextStyle = GoogleFonts.ubuntu(
+  color: kBlackTextColor,
+  fontSize: 12,
+  fontWeight: FontWeight.w800,
 );

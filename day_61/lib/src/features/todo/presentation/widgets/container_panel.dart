@@ -30,7 +30,7 @@ class ContainerPanel extends StatelessWidget {
           SizedBox(
             child: Align(
               alignment: Alignment.topCenter,
-              child: Image.asset(kImgHaaland),
+              child: Image.asset(kImgBellingham),
             ),
           ),
           Container(
@@ -124,7 +124,7 @@ class ContainerPanel extends StatelessWidget {
                     Container(
                       height: 5,
                       width: double.infinity,
-                      color: kBlueColor,
+                      color: kPurpleAccent,
                     ),
                     Container(
                       height: 5,
@@ -233,7 +233,7 @@ class ContainerPanel extends StatelessWidget {
                               width: 25,
                               child: ClipOval(
                                 child: Image.asset(
-                                  kImgPlayer1,
+                                  kImgPlayer3,
                                   fit: BoxFit.cover,
                                 ),
                               ),
@@ -243,7 +243,7 @@ class ContainerPanel extends StatelessWidget {
                               width: 25,
                               child: ClipOval(
                                 child: Image.asset(
-                                  kImgPlayer2,
+                                  kImgPlayer4,
                                   fit: BoxFit.cover,
                                 ),
                               ),
