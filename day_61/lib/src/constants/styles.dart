@@ -16,6 +16,25 @@ TextStyle kHomeViewUserNameTextStyle = GoogleFonts.ubuntu(
   fontWeight: FontWeight.w800,
 );
 
+TextStyle kHomeViewTimeAndDateTextStyle = GoogleFonts.ubuntu(
+  color: Colors.black54,
+  fontSize: 18,
+  fontWeight: FontWeight.w600,
+);
+
+TextStyle kHomeViewProfitTextStyle = GoogleFonts.ubuntu(
+  color: kSecondaryColor,
+  fontSize: 18,
+  fontWeight: FontWeight.w600,
+);
+
+TextStyle kHomeViewNameTextStyle = GoogleFonts.ubuntu(
+  color: kBlackTextColor,
+  fontSize: 18,
+  fontWeight: FontWeight.w600,
+);
+
+
 TextStyle kHomeViewFavoriteTextStyle = GoogleFonts.ubuntu(
   color: kBlackTextColor,
   fontSize: 16,
@@ -57,6 +76,12 @@ TextStyle kHomeViewGameDateTextStyle = GoogleFonts.ubuntu(
   fontWeight: FontWeight.w800,
 );
 
+TextStyle kHomeViewAllTextStyle = GoogleFonts.ubuntu(
+  color: Colors.black54,
+  fontSize: 14,
+  fontWeight: FontWeight.w600,
+);
+
 TextStyle kHomeViewLevelStatusTextStyle = GoogleFonts.ubuntu(
   color: kBlackTextColor,
   fontSize: 12,
@@ -92,3 +117,16 @@ TextStyle kHomeViewScoreTextStyle = GoogleFonts.ubuntu(
   fontSize: 12,
   fontWeight: FontWeight.w800,
 );
+
+TextStyle kHomeViewProfitInfoTextStyle = GoogleFonts.ubuntu(
+  color: Colors.black54,
+  fontSize: 12,
+  fontWeight: FontWeight.w800,
+);
+
+TextStyle kHomeViewProfitTimeTextStyle = GoogleFonts.ubuntu(
+  color: Colors.black54,
+  fontSize: 12,
+  fontWeight: FontWeight.w400,
+);
+

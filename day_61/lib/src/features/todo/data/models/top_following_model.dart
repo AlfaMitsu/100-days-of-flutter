@@ -1,34 +1,36 @@
+import '../../../../constants/assets.dart';
+
 class TopFollowingModel {
-  final String person;
+  final String player;
 
   TopFollowingModel({
-    required this.person,
+    required this.player,
   });
 }
 
-List demoTopFollowing = [
+List topFollowingData = [
   TopFollowingModel(
-    person: "assets/images/person1.jpg",
+    player: kImgPlayer1,
   ),
   TopFollowingModel(
-    person: "assets/images/person2.jpg",
+    player: kImgPlayer2,
   ),
   TopFollowingModel(
-    person: "assets/images/person3.jpg",
+    player: kImgPlayer3,
   ),
   TopFollowingModel(
-    person: "assets/images/person4.jpg",
+    player: kImgPlayer4,
   ),
   TopFollowingModel(
-    person: "assets/images/person5.jpg",
+    player: kImgPlayer5,
   ),
   TopFollowingModel(
-    person: "assets/images/person6.jpg",
+    player: kImgPlayer6,
   ),
   TopFollowingModel(
-    person: "assets/images/person7.jpg",
+    player: kImgPlayer7,
   ),
   TopFollowingModel(
-    person: "assets/images/person8.jpg",
+    player: kImgPlayer8,
   ),
 ];

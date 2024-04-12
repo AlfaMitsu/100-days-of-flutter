@@ -1,3 +1,6 @@
+import 'package:day_61/src/features/todo/data/models/notification_items_model.dart';
+import 'package:day_61/src/features/todo/data/models/top_following_model.dart';
+import 'package:fdottedline_nullsafety/fdottedline__nullsafety.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:material_segmented_control/material_segmented_control.dart';
@@ -33,6 +36,7 @@ class _HomeViewState extends State<HomeView> {
           Expanded(
             flex: 4,
             child: Row(
+              crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Expanded(
                   flex: 2,
@@ -255,7 +259,7 @@ class _HomeViewState extends State<HomeView> {
                                 padding:
                                     const EdgeInsets.only(left: defaultPadding),
                                 child: Text(
-                                  'LaLiga',
+                                  'La Liga',
                                   style: kHomeViewDropdownMenuTextStyle,
                                 ),
                               ),
@@ -286,12 +290,306 @@ class _HomeViewState extends State<HomeView> {
                 ),
                 Expanded(
                   flex: 1,
-                  child: Container(),
+                  child: Container(
+                    padding: const EdgeInsets.only(
+                      top: defaultPadding * 8,
+                      left: defaultPadding * 0.5,
+                      right: defaultPadding * 1.5,
+                    ),
+                    child: SingleChildScrollView(
+                      child: Column(
+                        children: [
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              Text(
+                                'Top Following',
+                                style: kHomeViewFootballGamesTextStyle,
+                              ),
+                              Text(
+                                'All',
+                                style: kHomeViewAllTextStyle,
+                              ),
+                            ],
+                          ),
+                          const SizedBox(height: defaultPadding * 2),
+                          SizedBox(
+                            height: 160,
+                            width: double.infinity,
+                            child: GridView.builder(
+                              itemCount: topFollowingData.length,
+                              gridDelegate:
+                                  const SliverGridDelegateWithFixedCrossAxisCount(
+                                crossAxisCount: 4,
+                                crossAxisSpacing: defaultPadding * 2,
+                                mainAxisSpacing: defaultPadding,
+                              ),
+                              itemBuilder: (context, index) {
+                                return topFollowing(
+                                  topFollowingData[index],
+                                );
+                              },
+                            ),
+                          ),
+                          const SizedBox(height: defaultPadding),
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              Text(
+                                'Your Balance',
+                                style: kHomeViewFootballGamesTextStyle,
+                              ),
+                              Text(
+                                '\$ 26,020.31',
+                                style: kHomeViewFootballGamesTextStyle,
+                              ),
+                            ],
+                          ),
+                          const SizedBox(height: defaultPadding),
+                          Stack(
+                            children: [
+                              Padding(
+                                padding: const EdgeInsets.only(
+                                  right: defaultPadding * 5.3,
+                                  top: defaultPadding * 3,
+                                ),
+                                child: Align(
+                                  alignment: Alignment.centerRight,
+                                  child: FDottedLine(
+                                    color: kSecondaryColor,
+                                    height: 130,
+                                  ),
+                                ),
+                              ),
+                              SizedBox(
+                                height: 130,
+                                child: SfCartesianChart(
+                                  onMarkerRender: (MarkerRenderArgs args) {
+                                    if (!(args.pointIndex == 8)) {
+                                      args.markerHeight = 0;
+                                      args.markerWidth = 0;
+                                    }
+                                  },
+                                  plotAreaBackgroundColor: kTransparent,
+                                  margin: const EdgeInsets.all(0),
+                                  borderColor: kTransparent,
+                                  borderWidth: 0,
+                                  plotAreaBorderWidth: 0,
+                                  primaryXAxis: const CategoryAxis(
+                                    isVisible: false,
+                                  ),
+                                  primaryYAxis: const NumericAxis(
+                                    isVisible: false,
+                                  ),
+                                  series: <LineSeries<ChartSplineData, String>>[
+                                    LineSeries(
+                                      color: kSecondaryColor,
+                                      markerSettings: const MarkerSettings(
+                                        isVisible: true,
+                                        color: kBgColor,
+                                        borderColor: kSecondaryColor,
+                                        borderWidth: 3,
+                                        height: 10,
+                                        width: 10,
+                                      ),
+                                      width: 3,
+                                      dataSource: chartData2,
+                                      xValueMapper: (ChartSplineData data, _) =>
+                                          data.month,
+                                      yValueMapper: (ChartSplineData data, _) =>
+                                          data.amount,
+                                    )
+                                  ],
+                                ),
+                              ),
+                            ],
+                          ),
+                          Container(
+                            padding: const EdgeInsets.all(defaultPadding),
+                            height: 90,
+                            width: double.infinity,
+                            decoration: const BoxDecoration(
+                              color: kWhiteColor,
+                              borderRadius: BorderRadius.all(
+                                Radius.circular(defaultBorderRadius),
+                              ),
+                            ),
+                            child: Column(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              children: [
+                                Row(
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.spaceBetween,
+                                  children: [
+                                    Text(
+                                      '7:00 PM 12 April 2024',
+                                      style: kHomeViewUserNameTextStyle,
+                                    ),
+                                    Text(
+                                      '+ \$110.23',
+                                      style: kHomeViewProfitTextStyle,
+                                    ),
+                                  ],
+                                ),
+                                Row(
+                                  children: [
+                                    SizedBox(
+                                      height: 30,
+                                      width: 30,
+                                      child: ClipOval(
+                                        child: Image.asset(
+                                          kImgProfile,
+                                          fit: BoxFit.cover,
+                                        ),
+                                      ),
+                                    ),
+                                    Padding(
+                                      padding: const EdgeInsets.only(
+                                          left: defaultPadding / 2),
+                                      child: Text(
+                                        'Al-Fasheer A. Hadji Usop',
+                                        style: kHomeViewNameTextStyle,
+                                      ),
+                                    ),
+                                    const Spacer(),
+                                    SizedBox(
+                                      height: 30,
+                                      width: 30,
+                                      child: ClipOval(
+                                        child: Image.asset(
+                                          kImgManchesterUnited,
+                                          fit: BoxFit.cover,
+                                        ),
+                                      ),
+                                    ),
+                                    Padding(
+                                      padding: const EdgeInsets.symmetric(
+                                          horizontal: defaultPadding / 2),
+                                      child: Text(
+                                        'VS',
+                                        style: kHomeViewTitleTextStyle,
+                                      ),
+                                    ),
+                                    SizedBox(
+                                      height: 30,
+                                      width: 30,
+                                      child: ClipOval(
+                                        child: Image.asset(
+                                          kImgManchesterCity,
+                                          fit: BoxFit.cover,
+                                        ),
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              ],
+                            ),
+                          ),
+                          const SizedBox(height: defaultPadding * 2),
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              Text(
+                                'Notification',
+                                style: kHomeViewFootballGamesTextStyle,
+                              ),
+                              Text(
+                                'News Feed',
+                                style: kHomeViewAllTextStyle,
+                              ),
+                            ],
+                          ),
+                          const SizedBox(height: defaultPadding * 2),
+                          SizedBox(
+                            height: notificationItems.length * 90,
+                            width: double.infinity,
+                            child: ListView.builder(
+                              itemCount: notificationItems.length,
+                              itemBuilder: (context, index) {
+                                return notification(
+                                  notificationItems[index],
+                                );
+                              },
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
                 ),
               ],
             ),
           ),
         ],
+      ),
+    );
+  }
+
+  Padding notification(NotificationItemsModel notificationItems) {
+    return Padding(
+      padding: const EdgeInsets.only(bottom: defaultPadding),
+      child: Container(
+        padding: const EdgeInsets.symmetric(
+          horizontal: defaultPadding,
+          vertical: 6,
+        ),
+        height: 70,
+        decoration: const BoxDecoration(
+          color: kWhiteColor,
+          borderRadius: BorderRadius.all(
+            Radius.circular(defaultBorderRadius),
+          ),
+        ),
+        child: Row(
+          children: [
+            SizedBox(
+              height: 30,
+              width: 30,
+              child: ClipOval(
+                child: Image.asset(
+                  notificationItems.player,
+                  fit: BoxFit.cover,
+                ),
+              ),
+            ),
+            const SizedBox(width: defaultPadding),
+            Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Text(
+                  notificationItems.title1,
+                  style: kHomeViewDropdownMenuTextStyle,
+                ),
+                Text(
+                  notificationItems.title2,
+                  style: kHomeViewProfitInfoTextStyle,
+                ),
+                const Spacer(),
+                Text(
+                  notificationItems.time,
+                  style: kHomeViewProfitTimeTextStyle,
+                ),
+              ],
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+
+  Container topFollowing(TopFollowingModel topFollowing) {
+    return Container(
+      padding: const EdgeInsets.all(3),
+      decoration: const BoxDecoration(
+        shape: BoxShape.circle,
+        color: kSecondaryColor,
+      ),
+      child: ClipOval(
+        child: Image.asset(
+          topFollowing.player,
+          fit: BoxFit.cover,
+        ),
       ),
     );
   }
@@ -319,7 +617,7 @@ class _HomeViewState extends State<HomeView> {
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       Text(
-                        '3:00',
+                        spain.gametime,
                         style: kHomeViewDropdownMenuTextStyle,
                       ),
                       Text(
@@ -372,7 +670,7 @@ class _HomeViewState extends State<HomeView> {
                   ),
                   child: Center(
                     child: Text(
-                      '3 : 2',
+                      spain.score,
                       style: kHomeViewScoreTextStyle,
                     ),
                   ),
@@ -389,7 +687,7 @@ class _HomeViewState extends State<HomeView> {
                           innerRadius: '90%',
                           radius: '220%',
                           startAngle: 0,
-                          endAngle: 90,
+                          endAngle: spain.time,
                           pointColorMapper: (ChartData data, _) => data.color,
                           xValueMapper: (ChartData data, _) => data.level,
                           yValueMapper: (ChartData data, _) => data.y,

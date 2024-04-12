@@ -1,31 +1,33 @@
+import 'package:day_61/src/constants/assets.dart';
+
 class NotificationItemsModel {
-  final String title1, title2, person, time;
+  final String title1, title2, player, time;
 
   NotificationItemsModel({
     required this.title1,
     required this.title2,
-    required this.person,
+    required this.player,
     required this.time,
   });
 }
 
 List notificationItems = [
   NotificationItemsModel(
-    person: "assets/images//person4.jpg",
-    time: "04:20 pm",
-    title1: "Mohammed Mohammed",
-    title2: "+ profit on Football",
+    player: kImgPlayer4,
+    time: '04:20 AM',
+    title1: 'Usopp',
+    title2: '+ Profit on Football',
   ),
   NotificationItemsModel(
-    person: "assets/images//person8.jpg",
-    time: "04:45 pm",
-    title1: "Ahmed El bassem",
-    title2: "+ profit on Football",
+    player: kImgPlayer8,
+    time: '04:45 AM',
+    title1: 'Trafalgar D. Water Law',
+    title2: '+ Profit on Football',
   ),
   NotificationItemsModel(
-    person: "assets/images/person3.jpg",
-    time: "03:45 pm",
-    title1: "Edward Noya",
-    title2: "+ profit on Football",
+    player: kImgPlayer3,
+    time: '03:45 AM',
+    title1: 'Vinsmoke Sanji',
+    title2: '+ Profit on Football',
   ),
 ];
