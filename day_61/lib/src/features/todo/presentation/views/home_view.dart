@@ -1,8 +1,6 @@
 import 'package:day_61/src/features/todo/data/models/notification_items_model.dart';
 import 'package:day_61/src/features/todo/data/models/top_following_model.dart';
-import 'package:fdottedline_nullsafety/fdottedline__nullsafety.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:material_segmented_control/material_segmented_control.dart';
 import 'package:syncfusion_flutter_charts/charts.dart';
 
@@ -14,6 +12,10 @@ import '../../data/data_sources/chart_data.dart';
 import '../../data/data_sources/my_tabs.dart';
 import '../../data/models/spain_model.dart';
 import '../widgets/container_panel.dart';
+import '../widgets/football_games.dart';
+import '../widgets/notification.dart';
+import '../widgets/profit.dart';
+import '../widgets/profit_status.dart';
 import '../widgets/side_main.dart';
 
 class HomeView extends StatefulWidget {
@@ -51,36 +53,9 @@ class _HomeViewState extends State<HomeView> {
                         children: [
                           Row(
                             children: [
-                              Expanded(
-                                child: Container(
-                                  padding: const EdgeInsets.symmetric(
-                                      horizontal: defaultPadding),
-                                  height: 40,
-                                  decoration: const BoxDecoration(
-                                    borderRadius: BorderRadius.all(
-                                      Radius.circular(defaultBorderRadius),
-                                    ),
-                                    color: kWhiteColor,
-                                    boxShadow: [
-                                      BoxShadow(
-                                        color: kGrey200Color,
-                                        spreadRadius: 1,
-                                        blurRadius: 5,
-                                        offset: Offset(0, 2),
-                                      ),
-                                    ],
-                                  ),
-                                  child: TextFormField(
-                                    initialValue: 'Search Games...',
-                                    style: const TextStyle(color: kGreyColor),
-                                    decoration: const InputDecoration(
-                                      suffixIcon: Icon(
-                                        Icons.search,
-                                        color: kBlackColor,
-                                      ),
-                                    ),
-                                  ),
-                                ),
+                              const SizedBox(width: defaultPadding),
+                              const Expanded(
+                                child: SearchBar(),
                               ),
                               const SizedBox(width: defaultPadding * 2),
                               Container(
@@ -157,43 +132,7 @@ class _HomeViewState extends State<HomeView> {
                           const SizedBox(height: defaultPadding),
                           const ContainerPanel(),
                           const SizedBox(height: defaultPadding),
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            children: [
-                              Text(
-                                'Football Games',
-                                style: kHomeViewFootballGamesTextStyle,
-                              ),
-                              Container(
-                                height: 30,
-                                width: 130,
-                                decoration: const BoxDecoration(
-                                  color: kPrimaryColor,
-                                  borderRadius: BorderRadius.all(
-                                    Radius.circular(22),
-                                  ),
-                                ),
-                                child: Center(
-                                  child: DropdownButton(
-                                    underline: Container(),
-                                    iconEnabledColor: kBlackColor,
-                                    iconDisabledColor: kBlackColor,
-                                    value: 'More Bets',
-                                    items: [
-                                      DropdownMenuItem(
-                                        value: 'More Bets',
-                                        child: Text(
-                                          'More Bets',
-                                          style: kHomeViewDropdownMenuTextStyle,
-                                        ),
-                                      ),
-                                    ],
-                                    onChanged: (value) {},
-                                  ),
-                                ),
-                              ),
-                            ],
-                          ),
+                          const FootballGames(),
                           const SizedBox(height: defaultPadding * 2),
                           SizedBox(
                             width: double.infinity,
@@ -346,159 +285,10 @@ class _HomeViewState extends State<HomeView> {
                             ],
                           ),
                           const SizedBox(height: defaultPadding),
-                          Stack(
-                            children: [
-                              Padding(
-                                padding: const EdgeInsets.only(
-                                  right: defaultPadding * 5.3,
-                                  top: defaultPadding * 3,
-                                ),
-                                child: Align(
-                                  alignment: Alignment.centerRight,
-                                  child: FDottedLine(
-                                    color: kSecondaryColor,
-                                    height: 130,
-                                  ),
-                                ),
-                              ),
-                              SizedBox(
-                                height: 130,
-                                child: SfCartesianChart(
-                                  onMarkerRender: (MarkerRenderArgs args) {
-                                    if (!(args.pointIndex == 8)) {
-                                      args.markerHeight = 0;
-                                      args.markerWidth = 0;
-                                    }
-                                  },
-                                  plotAreaBackgroundColor: kTransparent,
-                                  margin: const EdgeInsets.all(0),
-                                  borderColor: kTransparent,
-                                  borderWidth: 0,
-                                  plotAreaBorderWidth: 0,
-                                  primaryXAxis: const CategoryAxis(
-                                    isVisible: false,
-                                  ),
-                                  primaryYAxis: const NumericAxis(
-                                    isVisible: false,
-                                  ),
-                                  series: <LineSeries<ChartSplineData, String>>[
-                                    LineSeries(
-                                      color: kSecondaryColor,
-                                      markerSettings: const MarkerSettings(
-                                        isVisible: true,
-                                        color: kBgColor,
-                                        borderColor: kSecondaryColor,
-                                        borderWidth: 3,
-                                        height: 10,
-                                        width: 10,
-                                      ),
-                                      width: 3,
-                                      dataSource: chartData2,
-                                      xValueMapper: (ChartSplineData data, _) =>
-                                          data.month,
-                                      yValueMapper: (ChartSplineData data, _) =>
-                                          data.amount,
-                                    )
-                                  ],
-                                ),
-                              ),
-                            ],
-                          ),
-                          Container(
-                            padding: const EdgeInsets.all(defaultPadding),
-                            height: 90,
-                            width: double.infinity,
-                            decoration: const BoxDecoration(
-                              color: kWhiteColor,
-                              borderRadius: BorderRadius.all(
-                                Radius.circular(defaultBorderRadius),
-                              ),
-                            ),
-                            child: Column(
-                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                              children: [
-                                Row(
-                                  mainAxisAlignment:
-                                      MainAxisAlignment.spaceBetween,
-                                  children: [
-                                    Text(
-                                      '7:00 PM 12 April 2024',
-                                      style: kHomeViewUserNameTextStyle,
-                                    ),
-                                    Text(
-                                      '+ \$110.23',
-                                      style: kHomeViewProfitTextStyle,
-                                    ),
-                                  ],
-                                ),
-                                Row(
-                                  children: [
-                                    SizedBox(
-                                      height: 30,
-                                      width: 30,
-                                      child: ClipOval(
-                                        child: Image.asset(
-                                          kImgProfile,
-                                          fit: BoxFit.cover,
-                                        ),
-                                      ),
-                                    ),
-                                    Padding(
-                                      padding: const EdgeInsets.only(
-                                          left: defaultPadding / 2),
-                                      child: Text(
-                                        'Al-Fasheer A. Hadji Usop',
-                                        style: kHomeViewNameTextStyle,
-                                      ),
-                                    ),
-                                    const Spacer(),
-                                    SizedBox(
-                                      height: 30,
-                                      width: 30,
-                                      child: ClipOval(
-                                        child: Image.asset(
-                                          kImgManchesterUnited,
-                                          fit: BoxFit.cover,
-                                        ),
-                                      ),
-                                    ),
-                                    Padding(
-                                      padding: const EdgeInsets.symmetric(
-                                          horizontal: defaultPadding / 2),
-                                      child: Text(
-                                        'VS',
-                                        style: kHomeViewTitleTextStyle,
-                                      ),
-                                    ),
-                                    SizedBox(
-                                      height: 30,
-                                      width: 30,
-                                      child: ClipOval(
-                                        child: Image.asset(
-                                          kImgManchesterCity,
-                                          fit: BoxFit.cover,
-                                        ),
-                                      ),
-                                    ),
-                                  ],
-                                ),
-                              ],
-                            ),
-                          ),
+                          const Profit(),
+                          const ProfitStatus(),
                           const SizedBox(height: defaultPadding * 2),
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            children: [
-                              Text(
-                                'Notification',
-                                style: kHomeViewFootballGamesTextStyle,
-                              ),
-                              Text(
-                                'News Feed',
-                                style: kHomeViewAllTextStyle,
-                              ),
-                            ],
-                          ),
+                          const NotificationText(),
                           const SizedBox(height: defaultPadding * 2),
                           SizedBox(
                             height: notificationItems.length * 90,
