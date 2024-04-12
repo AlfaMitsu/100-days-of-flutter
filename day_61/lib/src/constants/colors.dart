@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 // Brand Colors
 
 const kPrimaryColor = Color(0xFFE0E0E0);
-const kSecondaryColor = Color.fromARGB(255, 0, 166, 83);
+const kSecondaryColor = kPurpleColor;
 const kBgColor = Color.fromARGB(255, 243, 243, 243);
 const kElevatedButtonColor = Color(0xFF183b37);
 const kFavoriteIconColor = Color.fromARGB(255, 252, 220, 178);
@@ -65,3 +65,4 @@ LinearGradient kLineGradientContainerCardColor = LinearGradient(
 const kGrey200Color = Color(0xFFE6E6E6);
 const kGrey300Color = Color(0xFFCCCCCC);
 const kGrey800Color = Color(0xFF424242);
+const kPurpleAccent = Colors.purpleAccent;

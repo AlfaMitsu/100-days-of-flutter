@@ -1,3 +1,5 @@
+import '../../../../constants/assets.dart';
+
 class MainSideFavoriteClubModel {
   final String title, image;
   final int index;
@@ -9,15 +11,30 @@ class MainSideFavoriteClubModel {
   });
 }
 
-List dmainSideFavouriteClub = [
+List mainSideFavoriteClub = [
   MainSideFavoriteClubModel(
-    image: "assets/images/chelsea.png",
-    title: "Chelsea F.C",
-    index: 7,
+    image: kImgManchesterUnited,
+    title: 'Manchester United',
+    index: 9,
   ),
   MainSideFavoriteClubModel(
-    image: "assets/images/real_madrid.png",
-    title: "Real Madrid",
-    index: 8,
+    image: kImgRealMadrid,
+    title: 'Real Madrid',
+    index: 10,
+  ),
+  MainSideFavoriteClubModel(
+    image: kImgManchesterCity,
+    title: 'Manchester City',
+    index: 11,
+  ),
+  MainSideFavoriteClubModel(
+    image: kImgJuventus,
+    title: 'Juventus',
+    index: 12,
+  ),
+  MainSideFavoriteClubModel(
+    image: kImgAlNassr,
+    title: 'Al Nassr',
+    index: 13,
   ),
 ];

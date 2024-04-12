@@ -15,22 +15,22 @@ class MainSideModel {
 List mainSide = [
   MainSideModel(
     icon: Icons.dashboard_outlined,
-    title: "Dashboard",
+    title: 'Dashboard',
     index: 0,
   ),
   MainSideModel(
     icon: Icons.feed_outlined,
-    title: "My Feed",
+    title: 'My Feed',
     index: 1,
   ),
   MainSideModel(
     icon: Icons.filter_alt_outlined,
-    title: "Tipstres",
+    title: 'Tipstres',
     index: 2,
   ),
   MainSideModel(
     icon: Icons.send_outlined,
-    title: "Hot Tips",
+    title: 'Hot Tips',
     index: 3,
   ),
 ];

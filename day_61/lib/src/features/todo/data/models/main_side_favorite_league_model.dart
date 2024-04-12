@@ -13,17 +13,28 @@ class MainSideFavoriteLeagueModel {
 
 List mainSideFavoriteLeague = [
   MainSideFavoriteLeagueModel(
-      image: kImgPremierLeague,
-      title: 'Premier League',
-      index: 4,),
+    image: kImgChampionsLeague,
+    title: 'ChampionsLeague',
+    index: 4,
+  ),
+  MainSideFavoriteLeagueModel(
+    image: kImgPremierLeague,
+    title: 'Premier League',
+    index: 5,
+  ),
+  MainSideFavoriteLeagueModel(
+    image: kImgBundesliga,
+    title: 'Bundesliga',
+    index: 6,
+  ),
   MainSideFavoriteLeagueModel(
     image: kImgLaLiga,
     title: 'La Liga',
-    index: 5,
+    index: 7,
   ),
   MainSideFavoriteLeagueModel(
     image: kImgSerieA,
     title: 'Serie A',
-    index: 6,
+    index: 8,
   ),
 ];
