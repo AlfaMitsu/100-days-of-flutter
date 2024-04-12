@@ -9,6 +9,7 @@ import '../../../../constants/dimensions.dart';
 import '../../../../constants/styles.dart';
 import '../../data/data_sources/chart_data.dart';
 import '../../data/data_sources/my_tabs.dart';
+import '../../data/models/spain_model.dart';
 import '../widgets/container_panel.dart';
 import '../widgets/side_main.dart';
 
@@ -267,12 +268,14 @@ class _HomeViewState extends State<HomeView> {
                           ),
                           const SizedBox(height: defaultPadding),
                           SizedBox(
-                            height: 310,
+                            height: spain.length * 80,
                             width: double.infinity,
                             child: ListView.builder(
-                              itemCount: 4,
+                              itemCount: spain.length,
                               itemBuilder: (context, index) {
-                                return gamesList();
+                                return gamesList(
+                                  spain[index],
+                                );
                               },
                             ),
                           ),
@@ -293,7 +296,7 @@ class _HomeViewState extends State<HomeView> {
     );
   }
 
-  Padding gamesList() {
+  Padding gamesList(SpainModel spain) {
     return Padding(
       padding: const EdgeInsets.only(bottom: defaultPadding),
       child: Container(
@@ -347,12 +350,12 @@ class _HomeViewState extends State<HomeView> {
                     height: 30,
                     width: 30,
                     child: ClipOval(
-                      child: Image.asset(kImgRealMadrid),
+                      child: Image.asset(spain.image1),
                     ),
                   ),
                   const SizedBox(width: defaultPadding * 1.5),
                   Text(
-                    'Real Madrid',
+                    spain.title1,
                     style: kHomeViewDropdownMenuTextStyle,
                   ),
                 ],
@@ -408,12 +411,12 @@ class _HomeViewState extends State<HomeView> {
                     height: 30,
                     width: 30,
                     child: ClipOval(
-                      child: Image.asset(kImgBarcelona),
+                      child: Image.asset(spain.image2),
                     ),
                   ),
                   const SizedBox(width: defaultPadding),
                   Text(
-                    'Barcelona',
+                    spain.title2,
                     style: kHomeViewDropdownMenuTextStyle,
                   ),
                   const Spacer(),
@@ -421,7 +424,7 @@ class _HomeViewState extends State<HomeView> {
                     height: 25,
                     width: 25,
                     child: ClipOval(
-                      child: Image.asset(kImgPlayer5),
+                      child: Image.asset(spain.player1),
                     ),
                   ),
                   const SizedBox(width: defaultPadding),
@@ -429,7 +432,7 @@ class _HomeViewState extends State<HomeView> {
                     height: 25,
                     width: 25,
                     child: ClipOval(
-                      child: Image.asset(kImgPlayer6),
+                      child: Image.asset(spain.player2),
                     ),
                   ),
                 ],
