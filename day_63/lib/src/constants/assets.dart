@@ -1,35 +1,22 @@
 //images
 
 const String kImgProfile = 'lib/src/resources/assets/images/kImgProfile.jpg';
-const String kImgChampionsLeague = 'lib/src/resources/assets/images/kImgChampionsLeague.png';
-const String kImgPremierLeague = 'lib/src/resources/assets/images/kImgPremierLeague.png';
-const String kImgBundesliga = 'lib/src/resources/assets/images/kImgBundesliga.png';
-const String kImgLaLiga = 'lib/src/resources/assets/images/kImgLaLiga.png';
-const String kImgSerieA = 'lib/src/resources/assets/images/kImgSerieA.png';
-const String kImgManchesterUnited = 'lib/src/resources/assets/images/kImgManchesterUnited.webp';
-const String kImgRealMadrid = 'lib/src/resources/assets/images/kImgRealMadrid.png';
-const String kImgManchesterCity = 'lib/src/resources/assets/images/kImgManchesterCity.png';
-const String kImgJuventus = 'lib/src/resources/assets/images/kImgJuventus.png';
-const String kImgAlNassr = 'lib/src/resources/assets/images/kImgAlNassr.png';
-const String kImgBarcelona = 'lib/src/resources/assets/images/kImgBarcelona.png';
-const String kImgVillareal = 'lib/src/resources/assets/images/kImgVillareal.png';
-const String kImgAlaves = 'lib/src/resources/assets/images/kImgAlaves.png';
-const String kImgAtleticoMadrid = 'lib/src/resources/assets/images/kImgAtleticoMadrid.png';
-const String kImgSevilla = 'lib/src/resources/assets/images/kImgSevilla.png';
-const String kImgRealSociedad = 'lib/src/resources/assets/images/kImgRealSociedad.png';
-const String kImgEibar = 'lib/src/resources/assets/images/kImgEibar.png';
-const String kImgBellingham = 'lib/src/resources/assets/images/kImgBellingham.webp';
-const String kImgPlayer1 = 'lib/src/resources/assets/images/kImgPlayer1.jpg';
-const String kImgPlayer2 = 'lib/src/resources/assets/images/kImgPlayer2.jpg';
-const String kImgPlayer3 = 'lib/src/resources/assets/images/kImgPlayer3.jpg';
-const String kImgPlayer4 = 'lib/src/resources/assets/images/kImgPlayer4.jpg';
-const String kImgPlayer5 = 'lib/src/resources/assets/images/kImgPlayer5.jpg';
-const String kImgPlayer6 = 'lib/src/resources/assets/images/kImgPlayer6.jpg';
-const String kImgPlayer7 = 'lib/src/resources/assets/images/kImgPlayer7.jpg';
-const String kImgPlayer8 = 'lib/src/resources/assets/images/kImgPlayer8.jpg';
-const String kImgPlayer9 = 'lib/src/resources/assets/images/kImgPlayer9.webp';
-const String kImgPlayer10 = 'lib/src/resources/assets/images/kImgPlayer10.jpg';
-const String kImgPlayer11 = 'lib/src/resources/assets/images/kImgPlayer11.webp';
-const String kImgPlayer12 = 'lib/src/resources/assets/images/kImgPlayer12.png';
-const String kImgSpain = 'lib/src/resources/assets/images/kImgSpain.png';
+const String kImg1 = 'lib/src/resources/assets/images/kImg1.jpg';
+const String kImg2 = 'lib/src/resources/assets/images/kImg2.jpg';
+const String kImg3 = 'lib/src/resources/assets/images/kImg3.jpg';
+const String kImg4 = 'lib/src/resources/assets/images/kImg4.jpg';
+const String kImg5 = 'lib/src/resources/assets/images/kImg5.jpg';
+const String kImgDevice1 = 'lib/src/resources/assets/images/kImgDevice1.png';
+const String kImgDevice2 = 'lib/src/resources/assets/images/kImgDevice2.png';
+const String kImgDevice3 = 'lib/src/resources/assets/images/kImgDevice3.png';
+const String kImgDevice4 = 'lib/src/resources/assets/images/kImgDevice4.png';
+const String kImgDevice5 = 'lib/src/resources/assets/images/kImgDevice5.png';
+const String kImgDevice6 = 'lib/src/resources/assets/images/kImgDevice6.png';
+const String kImgDevice7 = 'lib/src/resources/assets/images/kImgDevice7.png';
 
+//icons
+
+const String kIcHome = 'lib/src/resources/assets/icons/kIcHome.png';
+const String kIcSearch = 'lib/src/resources/assets/icons/kIcSearch.png';
+const String kIcDashboard = 'lib/src/resources/assets/icons/kIcDashboard.png';
+const String kIcAccount = 'lib/src/resources/assets/icons/kIcAccount.png';

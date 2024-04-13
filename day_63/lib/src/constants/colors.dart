@@ -2,14 +2,14 @@ import 'package:flutter/material.dart';
 
 // Brand Colors
 
-const kPrimaryColor = Color(0xFFE0E0E0);
-const kSecondaryColor = kPurpleColor;
-const kBgColor = Color.fromARGB(255, 243, 243, 243);
-const kElevatedButtonColor = Color(0xFF183b37);
-const kFavoriteIconColor = Color.fromARGB(255, 252, 220, 178);
+const kPrimaryColor = kPurpleColor;
+const kSecondaryColor = kPurpleAccent;
+const kBgColor = Color(0xFFFBFBFB);
+const kTextColor = Color(0xFF583354);
+const kIconColor = Color(0xFFFF6766);
 const kSplineColor = Color.fromARGB(255, 210, 163, 96);
 const kSecondaryBgColor = Color.fromARGB(255, 238, 240, 242);
-const kHoverColor = Color(0xFFCCEDD0);
+const kUnselectedLabelColor = Color.fromARGB(255, 22, 17, 17);
 
 // Common Colors
 
