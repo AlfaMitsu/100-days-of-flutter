@@ -2,15 +2,6 @@ import 'package:flutter/material.dart';
 
 // Brand Colors
 
-const kPrimaryColor = kPurpleColor;
-const kSecondaryColor = kPurpleAccent;
-const kBgColor = Color(0xFFFBFBFB);
-const kTextColor = Color(0xFF583354);
-const kIconColor = Color(0xFFFF6766);
-const kSplineColor = Color.fromARGB(255, 210, 163, 96);
-const kSecondaryBgColor = Color.fromARGB(255, 238, 240, 242);
-const kUnselectedLabelColor = Color.fromARGB(255, 22, 17, 17);
-
 // Common Colors
 
 const kWhiteColor = Color(0xFFFFFFFF);
