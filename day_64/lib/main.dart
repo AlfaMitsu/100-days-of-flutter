@@ -18,7 +18,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return const MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: HomeView(title: 'Get It',),
+      home: HomeView(title: 'Get It'),
     );
   }
 }
