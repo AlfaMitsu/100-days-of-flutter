@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 
 // Brand Colors
 
-const kContainerColor = Color.fromARGB(157, 53, 53, 53);
-const kBordercolor = Color(0xFFCF25AF);
+const kContentColor = Color(0xffF5F5F5);
+const kPrimaryColor = Color(0xffff660e);
 
 // Common Colors
 
