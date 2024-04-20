@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 
-import '../../../../constants/colors.dart';
-import '../../../core/favorite_provider.dart';
-import '../../data/models/product_model.dart';
+import '../../../../../constants/colors.dart';
+import '../../../../core/favorite_provider.dart';
+import '../../../data/models/product_model.dart';
+import '../../views/details_view.dart';
 
 class ProductCard extends StatelessWidget {
   final Product product;
@@ -16,7 +17,7 @@ class ProductCard extends StatelessWidget {
         Navigator.push(
           context,
           MaterialPageRoute(
-            builder: (context) => DetailScreen(product: product),
+            builder: (context) => DetailsView(product: product),
           ),
         );
       },

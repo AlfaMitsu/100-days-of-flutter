@@ -2,10 +2,10 @@ import 'package:flutter/material.dart';
 
 import '../../data/models/category_model.dart';
 import '../../data/models/product_model.dart';
-import '../widgets/custom_app_bar.dart';
-import '../widgets/custom_search_bar.dart';
-import '../widgets/image_slider.dart';
-import '../widgets/product_card.dart';
+import '../widgets/home/custom_app_bar.dart';
+import '../widgets/home/custom_search_bar.dart';
+import '../widgets/home/image_slider.dart';
+import '../widgets/home/product_card.dart';
 
 class HomeView extends StatefulWidget {
   const HomeView({super.key});
