@@ -1,10 +1,10 @@
-import 'package:day_66/src/features/todo/presentation/views/home_view.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 
 import 'src/features/core/cart_provider.dart';
 import 'src/features/core/favorite_provider.dart';
+import 'src/features/todo/presentation/views/bottom_nav_bar.dart';
 
 void main() async {
   runApp(const MyApp());
@@ -28,7 +28,7 @@ class MyApp extends StatelessWidget {
           theme: ThemeData(
             textTheme: GoogleFonts.mulishTextTheme(),
           ),
-          home: const HomeView(),
+          home: const BottomNavBar(),
         ),
       );
 }

@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
 
 import '../../../../constants/colors.dart';
+import 'cart_view.dart';
+import 'favorite_view.dart';
 import 'home_view.dart';
+import 'profile_view.dart';
 
 class BottomNavBar extends StatefulWidget {
   const BottomNavBar({super.key});
@@ -14,7 +17,7 @@ class _BottomNavBarState extends State<BottomNavBar> {
   int cuttentIndex = 2;
   List screens = const [
     Scaffold(),
-    Favorite(),
+    FavoriteView(),
     HomeView(),
     CartView(),
     ProfileView(),
