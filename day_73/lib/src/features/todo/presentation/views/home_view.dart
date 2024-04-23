@@ -2,144 +2,121 @@ import 'package:flutter/material.dart';
 import 'package:svg_flutter/svg_flutter.dart';
 
 import '../../../../constants/colors.dart';
-import '../../data/models/job_model.dart';
-import '../widgets/job_carousel.dart';
-import '../widgets/recent_items_list.dart';
+import '../widgets/bottom_navigation_bar.dart';
+import '../widgets/product_list.dart';
 
-class HomeView extends StatelessWidget {
+class HomeView extends StatefulWidget {
   const HomeView({super.key});
 
   @override
+  State<HomeView> createState() => _HomeViewState();
+}
+
+class _HomeViewState extends State<HomeView> {
+  List<String> category = [
+    "Controllers",
+    "Headsets",
+    "Keyboards",
+    "Speakers,",
+    "VR Accessories"
+  ];
+  int currentSelectItems = 0;
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: SafeArea(
-        child: ListView(
-          children: [
-            // for menu , search and filter icon
-            customAppBar(),
-            // for welcome text
-            welcomText(),
-            // for you
-            Padding(
-              padding: const EdgeInsets.only(left: 30),
-              child: Text(
-                "For You",
-                style: TextStyle(
-                  fontSize: 20,
-                  color: kSecondaryTextColor,
-                ),
-              ),
-            ),
-            JobCarousel(jobs: forYou),
-            // for recent
-            recentItems()
-          ],
-        ),
-      ),
-    );
-  }
-
-  Column recentItems() {
-    return Column(
-      children: [
-        Padding(
-          padding: const EdgeInsets.only(
-            left: 30,
-            right: 30,
-            top: 5,
-            bottom: 15,
-          ),
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              Text(
-                "Recent",
-                style: TextStyle(
-                  fontSize: 20,
-                  color: kSecondaryTextColor,
-                ),
-              ),
-              Text(
-                "See All",
-                style: TextStyle(
-                  fontSize: 16,
-                  fontWeight: FontWeight.bold,
-                  color: kSecondaryColor,
-                ),
-              ),
-            ],
-          ),
-        ),
-        Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 20),
-          child: ListView.builder(
-            shrinkWrap: true,
-            physics: const NeverScrollableScrollPhysics(),
-            itemCount: recent.length,
-            itemBuilder: (context, index) {
-              return RecentItemsList(job: recent[index]);
-            },
-          ),
-        ),
-      ],
-    );
-  }
-
-  Padding welcomText() {
-    return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 25),
-      child: Column(
+      bottomNavigationBar: const BottomNaigationBar(),
+      body: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Text(
-            "Hi Jade",
-            style: TextStyle(
-              fontSize: 20,
-              color: kSecondaryTextColor,
-            ),
-          ),
-          Text(
-            "Find your next",
-            style: TextStyle(
-              fontSize: 40,
-              fontWeight: FontWeight.bold,
-              color: kPrimaryColor,
-            ),
-          ),
-          Text(
-            "design job",
-            style: TextStyle(
-              fontSize: 36,
-              fontWeight: FontWeight.bold,
-              color: kSecondaryColor,
-            ),
-          ),
+          // for menu and searach
+          myAppBarItems(),
+          // for welcome text
+          welcomeText(),
+          const SizedBox(
+            height: 5,
+          ), // for category selection
+          categorySelection(),
+          // for body items
+          const ProductList(),
         ],
       ),
     );
   }
 
-  Padding customAppBar() {
+  SizedBox categorySelection() {
+    return SizedBox(
+      height: 35,
+      child: ListView.builder(
+          scrollDirection: Axis.horizontal,
+          itemCount: category.length,
+          itemBuilder: (context, index) {
+            return GestureDetector(
+              onTap: () {},
+              child: Container(
+                padding: const EdgeInsets.only(left: 32),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      category[index],
+                      style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                          fontSize: 16,
+                          color: currentSelectItems == index
+                              ? kSecondaryColor
+                              : kSecondTextColor),
+                    ),
+                    const SizedBox(
+                      height: 5,
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.only(left: 5),
+                      child: Container(
+                        height: 3,
+                        width: 50,
+                        color: currentSelectItems == index
+                            ? kSecondaryColor
+                            : Colors.transparent,
+                      ),
+                    )
+                  ],
+                ),
+              ),
+            );
+          }),
+    );
+  }
+
+  Container welcomeText() {
+    return Container(
+      padding: const EdgeInsets.symmetric(
+        horizontal: 32,
+        vertical: 10,
+      ),
+      child: const Text(
+        "Welcome to \nPlaystation® Accessories",
+        style: TextStyle(fontWeight: FontWeight.bold, fontSize: 25),
+      ),
+    );
+  }
+
+  Padding myAppBarItems() {
     return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 5),
-      child: Row(
-        children: [
-          SvgPicture.asset(
-            "assets/icons/slider.svg",
-            height: 35,
-          ),
-          const Spacer(),
-          SvgPicture.asset(
-            "assets/icons/search.svg",
-            height: 35,
-          ),
-          const SizedBox(
-            width: 20,
-          ),
-          SvgPicture.asset(
-            "assets/icons/filter.svg",
-            height: 35,
-          ),
+      padding: const EdgeInsets.symmetric(
+        horizontal: 18,
+      ),
+      child: AppBar(
+        leading: IconButton(
+            onPressed: () {},
+            icon: SvgPicture.asset(
+              "assets/icons/icon_menu.svg",
+            )),
+        actions: [
+          IconButton(
+              onPressed: () {},
+              icon: SvgPicture.asset(
+                "assets/icons/icon_search.svg",
+              )),
         ],
       ),
     );

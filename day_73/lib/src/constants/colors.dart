@@ -2,10 +2,13 @@ import 'package:flutter/material.dart';
 
 // Brand Colors
 
-Color kPrimaryColor = const Color(0XFF030047);
-Color kSecondaryColor = const Color(0xFF5F5FFF);
-Color kSecondaryTextColor = const Color(0XFFB7B7D2);
-
+Color kBackgroundColor = const Color(0xFFFFFFFF);
+Color kBarBackgroundColor = const Color(0xFFF1F3F5);
+Color kCardBackgroundColor = const Color(0XFFF8F9FA);
+Color kSelectCardBackgroundColor = const Color(0xFF6741D9);
+Color kPrimaryTextColor = const Color(0xFF495057);
+Color kSecondTextColor = const Color(0xFF495057);
+Color kSecondaryColor = const Color(0xFFF76707);
 
 // Common Colors
 
