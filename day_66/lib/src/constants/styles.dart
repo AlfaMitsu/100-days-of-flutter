@@ -1,39 +1,32 @@
 import 'package:flutter/material.dart';
+
 import 'colors.dart';
 
 // TextStyle
 
-const kSignUpTextStyle = TextStyle(
-  fontSize: 30,
+const kMyCartTextStyle = TextStyle(
+  fontSize: 25,
   fontWeight: FontWeight.bold,
-  color: kWhiteColor,
 );
 
-const kSignUpTextTextStyle = TextStyle(
-  color: kWhiteColor,
-  fontSize: 18,
-  fontWeight: FontWeight.w700,
-);
-
-const kEmailAndPasswordTextStyle = TextStyle(
-  color: kGrey200Color,
+const kCartItemsTitleTextStyle = TextStyle(
   fontSize: 16,
-  fontWeight: FontWeight.w600,
-);
-
-const kDontHaveAnAccountTextStyle = TextStyle(
-  color: kGrey300Color,
-  fontSize: 16,
-);
-
-const kLoginTextStyle = TextStyle(
-  color: kGrey200Color,
+  color: kBlackTextColor,
   fontWeight: FontWeight.bold,
-  fontSize: 16,
 );
 
-const kLabelTextStyle = TextStyle(
-  color: kGrey300Color,
-  fontSize: 15,
-  fontWeight: FontWeight.w500,
+const kCartItemsCategoryTextStyle = TextStyle(
+  fontSize: 14,
+  color: kGreyTextColor,
+  fontWeight: FontWeight.bold,
+);
+
+const kCartItemsPriceTextStyle = TextStyle(
+  fontSize: 14,
+  fontWeight: FontWeight.bold,
+);
+
+const kCartItemsQuantityTextStyle = TextStyle(
+  color: kBlackTextColor,
+  fontWeight: FontWeight.bold,
 );

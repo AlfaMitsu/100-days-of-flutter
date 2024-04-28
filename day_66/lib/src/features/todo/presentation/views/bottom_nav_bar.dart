@@ -27,15 +27,17 @@ class _BottomNavBarState extends State<BottomNavBar> {
     return Scaffold(
       floatingActionButton: FloatingActionButton(
         onPressed: () {
-          setState(() {
-            cuttentIndex = 2;
-          });
+          setState(
+            () {
+              cuttentIndex = 2;
+            },
+          );
         },
         shape: const CircleBorder(),
         backgroundColor: kPrimaryColor,
         child: const Icon(
           Icons.home,
-          color: Colors.white,
+          color: kWhiteColor,
           size: 35,
         ),
       ),
@@ -43,7 +45,7 @@ class _BottomNavBarState extends State<BottomNavBar> {
       bottomNavigationBar: BottomAppBar(
         elevation: 1,
         height: 60,
-        color: Colors.white,
+        color: kWhiteColor,
         shape: const CircularNotchedRectangle(),
         notchMargin: 10,
         clipBehavior: Clip.antiAliasWithSaveLayer,
@@ -53,53 +55,59 @@ class _BottomNavBarState extends State<BottomNavBar> {
           children: [
             IconButton(
               onPressed: () {
-                setState(() {
-                  cuttentIndex = 0;
-                });
+                setState(
+                  () {
+                    cuttentIndex = 0;
+                  },
+                );
               },
               icon: Icon(
                 Icons.grid_view_outlined,
                 size: 30,
-                color: cuttentIndex == 0 ? kPrimaryColor : Colors.grey.shade400,
+                color: cuttentIndex == 0 ? kPrimaryColor : kGrey300Color,
               ),
             ),
             IconButton(
               onPressed: () {
-                setState(() {
-                  cuttentIndex = 1;
-                });
+                setState(
+                  () {
+                    cuttentIndex = 1;
+                  },
+                );
               },
               icon: Icon(
                 Icons.favorite_border,
                 size: 30,
-                color: cuttentIndex == 1 ? kPrimaryColor : Colors.grey.shade400,
+                color: cuttentIndex == 1 ? kPrimaryColor : kGrey300Color,
               ),
             ),
-            const SizedBox(
-              width: 15,
-            ),
+            const SizedBox(width: 15),
             IconButton(
               onPressed: () {
-                setState(() {
-                  cuttentIndex = 3;
-                });
+                setState(
+                  () {
+                    cuttentIndex = 3;
+                  },
+                );
               },
               icon: Icon(
                 Icons.shopping_cart_outlined,
                 size: 30,
-                color: cuttentIndex == 3 ? kPrimaryColor : Colors.grey.shade400,
+                color: cuttentIndex == 3 ? kPrimaryColor : kGrey300Color,
               ),
             ),
             IconButton(
               onPressed: () {
-                setState(() {
-                  cuttentIndex = 4;
-                });
+                setState(
+                  () {
+                    cuttentIndex = 4;
+                  },
+                );
               },
               icon: Icon(
                 Icons.person,
                 size: 30,
-                color: cuttentIndex == 4 ? kPrimaryColor : Colors.grey.shade400,
+                color: cuttentIndex == 4 ? kPrimaryColor : kGrey300Color,
               ),
             ),
           ],

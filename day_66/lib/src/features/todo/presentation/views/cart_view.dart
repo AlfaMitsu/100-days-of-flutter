@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../../../../constants/colors.dart';
+import '../../../../constants/styles.dart';
 import '../../../core/cart_provider.dart';
 import '../widgets/cart/check_out_box.dart';
 import 'bottom_nav_bar.dart';
@@ -21,11 +22,13 @@ class _CartViewState extends State<CartView> {
     productQuantity(IconData icon, int index) {
       return GestureDetector(
         onTap: () {
-          setState(() {
-            icon == Icons.add
-                ? provider.incrementQtn(index)
-                : provider.decrementQtn(index);
-          });
+          setState(
+            () {
+              icon == Icons.add
+                  ? provider.incrementQtn(index)
+                  : provider.decrementQtn(index);
+            },
+          );
         },
         child: Icon(
           icon,
@@ -35,15 +38,13 @@ class _CartViewState extends State<CartView> {
     }
 
     return Scaffold(
-      // for total and check out
       backgroundColor: kContentColor,
       bottomSheet: const CheckOutBox(),
-
       body: SafeArea(
         child: Column(
           children: [
             Padding(
-              padding: const EdgeInsets.all(8.0),
+              padding: const EdgeInsets.all(8),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
@@ -57,17 +58,14 @@ class _CartViewState extends State<CartView> {
                       );
                     },
                     style: IconButton.styleFrom(
-                      backgroundColor: Colors.white,
+                      backgroundColor: kWhiteColor,
                       padding: const EdgeInsets.all(15),
                     ),
                     icon: const Icon(Icons.arrow_back_ios),
                   ),
                   const Text(
-                    "My Cart",
-                    style: TextStyle(
-                      fontWeight: FontWeight.bold,
-                      fontSize: 25,
-                    ),
+                    'My Cart',
+                    style: kMyCartTextStyle,
                   ),
                   const SizedBox(),
                 ],
@@ -82,11 +80,11 @@ class _CartViewState extends State<CartView> {
                   return Stack(
                     children: [
                       Padding(
-                        padding: const EdgeInsets.all(15.0),
+                        padding: const EdgeInsets.all(15),
                         child: Container(
                           width: double.infinity,
                           decoration: BoxDecoration(
-                            color: Colors.white,
+                            color: kWhiteColor,
                             borderRadius: BorderRadius.circular(20),
                           ),
                           padding: const EdgeInsets.all(20),
@@ -110,28 +108,17 @@ class _CartViewState extends State<CartView> {
                                 children: [
                                   Text(
                                     cartItems.title,
-                                    style: const TextStyle(
-                                      fontSize: 16,
-                                      color: Colors.black,
-                                      fontWeight: FontWeight.bold,
-                                    ),
+                                    style: kCartItemsTitleTextStyle,
                                   ),
                                   const SizedBox(height: 5),
                                   Text(
                                     cartItems.category,
-                                    style: const TextStyle(
-                                      fontSize: 14,
-                                      fontWeight: FontWeight.bold,
-                                      color: Colors.grey,
-                                    ),
+                                    style: kCartItemsCategoryTextStyle,
                                   ),
                                   const SizedBox(height: 8),
                                   Text(
                                     "\$${cartItems.price}",
-                                    style: const TextStyle(
-                                      fontSize: 14,
-                                      fontWeight: FontWeight.bold,
-                                    ),
+                                    style: kCartItemsPriceTextStyle,
                                   ),
                                 ],
                               ),
@@ -153,7 +140,7 @@ class _CartViewState extends State<CartView> {
                               },
                               icon: const Icon(
                                 Icons.delete,
-                                color: Colors.red,
+                                color: kRedColor,
                                 size: 20,
                               ),
                             ),
@@ -163,7 +150,7 @@ class _CartViewState extends State<CartView> {
                               decoration: BoxDecoration(
                                 color: kContentColor,
                                 border: Border.all(
-                                  color: Colors.grey.shade200,
+                                  color: kGrey200Color,
                                   width: 2,
                                 ),
                                 borderRadius: BorderRadius.circular(20),
@@ -175,10 +162,7 @@ class _CartViewState extends State<CartView> {
                                   const SizedBox(width: 10),
                                   Text(
                                     cartItems.quantity.toString(),
-                                    style: const TextStyle(
-                                      color: Colors.black,
-                                      fontWeight: FontWeight.bold,
-                                    ),
+                                    style: kCartItemsQuantityTextStyle,
                                   ),
                                   const SizedBox(width: 10),
                                   productQuantity(Icons.remove, index),
@@ -188,7 +172,7 @@ class _CartViewState extends State<CartView> {
                             ),
                           ],
                         ),
-                      )
+                      ),
                     ],
                   );
                 },
