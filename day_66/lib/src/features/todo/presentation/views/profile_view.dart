@@ -28,7 +28,7 @@ class ProfileView extends StatelessWidget {
                   borderRadius: BorderRadius.circular(15),
                 ),
                 child: Container(
-                  height: size.height * 0.4,
+                  height: size.height * 0.55,
                   padding:
                       const EdgeInsets.symmetric(horizontal: 8, vertical: 15),
                   child: Column(

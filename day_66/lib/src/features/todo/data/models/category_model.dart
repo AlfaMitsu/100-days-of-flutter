@@ -1,3 +1,5 @@
+import '../../../../constants/assets.dart';
+
 class Category {
   final String title;
   final String image;
@@ -10,27 +12,27 @@ class Category {
 
 final List<Category> categoriesList = [
   Category(
-    title: "All",
-    image: "lib/src/resources/assets/images/all.png",
+    title: 'All',
+    image: kImgAll,
   ),
   Category(
-    title: "Shoes",
-    image: "lib/src/resources/assets/images/shoes.png",
+    title: 'Shoes',
+    image: kImgShoes,
   ),
   Category(
-    title: "Beauty",
-    image: "lib/src/resources/assets/images/beauty.png",
+    title: 'Beauty',
+    image: kImgBeauty,
   ),
   Category(
     title: "Women's\nFashion",
-    image: "lib/src/resources/assets/images/image1.png",
+    image: kImgSlider2,
   ),
   Category(
-    title: "Jewelry",
-    image: "lib/src/resources/assets/images/jewelry.png",
+    title: 'Jewelry',
+    image: kImgJewelry,
   ),
   Category(
     title: "Men's\nFashion",
-    image: "lib/src/resources/assets/images/men.png",
+    image: kImgMen,
   ),
 ];
