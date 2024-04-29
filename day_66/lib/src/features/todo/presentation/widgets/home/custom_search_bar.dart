@@ -19,7 +19,7 @@ class CustomSearchBar extends StatelessWidget {
         children: [
           const Icon(
             Icons.search,
-            color: Colors.grey,
+            color: kGreyColor,
             size: 30,
           ),
           const SizedBox(width: 10),
@@ -27,19 +27,21 @@ class CustomSearchBar extends StatelessWidget {
             flex: 4,
             child: TextField(
               decoration: InputDecoration(
-                  hintText: "Search...", border: InputBorder.none),
+                hintText: 'Search...',
+                border: InputBorder.none,
+              ),
             ),
           ),
           Container(
             height: 25,
             width: 1.5,
-            color: Colors.grey,
+            color: kGreyColor,
           ),
           IconButton(
             onPressed: () {},
             icon: const Icon(
               Icons.tune,
-              color: Colors.grey,
+              color: kGreyColor,
             ),
           ),
         ],

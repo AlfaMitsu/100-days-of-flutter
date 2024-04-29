@@ -1,4 +1,7 @@
+import 'package:day_66/src/constants/colors.dart';
 import 'package:flutter/material.dart';
+
+import '../../../../../constants/assets.dart';
 
 class ImageSlider extends StatelessWidget {
   final Function(int) onChange;
@@ -25,15 +28,15 @@ class ImageSlider extends StatelessWidget {
               physics: const ClampingScrollPhysics(),
               children: [
                 Image.asset(
-                  "lib/src/resources/assets/images/slider.jpg",
+                  kImgSlider1,
                   fit: BoxFit.cover,
                 ),
                 Image.asset(
-                  "lib/src/resources/assets/images/image1.png",
+                  kImgSlider2,
                   fit: BoxFit.cover,
                 ),
                 Image.asset(
-                  "lib/src/resources/assets/images/slider3.png",
+                  kImgSlider3,
                   fit: BoxFit.cover,
                 )
               ],
@@ -54,13 +57,12 @@ class ImageSlider extends StatelessWidget {
                   height: 8,
                   margin: const EdgeInsets.only(right: 3),
                   decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(10),
-                      color: currentSlide == index
-                          ? Colors.black
-                          : Colors.transparent,
-                      border: Border.all(
-                        color: Colors.black,
-                      )),
+                    borderRadius: BorderRadius.circular(10),
+                    color: currentSlide == index ? kBlackColor : kTransparent,
+                    border: Border.all(
+                      color: Colors.black,
+                    ),
+                  ),
                 ),
               ),
             ),

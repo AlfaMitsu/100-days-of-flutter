@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../../../../../constants/colors.dart';
+import '../../../../../constants/styles.dart';
 import '../../../../core/favorite_provider.dart';
 import '../../../data/models/product_model.dart';
 import '../../views/details_view.dart';
@@ -49,10 +50,7 @@ class ProductCard extends StatelessWidget {
                   padding: const EdgeInsets.only(left: 10),
                   child: Text(
                     product.title,
-                    style: const TextStyle(
-                      fontWeight: FontWeight.bold,
-                      fontSize: 16,
-                    ),
+                    style: kCategoryListTitleTextStyle,
                   ),
                 ),
                 const SizedBox(height: 10),
@@ -60,11 +58,8 @@ class ProductCard extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.spaceAround,
                   children: [
                     Text(
-                      "\$${product.price}",
-                      style: const TextStyle(
-                        fontWeight: FontWeight.bold,
-                        fontSize: 17,
-                      ),
+                      '\$${product.price}',
+                      style: kProductPriceTextStyle,
                     ),
                     Row(
                       children: List.generate(
@@ -79,39 +74,40 @@ class ProductCard extends StatelessWidget {
                           ),
                         ),
                       ),
-                    )
+                    ),
                   ],
-                )
+                ),
               ],
             ),
           ),
           Positioned(
-              child: Align(
-            alignment: Alignment.topRight,
-            child: Container(
-              height: 40,
-              width: 40,
-              decoration: const BoxDecoration(
-                color: kPrimaryColor,
-                borderRadius: BorderRadius.only(
-                  topRight: Radius.circular(20),
-                  bottomLeft: Radius.circular(10),
+            child: Align(
+              alignment: Alignment.topRight,
+              child: Container(
+                height: 40,
+                width: 40,
+                decoration: const BoxDecoration(
+                  color: kPrimaryColor,
+                  borderRadius: BorderRadius.only(
+                    topRight: Radius.circular(20),
+                    bottomLeft: Radius.circular(10),
+                  ),
                 ),
-              ),
-              child: GestureDetector(
-                onTap: () {
-                  provider.toggleFavorite(product);
-                },
-                child: Icon(
-                  provider.isExist(product)
-                      ? Icons.favorite
-                      : Icons.favorite_border,
-                  color: Colors.white,
-                  size: 22,
+                child: GestureDetector(
+                  onTap: () {
+                    provider.toggleFavorite(product);
+                  },
+                  child: Icon(
+                    provider.isExist(product)
+                        ? Icons.favorite
+                        : Icons.favorite_border,
+                    color: kWhiteColor,
+                    size: 22,
+                  ),
                 ),
               ),
             ),
-          ))
+          ),
         ],
       ),
     );

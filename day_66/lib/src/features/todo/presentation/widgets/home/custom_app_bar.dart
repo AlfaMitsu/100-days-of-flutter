@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import '../../../../../constants/assets.dart';
 import '../../../../../constants/colors.dart';
 
 class CustomAppBar extends StatelessWidget {
@@ -19,7 +20,7 @@ class CustomAppBar extends StatelessWidget {
           ),
           onPressed: () {},
           icon: Image.asset(
-            "lib/src/resources/assets/images/icon.png",
+            kImgIcon,
             height: 20,
           ),
         ),

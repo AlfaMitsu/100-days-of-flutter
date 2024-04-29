@@ -53,6 +53,11 @@ const kTotalTextStyle = TextStyle(
   fontWeight: FontWeight.bold,
 );
 
+const kProductPriceTextStyle = TextStyle(
+  fontSize: 17,
+  fontWeight: FontWeight.bold,
+);
+
 const kCartItemsTitleTextStyle = TextStyle(
   fontSize: 16,
   color: kBlackTextColor,
