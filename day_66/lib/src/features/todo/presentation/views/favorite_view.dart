@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../../../../constants/colors.dart';
+import '../../../../constants/styles.dart';
 import '../../../core/favorite_provider.dart';
 
 class FavoriteView extends StatefulWidget {
@@ -18,13 +19,12 @@ class _FavoriteViewState extends State<FavoriteView> {
     return Scaffold(
       backgroundColor: kContentColor,
       appBar: AppBar(
-        backgroundColor: kContentColor,
-        title: const Text(
-          "Favorite",
-          style: TextStyle(fontWeight: FontWeight.bold),
-        ),
-        centerTitle: true,
-      ),
+          backgroundColor: kContentColor,
+          title: const Text(
+            'Favorite',
+            style: TextStyle(fontWeight: FontWeight.bold),
+          ),
+          centerTitle: true),
       body: Column(
         children: [
           Expanded(
@@ -39,7 +39,7 @@ class _FavoriteViewState extends State<FavoriteView> {
                       child: Container(
                         width: double.infinity,
                         decoration: BoxDecoration(
-                          color: Colors.white,
+                          color: kWhiteColor,
                           borderRadius: BorderRadius.circular(20),
                         ),
                         padding: const EdgeInsets.all(10),
@@ -71,19 +71,12 @@ class _FavoriteViewState extends State<FavoriteView> {
                                 const SizedBox(height: 5),
                                 Text(
                                   favoritItems.category,
-                                  style: const TextStyle(
-                                    fontSize: 14,
-                                    fontWeight: FontWeight.bold,
-                                    color: Colors.grey,
-                                  ),
+                                  style: kCartItemsCategoryTextStyle,
                                 ),
                                 const SizedBox(height: 8),
                                 Text(
                                   "\$${favoritItems.price}",
-                                  style: const TextStyle(
-                                    fontSize: 15,
-                                    fontWeight: FontWeight.bold,
-                                  ),
+                                  style: kFavoriteItemsPriceTextStyle,
                                 ),
                               ],
                             ),
@@ -104,12 +97,15 @@ class _FavoriteViewState extends State<FavoriteView> {
                                 () {},
                               );
                             },
-                            child: const Icon(Icons.delete,
-                                color: Colors.red, size: 25),
+                            child: const Icon(
+                              Icons.delete,
+                              color: kRedColor,
+                              size: 25,
+                            ),
                           ),
                         ],
                       ),
-                    )
+                    ),
                   ],
                 );
               },

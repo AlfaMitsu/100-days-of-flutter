@@ -9,9 +9,19 @@ const kMyCartTextStyle = TextStyle(
   fontWeight: FontWeight.bold,
 );
 
+const kColorTextStyle = TextStyle(
+  fontSize: 22,
+  fontWeight: FontWeight.bold,
+);
+
 const kCartItemsTitleTextStyle = TextStyle(
   fontSize: 16,
   color: kBlackTextColor,
+  fontWeight: FontWeight.bold,
+);
+
+const kFavoriteItemsPriceTextStyle = TextStyle(
+  fontSize: 15,
   fontWeight: FontWeight.bold,
 );
 
