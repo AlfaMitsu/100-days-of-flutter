@@ -1,4 +1,8 @@
+import 'package:day_66/src/constants/colors.dart';
 import 'package:flutter/material.dart';
+
+import '../../../../constants/assets.dart';
+import '../../../../constants/styles.dart';
 
 class ProfileView extends StatelessWidget {
   const ProfileView({super.key});
@@ -10,7 +14,7 @@ class ProfileView extends StatelessWidget {
       body: Stack(
         children: [
           Image.asset(
-            "lib/src/resources/assets/images/profile3.png",
+            kImgProfile3,
             fit: BoxFit.cover,
             height: size.height,
             width: size.width,
@@ -41,8 +45,7 @@ class ProfileView extends StatelessWidget {
                                   children: [
                                     const CircleAvatar(
                                       radius: 42,
-                                      backgroundImage:
-                                          AssetImage("lib/src/resources/assets/images/profile3.png"),
+                                      backgroundImage: AssetImage(kImgProfile3),
                                     ),
                                     Positioned(
                                       bottom: 0,
@@ -52,95 +55,80 @@ class ProfileView extends StatelessWidget {
                                         width: 25,
                                         decoration: const BoxDecoration(
                                           shape: BoxShape.circle,
-                                          color:
-                                              Color.fromARGB(255, 95, 225, 99),
+                                          color: kLightGreenColor,
                                         ),
                                         child: const Icon(
                                           Icons.check,
-                                          color: Colors.white,
+                                          color: kWhiteColor,
                                           size: 20,
                                         ),
                                       ),
-                                    )
+                                    ),
                                   ],
                                 ),
                                 Row(
                                   children: [
                                     Container(
                                       decoration: BoxDecoration(
-                                          borderRadius:
-                                              BorderRadius.circular(20),
-                                          border: Border.all(
-                                              color: Colors.black54)),
+                                        borderRadius: BorderRadius.circular(20),
+                                        border:
+                                            Border.all(color: Colors.black54),
+                                      ),
                                       padding: const EdgeInsets.symmetric(
-                                          vertical: 9, horizontal: 12),
+                                        vertical: 9,
+                                        horizontal: 12,
+                                      ),
                                       child: const Text(
-                                        "ADD FRIEND",
-                                        style: TextStyle(
-                                            fontWeight: FontWeight.bold,
-                                            fontSize: 15),
+                                        'ADD FRIEND',
+                                        style: kFavoriteItemsPriceTextStyle,
                                       ),
                                     ),
                                     const SizedBox(width: 8),
                                     Container(
                                       decoration: BoxDecoration(
                                         borderRadius: BorderRadius.circular(20),
-                                        color: Colors.pink,
+                                        color: kPinkColor,
                                       ),
                                       padding: const EdgeInsets.symmetric(
-                                          vertical: 8, horizontal: 12),
-                                      child: const Text(
-                                        "Follow",
-                                        style: TextStyle(
-                                          fontWeight: FontWeight.bold,
-                                          fontSize: 16,
-                                          color: Colors.white,
-                                        ),
+                                        vertical: 8,
+                                        horizontal: 12,
                                       ),
-                                    )
+                                      child: const Text(
+                                        'Follow',
+                                        style: kFollowTextStyle,
+                                      ),
+                                    ),
                                   ],
-                                )
+                                ),
                               ],
                             ),
                             const SizedBox(height: 10),
                             const Text(
-                              "Winnie Vasquez",
-                              style: TextStyle(
-                                fontWeight: FontWeight.w800,
-                                fontSize: 35,
-                              ),
+                              'Al-Fasheer Hadji Usop',
+                              style: kProfileNameTextStyle,
                             ),
                             const Text(
-                              "Flutter Developer",
-                              style: TextStyle(
-                                  fontWeight: FontWeight.w800,
-                                  fontSize: 16,
-                                  color: Colors.black45),
+                              'Flutter Developer',
+                              style: kJobStatusTextStyle,
                             ),
-                            const SizedBox(
-                              height: 15,
-                            ),
+                            const SizedBox(height: 15),
                             const Text(
                               "A Flutter developer is a software engineer who has proficiency with the Flutter framework to develop mobile, web,",
-                              style: TextStyle(
-                                fontSize: 16,
-                              ),
+                              style: TextStyle(fontSize: 16),
                             ),
                           ],
                         ),
                       ),
                       const Spacer(),
-                      const Divider(
-                        color: Colors.black12,
-                      ),
+                      const Divider(color: Colors.black12),
                       SizedBox(
                         height: 65,
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                           children: [
-                            friendAndMore("FRIENDS", "2318"),
-                            friendAndMore("FOLLOWING", "364"),
-                            friendAndMore("FOLLOWER", "175"),
+                            friendAndMore('FRIENDS', '2318'),
+                            friendAndMore('FOLLOWING', '364'),
+                            friendAndMore('FOLLOWER', '175'),
                           ],
                         ),
                       ),
@@ -162,19 +150,12 @@ class ProfileView extends StatelessWidget {
         children: [
           Text(
             title,
-            style: const TextStyle(
-                fontWeight: FontWeight.bold,
-                fontSize: 14,
-                color: Colors.black26),
+            style: kTitleTextStyle,
           ),
           Text(
             number,
-            style: const TextStyle(
-              fontWeight: FontWeight.bold,
-              fontSize: 25,
-              color: Colors.black,
-            ),
-          )
+            style: kNumberTextStyle,
+          ),
         ],
       ),
     );

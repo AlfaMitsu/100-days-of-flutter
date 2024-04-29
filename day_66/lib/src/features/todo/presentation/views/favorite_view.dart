@@ -75,7 +75,7 @@ class _FavoriteViewState extends State<FavoriteView> {
                                 ),
                                 const SizedBox(height: 8),
                                 Text(
-                                  "\$${favoritItems.price}",
+                                  '\$${favoritItems.price}',
                                   style: kFavoriteItemsPriceTextStyle,
                                 ),
                               ],

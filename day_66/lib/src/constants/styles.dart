@@ -4,9 +4,25 @@ import 'colors.dart';
 
 // TextStyle
 
+const kProfileNameTextStyle = TextStyle(
+  fontWeight: FontWeight.w800,
+  fontSize: 35,
+);
+
 const kMyCartTextStyle = TextStyle(
   fontSize: 25,
   fontWeight: FontWeight.bold,
+);
+
+const kNumberTextStyle = TextStyle(
+  fontSize: 25,
+  fontWeight: FontWeight.bold,
+  color: kBlackTextColor,
+);
+
+const kSpecialForYouTextStyle = TextStyle(
+  fontSize: 25,
+  fontWeight: FontWeight.w800,
 );
 
 const kColorTextStyle = TextStyle(
@@ -18,6 +34,29 @@ const kCartItemsTitleTextStyle = TextStyle(
   fontSize: 16,
   color: kBlackTextColor,
   fontWeight: FontWeight.bold,
+);
+
+const kSeeAllTextStyle = TextStyle(
+  fontWeight: FontWeight.w500,
+  fontSize: 16,
+  color: Colors.black54,
+);
+
+const kCategoryListTitleTextStyle = TextStyle(
+  fontWeight: FontWeight.bold,
+  fontSize: 16,
+);
+
+const kJobStatusTextStyle = TextStyle(
+  fontWeight: FontWeight.w800,
+  fontSize: 16,
+  color: Colors.black54,
+);
+
+const kFollowTextStyle = TextStyle(
+  fontWeight: FontWeight.bold,
+  fontSize: 16,
+  color: kWhiteTextColor,
 );
 
 const kFavoriteItemsPriceTextStyle = TextStyle(
@@ -34,6 +73,12 @@ const kCartItemsCategoryTextStyle = TextStyle(
 const kCartItemsPriceTextStyle = TextStyle(
   fontSize: 14,
   fontWeight: FontWeight.bold,
+);
+
+const kTitleTextStyle = TextStyle(
+  fontSize: 14,
+  fontWeight: FontWeight.bold,
+  color: Colors.black26,
 );
 
 const kCartItemsQuantityTextStyle = TextStyle(

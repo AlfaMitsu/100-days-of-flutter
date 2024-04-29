@@ -1,5 +1,7 @@
+import 'package:day_66/src/constants/colors.dart';
 import 'package:flutter/material.dart';
 
+import '../../../../constants/styles.dart';
 import '../../data/models/category_model.dart';
 import '../../data/models/product_model.dart';
 import '../widgets/home/custom_app_bar.dart';
@@ -29,7 +31,7 @@ class _HomeViewState extends State<HomeView> {
       menFashion
     ];
     return Scaffold(
-      backgroundColor: Colors.white,
+      backgroundColor: kWhiteColor,
       body: SingleChildScrollView(
         child: Padding(
           padding: const EdgeInsets.all(20),
@@ -59,19 +61,12 @@ class _HomeViewState extends State<HomeView> {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Text(
-                      "Special For You",
-                      style: TextStyle(
-                        fontSize: 25,
-                        fontWeight: FontWeight.w800,
-                      ),
+                      'Special For You',
+                      style: kSpecialForYouTextStyle,
                     ),
                     Text(
-                      "See all",
-                      style: TextStyle(
-                        fontWeight: FontWeight.w500,
-                        fontSize: 16,
-                        color: Colors.black54,
-                      ),
+                      'See all',
+                      style: kSeeAllTextStyle,
                     ),
                   ],
                 ),
@@ -91,7 +86,7 @@ class _HomeViewState extends State<HomeView> {
                     product: selectcategories[selectedIndex][index],
                   );
                 },
-              )
+              ),
             ],
           ),
         ),
@@ -117,9 +112,7 @@ class _HomeViewState extends State<HomeView> {
               padding: const EdgeInsets.all(5),
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(15),
-                color: selectedIndex == index
-                    ? Colors.blue[200]
-                    : Colors.transparent,
+                color: selectedIndex == index ? kTealColor : kTransparent,
               ),
               child: Column(
                 children: [
@@ -136,11 +129,8 @@ class _HomeViewState extends State<HomeView> {
                   const SizedBox(height: 5),
                   Text(
                     categoriesList[index].title,
-                    style: const TextStyle(
-                      fontSize: 16,
-                      fontWeight: FontWeight.bold,
-                    ),
-                  )
+                    style: kCategoryListTitleTextStyle,
+                  ),
                 ],
               ),
             ),
