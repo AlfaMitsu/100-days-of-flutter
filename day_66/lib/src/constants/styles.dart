@@ -30,6 +30,17 @@ const kColorTextStyle = TextStyle(
   fontWeight: FontWeight.bold,
 );
 
+const kApplyTextStyle = TextStyle(
+  color: kPrimaryColor,
+  fontSize: 20,
+  fontWeight: FontWeight.bold,
+);
+
+const kTotalTextStyle = TextStyle(
+  fontSize: 18,
+  fontWeight: FontWeight.bold,
+);
+
 const kCartItemsTitleTextStyle = TextStyle(
   fontSize: 16,
   color: kBlackTextColor,
@@ -59,6 +70,12 @@ const kFollowTextStyle = TextStyle(
   color: kWhiteTextColor,
 );
 
+const kSubTotalTextStyle = TextStyle(
+  fontWeight: FontWeight.bold,
+  fontSize: 16,
+  color: kGreyTextColor,
+);
+
 const kFavoriteItemsPriceTextStyle = TextStyle(
   fontSize: 15,
   fontWeight: FontWeight.bold,
@@ -79,6 +96,12 @@ const kTitleTextStyle = TextStyle(
   fontSize: 14,
   fontWeight: FontWeight.bold,
   color: Colors.black26,
+);
+
+const kDiscountCodeTextStyle = TextStyle(
+  fontSize: 14,
+  fontWeight: FontWeight.w600,
+  color: kGreyColor,
 );
 
 const kCartItemsQuantityTextStyle = TextStyle(

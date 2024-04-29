@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../../../../../constants/colors.dart';
+import '../../../../../constants/styles.dart';
 import '../../../../core/cart_provider.dart';
 
 class CheckOutBox extends StatelessWidget {
@@ -15,7 +16,7 @@ class CheckOutBox extends StatelessWidget {
       height: 300,
       width: double.infinity,
       decoration: const BoxDecoration(
-        color: Colors.white,
+        color: kWhiteColor,
         borderRadius: BorderRadius.only(
           topRight: Radius.circular(30),
           topLeft: Radius.circular(30),
@@ -37,21 +38,13 @@ class CheckOutBox extends StatelessWidget {
               ),
               filled: true,
               fillColor: kContentColor,
-              hintText: "Enter Discount Code",
-              hintStyle: const TextStyle(
-                fontSize: 14,
-                fontWeight: FontWeight.w600,
-                color: Colors.grey,
-              ),
+              hintText: 'Enter Discount Code',
+              hintStyle: kDiscountCodeTextStyle,
               suffixIcon: TextButton(
                 onPressed: () {},
                 child: const Text(
-                  "Apply",
-                  style: TextStyle(
-                    color: kPrimaryColor,
-                    fontSize: 20,
-                    fontWeight: FontWeight.bold,
-                  ),
+                  'Apply',
+                  style: kApplyTextStyle,
                 ),
               ),
             ),
@@ -61,20 +54,13 @@ class CheckOutBox extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               const Text(
-                "Subtotal",
-                style: TextStyle(
-                  fontSize: 16,
-                  fontWeight: FontWeight.bold,
-                  color: Colors.grey,
-                ),
+                'Sub Total',
+                style: kSubTotalTextStyle,
               ),
               Text(
-                "\$${provider.totalPrice()}",
-                style: const TextStyle(
-                  fontSize: 16,
-                  fontWeight: FontWeight.bold,
-                ),
-              )
+                '\$${provider.totalPrice()}',
+                style: kCategoryListTitleTextStyle,
+              ),
             ],
           ),
           const SizedBox(height: 10),
@@ -84,19 +70,13 @@ class CheckOutBox extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               const Text(
-                "Total",
-                style: TextStyle(
-                  fontSize: 18,
-                  fontWeight: FontWeight.bold,
-                ),
+                'Total',
+                style: kTotalTextStyle,
               ),
               Text(
-                "\$${provider.totalPrice()}",
-                style: const TextStyle(
-                  fontSize: 18,
-                  fontWeight: FontWeight.bold,
-                ),
-              )
+                '\$${provider.totalPrice()}',
+                style: kTotalTextStyle,
+              ),
             ],
           ),
           const SizedBox(height: 20),
@@ -104,15 +84,14 @@ class CheckOutBox extends StatelessWidget {
             onPressed: () {},
             style: ElevatedButton.styleFrom(
               backgroundColor: kPrimaryColor,
-              minimumSize: const Size(double.infinity, 55),
+              minimumSize: const Size(
+                double.infinity,
+                55,
+              ),
             ),
             child: const Text(
-              "Check out",
-              style: TextStyle(
-                fontSize: 16,
-                color: Colors.white,
-                fontWeight: FontWeight.bold,
-              ),
+              'Check out',
+              style: kFollowTextStyle,
             ),
           ),
         ],
