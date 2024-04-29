@@ -1,6 +1,8 @@
+import 'package:day_69/src/constants/assets.dart';
 import 'package:flutter/material.dart';
 
 import '../../../../constants/colors.dart';
+import '../../../../constants/styles.dart';
 import 'custom_search_bar.dart';
 import 'profile_and_cart.dart';
 import 'responsive_widget.dart';
@@ -22,7 +24,6 @@ class Header extends StatelessWidget {
               child: Column(
                 children: [
                   ResponsiveWidget(
-                    // mobile parts
                     mobile: Row(
                       children: [
                         Builder(
@@ -33,19 +34,12 @@ class Header extends StatelessWidget {
                             icon: const Icon(Icons.menu),
                           ),
                         ),
-                        const SizedBox(
-                          width: 5,
-                        ),
+                        const SizedBox(width: 5),
                         const Text(
-                          "  PET SHOP",
-                          style: TextStyle(
-                            fontWeight: FontWeight.w900,
-                            fontSize: 20,
-                          ),
+                          '  PET SHOP',
+                          style: kPetShopTextStyle,
                         ),
-
                         const Spacer(),
-                        // for profile and cart icons
                         const ProfileAndCart(),
                       ],
                     ),
@@ -55,54 +49,36 @@ class Header extends StatelessWidget {
                           child: CircleAvatar(
                             radius: 70,
                             backgroundImage: AssetImage(
-                              "images/pets logo.png",
+                              kImgLogo,
                             ),
                           ),
                         ),
-                        SizedBox(
-                          width: 5,
-                        ),
+                        SizedBox(width: 5),
                         Text(
-                          "PET SHOP",
-                          style: TextStyle(
-                            fontWeight: FontWeight.w900,
-                            fontSize: 20,
-                          ),
+                          'PET SHOP',
+                          style: kPetShopTextStyle,
                         ),
                         Spacer(),
                         Spacer(),
-                        // for web menu items
                         WebMenu(),
                         Spacer(),
-                        // for profile and cart icons
                         ProfileAndCart(),
                       ],
                     ),
                   ),
-                  // for both web and mobile
-                  const SizedBox(
-                    height: 30,
-                  ),
-                  // for search bar,
+                  const SizedBox(height: 30),
                   const CustomSearchBar(),
                   const SizedBox(height: 50),
                   ResponsiveWidget(
-                    // for mobile
                     mobile: Column(
                       children: [
                         const Text(
                           "Unitl one has loved an animal,\na part of one's soul\nremains unawakened.",
-                          style: TextStyle(
-                            fontWeight: FontWeight.bold,
-                            fontSize: 28,
-                            height: 1.5,
-                          ),
+                          style: kDescription2TextStyle,
                         ),
-                        const SizedBox(
-                          height: 20,
-                        ),
+                        const SizedBox(height: 20),
                         Image.asset(
-                          "images/pets.png",
+                          kImgPets,
                           height: 250,
                           fit: BoxFit.cover,
                         ),
@@ -118,22 +94,16 @@ class Header extends StatelessWidget {
                             children: [
                               const Text(
                                 "Unitl one has loved an animal,\na part of one's soul\nremains unawakened.",
-                                style: TextStyle(
-                                  fontWeight: FontWeight.bold,
-                                  fontSize: 28,
-                                  height: 1.5,
-                                ),
+                                style: kDescription2TextStyle,
                               ),
-                              const SizedBox(
-                                height: 20,
-                              ),
+                              const SizedBox(height: 20),
                               startShoppingButton(),
                             ],
                           ),
                           const Spacer(),
                           Expanded(
                             child: Image.asset(
-                              "images/pets.png",
+                              kImgPets,
                             ),
                           ),
                         ],
@@ -155,17 +125,13 @@ class Header extends StatelessWidget {
       width: 200,
       padding: const EdgeInsets.symmetric(horizontal: 20),
       decoration: BoxDecoration(
-        color: Colors.blueAccent,
+        color: kBlueColor,
         borderRadius: BorderRadius.circular(50),
       ),
       child: const Center(
         child: Text(
-          "Start Shopping",
-          style: TextStyle(
-            fontWeight: FontWeight.bold,
-            fontSize: 18,
-            color: Colors.white,
-          ),
+          'Start Shopping',
+          style: kStartShoppingTextStyle,
         ),
       ),
     );

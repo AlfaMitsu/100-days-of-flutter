@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../../../../constants/colors.dart';
+import '../../../../constants/styles.dart';
 
 class PetsMoreServices extends StatelessWidget {
   const PetsMoreServices({super.key});
@@ -11,22 +12,22 @@ class PetsMoreServices extends StatelessWidget {
       children: [
         petsServices(
             icon: Icons.discount_outlined,
-            title: "30% Offer\nThis Month",
+            title: '30% Offer\nThis Month',
             press: () {}),
         petsServices(
             icon: Icons.delivery_dining,
-            title: "Free Shipping\n For Member",
+            title: 'Free Shipping\n For Member',
             press: () {}),
         petsServices(
             icon: Icons.precision_manufacturing_sharp,
-            title: "Easy Online\n Purchase",
+            title: 'Easy Online\n Purchase',
             press: () {}),
         petsServices(
             icon: Icons.medical_services_outlined,
-            title: "Animal Care\n Services",
+            title: 'Animal Care\n Services',
             press: () {}),
         petsServices(
-            icon: Icons.shopping_cart, title: "Pets\nShopes", press: () {}),
+            icon: Icons.shopping_cart, title: 'Pets\nShopes', press: () {}),
       ],
     );
   }
@@ -55,12 +56,8 @@ class PetsMoreServices extends StatelessWidget {
             Text(
               title,
               textAlign: TextAlign.center,
-              style: const TextStyle(
-                fontWeight: FontWeight.bold,
-                fontSize: 18,
-                height: 1.5,
-              ),
-            )
+              style: kPetServicesTitleTextStyle,
+            ),
           ],
         ),
       ),

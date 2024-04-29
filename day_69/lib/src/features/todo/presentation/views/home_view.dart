@@ -1,5 +1,7 @@
+import 'package:day_69/src/constants/colors.dart';
 import 'package:flutter/material.dart';
 
+import '../../../../constants/assets.dart';
 import '../widgets/body.dart';
 import '../widgets/footer.dart';
 import '../widgets/header.dart';
@@ -20,14 +22,12 @@ class _HomeViewState extends State<HomeView> {
         child: ListView(
           children: const [
             DrawerHeader(
-              decoration: BoxDecoration(color: Colors.pink),
+              decoration: BoxDecoration(color: kPinkColor),
               padding: EdgeInsets.symmetric(horizontal: 50),
               child: Center(
                 child: CircleAvatar(
                   radius: 60,
-                  backgroundImage: AssetImage(
-                    "images/pets logo.png",
-                  ),
+                  backgroundImage: AssetImage(kImgLogo),
                 ),
               ),
             ),
@@ -38,11 +38,8 @@ class _HomeViewState extends State<HomeView> {
       body: const SingleChildScrollView(
         child: Column(
           children: [
-            // for header parts
             Header(),
-            // body parts
             Body(),
-            // footer parts
             Footer(),
           ],
         ),

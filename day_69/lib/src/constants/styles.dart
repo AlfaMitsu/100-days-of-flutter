@@ -1,39 +1,58 @@
+import 'package:day_69/src/constants/colors.dart';
 import 'package:flutter/material.dart';
-import 'colors.dart';
 
 // TextStyle
 
-const kSignUpTextStyle = TextStyle(
+const kCareAndHealthyPetsTextStyle = TextStyle(
+  fontWeight: FontWeight.w900,
   fontSize: 30,
-  fontWeight: FontWeight.bold,
-  color: kWhiteColor,
 );
 
-const kSignUpTextTextStyle = TextStyle(
-  color: kWhiteColor,
+const kDescription2TextStyle = TextStyle(
+  fontWeight: FontWeight.bold,
+  fontSize: 28,
+  height: 1.5,
+);
+
+const kPetShopTextStyle = TextStyle(
+  fontWeight: FontWeight.w900,
+  fontSize: 20,
+);
+
+const kWebTitleTextStyle = TextStyle(
   fontSize: 18,
-  fontWeight: FontWeight.w700,
-);
-
-const kEmailAndPasswordTextStyle = TextStyle(
-  color: kGrey200Color,
-  fontSize: 16,
-  fontWeight: FontWeight.w600,
-);
-
-const kDontHaveAnAccountTextStyle = TextStyle(
-  color: kGrey300Color,
-  fontSize: 16,
-);
-
-const kLoginTextStyle = TextStyle(
-  color: kGrey200Color,
   fontWeight: FontWeight.bold,
+);
+
+const kStartShoppingTextStyle = TextStyle(
+  fontSize: 18,
+  fontWeight: FontWeight.bold,
+  color: kWhiteTextColor,
+);
+
+const kPetServicesTitleTextStyle = TextStyle(
+  fontWeight: FontWeight.bold,
+  fontSize: 18,
+  height: 1.5,
+);
+
+const kMobileTitleTextStyle = TextStyle(
+  fontSize: 16,
+  fontWeight: FontWeight.bold,
+);
+
+const kPopularProductTextStyle = TextStyle(
+  color: kBlackTextColor,
+  fontWeight: FontWeight.w900,
   fontSize: 16,
 );
 
-const kLabelTextStyle = TextStyle(
-  color: kGrey300Color,
-  fontSize: 15,
+const kDescriptionTextStyle = TextStyle(
+  color: Colors.black54,
+  fontSize: 16,
+);
+
+const kWhatAreYouLookingForTextStyle = TextStyle(
   fontWeight: FontWeight.w500,
+  color: Colors.black45,
 );

@@ -1,3 +1,5 @@
+import '../../../../constants/assets.dart';
+
 class Product {
   String image;
   String title;
@@ -14,22 +16,22 @@ class Product {
 List<Product> products = [
   Product(
     rating: 5,
-    title: "Dog",
-    image: "images/dogs.png",
+    title: 'Dog',
+    image: kImgDog,
   ),
   Product(
     rating: 4,
-    title: "Cat",
-    image: "images/cats.png",
+    title: 'Cat',
+    image: kImgCat,
   ),
   Product(
     rating: 5,
-    title: "Bird",
-    image: "images/bird.png",
+    title: 'Bird',
+    image: kImgBird,
   ),
   Product(
     rating: 4,
-    title: "Fish",
-    image: "images/fishs.png",
+    title: 'Fish',
+    image: kImgFish,
   ),
 ];

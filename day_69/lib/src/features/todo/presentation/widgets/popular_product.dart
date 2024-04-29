@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import '../../../../constants/styles.dart';
 import '../../data/models/product_model.dart';
 import 'star_rating.dart';
 
@@ -23,18 +24,13 @@ class PopularProduct extends StatelessWidget {
               fit: BoxFit.cover,
             ),
           ),
-          const SizedBox(
-            height: 10,
-          ),
+          const SizedBox(height: 10),
           StarRating(rating: product.rating),
           Padding(
             padding: const EdgeInsets.only(left: 10),
             child: Text(
               product.title,
-              style: const TextStyle(
-                fontWeight: FontWeight.bold,
-                fontSize: 16,
-              ),
+              style: kMobileTitleTextStyle,
             ),
           ),
         ],

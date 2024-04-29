@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../../../../../constants/styles.dart';
+
 class MobileMenu extends StatelessWidget {
   const MobileMenu({super.key});
 
@@ -8,12 +10,12 @@ class MobileMenu extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        menuItems("Dots"),
-        menuItems("Cats"),
-        menuItems("Pig"),
-        menuItems("Birds"),
-        menuItems("Fish"),
-        menuItems("Cow"),
+        menuItems('Dots'),
+        menuItems('Cats'),
+        menuItems('Pig'),
+        menuItems('Birds'),
+        menuItems('Fish'),
+        menuItems('Cow'),
       ],
     );
   }
@@ -23,10 +25,7 @@ class MobileMenu extends StatelessWidget {
       padding: const EdgeInsets.all(10),
       child: Text(
         title,
-        style: const TextStyle(
-          fontWeight: FontWeight.bold,
-          fontSize: 16,
-        ),
+        style: kMobileTitleTextStyle,
       ),
     );
   }

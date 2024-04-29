@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import '../../../../constants/styles.dart';
 import '../../data/models/product_model.dart';
 import 'pets_more_services.dart';
 import 'popular_product.dart';
@@ -15,7 +16,7 @@ class Body extends StatelessWidget {
         children: [
           Container(
             padding: const EdgeInsets.all(20),
-            child:Column(
+            child: Column(
               children: [
                 const PetsMoreServices(),
                 const Divider(),
@@ -28,26 +29,19 @@ class Body extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       Text(
-                        "Popular Product",
+                        'Popular Product',
                         textAlign: TextAlign.center,
-                        style: TextStyle(
-                          color: Colors.black,
-                          fontWeight: FontWeight.w900,
-                          fontSize: 16,
-                        ),
-                      )
+                        style: kPopularProductTextStyle,
+                      ),
                     ],
                   ),
                 ),
                 Wrap(
                   spacing: 20,
-                  children: 
-                  
-                    List.generate(
-                      products.length,
-                      (index) => PopularProduct(product: products[index]),
-                    ),
-                  
+                  children: List.generate(
+                    products.length,
+                    (index) => PopularProduct(product: products[index]),
+                  ),
                 ),
               ],
             ),

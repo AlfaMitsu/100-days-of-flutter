@@ -21,13 +21,16 @@ class _StarRatingState extends State<StarRating> {
   @override
   Widget build(BuildContext context) {
     return Wrap(
-      children: List.generate(5, (index) {
-        if (index < (widget.rating).round()) {
-          return star(true);
-        } else {
-          return star(false);
-        }
-      }),
+      children: List.generate(
+        5,
+        (index) {
+          if (index < (widget.rating).round()) {
+            return star(true);
+          } else {
+            return star(false);
+          }
+        },
+      ),
     );
   }
 }
