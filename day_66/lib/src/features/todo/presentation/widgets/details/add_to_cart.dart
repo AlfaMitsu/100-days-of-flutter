@@ -1,12 +1,13 @@
 import 'package:flutter/material.dart';
 
 import '../../../../../constants/colors.dart';
+import '../../../../../constants/styles.dart';
 import '../../../../core/cart_provider.dart';
 import '../../../data/models/product_model.dart';
 
 class AddToCart extends StatefulWidget {
   final Product product;
-  
+
   const AddToCart({
     super.key,
     required this.product,
@@ -28,7 +29,7 @@ class _AddToCartState extends State<AddToCart> {
         height: 85,
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(50),
-          color: Colors.black,
+          color: kBlackColor,
         ),
         padding: const EdgeInsets.symmetric(horizontal: 15),
         alignment: Alignment.center,
@@ -39,7 +40,10 @@ class _AddToCartState extends State<AddToCart> {
               height: 40,
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(20),
-                border: Border.all(color: Colors.white, width: 2),
+                border: Border.all(
+                  color: kWhiteColor,
+                  width: 2,
+                ),
               ),
               child: Row(
                 children: [
@@ -54,28 +58,27 @@ class _AddToCartState extends State<AddToCart> {
                     iconSize: 18,
                     icon: const Icon(
                       Icons.remove,
-                      color: Colors.white,
+                      color: kWhiteColor,
                     ),
                   ),
                   const SizedBox(width: 5),
                   Text(
                     currentIndex.toString(),
-                    style: const TextStyle(
-                      fontWeight: FontWeight.bold,
-                      color: Colors.white,
-                    ),
+                    style: kCurrentIndexTextStyle,
                   ),
                   const SizedBox(width: 5),
                   IconButton(
                     onPressed: () {
-                      setState(() {
-                        currentIndex++;
-                      });
+                      setState(
+                        () {
+                          currentIndex++;
+                        },
+                      );
                     },
                     iconSize: 18,
                     icon: const Icon(
                       Icons.add,
-                      color: Colors.white,
+                      color: kWhiteColor,
                     ),
                   )
                 ],
@@ -86,12 +89,8 @@ class _AddToCartState extends State<AddToCart> {
                 provider.toggleFavorite(widget.product);
                 const snackBar = SnackBar(
                   content: Text(
-                    "Successfully added!",
-                    style: TextStyle(
-                      fontWeight: FontWeight.bold,
-                      fontSize: 25,
-                      color: Colors.white,
-                    ),
+                    'Successfully added!',
+                    style: kSuccessfullyAddedTextStyle,
                   ),
                   duration: Duration(seconds: 1),
                 );
@@ -106,14 +105,11 @@ class _AddToCartState extends State<AddToCart> {
                 alignment: Alignment.center,
                 padding: const EdgeInsets.symmetric(horizontal: 50),
                 child: const Text(
-                  "Add to Cart",
-                  style: TextStyle(
-                      color: Colors.white,
-                      fontWeight: FontWeight.bold,
-                      fontSize: 20),
+                  'Add to Cart',
+                  style: kAddToCartTextStyle,
                 ),
               ),
-            )
+            ),
           ],
         ),
       ),

@@ -1,3 +1,4 @@
+import 'package:day_66/src/constants/colors.dart';
 import 'package:flutter/material.dart';
 
 import '../../../../core/favorite_provider.dart';
@@ -5,7 +6,7 @@ import '../../../data/models/product_model.dart';
 
 class DetailAppBar extends StatelessWidget {
   final Product product;
-  
+
   const DetailAppBar({
     super.key,
     required this.product,
@@ -20,7 +21,7 @@ class DetailAppBar extends StatelessWidget {
         children: [
           IconButton(
             style: IconButton.styleFrom(
-              backgroundColor: Colors.white,
+              backgroundColor: kWhiteColor,
               padding: const EdgeInsets.all(15),
             ),
             onPressed: () {
@@ -31,7 +32,7 @@ class DetailAppBar extends StatelessWidget {
           const Spacer(),
           IconButton(
             style: IconButton.styleFrom(
-              backgroundColor: Colors.white,
+              backgroundColor: kWhiteColor,
               padding: const EdgeInsets.all(15),
             ),
             onPressed: () {},
@@ -40,7 +41,7 @@ class DetailAppBar extends StatelessWidget {
           const SizedBox(width: 10),
           IconButton(
             style: IconButton.styleFrom(
-              backgroundColor: Colors.white,
+              backgroundColor: kWhiteColor,
               padding: const EdgeInsets.all(15),
             ),
             onPressed: () {
@@ -50,7 +51,7 @@ class DetailAppBar extends StatelessWidget {
               provider.isExist(product)
                   ? Icons.favorite
                   : Icons.favorite_border,
-              color: Colors.black,
+              color: kBlackColor,
               size: 25,
             ),
           ),

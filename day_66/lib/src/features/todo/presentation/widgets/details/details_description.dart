@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../../../../../constants/colors.dart';
+import '../../../../../constants/styles.dart';
 
 class Description extends StatelessWidget {
   final String description;
@@ -27,37 +28,24 @@ class Description extends StatelessWidget {
               ),
               alignment: Alignment.center,
               child: const Text(
-                "Description",
-                style: TextStyle(
-                    fontWeight: FontWeight.bold,
-                    color: Colors.white,
-                    fontSize: 16),
+                'Description',
+                style: kFollowTextStyle,
               ),
             ),
             const Text(
-              "Specifications",
-              style: TextStyle(
-                  fontWeight: FontWeight.bold,
-                  color: Colors.black,
-                  fontSize: 16),
+              'Specifications',
+              style: kCartItemsTitleTextStyle,
             ),
             const Text(
-              "Reviews",
-              style: TextStyle(
-                fontSize: 16,
-                fontWeight: FontWeight.bold,
-                color: Colors.black,
-              ),
+              'Reviews',
+              style: kCartItemsTitleTextStyle,
             ),
           ],
         ),
         const SizedBox(height: 20),
         Text(
           description,
-          style: const TextStyle(
-            fontSize: 16,
-            color: Colors.grey,
-          ),
+          style: kDescriptionTextStyle,
         ),
       ],
     );

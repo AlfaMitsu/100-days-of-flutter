@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../../../../../constants/colors.dart';
+import '../../../../../constants/styles.dart';
 import '../../../data/models/product_model.dart';
 
 class ItemsDetails extends StatelessWidget {
@@ -18,10 +19,7 @@ class ItemsDetails extends StatelessWidget {
       children: [
         Text(
           product.title,
-          style: const TextStyle(
-            fontWeight: FontWeight.w800,
-            fontSize: 25,
-          ),
+          style: kSpecialForYouTextStyle,
         ),
         Row(
           children: [
@@ -29,11 +27,8 @@ class ItemsDetails extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
-                  "\$${product.price}",
-                  style: const TextStyle(
-                    fontWeight: FontWeight.w800,
-                    fontSize: 25,
-                  ),
+                  '\$${product.price}',
+                  style: kSpecialForYouTextStyle,
                 ),
                 const SizedBox(height: 10),
                 Row(
@@ -52,18 +47,12 @@ class ItemsDetails extends StatelessWidget {
                           const Icon(
                             Icons.star,
                             size: 15,
-                            color: Colors.white,
+                            color: kWhiteColor,
                           ),
-                          const SizedBox(
-                            width: 3,
-                          ),
+                          const SizedBox(width: 3),
                           Text(
                             product.rate.toString(),
-                            style: const TextStyle(
-                              fontWeight: FontWeight.bold,
-                              color: Colors.white,
-                              fontSize: 14,
-                            ),
+                            style: kProductRatingTextStyle,
                           ),
                         ],
                       ),
@@ -71,13 +60,10 @@ class ItemsDetails extends StatelessWidget {
                     const SizedBox(width: 5),
                     Text(
                       product.review,
-                      style: const TextStyle(
-                        color: Colors.grey,
-                        fontSize: 15,
-                      ),
+                      style: kProductReviewTextStyle,
                     )
                   ],
-                )
+                ),
               ],
             ),
             const Spacer(),
@@ -85,13 +71,12 @@ class ItemsDetails extends StatelessWidget {
               TextSpan(
                 children: [
                   const TextSpan(
-                    text: "Seller: ",
+                    text: 'Seller: ',
                     style: TextStyle(fontSize: 16),
                   ),
                   TextSpan(
                     text: product.seller,
-                    style: const TextStyle(
-                        fontSize: 16, fontWeight: FontWeight.bold),
+                    style: kCategoryListTitleTextStyle,
                   ),
                 ],
               ),
