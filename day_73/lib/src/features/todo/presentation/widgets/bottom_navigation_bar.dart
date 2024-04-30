@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:svg_flutter/svg_flutter.dart';
 
+import '../../../../constants/assets.dart';
 import '../../../../constants/colors.dart';
 
 class BottomNaigationBar extends StatelessWidget {
@@ -13,8 +14,9 @@ class BottomNaigationBar extends StatelessWidget {
         height: 60,
         margin: const EdgeInsets.symmetric(horizontal: 28),
         decoration: BoxDecoration(
-            color: const Color.fromARGB(17, 0, 0, 0),
-            borderRadius: BorderRadius.circular(36)),
+          color: kBlackColor,
+          borderRadius: BorderRadius.circular(36),
+        ),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: [
@@ -26,28 +28,28 @@ class BottomNaigationBar extends StatelessWidget {
                   color: kSecondaryColor,
                 ),
                 const Spacer(),
-                SvgPicture.asset("assets/icons/icon_home.svg"),
+                SvgPicture.asset(kIcHome),
                 const Spacer(),
               ],
             ),
             Column(
               children: [
                 const Spacer(),
-                SvgPicture.asset("assets/icons/icon_heart.svg"),
+                SvgPicture.asset(kIcHeart),
                 const Spacer(),
               ],
             ),
             Column(
               children: [
                 const Spacer(),
-                SvgPicture.asset("assets/icons/icon_cart.svg"),
+                SvgPicture.asset(kIcCart),
                 const Spacer(),
               ],
             ),
             Column(
               children: [
                 const Spacer(),
-                SvgPicture.asset("assets/icons/icon_user.svg"),
+                SvgPicture.asset(kIcUser),
                 const Spacer(),
               ],
             ),

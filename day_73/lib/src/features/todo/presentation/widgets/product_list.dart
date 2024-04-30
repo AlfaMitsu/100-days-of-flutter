@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:svg_flutter/svg_flutter.dart';
 
+import '../../../../constants/assets.dart';
 import '../../../../constants/colors.dart';
 import '../../data/models/product_model.dart';
 import '../views/details_view.dart';
@@ -20,11 +21,12 @@ class _ProductListState extends State<ProductList> {
     return Container(
       padding: const EdgeInsets.symmetric(horizontal: 32),
       child: ListView.builder(
-          shrinkWrap: true,
-          itemCount: productList.length,
-          itemBuilder: (context, index) {
-            return gamingItems(index);
-          }),
+        shrinkWrap: true,
+        itemCount: productList.length,
+        itemBuilder: (context, index) {
+          return gamingItems(index);
+        },
+      ),
     );
   }
 
@@ -33,15 +35,14 @@ class _ProductListState extends State<ProductList> {
     Color backgroundColor = kBackgroundColor;
     Color textColor = kPrimaryTextColor;
     if (currentSelectItems == index) {
-      scale = 1.35;
+      scale = 1.20;
       backgroundColor = kSelectCardBackgroundColor;
 
-      textColor = Colors.white;
+      textColor = kWhiteColor;
     }
     final game = productList[index];
     return GestureDetector(
       onTap: () {
-        // for navigation
         Navigator.push(
           context,
           MaterialPageRoute(
@@ -74,7 +75,7 @@ class _ProductListState extends State<ProductList> {
                     children: [
                       Container(
                         decoration: BoxDecoration(
-                          color: const Color.fromARGB(10, 0, 0, 0),
+                          color: kBlackColor,
                           borderRadius: BorderRadius.circular(20),
                         ),
                         padding: const EdgeInsets.symmetric(
@@ -84,13 +85,9 @@ class _ProductListState extends State<ProductList> {
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
-                            SizedBox(
-                              height: 7 * scale,
-                            ),
+                            SizedBox(height: 7 * scale),
                             Padding(
-                              padding: const EdgeInsets.only(
-                                right: 90,
-                              ),
+                              padding: const EdgeInsets.only(right: 90),
                               child: Text(
                                 game.name,
                                 maxLines: 2,
@@ -102,24 +99,18 @@ class _ProductListState extends State<ProductList> {
                                 ),
                               ),
                             ),
-                            SizedBox(
-                              height: 7 * scale,
-                            ),
+                            SizedBox(height: 7 * scale),
                             const Rating(),
-                            SizedBox(
-                              height: 8 * scale,
-                            ),
+                            SizedBox(height: 8 * scale),
                             Text(
-                              "\$${game.price}",
+                              '\$${game.price}',
                               style: TextStyle(
                                 fontWeight: FontWeight.bold,
                                 fontSize: 16 * scale,
                                 color: textColor,
                               ),
                             ),
-                            SizedBox(
-                              height: 8 * scale,
-                            ),
+                            SizedBox(height: 8 * scale),
                           ],
                         ),
                       ),
@@ -136,7 +127,7 @@ class _ProductListState extends State<ProductList> {
                             ),
                           ),
                           child: SvgPicture.asset(
-                            "assets/icons/icon_add_cart.svg",
+                            kIcAddCart,
                             width: 17,
                           ),
                         ),
@@ -158,7 +149,7 @@ class _ProductListState extends State<ProductList> {
                       ),
                     ),
                   ),
-                )
+                ),
               ],
             ),
           ),

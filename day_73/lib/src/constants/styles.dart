@@ -3,37 +3,30 @@ import 'colors.dart';
 
 // TextStyle
 
-const kSignUpTextStyle = TextStyle(
-  fontSize: 30,
+final kGamePriceTextStyle = TextStyle(
   fontWeight: FontWeight.bold,
-  color: kWhiteColor,
+  fontSize: 35,
+  color: kPrimaryTextColor,
 );
 
-const kSignUpTextTextStyle = TextStyle(
-  color: kWhiteColor,
+const kWelcomeTextStyle = TextStyle(
+  fontWeight: FontWeight.bold,
+  fontSize: 25,
+);
+
+final kGameNameTextStyle = TextStyle(
+  fontWeight: FontWeight.bold,
+  fontSize: 25,
+  color: kPrimaryTextColor,
+);
+
+const kAddToCartTextStyle = TextStyle(
+  fontWeight: FontWeight.bold,
+  fontSize: 20,
+  color: kWhiteTextColor,
+);
+
+final kDescriptionTextStyle = TextStyle(
   fontSize: 18,
-  fontWeight: FontWeight.w700,
-);
-
-const kEmailAndPasswordTextStyle = TextStyle(
-  color: kGrey200Color,
-  fontSize: 16,
-  fontWeight: FontWeight.w600,
-);
-
-const kDontHaveAnAccountTextStyle = TextStyle(
-  color: kGrey300Color,
-  fontSize: 16,
-);
-
-const kLoginTextStyle = TextStyle(
-  color: kGrey200Color,
-  fontWeight: FontWeight.bold,
-  fontSize: 16,
-);
-
-const kLabelTextStyle = TextStyle(
-  color: kGrey300Color,
-  fontSize: 15,
-  fontWeight: FontWeight.w500,
+  color: kSecondTextColor,
 );

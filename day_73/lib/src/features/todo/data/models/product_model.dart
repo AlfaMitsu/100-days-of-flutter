@@ -1,5 +1,7 @@
 import 'dart:core';
 
+import '../../../../constants/assets.dart';
+
 class Product {
   String name;
   String imagePic;
@@ -13,19 +15,19 @@ List<Product> productList = [
   Product(
     'Dualshock 4 Camouflage Red',
     60,
-    'assets/images/2.png',
+    kImgProduct2,
     4.0,
   ),
   Product(
     'Dualshock 4 Midnight Blue',
     55,
-    'assets/images/3.png',
+    kImgProduct3,
     4.0,
   ),
   Product(
     'Dualshock 4 Glacier White',
     50,
-    'assets/images/1.png',
+    kImgProduct1,
     4.0,
   ),
 ];

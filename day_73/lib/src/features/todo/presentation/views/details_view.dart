@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../../../../constants/colors.dart';
+import '../../../../constants/styles.dart';
 import '../../data/models/product_model.dart';
 import '../widgets/image_size.dart';
 import '../widgets/rating.dart';
@@ -17,82 +18,70 @@ class DetailsView extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: myAppbar(),
-      body: Column(
-        children: [
-          // for detail image
-          detailImage(),
-          // for image size
-          const ImageSize(),
-          // for name star and description,
-          itemsDetails(),
-          //for add to cart and price
-          Container(
-            padding: const EdgeInsets.symmetric(vertical: 32, horizontal: 20),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Text(
-                  "\$${game.price}",
-                  style: TextStyle(
-                    fontWeight: FontWeight.bold,
-                    fontSize: 35,
-                    color: kPrimaryTextColor,
+      body: SingleChildScrollView(
+        child: Column(
+          children: [
+            detailImage(),
+            const ImageSize(),
+            itemsDetails(),
+            Container(
+              padding: const EdgeInsets.symmetric(
+                vertical: 32,
+                horizontal: 20,
+              ),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Text(
+                    '\$${game.price}',
+                    style: kGamePriceTextStyle,
                   ),
-                ),
-                Container(
-                  height: 80,
-                  width: 200,
-                  padding:
-                      const EdgeInsets.symmetric(vertical: 28, horizontal: 18),
-                  decoration: BoxDecoration(
-                    color: kSecondaryColor,
-                    borderRadius: BorderRadius.circular(36),
-                  ),
-                  child: const Center(
-                    child: Text(
-                      "Add to Cart",
-                      style: TextStyle(
-                        fontWeight: FontWeight.bold,
-                        fontSize: 20,
-                        color: Colors.white,
+                  Container(
+                    height: 80,
+                    width: 200,
+                    padding: const EdgeInsets.symmetric(
+                      vertical: 28,
+                      horizontal: 18,
+                    ),
+                    decoration: BoxDecoration(
+                      color: kSecondaryColor,
+                      borderRadius: BorderRadius.circular(36),
+                    ),
+                    child: const Center(
+                      child: Text(
+                        'Add to Cart',
+                        style: kAddToCartTextStyle,
                       ),
                     ),
                   ),
-                )
-              ],
+                ],
+              ),
             ),
-          )
-        ],
+          ],
+        ),
       ),
     );
   }
 
   Container itemsDetails() {
     return Container(
-      padding: const EdgeInsets.symmetric(vertical: 16, horizontal: 20),
+      padding: const EdgeInsets.symmetric(
+        vertical: 16,
+        horizontal: 20,
+      ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Text(
             game.name,
-            style: TextStyle(
-              fontWeight: FontWeight.bold,
-              fontSize: 25,
-              color: kPrimaryTextColor,
-            ),
+            style: kGameNameTextStyle,
           ),
-          const SizedBox(
-            height: 10,
-          ),
-          //for rating
+          const SizedBox(height: 10),
           const Rating(),
           Text(
-            "Unleash your color with the arrival of four new stvles. Each wireless controller comes loaded with the same DUALSHOCK@4 features including touch paa, motion sensors and punt-in rechargedole batterv.",
-            style: TextStyle(
-              fontSize: 18,
-              color: kSecondTextColor,
-            ),
-          )
+            'Unleash your color with the arrival of four new stvles. Each wireless controller comes loaded with the same DUALSHOCK@4 features including touch paa, motion sensors and punt-in rechargedole batterv.',
+            style: kDescriptionTextStyle,
+          ),
         ],
       ),
     );
@@ -108,20 +97,21 @@ class DetailsView extends StatelessWidget {
             color: kSelectCardBackgroundColor,
           ),
           Positioned(
-              bottom: 0,
-              left: 0,
-              right: 0,
-              child: Container(
-                alignment: Alignment.center,
-                child: Hero(
-                  tag: game.imagePic,
-                  child: Image.asset(
-                    game.imagePic,
-                    height: 220,
-                    width: 330,
-                  ),
+            bottom: 0,
+            left: 0,
+            right: 0,
+            child: Container(
+              alignment: Alignment.center,
+              child: Hero(
+                tag: game.imagePic,
+                child: Image.asset(
+                  game.imagePic,
+                  height: 220,
+                  width: 330,
                 ),
-              ))
+              ),
+            ),
+          ),
         ],
       ),
     );
@@ -129,17 +119,17 @@ class DetailsView extends StatelessWidget {
 
   AppBar myAppbar() {
     return AppBar(
-      iconTheme: const IconThemeData(color: Colors.white),
+      iconTheme: const IconThemeData(color: kWhiteColor),
       backgroundColor: kSelectCardBackgroundColor,
       actions: const [
         Padding(
           padding: EdgeInsets.only(right: 10),
           child: Icon(
             Icons.favorite_border,
-            color: Colors.white,
+            color: kWhiteColor,
             size: 30,
           ),
-        )
+        ),
       ],
     );
   }
