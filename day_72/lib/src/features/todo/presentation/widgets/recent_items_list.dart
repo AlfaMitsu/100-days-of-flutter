@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../../../../constants/colors.dart';
+import '../../../../constants/styles.dart';
 import '../../data/models/job_model.dart';
 
 class RecentItemsList extends StatelessWidget {
@@ -17,15 +18,16 @@ class RecentItemsList extends StatelessWidget {
       padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 7),
       child: Container(
         decoration: BoxDecoration(
-            color: Colors.white,
-            borderRadius: BorderRadius.circular(10),
-            boxShadow: const [
-              BoxShadow(
-                color: Colors.black26,
-                offset: Offset(2, 2),
-                blurRadius: 8,
-              ),
-            ]),
+          color: kWhiteColor,
+          borderRadius: BorderRadius.circular(10),
+          boxShadow: const [
+            BoxShadow(
+              color: Colors.black26,
+              offset: Offset(2, 2),
+              blurRadius: 8,
+            ),
+          ],
+        ),
         height: 110,
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -46,7 +48,7 @@ class RecentItemsList extends StatelessWidget {
                 Icons.favorite_border,
                 color: Colors.black45,
               ),
-            )
+            ),
           ],
         ),
       ),
@@ -60,16 +62,11 @@ class RecentItemsList extends StatelessWidget {
       children: [
         Text(
           job.name,
-          style: TextStyle(
-            fontSize: 15,
-            fontWeight: FontWeight.bold,
-            color: kSecondaryTextColor,
-          ),
+          style: kJobNameTextStyle,
         ),
         Text(
           job.role,
-          style: TextStyle(
-              fontSize: 20, color: kPrimaryColor, fontWeight: FontWeight.w500),
+          style: kJobRole3TextStyle,
         ),
         const SizedBox(
           height: 2,
@@ -80,18 +77,13 @@ class RecentItemsList extends StatelessWidget {
               Icons.location_on,
               color: Theme.of(context).highlightColor,
             ),
-            const SizedBox(
-              height: 5,
-            ),
+            const SizedBox(height: 5),
             Text(
               job.location,
-              style: TextStyle(
-                fontSize: 15,
-                color: kSecondaryTextColor,
-              ),
+              style: kJobLocationTextStyle,
             ),
           ],
-        )
+        ),
       ],
     );
   }

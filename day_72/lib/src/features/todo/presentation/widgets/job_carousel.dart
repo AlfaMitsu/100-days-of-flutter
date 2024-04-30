@@ -16,10 +16,12 @@ class JobCarousel extends StatelessWidget {
   Widget build(BuildContext context) {
     return CarouselSlider(
       items: jobs
-          .map((e) => ItemsJobs(
-                job: e,
-                themeDark: jobs.indexOf(e) == 0,
-              ))
+          .map(
+            (e) => ItemsJobs(
+              job: e,
+              themeDark: jobs.indexOf(e) == 0,
+            ),
+          )
           .toList(),
       options: CarouselOptions(
         enableInfiniteScroll: false,

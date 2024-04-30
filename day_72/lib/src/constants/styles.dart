@@ -3,37 +3,66 @@ import 'colors.dart';
 
 // TextStyle
 
-const kSignUpTextStyle = TextStyle(
-  fontSize: 30,
+final kFindYourNextTextStyle = TextStyle(
+  fontSize: 40,
   fontWeight: FontWeight.bold,
-  color: kWhiteColor,
+  color: kPrimaryColor,
 );
 
-const kSignUpTextTextStyle = TextStyle(
-  color: kWhiteColor,
-  fontSize: 18,
-  fontWeight: FontWeight.w700,
-);
-
-const kEmailAndPasswordTextStyle = TextStyle(
-  color: kGrey200Color,
-  fontSize: 16,
-  fontWeight: FontWeight.w600,
-);
-
-const kDontHaveAnAccountTextStyle = TextStyle(
-  color: kGrey300Color,
-  fontSize: 16,
-);
-
-const kLoginTextStyle = TextStyle(
-  color: kGrey200Color,
+final kDesignJobTextStyle = TextStyle(
+  fontSize: 36,
   fontWeight: FontWeight.bold,
-  fontSize: 16,
+  color: kSecondaryColor,
 );
 
-const kLabelTextStyle = TextStyle(
-  color: kGrey300Color,
-  fontSize: 15,
+final kJobHuntingTextStyle = TextStyle(
+  fontSize: 36,
+  fontWeight: FontWeight.bold,
+  color: kPrimaryColor,
+);
+
+const kGettingStarted = TextStyle(
+  fontWeight: FontWeight.bold,
+  fontSize: 28,
+  color: kWhiteTextColor,
+);
+
+final kForYouTextStyle = TextStyle(
+  fontSize: 20,
+  color: kSecondaryTextColor,
+);
+
+const kJobRoleTextStyle = TextStyle(
+  fontSize: 20,
+  color: kWhiteColor,
+  fontWeight: FontWeight.bold,
+);
+
+final kJobRole2TextStyle = TextStyle(
+  fontSize: 20,
+  color: kPrimaryColor,
+  fontWeight: FontWeight.bold,
+);
+
+final kJobRole3TextStyle = TextStyle(
+  fontSize: 20,
+  color: kPrimaryColor,
   fontWeight: FontWeight.w500,
+);
+
+final kSeeAllTextStyle = TextStyle(
+  fontSize: 16,
+  fontWeight: FontWeight.bold,
+  color: kSecondaryColor,
+);
+
+final kJobLocationTextStyle = TextStyle(
+  fontSize: 15,
+  color: kSecondaryTextColor,
+);
+
+final kJobNameTextStyle = TextStyle(
+  fontSize: 15,
+  fontWeight: FontWeight.bold,
+  color: kSecondaryTextColor,
 );

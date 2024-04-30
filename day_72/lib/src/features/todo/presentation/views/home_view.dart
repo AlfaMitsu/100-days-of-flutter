@@ -1,7 +1,8 @@
+import 'package:day_72/src/constants/assets.dart';
 import 'package:flutter/material.dart';
 import 'package:svg_flutter/svg_flutter.dart';
 
-import '../../../../constants/colors.dart';
+import '../../../../constants/styles.dart';
 import '../../data/models/job_model.dart';
 import '../widgets/job_carousel.dart';
 import '../widgets/recent_items_list.dart';
@@ -15,23 +16,16 @@ class HomeView extends StatelessWidget {
       body: SafeArea(
         child: ListView(
           children: [
-            // for menu , search and filter icon
             customAppBar(),
-            // for welcome text
             welcomText(),
-            // for you
             Padding(
               padding: const EdgeInsets.only(left: 30),
               child: Text(
-                "For You",
-                style: TextStyle(
-                  fontSize: 20,
-                  color: kSecondaryTextColor,
-                ),
+                'For You',
+                style: kForYouTextStyle,
               ),
             ),
             JobCarousel(jobs: forYou),
-            // for recent
             recentItems()
           ],
         ),
@@ -53,19 +47,12 @@ class HomeView extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Text(
-                "Recent",
-                style: TextStyle(
-                  fontSize: 20,
-                  color: kSecondaryTextColor,
-                ),
+                'Recent',
+                style: kForYouTextStyle,
               ),
               Text(
-                "See All",
-                style: TextStyle(
-                  fontSize: 16,
-                  fontWeight: FontWeight.bold,
-                  color: kSecondaryColor,
-                ),
+                'See All',
+                style: kSeeAllTextStyle,
               ),
             ],
           ),
@@ -92,27 +79,16 @@ class HomeView extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Text(
-            "Hi Jade",
-            style: TextStyle(
-              fontSize: 20,
-              color: kSecondaryTextColor,
-            ),
+            'Hi Alfa',
+            style: kForYouTextStyle,
           ),
           Text(
-            "Find your next",
-            style: TextStyle(
-              fontSize: 40,
-              fontWeight: FontWeight.bold,
-              color: kPrimaryColor,
-            ),
+            'Find your next',
+            style: kFindYourNextTextStyle,
           ),
           Text(
-            "design job",
-            style: TextStyle(
-              fontSize: 36,
-              fontWeight: FontWeight.bold,
-              color: kSecondaryColor,
-            ),
+            'design job',
+            style: kDesignJobTextStyle,
           ),
         ],
       ),
@@ -125,19 +101,19 @@ class HomeView extends StatelessWidget {
       child: Row(
         children: [
           SvgPicture.asset(
-            "assets/icons/slider.svg",
+            kIcSlider,
             height: 35,
           ),
           const Spacer(),
           SvgPicture.asset(
-            "assets/icons/search.svg",
+            kIcSearch,
             height: 35,
           ),
           const SizedBox(
             width: 20,
           ),
           SvgPicture.asset(
-            "assets/icons/filter.svg",
+            kIcFilter,
             height: 35,
           ),
         ],

@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 
+import '../../../../constants/assets.dart';
 import '../../../../constants/colors.dart';
+import '../../../../constants/styles.dart';
 import 'home_view.dart';
 
 class SplashView extends StatelessWidget {
@@ -11,29 +13,21 @@ class SplashView extends StatelessWidget {
     return Scaffold(
       body: Container(
         height: double.infinity,
-        color: Colors.white,
+        color: kWhiteColor,
         alignment: Alignment.center,
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
-            Image.asset("assets/images/img_main.png"),
+            Image.asset(kImgSplash),
             Column(
               children: [
                 Text(
-                  "Job hunting",
-                  style: TextStyle(
-                    fontWeight: FontWeight.bold,
-                    fontSize: 36,
-                    color: kPrimaryColor,
-                  ),
+                  'Job hunting',
+                  style: kJobHuntingTextStyle,
                 ),
                 Text(
-                  "made easy",
-                  style: TextStyle(
-                    fontWeight: FontWeight.bold,
-                    fontSize: 36,
-                    color: kSecondaryColor,
-                  ),
+                  'made easy',
+                  style: kDesignJobTextStyle,
                 ),
               ],
             ),
@@ -43,9 +37,7 @@ class SplashView extends StatelessWidget {
               minWidth: 230,
               height: 70,
               shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(
-                  8,
-                ),
+                borderRadius: BorderRadius.circular(8),
               ),
               onPressed: () {
                 Navigator.push(
@@ -56,14 +48,10 @@ class SplashView extends StatelessWidget {
                 );
               },
               child: const Text(
-                "Get Started",
-                style: TextStyle(
-                  fontWeight: FontWeight.bold,
-                  fontSize: 28,
-                  color: Colors.white,
-                ),
+                'Get Started',
+                style: kGettingStarted,
               ),
-            )
+            ),
           ],
         ),
       ),

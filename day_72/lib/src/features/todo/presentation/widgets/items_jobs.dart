@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../../../../constants/colors.dart';
+import '../../../../constants/styles.dart';
 import '../../data/models/job_model.dart';
 
 class ItemsJobs extends StatefulWidget {
@@ -28,7 +29,7 @@ class _ItemsJobsState extends State<ItemsJobs> {
       ),
       child: Container(
         decoration: BoxDecoration(
-          color: widget.themeDark ? kSecondaryColor : Colors.white,
+          color: widget.themeDark ? kSecondaryColor : kWhiteColor,
           borderRadius: BorderRadius.circular(10),
           boxShadow: const [
             BoxShadow(
@@ -49,7 +50,7 @@ class _ItemsJobsState extends State<ItemsJobs> {
                 children: [
                   Container(
                     decoration: BoxDecoration(
-                      color: Colors.white,
+                      color: kWhiteColor,
                       borderRadius: BorderRadius.circular(10),
                     ),
                     child: ClipRRect(
@@ -62,17 +63,19 @@ class _ItemsJobsState extends State<ItemsJobs> {
                   ),
                   GestureDetector(
                     onTap: () {
-                      setState(() {
-                        widget.job.isFavorite = !widget.job.isFavorite;
-                      });
+                      setState(
+                        () {
+                          widget.job.isFavorite = !widget.job.isFavorite;
+                        },
+                      );
                     },
                     child: Icon(
                       widget.job.isFavorite
                           ? Icons.favorite
                           : Icons.favorite_border,
-                      color: widget.themeDark ? Colors.white : Colors.grey,
+                      color: widget.themeDark ? kWhiteColor : kGreyColor,
                     ),
-                  )
+                  ),
                 ],
               ),
               Column(
@@ -83,24 +86,16 @@ class _ItemsJobsState extends State<ItemsJobs> {
                     style: TextStyle(
                       fontSize: 15,
                       color:
-                          widget.themeDark ? kSecondaryTextColor : Colors.grey,
+                          widget.themeDark ? kSecondaryTextColor : kGreyColor,
                     ),
                   ),
                   Text(
                     widget.job.role,
                     style: widget.themeDark
-                        ? const TextStyle(
-                            fontSize: 20,
-                            color: Colors.white,
-                            fontWeight: FontWeight.bold)
-                        : TextStyle(
-                            fontSize: 20,
-                            color: kPrimaryColor,
-                            fontWeight: FontWeight.bold),
+                        ? kJobRoleTextStyle
+                        : kJobRole2TextStyle,
                   ),
-                  const SizedBox(
-                    height: 2,
-                  ),
+                  const SizedBox(height: 2),
                   Row(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
@@ -108,22 +103,20 @@ class _ItemsJobsState extends State<ItemsJobs> {
                         Icons.location_on,
                         color: Theme.of(context).highlightColor,
                       ),
-                      const SizedBox(
-                        height: 5,
-                      ),
+                      const SizedBox(height: 5),
                       Text(
                         widget.job.location,
                         style: TextStyle(
                           fontSize: 15,
                           color: widget.themeDark
                               ? kSecondaryTextColor
-                              : Colors.grey,
+                              : kGreyColor,
                         ),
                       ),
                     ],
-                  )
+                  ),
                 ],
-              )
+              ),
             ],
           ),
         ),
