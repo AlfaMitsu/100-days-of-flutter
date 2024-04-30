@@ -1,3 +1,4 @@
+import 'package:day_75/src/constants/colors.dart';
 import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter/material.dart';
 
@@ -49,14 +50,14 @@ class MyLineChart extends StatelessWidget {
               const FlSpot(12, 3),
             ],
             isCurved: true,
-            color: Colors.pink.withOpacity(0.5),
+            color: kPinkColor.withOpacity(0.5),
             barWidth: 3,
             dotData: const FlDotData(
               show: false,
             ),
             belowBarData: BarAreaData(
               show: true,
-              color: Colors.pink.withOpacity(0.1),
+              color: kPinkColor.withOpacity(0.1),
             ),
           ),
         ],

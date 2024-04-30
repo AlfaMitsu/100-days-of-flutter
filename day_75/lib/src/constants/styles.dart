@@ -1,39 +1,36 @@
 import 'package:flutter/material.dart';
-import 'colors.dart';
 
 // TextStyle
 
-const kSignUpTextStyle = TextStyle(
+const k30DaysTextStyle = TextStyle(
   fontSize: 30,
-  fontWeight: FontWeight.bold,
-  color: kWhiteColor,
+  fontWeight: FontWeight.w900,
 );
 
-const kSignUpTextTextStyle = TextStyle(
-  color: kWhiteColor,
+const kDateTextStyle = TextStyle(
+  fontSize: 20,
+  color: Colors.black,
+  fontWeight: FontWeight.w800,
+);
+
+const kTodayTextStyle = TextStyle(
   fontSize: 18,
-  fontWeight: FontWeight.w700,
+  color: Colors.black45,
 );
 
-const kEmailAndPasswordTextStyle = TextStyle(
-  color: kGrey200Color,
+const kNameTextStyle = TextStyle(
   fontSize: 16,
-  fontWeight: FontWeight.w600,
-);
-
-const kDontHaveAnAccountTextStyle = TextStyle(
-  color: kGrey300Color,
-  fontSize: 16,
-);
-
-const kLoginTextStyle = TextStyle(
-  color: kGrey200Color,
   fontWeight: FontWeight.bold,
-  fontSize: 16,
 );
 
-const kLabelTextStyle = TextStyle(
-  color: kGrey300Color,
-  fontSize: 15,
+const kProgressTextStyle = TextStyle(fontSize: 15);
+
+const kUnitTextStyle = TextStyle(
+  fontSize: 12,
+  color: Colors.black38,
+);
+
+const kTrackYourFitnessTextStyle = TextStyle(
+  color: Colors.black54,
   fontWeight: FontWeight.w500,
 );

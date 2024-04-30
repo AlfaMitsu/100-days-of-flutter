@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 
+import '../../../../constants/assets.dart';
 import '../../../../constants/colors.dart';
+import '../../../../constants/styles.dart';
 import 'home_view.dart';
 
 class SplashView extends StatelessWidget {
@@ -15,7 +17,7 @@ class SplashView extends StatelessWidget {
           children: [
             const SizedBox(height: 40),
             Image.asset(
-              "assets/image.png",
+              kImgSplash,
               height: size.height * 0.68,
               fit: BoxFit.fill,
               width: size.width,
@@ -28,20 +30,14 @@ class SplashView extends StatelessWidget {
                   SizedBox(
                     width: size.width * 0.75,
                     child: const Text(
-                      "30 Days Fitness\nChallenge",
-                      style: TextStyle(
-                        fontSize: 30,
-                        fontWeight: FontWeight.w900,
-                      ),
+                      '30 Days Fitness\nChallenge',
+                      style: k30DaysTextStyle,
                     ),
                   ),
                   const SizedBox(height: 20),
                   const Text(
-                    "Track your fitness level by our smart Mobile App, Calories sleep and training.",
-                    style: TextStyle(
-                      color: Colors.black54,
-                      fontWeight: FontWeight.w500,
-                    ),
+                    'Track your fitness level by our smart Mobile App, Calories sleep and training.',
+                    style: kTrackYourFitnessTextStyle,
                   ),
                   const SizedBox(height: 40),
                   Align(
@@ -64,15 +60,16 @@ class SplashView extends StatelessWidget {
                           backgroundColor: kPrimaryColor,
                           child: Icon(
                             Icons.arrow_forward_ios,
-                            color: Colors.white,
+                            color: kWhiteColor,
                           ),
                         ),
                       ),
                     ),
-                  )
+                  ),
                 ],
               ),
             ),
+            const SizedBox(height: 10),
           ],
         ),
       ),

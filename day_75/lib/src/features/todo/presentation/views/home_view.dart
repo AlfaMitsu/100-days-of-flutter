@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:syncfusion_flutter_gauges/gauges.dart';
 
+import '../../../../constants/assets.dart';
 import '../../../../constants/colors.dart';
+import '../../../../constants/styles.dart';
 import '../widgets/my_line_chart.dart';
 
 class HomeView extends StatefulWidget {
@@ -34,7 +36,7 @@ class _HomeViewState extends State<HomeView> {
                   ),
                 ),
                 const CircleAvatar(
-                  backgroundImage: AssetImage("assets/avatar.png"),
+                  backgroundImage: AssetImage(kImgProfile),
                   radius: 20,
                 ),
               ],
@@ -49,19 +51,13 @@ class _HomeViewState extends State<HomeView> {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
-                  "Today",
-                  style: TextStyle(
-                    fontSize: 18,
-                    color: Colors.black45,
-                  ),
+                  'Today',
+                  style: kTodayTextStyle,
                 ),
                 Text(
-                  "Sep 01, 2020",
-                  style: TextStyle(
-                      fontSize: 20,
-                      color: Colors.black,
-                      fontWeight: FontWeight.w800),
-                )
+                  'Apr 30, 2024',
+                  style: kDateTextStyle,
+                ),
               ],
             ),
           ),
@@ -73,33 +69,33 @@ class _HomeViewState extends State<HomeView> {
                   0,
                   Colors.deepOrange,
                   Icons.favorite_border,
-                  "Heart",
-                  "80",
-                  "Per min",
+                  'Heart',
+                  '80',
+                  'Per min',
                 ),
                 fitnessItems(
                   1,
                   kPrimaryColor,
                   Icons.crisis_alert_sharp,
-                  "Calories",
-                  "950",
-                  "Kcal",
+                  'Calories',
+                  '950',
+                  'Kcal',
                 ),
                 fitnessItems(
                   2,
                   Colors.orangeAccent,
                   Icons.nightlight_round_outlined,
-                  "Sleep",
-                  "8:30",
-                  "Hours",
+                  'Sleep',
+                  '8:30',
+                  'Hours',
                 ),
                 fitnessItems(
                   4,
                   Colors.deepPurple,
                   Icons.timer_sharp,
-                  "Training",
-                  "2:00",
-                  "Hours",
+                  'Training',
+                  '2:00',
+                  'Hours',
                 ),
               ],
             ),
@@ -139,18 +135,15 @@ class _HomeViewState extends State<HomeView> {
                                 mainAxisAlignment: MainAxisAlignment.center,
                                 children: [
                                   Text(
-                                    "2.0",
-                                    style: TextStyle(
-                                      fontWeight: FontWeight.w900,
-                                      fontSize: 30,
-                                    ),
+                                    '2.0',
+                                    style: k30DaysTextStyle,
                                   ),
                                   Text(
-                                    "KM",
+                                    'KM',
                                     style: TextStyle(
                                       fontSize: 14,
                                     ),
-                                  )
+                                  ),
                                 ],
                               ),
                               positionFactor: 0.1,
@@ -194,7 +187,7 @@ class _HomeViewState extends State<HomeView> {
                   bottom: 10,
                   left: 140,
                   child: Image.asset(
-                    "assets/running.png",
+                    kImgRunning,
                     height: 100,
                   ),
                 ),
@@ -217,41 +210,42 @@ class _HomeViewState extends State<HomeView> {
                   ),
                 ),
                 Positioned(
-                    bottom: 40,
-                    left: 15,
-                    right: 15,
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        Text(
-                          "1km",
-                          style: TextStyle(fontSize: 15),
-                        ),
-                        Text(
-                          "2km",
-                          style: TextStyle(fontSize: 15),
-                        ),
-                        Text(
-                          "3km",
-                          style: TextStyle(fontSize: 15),
-                        ),
-                        Text(
-                          "4km",
-                          style: TextStyle(fontSize: 15),
-                        ),
-                        Text(
-                          "5km",
-                          style: TextStyle(fontSize: 15),
-                        ),
-                        Text(
-                          "6km",
-                          style: TextStyle(fontSize: 15),
-                        )
-                      ],
-                    ))
+                  bottom: 40,
+                  left: 15,
+                  right: 15,
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Text(
+                        '1km',
+                        style: kProgressTextStyle,
+                      ),
+                      Text(
+                        '2km',
+                        style: kProgressTextStyle,
+                      ),
+                      Text(
+                        '3km',
+                        style: kProgressTextStyle,
+                      ),
+                      Text(
+                        '4km',
+                        style: kProgressTextStyle,
+                      ),
+                      Text(
+                        '5km',
+                        style: kProgressTextStyle,
+                      ),
+                      Text(
+                        '6km',
+                        style: kProgressTextStyle,
+                      ),
+                    ],
+                  ),
+                ),
               ],
             ),
-          )
+          ),
         ],
       ),
       bottomNavigationBar: const SizedBox(
@@ -262,41 +256,45 @@ class _HomeViewState extends State<HomeView> {
             clipBehavior: Clip.none,
             children: [
               Positioned(
-                left: 180,
+                left: 160,
                 top: 0,
                 child: CircleAvatar(
                   radius: 25,
                   backgroundColor: kSecondaryColor,
                   child: Icon(
                     Icons.add,
-                    color: Colors.white,
+                    color: kWhiteColor,
                   ),
                 ),
               ),
               Padding(
-                padding: EdgeInsets.only(top: 12, left: 15, right: 15),
+                padding: EdgeInsets.only(
+                  top: 12,
+                  left: 15,
+                  right: 15,
+                ),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Icon(
                       Icons.house_outlined,
-                      color: Colors.white,
+                      color: kWhiteColor,
                       size: 30,
                     ),
                     Icon(
                       Icons.line_axis_rounded,
-                      color: Colors.white,
+                      color: kWhiteColor,
                       size: 30,
                     ),
                     SizedBox(width: 40),
                     Icon(
                       Icons.favorite_border,
-                      color: Colors.white,
+                      color: kWhiteColor,
                       size: 30,
                     ),
                     Icon(
                       Icons.person_outline,
-                      color: Colors.white,
+                      color: kWhiteColor,
                       size: 30,
                     ),
                   ],
@@ -315,7 +313,7 @@ class _HomeViewState extends State<HomeView> {
         padding: const EdgeInsets.symmetric(vertical: 30),
         decoration: BoxDecoration(
           border: Border.all(
-            color: currentIndex == index ? kSecondaryColor : Colors.transparent,
+            color: currentIndex == index ? kSecondaryColor : kTransparent,
           ),
           borderRadius: BorderRadius.circular(50),
         ),
@@ -329,30 +327,21 @@ class _HomeViewState extends State<HomeView> {
               ),
               child: Icon(
                 icon,
-                color: Colors.white,
+                color: kWhiteColor,
               ),
             ),
             const SizedBox(height: 10),
             Text(
               name,
-              style: const TextStyle(
-                fontSize: 16,
-                fontWeight: FontWeight.bold,
-              ),
+              style: kNameTextStyle,
             ),
             Text(
               value,
-              style: const TextStyle(
-                fontSize: 16,
-                fontWeight: FontWeight.bold,
-              ),
+              style: kNameTextStyle,
             ),
             Text(
               unit,
-              style: const TextStyle(
-                fontSize: 12,
-                color: Colors.black38,
-              ),
+              style: kUnitTextStyle, 
             ),
           ],
         ),
