@@ -1,3 +1,5 @@
+import '../../../../constants/assets.dart';
+
 class LeaderboardDetail {
   String image;
   String name;
@@ -14,39 +16,39 @@ class LeaderboardDetail {
 
 List<LeaderboardDetail> userItems = [
   LeaderboardDetail(
-    image: "images/a.png",
-    name: 'Dora Hines',
+    image: kImgKokz,
+    name: 'GeekFam.Kokz',
     rank: "4 ",
-    point: 6432,
+    point: 10018,
   ),
   LeaderboardDetail(
-    image: "images/b.png",
-    name: 'Alise Smith',
+    image: kImgArmel,
+    name: 'Aurora.Armel',
     rank: "5 ",
-    point: 5232,
+    point: 11172,
   ),
   LeaderboardDetail(
-    image: "images/c.png",
-    name: 'Boss Dee',
+    image: kImgPalos,
+    name: 'BLR.Palos',
     rank: "6 ",
-    point: 5200,
+    point: 10959,
   ),
   LeaderboardDetail(
-    image: "images/d.png",
-    name: 'Gender Tie',
+    image: kImgTims,
+    name: 'BLR.Tims',
     rank: "7 ",
-    point: 4900,
+    point: 10355,
   ),
   LeaderboardDetail(
-    image: "images/f.jpeg",
-    name: 'Roma Roy',
+    image: kImgYowe,
+    name: 'Darleng.Yowe',
     rank: "8 ",
-    point: 4100,
+    point: 11230,
   ),
   LeaderboardDetail(
-    image: "images/h.jpeg",
-    name: 'Alta Koch',
-    rank: "43",
-    point: 2200,
+    image: kImgAbed,
+    name: 'BLR.Abed',
+    rank: "9 ",
+    point: 9267,
   ),
 ];

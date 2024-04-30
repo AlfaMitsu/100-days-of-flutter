@@ -1,5 +1,8 @@
+import 'package:day_71/src/constants/colors.dart';
 import 'package:flutter/material.dart';
 
+import '../../../../constants/assets.dart';
+import '../../../../constants/styles.dart';
 import '../../data/models/leaderboard_model.dart';
 
 class ProfileView extends StatefulWidget {
@@ -21,16 +24,16 @@ class _ProfileViewState extends State<ProfileView> {
                 child: Column(
                   children: [
                     Image.asset(
-                      "images/leaderboard.png",
+                      kImgLeaderboard,
                       fit: BoxFit.cover,
                     ),
                     SizedBox(
                       height: 25,
                       child: Image.asset(
-                        "images/line.png",
+                        kImgLine,
                         fit: BoxFit.fill,
                       ),
-                    )
+                    ),
                   ],
                 ),
               ),
@@ -42,139 +45,121 @@ class _ProfileViewState extends State<ProfileView> {
               height: MediaQuery.of(context).size.height / 1.9,
               width: MediaQuery.of(context).size.width,
               decoration: const BoxDecoration(
-                color: Colors.white,
+                color: kWhiteColor,
                 borderRadius: BorderRadius.only(
                   topRight: Radius.circular(20),
                   topLeft: Radius.circular(20),
                 ),
               ),
               child: ListView.builder(
-                  shrinkWrap: true,
-                  physics: const BouncingScrollPhysics(),
-                  itemCount: userItems.length,
-                  itemBuilder: (context, index) {
-                    final items = userItems[index];
-                    return Padding(
-                      padding: const EdgeInsets.only(
-                          right: 20, left: 20, bottom: 15),
-                      child: Row(
-                        children: [
-                          Text(
-                            items.rank,
-                            style: const TextStyle(
-                              fontSize: 16,
-                              fontWeight: FontWeight.bold,
-                            ),
+                shrinkWrap: true,
+                physics: const BouncingScrollPhysics(),
+                itemCount: userItems.length,
+                itemBuilder: (context, index) {
+                  final items = userItems[index];
+                  return Padding(
+                    padding: const EdgeInsets.only(
+                      right: 20,
+                      left: 20,
+                      bottom: 15,
+                    ),
+                    child: Row(
+                      children: [
+                        Text(
+                          items.rank,
+                          style: kItemsRankTextStyle,
+                        ),
+                        const SizedBox(width: 15),
+                        CircleAvatar(
+                          radius: 25,
+                          backgroundImage: AssetImage(items.image),
+                        ),
+                        const SizedBox(width: 15),
+                        Text(
+                          items.name,
+                          style: kItemsNameTextStyle,
+                        ),
+                        const Spacer(),
+                        Container(
+                          height: 25,
+                          width: 70,
+                          decoration: BoxDecoration(
+                            color: Colors.black12,
+                            borderRadius: BorderRadius.circular(50),
                           ),
-                          const SizedBox(
-                            width: 15,
-                          ),
-                          CircleAvatar(
-                            radius: 25,
-                            backgroundImage: AssetImage(items.image),
-                          ),
-                          const SizedBox(
-                            width: 15,
-                          ),
-                          Text(
-                            items.name,
-                            style: const TextStyle(
-                              fontSize: 17,
-                              fontWeight: FontWeight.w500,
-                            ),
-                          ),
-                          const Spacer(),
-                          Container(
-                            height: 25,
-                            width: 70,
-                            decoration: BoxDecoration(
-                                color: Colors.black12,
-                                borderRadius: BorderRadius.circular(50)),
-                            child: Row(
-                              children: [
-                                const SizedBox(
-                                  width: 5,
+                          child: Row(
+                            children: [
+                              const SizedBox(width: 5),
+                              const RotatedBox(
+                                quarterTurns: 1,
+                                child: Icon(
+                                  Icons.back_hand,
+                                  color: kYellowColor,
                                 ),
-                                const RotatedBox(
-                                  quarterTurns: 1,
-                                  child: Icon(
-                                    Icons.back_hand,
-                                    color: Color.fromARGB(255, 255, 187, 0),
-                                  ),
-                                ),
-                                const SizedBox(
-                                  width: 5,
-                                ),
-                                Text(
-                                  items.point.toString(),
-                                  style: const TextStyle(
-                                      fontWeight: FontWeight.bold,
-                                      fontSize: 10,
-                                      color: Colors.black),
-                                ),
-                              ],
-                            ),
-                          )
-                        ],
-                      ),
-                    );
-                  }),
+                              ),
+                              const SizedBox(width: 5),
+                              Text(
+                                items.point.toString(),
+                                style: kItemsPointTextStyle,
+                              ),
+                            ],
+                          ),
+                        ),
+                      ],
+                    ),
+                  );
+                },
+              ),
             ),
           ),
           const Positioned(
             top: 70,
             right: 150,
             child: Text(
-              "Leaderboard",
-              style: TextStyle(
-                fontSize: 22,
-                fontWeight: FontWeight.bold,
-              ),
+              'Leaderboard',
+              style: kLeaderboardTextStyle,
             ),
           ),
           const Positioned(
             top: 120,
             left: 10,
             child: Text(
-              "Ens in 2d 23Hours",
-              style: TextStyle(
-                fontSize: 15,
-                fontWeight: FontWeight.w500,
-              ),
+              'Ends in 2d 23Hours',
+              style: kLeaderboardTimerTextStyle,
             ),
           ),
-          // Rank 1st
           Positioned(
-            top: 140,
-            right: 165,
+            top: 150,
+            right: 125,
             child: rank(
-                radius: 45.0,
-                height: 25,
-                image: "images/g.jpeg",
-                name: "Johnny Rios",
-                point: "23131"),
+              radius: 50,
+              height: 15,
+              image: kImgSkem,
+              name: 'GeekFam.Skem',
+              point: '10,094',
+            ),
           ),
-          // for rank 2nd
           Positioned(
             top: 240,
-            left: 45,
+            left: 5,
             child: rank(
-                radius: 30.0,
-                height: 10,
-                image: "images/k.jpeg",
-                name: "Hodges",
-                point: "12323"),
+              radius: 30.0,
+              height: 10,
+              image: kImgNatsumi,
+              name: 'GeekFam.Natsumi-',
+              point: '11,230',
+            ),
           ),
-          // For 3rd rank
           Positioned(
             top: 263,
             right: 50,
             child: rank(
-                radius: 30.0,
-                height: 10,
-                image: "images/j.jpeg",
-                name: "loram",
-                point: "6343"),
+              radius: 30.0,
+              height: 10,
+              image: kImgKarl,
+              name: '747.Karl',
+              point: '8709',
+            ),
           ),
         ],
       ),
@@ -194,39 +179,30 @@ class _ProfileViewState extends State<ProfileView> {
           radius: radius,
           backgroundImage: AssetImage(image),
         ),
-        SizedBox(
-          height: height,
-        ),
+        SizedBox(height: height),
         Text(
           name,
-          style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 18),
+          style: kNameTextStyle,
         ),
-        SizedBox(
-          height: height,
-        ),
+        SizedBox(height: height),
         Container(
           height: 25,
           width: 70,
           decoration: BoxDecoration(
-              color: Colors.black54, borderRadius: BorderRadius.circular(50)),
+            color: Colors.black54,
+            borderRadius: BorderRadius.circular(50),
+          ),
           child: Row(
             children: [
-              const SizedBox(
-                width: 5,
-              ),
+              const SizedBox(width: 5),
               const Icon(
                 Icons.back_hand,
-                color: Color.fromARGB(255, 255, 187, 0),
+                color: kYellowColor,
               ),
-              const SizedBox(
-                width: 5,
-              ),
+              const SizedBox(width: 5),
               Text(
                 point,
-                style: const TextStyle(
-                    fontWeight: FontWeight.bold,
-                    fontSize: 10,
-                    color: Colors.white),
+                style: kPointTextStyle,
               ),
             ],
           ),
