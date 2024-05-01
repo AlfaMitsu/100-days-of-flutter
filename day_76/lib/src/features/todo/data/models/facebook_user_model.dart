@@ -1,3 +1,5 @@
+import '../../../../constants/assets.dart';
+
 class FacebookUser {
   String name;
   String image;
@@ -24,58 +26,62 @@ class FacebookUser {
 
 List<FacebookUser> userInfo = [
   FacebookUser(
-      name: "Johna Smith",
-      image: "images/image1.png",
-      status:
-          "Roaming far and wide, chasing dreams. Each journey a tale untold, a soul enriched. #Wanderlust #Adventure",
-      comment: "111",
-      isOnline: true,
-      like: "11K",
-      time: "12 min ago",
-      profileImage: "images/profile5.png",
-      storyImage: "images/story1.png"),
+    name: 'Monkey D. Luffy',
+    image: kImgPost1,
+    status: "I'm going to become king of the pirates.",
+    comment: '111',
+    isOnline: true,
+    like: '11K',
+    time: '12 min ago',
+    profileImage: kImgUser1,
+    storyImage: kImgStory1,
+  ),
   FacebookUser(
-      name: "Maria Garcia",
-      image: "images/image2.png",
-      time: "2 h ago",
-      status: "",
-      //"Style is my language, expressing who I am. Confidence sewn into every stitch. #FashionForward #ExpressYourself",
-      comment: "200",
-      isOnline: true,
-      like: "20.5K",
-      profileImage: "images/profile3.png",
-      storyImage: "images/image3.png"),
+    name: 'Roronoa Zoro',
+    image: kImgPost2,
+    time: '2 h ago',
+    status:
+        'When I Decided to Follow My Dream, I Had Already Discarded My Life.',
+    comment: '200',
+    isOnline: true,
+    like: '20.5K',
+    profileImage: kImgUser2,
+    storyImage: kImgStory2,
+  ),
   FacebookUser(
-      name: "Mohammad Ali",
-      image: "images/image8.png",
-      time: "1 day ago",
-      status:
-          "Exploring new horizons, discovering wonders. Memories made, hearts touched. #TravelDiaries #Discover",
-      comment: "2",
-      isOnline: false,
-      like: "20",
-      profileImage: "images/profile1.png",
-      storyImage: "images/story2.png"),
+    name: 'Nami',
+    image: kImgPost3,
+    time: '1 day ago',
+    status:
+        'Life is like a pencil that will surely run out, but will leave the beautiful writing of life.',
+    comment: '2',
+    isOnline: false,
+    like: '20',
+    profileImage: kImgUser3,
+    storyImage: kImgStory3,
+  ),
   FacebookUser(
-      name: "Anna Johnson",
-      time: "22 hr ago",
-      image: "",
-      status:
-          "Life's a game; play it well. Laughter echoes, joy multiplies. Let's have some fun! #PlayfulSpirit #JoyfulLiving",
-      comment: "20",
-      isOnline: true,
-      like: "2K",
-      profileImage: "images/profile2.png",
-      storyImage: "images/story3.png"),
+    name: 'Vinsmoke Sanji',
+    time: '22 hr ago',
+    image: '',
+    status:
+        'Messing with a cook of the sea is a good way to get yourself killed.....Remember that well.',
+    comment: '20',
+    isOnline: true,
+    like: '2K',
+    profileImage: kImgUser4,
+    storyImage: kImgStory4,
+  ),
   FacebookUser(
-      name: "Chen Wei",
-      time: "2 week ago",
-      image: "images/story2.png",
-      status:
-          "In quiet moments, find serenity. Stillness speaks, wisdom whispers. Peace within, tranquility embraced. #InnerPeace #Mindfulness",
-      comment: "1k",
-      isOnline: false,
-      like: "100K",
-      profileImage: "images/profile4.png",
-      storyImage: "images/image1.png"),
+    name: 'Trafalgar D. Water Law',
+    time: '2 week ago',
+    image: kImgPost5,
+    status:
+        "The big timers didn't take any action! It was like everyone was just preparing for something.",
+    comment: '1k',
+    isOnline: false,
+    like: '100K',
+    profileImage: kImgUser5,
+    storyImage: kImgStory5,
+  ),
 ];

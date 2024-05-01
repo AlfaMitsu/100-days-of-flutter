@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 
+import '../../../../constants/assets.dart';
+import '../../../../constants/colors.dart';
+import '../../../../constants/styles.dart';
 import '../../data/models/facebook_user_model.dart';
 
 class HomeView extends StatefulWidget {
@@ -13,28 +16,29 @@ class _HomeViewState extends State<HomeView> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white,
+      backgroundColor: kWhiteColor,
       body: SafeArea(
         child: ListView(
           children: [
             Container(
               height: 100,
-              padding: const EdgeInsets.only(right: 20, left: 20),
+              padding: const EdgeInsets.only(
+                right: 20,
+                left: 20,
+              ),
               child: Row(
                 children: [
                   const CircleAvatar(
                     radius: 25,
-                    backgroundImage: AssetImage("images/profile1.png"),
+                    backgroundImage: AssetImage(kImgProfile),
                   ),
-                  const SizedBox(
-                    width: 10,
-                  ),
+                  const SizedBox(width: 10),
                   Expanded(
                     child: Container(
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(50),
                         border: Border.all(),
-                        color: Colors.white,
+                        color: kWhiteColor,
                       ),
                       child: const Padding(
                         padding: EdgeInsets.only(left: 20),
@@ -42,7 +46,7 @@ class _HomeViewState extends State<HomeView> {
                           decoration: InputDecoration(
                             border: InputBorder.none,
                             hintText: "What's on your mind?",
-                            hintStyle: TextStyle(color: Colors.black),
+                            hintStyle: TextStyle(color: kBlackTextColor),
                           ),
                         ),
                       ),
@@ -51,9 +55,9 @@ class _HomeViewState extends State<HomeView> {
                   const SizedBox(width: 20),
                   const Icon(
                     Icons.camera_alt,
-                    color: Colors.black,
+                    color: kBlackColor,
                     size: 30,
-                  )
+                  ),
                 ],
               ),
             ),
@@ -71,13 +75,10 @@ class _HomeViewState extends State<HomeView> {
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         Text(
-                          "Stories",
-                          style: TextStyle(
-                            fontWeight: FontWeight.bold,
-                            fontSize: 22,
-                          ),
+                          'Stories',
+                          style: kStoriesTextStyle,
                         ),
-                        Text("See more    "),
+                        Text('See more    '),
                       ],
                     ),
                     SizedBox(
@@ -95,8 +96,9 @@ class _HomeViewState extends State<HomeView> {
                               decoration: BoxDecoration(
                                 borderRadius: BorderRadius.circular(15),
                                 image: DecorationImage(
-                                    image: AssetImage(user.storyImage),
-                                    fit: BoxFit.cover),
+                                  image: AssetImage(user.storyImage),
+                                  fit: BoxFit.cover,
+                                ),
                               ),
                               child: Container(
                                 padding: const EdgeInsets.all(10),
@@ -114,7 +116,7 @@ class _HomeViewState extends State<HomeView> {
                                       decoration: BoxDecoration(
                                         shape: BoxShape.circle,
                                         border: Border.all(
-                                          color: Colors.white,
+                                          color: kWhiteColor,
                                           width: 2,
                                         ),
                                         image: DecorationImage(
@@ -126,11 +128,8 @@ class _HomeViewState extends State<HomeView> {
                                     Text(
                                       user.name,
                                       textAlign: TextAlign.center,
-                                      style: const TextStyle(
-                                        fontWeight: FontWeight.w900,
-                                        color: Colors.white,
-                                      ),
-                                    )
+                                      style: kUserNameTextStyle,
+                                    ),
                                   ],
                                 ),
                               ),
@@ -153,7 +152,10 @@ class _HomeViewState extends State<HomeView> {
 
   Widget userFeed(FacebookUser user) {
     return Container(
-      margin: const EdgeInsets.only(bottom: 20, right: 20),
+      margin: const EdgeInsets.only(
+        bottom: 20,
+        right: 20,
+      ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
@@ -168,35 +170,30 @@ class _HomeViewState extends State<HomeView> {
                     decoration: BoxDecoration(
                       shape: BoxShape.circle,
                       image: DecorationImage(
-                          image: AssetImage(
-                            user.profileImage,
-                          ),
-                          fit: BoxFit.cover),
+                        image: AssetImage(
+                          user.profileImage,
+                        ),
+                        fit: BoxFit.cover,
+                      ),
                     ),
                   ),
-                  const SizedBox(
-                    width: 10,
-                  ),
+                  const SizedBox(width: 10),
                   Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(
                         user.name,
                         textAlign: TextAlign.center,
-                        style: const TextStyle(
-                          fontSize: 16,
-                          fontWeight: FontWeight.w900,
-                        ),
+                        style: kUserName2TextStyle,
                       ),
                       const SizedBox(width: 10),
                       Text(
                         user.time,
                         textAlign: TextAlign.center,
-                        style: const TextStyle(
-                            fontSize: 15, color: Colors.black45),
+                        style: kUserTimeTextStyle,
                       ),
                     ],
-                  )
+                  ),
                 ],
               ),
               IconButton(
@@ -218,46 +215,43 @@ class _HomeViewState extends State<HomeView> {
             ),
           ),
           const SizedBox(height: 10),
-          user.image != ""
+          user.image != ''
               ? Container(
                   height: 400,
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(20),
                     image: DecorationImage(
-                        image: AssetImage(user.image), fit: BoxFit.cover),
+                      image: AssetImage(user.image),
+                      fit: BoxFit.cover,
+                    ),
                   ),
                 )
               : Container(),
           const SizedBox(height: 10),
           Row(
             children: [
-              likeAndLove(Colors.blue, Icons.thumb_up),
+              likeAndLove(kBlueColor, Icons.thumb_up),
               Transform.translate(
                 offset: const Offset(-5, 0),
-                child: likeAndLove(Colors.red, Icons.favorite),
+                child: likeAndLove(
+                  kRedColor,
+                  Icons.favorite,
+                ),
               ),
-              const SizedBox(
-                width: 5,
-              ),
+              const SizedBox(width: 5),
               Text(
                 user.like,
-                style: const TextStyle(
-                  fontSize: 16,
-                ),
+                style: const TextStyle(fontSize: 16),
               ),
               const Spacer(),
               Text(
-                "${user.comment} comment",
-                style: const TextStyle(
-                  fontSize: 16,
-                ),
+                '${user.comment} comment',
+                style: const TextStyle(fontSize: 16),
               ),
               const SizedBox(width: 10),
               const Text(
-                "3 Share",
-                style: TextStyle(
-                  fontSize: 16,
-                ),
+                '3 Share',
+                style: TextStyle(fontSize: 16),
               ),
             ],
           ),
@@ -266,11 +260,11 @@ class _HomeViewState extends State<HomeView> {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               likeCommentShare(Icons.thumb_up,
-                  user.isOnline == true ? Colors.blue : Colors.grey, "Like"),
-              likeCommentShare(Icons.comment, Colors.grey, "Comment"),
-              likeCommentShare(Icons.chat, Colors.grey, "Chat"),
+                  user.isOnline == true ? kBlueColor : kGreyColor, 'Like'),
+              likeCommentShare(Icons.comment, kGreyColor, 'Comment'),
+              likeCommentShare(Icons.chat, kGreyColor, 'Chat'),
             ],
-          )
+          ),
         ],
       ),
     );
@@ -295,13 +289,11 @@ class _HomeViewState extends State<HomeView> {
               size: 18,
               color: color,
             ),
-            const SizedBox(
-              width: 5,
-            ),
+            const SizedBox(width: 5),
             Text(
               name,
               style: TextStyle(color: color),
-            )
+            ),
           ],
         ),
       ),
@@ -314,13 +306,13 @@ class _HomeViewState extends State<HomeView> {
       decoration: BoxDecoration(
         color: color,
         shape: BoxShape.circle,
-        border: Border.all(color: Colors.white),
+        border: Border.all(color: kWhiteColor),
       ),
       child: Center(
         child: Icon(
           icon,
           size: 13,
-          color: Colors.white,
+          color: kWhiteColor,
         ),
       ),
     );

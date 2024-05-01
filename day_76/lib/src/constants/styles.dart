@@ -3,37 +3,22 @@ import 'colors.dart';
 
 // TextStyle
 
-const kSignUpTextStyle = TextStyle(
-  fontSize: 30,
+const kStoriesTextStyle = TextStyle(
   fontWeight: FontWeight.bold,
-  color: kWhiteColor,
+  fontSize: 22,
 );
 
-const kSignUpTextTextStyle = TextStyle(
-  color: kWhiteColor,
-  fontSize: 18,
-  fontWeight: FontWeight.w700,
-);
-
-const kEmailAndPasswordTextStyle = TextStyle(
-  color: kGrey200Color,
+const kUserName2TextStyle = TextStyle(
   fontSize: 16,
-  fontWeight: FontWeight.w600,
+  fontWeight: FontWeight.w900,
 );
 
-const kDontHaveAnAccountTextStyle = TextStyle(
-  color: kGrey300Color,
-  fontSize: 16,
-);
-
-const kLoginTextStyle = TextStyle(
-  color: kGrey200Color,
-  fontWeight: FontWeight.bold,
-  fontSize: 16,
-);
-
-const kLabelTextStyle = TextStyle(
-  color: kGrey300Color,
+const kUserTimeTextStyle = TextStyle(
   fontSize: 15,
-  fontWeight: FontWeight.w500,
+  color: Colors.black45,
+);
+
+const kUserNameTextStyle = TextStyle(
+  fontWeight: FontWeight.w900,
+  color: kWhiteColor,
 );
