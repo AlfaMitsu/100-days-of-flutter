@@ -3,37 +3,51 @@ import 'colors.dart';
 
 // TextStyle
 
-const kSignUpTextStyle = TextStyle(
-  fontSize: 30,
-  fontWeight: FontWeight.bold,
-  color: kWhiteColor,
+final kTitle2TextStyle = TextStyle(
+  fontWeight: FontWeight.w800,
+  fontSize: 40,
+  color: kTextColor,
 );
 
-const kSignUpTextTextStyle = TextStyle(
-  color: kWhiteColor,
+final kDescriptionTextStyle = TextStyle(
+  fontWeight: FontWeight.w900,
+  fontSize: 25,
+  color: kTextColor,
+);
+
+final kTitleTextStyle = TextStyle(
+  fontWeight: FontWeight.w900,
+  fontSize: 23,
+  color: kPrimaryColor,
+);
+
+const kChatNameTextStyle = TextStyle(
   fontSize: 18,
-  fontWeight: FontWeight.w700,
+  fontWeight: FontWeight.w500,
 );
 
-const kEmailAndPasswordTextStyle = TextStyle(
-  color: kGrey200Color,
-  fontSize: 16,
-  fontWeight: FontWeight.w600,
-);
-
-const kDontHaveAnAccountTextStyle = TextStyle(
-  color: kGrey300Color,
-  fontSize: 16,
-);
-
-const kLoginTextStyle = TextStyle(
-  color: kGrey200Color,
+const kGetStartedTextStyle = TextStyle(
   fontWeight: FontWeight.bold,
   fontSize: 16,
+  color: kWhiteTextColor,
 );
 
-const kLabelTextStyle = TextStyle(
-  color: kGrey300Color,
-  fontSize: 15,
-  fontWeight: FontWeight.w500,
+const kChatMessageTextStyle = TextStyle(
+  fontSize: 14,
+  color: Colors.black54,
+);
+
+final kBottomNavigationBarTextStyle = TextStyle(
+  fontWeight: FontWeight.bold,
+  color: kPrimaryColor,
+);
+
+final kBottomNavigationBar2TextStyle = TextStyle(
+  fontWeight: FontWeight.bold,
+  color: kSecondaryColor,
+);
+
+const kPersonalTextStyle = TextStyle(
+  fontWeight: FontWeight.w800,
+  color: kWhiteTextColor,
 );

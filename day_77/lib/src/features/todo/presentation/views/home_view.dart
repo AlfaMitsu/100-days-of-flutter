@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 
+import '../../../../constants/assets.dart';
 import '../../../../constants/colors.dart';
+import '../../../../constants/styles.dart';
 import '../../data/models/user_model.dart';
 
 class HomeView extends StatelessWidget {
@@ -10,7 +12,7 @@ class HomeView extends StatelessWidget {
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
     return Scaffold(
-      backgroundColor: Colors.white,
+      backgroundColor: kWhiteColor,
       body: SafeArea(
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 20),
@@ -20,30 +22,22 @@ class HomeView extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Text(
-                    "Chat",
-                    style: TextStyle(
-                      fontWeight: FontWeight.w800,
-                      fontSize: 40,
-                      color: kTextColor,
-                    ),
+                    'Chat',
+                    style: kTitle2TextStyle,
                   ),
                   const Spacer(),
                   const Icon(
                     Icons.search,
                     size: 40,
                   ),
-                  const SizedBox(
-                    width: 15,
-                  ),
+                  const SizedBox(width: 15),
                   const CircleAvatar(
-                    backgroundImage: AssetImage("images/profile.png"),
-                  )
+                    backgroundImage: AssetImage(kImgProfile),
+                  ),
                 ],
               ),
               SizedBox(height: size.height * 0.02),
-              // for selection group and personal chat
               personalAndGroup(size),
-              // for chat user
               Expanded(
                 child: ListView.builder(
                   itemCount: userItems.length,
@@ -51,12 +45,12 @@ class HomeView extends StatelessWidget {
                   itemBuilder: (context, index) {
                     final chat = userItems[index];
                     return Padding(
-                      padding: const EdgeInsets.all(8.0),
+                      padding: const EdgeInsets.all(8),
                       child: Container(
                         width: size.width,
                         padding: const EdgeInsets.all(8),
                         decoration: BoxDecoration(
-                          color: Colors.white,
+                          color: kWhiteColor,
                           borderRadius: BorderRadius.circular(10),
                           border: Border.all(
                             color: Colors.black12.withOpacity(0.05),
@@ -68,26 +62,18 @@ class HomeView extends StatelessWidget {
                               radius: 35,
                               backgroundImage: AssetImage(chat.image),
                             ),
-                            const SizedBox(
-                              width: 10,
-                            ),
+                            const SizedBox(width: 10),
                             Column(
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
                                 Text(
                                   chat.name,
-                                  style: const TextStyle(
-                                    fontSize: 18,
-                                    fontWeight: FontWeight.w500,
-                                  ),
+                                  style: kChatNameTextStyle,
                                 ),
                                 Text(
                                   chat.message,
-                                  style: const TextStyle(
-                                    fontSize: 14,
-                                    color: Colors.black54,
-                                  ),
-                                )
+                                  style: kChatMessageTextStyle,
+                                ),
                               ],
                             ),
                             const Spacer(),
@@ -96,14 +82,12 @@ class HomeView extends StatelessWidget {
                               width: 10,
                               decoration: BoxDecoration(
                                 color: chat.currentMesage == true
-                                    ? Colors.pink
-                                    : Colors.transparent,
+                                    ? kPinkColor
+                                    : kTransparent,
                                 borderRadius: BorderRadius.circular(50),
                               ),
                             ),
-                            const SizedBox(
-                              width: 20,
-                            )
+                            const SizedBox(width: 20),
                           ],
                         ),
                       ),
@@ -111,6 +95,7 @@ class HomeView extends StatelessWidget {
                   },
                 ),
               ),
+              const SizedBox(height: 100),
             ],
           ),
         ),
@@ -122,7 +107,7 @@ class HomeView extends StatelessWidget {
         onPressed: () {},
         child: const Icon(
           Icons.add,
-          color: Colors.white,
+          color: kWhiteColor,
         ),
       ),
     );
@@ -130,17 +115,23 @@ class HomeView extends StatelessWidget {
 
   Container bottomParts(Size size) {
     return Container(
-      height: size.height * 0.1,
-      decoration: const BoxDecoration(boxShadow: [
-        BoxShadow(
-          color: Colors.black12,
-          spreadRadius: 10,
-          blurRadius: 10,
-          offset: Offset(3, 10),
-        ),
-      ], color: Colors.white),
+      height: size.height * 0.12,
+      decoration: const BoxDecoration(
+        boxShadow: [
+          BoxShadow(
+            color: Colors.black12,
+            spreadRadius: 10,
+            blurRadius: 10,
+            offset: Offset(3, 10),
+          ),
+        ],
+        color: kWhiteColor,
+      ),
       child: Padding(
-        padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 25),
+        padding: const EdgeInsets.symmetric(
+          vertical: 10,
+          horizontal: 25,
+        ),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
@@ -151,12 +142,9 @@ class HomeView extends StatelessWidget {
                   size: 50,
                 ),
                 Text(
-                  "Chats",
-                  style: TextStyle(
-                    fontWeight: FontWeight.bold,
-                    color: kPrimaryColor,
-                  ),
-                )
+                  'Chats',
+                  style: kBottomNavigationBarTextStyle,
+                ),
               ],
             ),
             Column(
@@ -166,12 +154,9 @@ class HomeView extends StatelessWidget {
                   size: 50,
                 ),
                 Text(
-                  "Calls",
-                  style: TextStyle(
-                    fontWeight: FontWeight.bold,
-                    color: kSecondaryColor,
-                  ),
-                )
+                  'Calls',
+                  style: kBottomNavigationBar2TextStyle,
+                ),
               ],
             ),
             Column(
@@ -181,12 +166,9 @@ class HomeView extends StatelessWidget {
                   size: 50,
                 ),
                 Text(
-                  "Contacts",
-                  style: TextStyle(
-                    fontWeight: FontWeight.bold,
-                    color: kSecondaryColor,
-                  ),
-                )
+                  'Contacts',
+                  style: kBottomNavigationBar2TextStyle,
+                ),
               ],
             ),
           ],
@@ -206,7 +188,10 @@ class HomeView extends StatelessWidget {
           color: kSecondaryColor,
         ),
         child: Padding(
-          padding: const EdgeInsets.only(right: 5, left: 10),
+          padding: const EdgeInsets.only(
+            right: 5,
+            left: 10,
+          ),
           child: Row(
             children: [
               Container(
@@ -218,21 +203,15 @@ class HomeView extends StatelessWidget {
                 ),
                 child: const Center(
                   child: Text(
-                    "Personal",
-                    style: TextStyle(
-                      fontWeight: FontWeight.w800,
-                      color: Colors.white,
-                    ),
+                    'Personal',
+                    style: kPersonalTextStyle,
                   ),
                 ),
               ),
               const Spacer(),
               const Text(
-                "Groups",
-                style: TextStyle(
-                  fontWeight: FontWeight.w800,
-                  color: Colors.white,
-                ),
+                'Groups',
+                style: kPersonalTextStyle,
               ),
               const Spacer(),
             ],

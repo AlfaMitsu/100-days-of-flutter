@@ -1,3 +1,5 @@
+import 'package:day_77/src/constants/assets.dart';
+
 class UserDetail {
   String image;
   String name;
@@ -14,63 +16,63 @@ class UserDetail {
 
 List<UserDetail> userItems = [
   UserDetail(
-    image: "images/a.png",
-    name: 'Kivomi Takada',
-    message: 'The only true fear is the fear of...',
+    image: kImgUser1,
+    name: 'Monkey D. Luffy',
+    message: 'Join my crew',
     currentMesage: true,
   ),
   UserDetail(
-    image: "images/b.png",
-    name: 'Itachi Uchiha',
-    message: "People's lives don't end when t...",
+    image: kImgUser2,
+    name: 'Roronoa Zoro',
+    message: 'Want to train with me?',
     currentMesage: true,
   ),
   UserDetail(
-    image: "images/c.png",
-    name: 'Eren',
-    message: 'Tatakai 😤',
+    image: kImgUser3,
+    name: 'Nami',
+    message: 'Help me check some places',
     currentMesage: false,
   ),
   UserDetail(
-    image: "images/d.png",
-    name: 'Sukuna Ryomen',
-    message: '😂😂😂',
+    image: kImgUser4,
+    name: 'Vinsmoke Sanji',
+    message: 'I will teach you how to cook',
     currentMesage: false,
   ),
   UserDetail(
-    image: "images/e.png",
-    name: 'Soma poti',
-    message: 'The only true fear is the fear of...',
+    image: kImgUser5,
+    name: 'Trafalgar D. Water Law',
+    message: 'I need you to help me operate',
     currentMesage: false,
   ),
   UserDetail(
-    image: "images/f.png",
-    name: 'Eilly Pope',
-    message: 'You okay there?',
+    image: kImgUser6,
+    name: 'Nico Robin',
+    message: 'Lets decript the Poneglyph',
     currentMesage: false,
   ),
   UserDetail(
-    image: "images/g.png",
-    name: 'Jota',
-    message: 'Hello how are you?',
+    image: kImgUser7,
+    name: 'Boa Hancock',
+    message: 'Is Luffy with you?',
     currentMesage: false,
   ),
   UserDetail(
-    image: "images/h.png",
-    name: 'Aidemn Makram',
+    image: kImgUser8,
+    name: 'Carrot',
     message: 'I love you',
     currentMesage: false,
   ),
   UserDetail(
-    image: "images/i.png",
-    name: 'Sonam lee',
-    message: 'I am learning flutter ',
+    image: kImgUser9,
+    name: 'Portgas D. Ace',
+    message: 'Take care of Luffy for me',
     currentMesage: false,
   ),
   UserDetail(
-    image: "images/j.png",
-    name: 'Lovely',
-    message: '❤️❤️❤️❤️❤️❤️❤️❤️❤️',
+    image: kImgUser10,
+    name: 'Sabo',
+    message: 'Take care of Luffy',
     currentMesage: false,
   ),
 ];

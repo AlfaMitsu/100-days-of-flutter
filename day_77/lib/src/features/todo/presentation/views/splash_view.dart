@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 
+import '../../../../constants/assets.dart';
 import '../../../../constants/colors.dart';
+import '../../../../constants/styles.dart';
 import 'home_view.dart';
 
 class SplashView extends StatelessWidget {
@@ -10,15 +12,13 @@ class SplashView extends StatelessWidget {
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
     return Scaffold(
-      backgroundColor: Colors.white,
+      backgroundColor: kWhiteColor,
       body: SafeArea(
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 30),
           child: Column(
             children: [
-              SizedBox(
-                height: size.height * 0.1,
-              ),
+              SizedBox(height: size.height * 0.1),
               Stack(
                 children: [
                   Container(
@@ -70,17 +70,11 @@ class SplashView extends StatelessWidget {
                       width: size.width * 0.3,
                       child: Column(
                         children: [
-                          Image.asset(
-                            "images/cloud.png",
-                          ),
+                          Image.asset(kImgCloud),
                           Text(
-                            "CHAT APP",
-                            style: TextStyle(
-                              fontWeight: FontWeight.w900,
-                              fontSize: 23,
-                              color: kPrimaryColor,
-                            ),
-                          )
+                            'CHAT APP',
+                            style: kTitleTextStyle,
+                          ),
                         ],
                       ),
                     ),
@@ -91,13 +85,9 @@ class SplashView extends StatelessWidget {
               Padding(
                 padding: const EdgeInsets.all(30),
                 child: Text(
-                  "A new way to connect\nwith your friends",
+                  'A new way to connect\nwith your friends',
                   textAlign: TextAlign.center,
-                  style: TextStyle(
-                    fontWeight: FontWeight.w900,
-                    fontSize: 25,
-                    color: kTextColor,
-                  ),
+                  style: kDescriptionTextStyle,
                 ),
               ),
               SizedBox(height: size.height * 0.07),
@@ -126,19 +116,15 @@ class SplashView extends StatelessWidget {
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         Text(
-                          "Get Started",
+                          'Get Started',
                           textAlign: TextAlign.center,
-                          style: TextStyle(
-                            fontWeight: FontWeight.bold,
-                            fontSize: 16,
-                            color: Colors.white,
-                          ),
+                          style: kGetStartedTextStyle,
                         ),
                         CircleAvatar(
                           radius: 25,
-                          backgroundColor: Colors.white,
+                          backgroundColor: kWhiteColor,
                           child: Icon(Icons.arrow_forward),
-                        )
+                        ),
                       ],
                     ),
                   ),
