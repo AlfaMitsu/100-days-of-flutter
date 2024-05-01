@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../../../../constants/colors.dart';
+import '../../../../constants/styles.dart';
 import '../../data/models/car_model.dart';
 import '../widgets/car_items.dart';
 import 'details_view.dart';
@@ -16,21 +17,15 @@ class HomeView extends StatelessWidget {
         centerTitle: true,
         backgroundColor: kBackgroundColor,
         title: const Text(
-          "Available Car",
-          style: TextStyle(
-            fontWeight: FontWeight.bold,
-            fontSize: 25,
-            color: Colors.white,
-          ),
+          'Available Cars',
+          style: kAvailableCarsTextStyle,
         ),
         actions: const [
           Icon(
             Icons.menu,
-            color: Colors.white,
+            color: kWhiteColor,
           ),
-          SizedBox(
-            width: 20,
-          )
+          SizedBox(width: 20),
         ],
       ),
       body: ListView.builder(
@@ -40,11 +35,12 @@ class HomeView extends StatelessWidget {
           final car = carList[index];
           return GestureDetector(
             onTap: () {
-              // for navigating
               Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                      builder: (context) => DetailsView(car: car)));
+                context,
+                MaterialPageRoute(
+                  builder: (context) => DetailsView(car: car),
+                ),
+              );
             },
             child: Container(
               margin: const EdgeInsets.only(bottom: 20),
@@ -52,9 +48,17 @@ class HomeView extends StatelessWidget {
                 children: [
                   Container(
                     width: double.infinity,
-                    margin: const EdgeInsets.only(left: 24, right: 24, top: 50),
+                    margin: const EdgeInsets.only(
+                      left: 24,
+                      right: 24,
+                      top: 50,
+                    ),
                     padding: const EdgeInsets.only(
-                        left: 25, bottom: 15, right: 20, top: 10),
+                      left: 25,
+                      bottom: 15,
+                      right: 20,
+                      top: 10,
+                    ),
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(20),
                       color: kCardColor,
@@ -63,41 +67,34 @@ class HomeView extends StatelessWidget {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Text(
-                          "\$${car.price.toString()}",
-                          style: const TextStyle(
-                            fontWeight: FontWeight.bold,
-                            fontSize: 25,
-                            color: Colors.white,
-                          ),
+                          '\$${car.price.toString()}',
+                          style: kAvailableCarsTextStyle,
                         ),
                         const Text(
-                          "price/hr",
-                          style: TextStyle(
-                              color: Colors.white, fontWeight: FontWeight.bold),
+                          'price/hr',
+                          style: kPriceTextStyle,
                         ),
-                        const SizedBox(
-                          height: 15,
-                        ),
+                        const SizedBox(height: 15),
                         Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
                             CarItems(
-                              name: "Brand",
+                              name: 'Brand',
                               value: car.brand,
                               textColor: kBlackColor,
                             ),
                             CarItems(
-                              name: "Model No",
+                              name: 'Model No',
                               value: car.model,
                               textColor: kBlackColor,
                             ),
                             CarItems(
-                              name: "CO2",
+                              name: 'CO2',
                               value: car.co2,
                               textColor: kBlackColor,
                             ),
                             CarItems(
-                              name: "Fule Cons",
+                              name: 'Fule Cons',
                               value: car.fuelCons,
                               textColor: kBlackColor,
                             ),
@@ -115,7 +112,7 @@ class HomeView extends StatelessWidget {
                         height: 115,
                       ),
                     ),
-                  )
+                  ),
                 ],
               ),
             ),

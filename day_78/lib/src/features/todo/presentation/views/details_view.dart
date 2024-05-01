@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 
+import '../../../../constants/assets.dart';
 import '../../../../constants/colors.dart';
+import '../../../../constants/styles.dart';
 import '../../data/models/car_model.dart';
 import '../widgets/car_items.dart';
 
@@ -17,14 +19,12 @@ class DetailsView extends StatelessWidget {
     return Scaffold(
       body: Stack(
         children: [
-          // for image
           Image.asset(
-            "Images/map.png",
+            kImgMap,
             height: MediaQuery.of(context).size.height,
             width: MediaQuery.of(context).size.width,
             fit: BoxFit.cover,
           ),
-          // for back button ,name and menu icon
           carDetailAppbar(context),
           Positioned(
             left: 10,
@@ -33,152 +33,138 @@ class DetailsView extends StatelessWidget {
             child: Stack(
               children: [
                 Container(
-                  padding: const EdgeInsets.all(
-                    15,
-                  ),
+                  padding: const EdgeInsets.all(15),
                   margin: const EdgeInsets.only(top: 45),
                   decoration: BoxDecoration(
                     color: kBackgroundColor,
                     borderRadius: BorderRadius.circular(20),
                   ),
-                  //
                   child: Column(
                     children: [
                       cardInformation(),
-                      // for whtite line,
                       const Divider(
                         height: 15,
                         color: Colors.white70,
                       ),
                       Row(
                         children: [
-                          // for driver image
                           Image.asset(
-                            "Images/driver.png",
+                            kImgDriver,
                             height: 150,
                           ),
-                          const SizedBox(
-                            width: 15,
-                          ),
+                          const SizedBox(width: 15),
                           Expanded(
-                              child: Column(
-                            children: [
-                              // for driver name address and more
-                              const Row(
-                                mainAxisAlignment:
-                                    MainAxisAlignment.spaceBetween,
-                                children: [
-                                  Column(
-                                    crossAxisAlignment:
-                                        CrossAxisAlignment.start,
-                                    children: [
-                                      Text(
-                                        "Jesica Smith",
-                                        style: TextStyle(
-                                            fontWeight: FontWeight.bold,
-                                            fontSize: 18),
-                                      ),
-                                      Text(
-                                        "LIcense: NWR 369852",
-                                        style: TextStyle(
-                                            fontWeight: FontWeight.bold,
-                                            fontSize: 12),
-                                      ),
-                                    ],
-                                  ),
-                                  Column(
-                                    crossAxisAlignment:
-                                        CrossAxisAlignment.center,
-                                    children: [
-                                      Text(
-                                        "369",
-                                        style: TextStyle(
-                                            fontWeight: FontWeight.bold,
-                                            fontSize: 20,
-                                            color: Colors.white),
-                                      ),
-                                      Text(
-                                        "Ride",
-                                        style: TextStyle(
-                                            fontWeight: FontWeight.bold,
-                                            fontSize: 14),
-                                      ),
-                                    ],
-                                  ),
-                                ],
-                              ),
-                              const SizedBox(
-                                height: 12,
-                              ),
-                              const Row(
-                                children: [
-                                  Text(
-                                    "5.0",
-                                    style: TextStyle(
-                                        fontWeight: FontWeight.bold,
-                                        fontSize: 16),
-                                  ),
-                                  SizedBox(
-                                    width: 6,
-                                  ),
-                                  Icon(Icons.star,
-                                      color: Colors.white, size: 16),
-                                  Icon(Icons.star,
-                                      color: Colors.white, size: 16),
-                                  Icon(Icons.star,
-                                      color: Colors.white, size: 16),
-                                  Icon(Icons.star,
-                                      color: Colors.white, size: 16),
-                                  Icon(Icons.star,
-                                      color: Colors.white, size: 16)
-                                ],
-                              ),
-                              const SizedBox(
-                                height: 12,
-                              ),
-                              // for call and book now button,
-                              Row(
-                                mainAxisAlignment:
-                                    MainAxisAlignment.spaceBetween,
-                                children: [
-                                  Container(
-                                    padding: const EdgeInsets.symmetric(
-                                        vertical: 10, horizontal: 20),
-                                    decoration: BoxDecoration(
-                                      borderRadius: BorderRadius.circular(20),
-                                      color: kCardColor,
+                            child: Column(
+                              children: [
+                                const Row(
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.spaceBetween,
+                                  children: [
+                                    Column(
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.start,
+                                      children: [
+                                        Text(
+                                          'Jinbe',
+                                          style: kNameTextStyle,
+                                        ),
+                                        Text(
+                                          'LIcense: NWR 369852',
+                                          style: kLicenseTextStyle,
+                                        ),
+                                      ],
                                     ),
-                                    child: const Text(
-                                      "Call",
-                                      style: TextStyle(
-                                          fontWeight: FontWeight.bold,
-                                          color: Colors.white),
+                                    Column(
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.center,
+                                      children: [
+                                        Text(
+                                          '369',
+                                          style: kNumberTextStyle,
+                                        ),
+                                        Text(
+                                          "Ride",
+                                          style: kRideTextStyle,
+                                        ),
+                                      ],
                                     ),
-                                  ),
-                                  Container(
-                                    padding: const EdgeInsets.symmetric(
-                                        vertical: 10, horizontal: 20),
-                                    decoration: BoxDecoration(
-                                      borderRadius: BorderRadius.circular(20),
-                                      color: kCardColor,
+                                  ],
+                                ),
+                                const SizedBox(height: 12),
+                                const Row(
+                                  children: [
+                                    Text('5.0', style: kRatingTextStyle),
+                                    SizedBox(width: 6),
+                                    Icon(
+                                      Icons.star,
+                                      color: kWhiteColor,
+                                      size: 16,
                                     ),
-                                    child: const Text(
-                                      "Book Now",
-                                      style: TextStyle(
-                                          fontWeight: FontWeight.bold,
-                                          color: Colors.white),
+                                    Icon(
+                                      Icons.star,
+                                      color: kWhiteColor,
+                                      size: 16,
                                     ),
-                                  )
-                                ],
-                              )
-                            ],
-                          ))
+                                    Icon(
+                                      Icons.star,
+                                      color: kWhiteColor,
+                                      size: 16,
+                                    ),
+                                    Icon(
+                                      Icons.star,
+                                      color: kWhiteColor,
+                                      size: 16,
+                                    ),
+                                    Icon(
+                                      Icons.star,
+                                      color: kWhiteColor,
+                                      size: 16,
+                                    ),
+                                  ],
+                                ),
+                                const SizedBox(height: 12),
+                                Row(
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.spaceBetween,
+                                  children: [
+                                    Container(
+                                      padding: const EdgeInsets.symmetric(
+                                        vertical: 10,
+                                        horizontal: 20,
+                                      ),
+                                      decoration: BoxDecoration(
+                                        borderRadius: BorderRadius.circular(20),
+                                        color: kCardColor,
+                                      ),
+                                      child: const Text(
+                                        'Call',
+                                        style: kPriceTextStyle,
+                                      ),
+                                    ),
+                                    Container(
+                                      padding: const EdgeInsets.symmetric(
+                                        vertical: 10,
+                                        horizontal: 20,
+                                      ),
+                                      decoration: BoxDecoration(
+                                        borderRadius: BorderRadius.circular(20),
+                                        color: kCardColor,
+                                      ),
+                                      child: const Text(
+                                        'Book Now',
+                                        style: kPriceTextStyle,
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              ],
+                            ),
+                          ),
                         ],
-                      )
+                      ),
                     ],
                   ),
                 ),
-                // for car image
                 Positioned(
                   right: 60,
                   child: Hero(
@@ -191,7 +177,7 @@ class DetailsView extends StatelessWidget {
                 ),
               ],
             ),
-          )
+          ),
         ],
       ),
     );
@@ -202,31 +188,37 @@ class DetailsView extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Text(
-          "\$${car.price.toString()}",
-          style: const TextStyle(
-            fontWeight: FontWeight.bold,
-            fontSize: 25,
-            color: Colors.white,
-          ),
+          '\$${car.price.toString()}',
+          style: kAvailableCarsTextStyle,
         ),
         const Text(
-          "price/hr",
-          style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
+          'price/hr',
+          style: kPriceTextStyle,
         ),
-        const SizedBox(
-          height: 15,
-        ),
+        const SizedBox(height: 15),
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            CarItems(name: "Brand", value: car.brand, textColor: Colors.black),
             CarItems(
-                name: "Model No", value: car.model, textColor: Colors.black),
-            CarItems(name: "CO2", value: car.co2, textColor: Colors.black),
+              name: 'Brand',
+              value: car.brand,
+              textColor: kBlackTextColor,
+            ),
             CarItems(
-                name: "Fule Cons",
-                value: car.fuelCons,
-                textColor: Colors.black),
+              name: 'Model No',
+              value: car.model,
+              textColor: kBlackTextColor,
+            ),
+            CarItems(
+              name: 'CO2',
+              value: car.co2,
+              textColor: kBlackTextColor,
+            ),
+            CarItems(
+              name: 'Fule Cons',
+              value: car.fuelCons,
+              textColor: kBlackTextColor,
+            ),
           ],
         ),
       ],
@@ -235,36 +227,33 @@ class DetailsView extends StatelessWidget {
 
   SafeArea carDetailAppbar(BuildContext context) {
     return SafeArea(
-        child: Row(
-      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-      children: [
-        IconButton(
-          onPressed: () {
-            Navigator.pop(context);
-          },
-          icon: const Icon(
-            Icons.arrow_back_ios,
-            color: Colors.white,
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: [
+          IconButton(
+            onPressed: () {
+              Navigator.pop(context);
+            },
+            icon: const Icon(
+              Icons.arrow_back_ios,
+              color: kWhiteColor,
+            ),
           ),
-        ),
-        const Text(
-          "Car Detail",
-          style: TextStyle(
-            fontWeight: FontWeight.bold,
-            fontSize: 25,
-            color: Colors.white,
+          const Text(
+            'Car Detail',
+            style: kAvailableCarsTextStyle,
           ),
-        ),
-        IconButton(
-          onPressed: () {
-            Navigator.pop(context);
-          },
-          icon: const Icon(
-            Icons.menu,
-            color: Colors.white,
+          IconButton(
+            onPressed: () {
+              Navigator.pop(context);
+            },
+            icon: const Icon(
+              Icons.menu,
+              color: kWhiteColor,
+            ),
           ),
-        ),
-      ],
-    ));
+        ],
+      ),
+    );
   }
 }

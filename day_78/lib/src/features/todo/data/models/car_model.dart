@@ -1,3 +1,5 @@
+import '../../../../constants/assets.dart';
+
 class Car {
   String image;
   int price;
@@ -18,7 +20,7 @@ class Car {
 
 List<Car> carList = [
   Car(
-    'Images/bentley.png',
+    kImgBentley,
     120,
     'Bentley',
     '3A 9200',
@@ -26,7 +28,7 @@ List<Car> carList = [
     '5,5 L',
   ),
   Car(
-    'Images/rolls_royce.png',
+    kImgRollsRoyce,
     185,
     'RR',
     '3A 9200',
@@ -34,7 +36,7 @@ List<Car> carList = [
     '5,5 L',
   ),
   Car(
-    'Images/maserati.png',
+    kImgMaserati,
     100,
     'Maserati',
     '3A 9200',
@@ -42,7 +44,7 @@ List<Car> carList = [
     '5,5 L',
   ),
   Car(
-    'Images/cadillac.png',
+    kImgCadillac,
     90,
     'Cadillac',
     '3A 9200',

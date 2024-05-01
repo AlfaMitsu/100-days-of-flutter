@@ -3,37 +3,39 @@ import 'colors.dart';
 
 // TextStyle
 
-const kSignUpTextStyle = TextStyle(
-  fontSize: 30,
+const kAvailableCarsTextStyle = TextStyle(
   fontWeight: FontWeight.bold,
-  color: kWhiteColor,
+  fontSize: 25,
+  color: kWhiteTextColor,
 );
 
-const kSignUpTextTextStyle = TextStyle(
-  color: kWhiteColor,
+const kNumberTextStyle = TextStyle(
+  fontWeight: FontWeight.bold,
+  fontSize: 20,
+  color: kWhiteTextColor,
+);
+
+const kNameTextStyle = TextStyle(
+  fontWeight: FontWeight.bold,
   fontSize: 18,
-  fontWeight: FontWeight.w700,
 );
 
-const kEmailAndPasswordTextStyle = TextStyle(
-  color: kGrey200Color,
-  fontSize: 16,
-  fontWeight: FontWeight.w600,
-);
-
-const kDontHaveAnAccountTextStyle = TextStyle(
-  color: kGrey300Color,
-  fontSize: 16,
-);
-
-const kLoginTextStyle = TextStyle(
-  color: kGrey200Color,
+const kRatingTextStyle = TextStyle(
   fontWeight: FontWeight.bold,
   fontSize: 16,
 );
 
-const kLabelTextStyle = TextStyle(
-  color: kGrey300Color,
-  fontSize: 15,
-  fontWeight: FontWeight.w500,
+const kRideTextStyle = TextStyle(
+  fontWeight: FontWeight.bold,
+  fontSize: 14,
+);
+
+const kLicenseTextStyle = TextStyle(
+  fontWeight: FontWeight.bold,
+  fontSize: 12,
+);
+
+const kPriceTextStyle = TextStyle(
+  color: kWhiteTextColor,
+  fontWeight: FontWeight.bold,
 );

@@ -31,7 +31,7 @@ class CarItems extends StatelessWidget {
             fontWeight: FontWeight.bold,
             color: textColor,
           ),
-        )
+        ),
       ],
     );
   }
