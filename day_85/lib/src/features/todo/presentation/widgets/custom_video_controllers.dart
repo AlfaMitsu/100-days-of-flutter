@@ -4,6 +4,9 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:pod_player/pod_player.dart';
 
+import '../../../../constants/colors.dart';
+import '../../../../constants/styles.dart';
+
 class CustomVideoControllers extends StatefulWidget {
   const CustomVideoControllers({super.key});
 
@@ -30,16 +33,8 @@ class _CustomVideoControllersState extends State<CustomVideoControllers> {
   void initState() {
     super.initState();
     controller = PodPlayerController(
-      playVideoFrom: PlayVideoFrom.asset('assets/SampleVideo_720x480_20mb.mp4'),
-      // fromAssets: 'assets/long_video.mkv',
-      // fromAssets: 'assets/SampleVideo_720x480_20mb.mp4',
-      // fromNetworkUrl:
-      // 'http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ElephantsDream.mp4',
-      // 'https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerFun.mp4',
-      // 'https://flutter.github.io/assets-for-api-docs/assets/videos/bee.mp4',
-      // 'https://user-images.githubusercontent.com/85326522/140480457-ab21345a-76e2-4b0e-b4ec-027c89f0e712.mp4',
-      // 'http://techslides.com/demos/sample-videos/small.mp4',
-      // fromVimeoVideoId: '518228118',
+      playVideoFrom: PlayVideoFrom.asset(
+          'lib/src/resources/assets/SampleVideo_720x480_20mb.mp4'),
     )..initialise().then((value) {
         setState(() {
           isVideoPlaying = controller.isVideoPlaying;
@@ -48,7 +43,6 @@ class _CustomVideoControllersState extends State<CustomVideoControllers> {
     controller.addListener(_listner);
   }
 
-  ///Listnes to changes in video
   void _listner() {
     if (controller.isVideoPlaying != isVideoPlaying) {
       isVideoPlaying = controller.isVideoPlaying;
@@ -65,7 +59,6 @@ class _CustomVideoControllersState extends State<CustomVideoControllers> {
 
   @override
   Widget build(BuildContext context) {
-    ///
     const sizeH20 = SizedBox(height: 20);
     final totalHour = controller.currentVideoPosition.inHours == 0
         ? '0'
@@ -78,27 +71,21 @@ class _CustomVideoControllersState extends State<CustomVideoControllers> {
         .toString()
         .padLeft(2, '0');
 
-    ///
     const videoTitle = Padding(
       padding: kIsWeb
           ? EdgeInsets.symmetric(vertical: 25, horizontal: 15)
           : EdgeInsets.only(left: 15),
       child: Text(
         'Lorem Ipsum is simply dummy text of the printing and typesetting industry.',
-        style: TextStyle(
-          color: Colors.white,
-          fontSize: 18,
-        ),
+        style: kLongTextTextStyle,
         maxLines: 1,
         overflow: TextOverflow.ellipsis,
       ),
     );
-    const textStyle = TextStyle(
-      fontSize: 20,
-      fontWeight: FontWeight.bold,
-    );
     return Scaffold(
-      appBar: AppBar(title: const Text('Custom Player')),
+      appBar: AppBar(
+        title: const Text('Custom Player'),
+      ),
       body: SafeArea(
         child: SingleChildScrollView(
           child: Column(
@@ -119,7 +106,7 @@ class _CustomVideoControllersState extends State<CustomVideoControllers> {
                     Expanded(
                       child: Text(
                         controller.videoUrl ?? '',
-                        style: const TextStyle(color: Colors.grey),
+                        style: const TextStyle(color: kGreyColor),
                         maxLines: 1,
                         overflow: TextOverflow.ellipsis,
                       ),
@@ -133,14 +120,14 @@ class _CustomVideoControllersState extends State<CustomVideoControllers> {
                   children: [
                     Text(
                       'Video state: ${controller.videoState.name}',
-                      style: const TextStyle(color: Colors.red, fontSize: 18),
+                      style: kVideoStateNameTextStyle,
                     ),
                     sizeH20,
                     Text(
                       '$totalHour hour: '
                       '$totalMinute minute: '
                       '$totalSeconds seconds',
-                      style: textStyle,
+                      style: kText2TextStyle,
                     ),
                     sizeH20,
                     _loadVideoFromUrl(),
@@ -177,7 +164,9 @@ class _CustomVideoControllersState extends State<CustomVideoControllers> {
                     sizeH20,
                     _iconButton('Video Jump to 01:00 minute',
                         Icons.fast_forward_rounded, onPressed: () {
-                      controller.videoSeekTo(const Duration(minutes: 1));
+                      controller.videoSeekTo(
+                        const Duration(minutes: 1),
+                      );
                     }),
                     sizeH20,
                     _iconButton('Enable full screen', Icons.fullscreen,
@@ -199,12 +188,12 @@ class _CustomVideoControllersState extends State<CustomVideoControllers> {
                       'Is video Buffering: ${controller.isVideoBuffering}\n'
                       'Is video looping: ${controller.isVideoLooping}\n'
                       'Is video in fullscreeen: ${controller.isFullScreen}',
-                      style: textStyle,
+                      style: kText2TextStyle,
                     ),
                     sizeH20,
                     Text(
                       'Total Video length: ${controller.totalVideoLength}',
-                      style: textStyle,
+                      style: kText2TextStyle,
                     )
                   ],
                 ),
@@ -214,15 +203,15 @@ class _CustomVideoControllersState extends State<CustomVideoControllers> {
         ),
       ),
       floatingActionButton: FloatingActionButton(
-        backgroundColor: Colors.black,
+        backgroundColor: kBlackColor,
         onPressed: () => controller.togglePlayPause(),
         child: isVideoPlaying == null
             ? const SizedBox(
                 height: 20,
                 width: 20,
                 child: CircularProgressIndicator(
-                  backgroundColor: Colors.black,
-                  color: Colors.white,
+                  backgroundColor: kBlackColor,
+                  color: kWhiteColor,
                   strokeWidth: 1,
                 ),
               )
@@ -375,10 +364,12 @@ class _CustomVideoControllersState extends State<CustomVideoControllers> {
   ElevatedButton _iconButton(String text, IconData icon,
       {void Function()? onPressed}) {
     return ElevatedButton.icon(
-        onPressed: onPressed ?? () {},
-        style: ElevatedButton.styleFrom(
-            fixedSize: const Size.fromWidth(double.maxFinite)),
-        icon: Icon(icon),
-        label: Text(text));
+      onPressed: onPressed ?? () {},
+      style: ElevatedButton.styleFrom(
+        fixedSize: const Size.fromWidth(double.maxFinite),
+      ),
+      icon: Icon(icon),
+      label: Text(text),
+    );
   }
 }

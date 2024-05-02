@@ -2,6 +2,8 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:pod_player/pod_player.dart';
 
+import '../../../../constants/colors.dart';
+
 class PlayVideoFromNetwork extends StatefulWidget {
   const PlayVideoFromNetwork({super.key});
 
@@ -32,7 +34,9 @@ class _PlayVideoFromNetworkState extends State<PlayVideoFromNetwork> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text('Play video from Netwok')),
+      appBar: AppBar(
+        title: const Text('Play video from Netwok'),
+      ),
       body: SafeArea(
         child: Center(
           child: ListView(
@@ -48,9 +52,9 @@ class _PlayVideoFromNetworkState extends State<PlayVideoFromNetwork> {
                           left: 20,
                           right: 20,
                         ),
-                  playingBarColor: Colors.blue,
-                  circleHandlerColor: Colors.blue,
-                  backgroundColor: Colors.blueGrey,
+                  playingBarColor: kBlueColor,
+                  circleHandlerColor: kBlueColor,
+                  backgroundColor: kGreyColor,
                 ),
               ),
               const SizedBox(height: 40),

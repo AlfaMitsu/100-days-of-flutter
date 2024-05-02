@@ -13,7 +13,7 @@ class _PlayVideoFromAssetState extends State<PlayVideoFromAsset> {
   @override
   void initState() {
     controller = PodPlayerController(
-      playVideoFrom: PlayVideoFrom.asset('assets/SampleVideo_720x480_20mb.mp4'),
+      playVideoFrom: PlayVideoFrom.asset('lib/src/resources/assets/SampleVideo_720x480_20mb.mp4'),
     )..initialise();
     super.initState();
   }

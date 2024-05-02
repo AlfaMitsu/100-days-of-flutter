@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 
-import 'src/features/todo/presentation/views/custom_video_controllers.dart';
+import 'src/features/todo/presentation/widgets/custom_video_controllers.dart';
 import 'src/features/todo/presentation/views/home_view.dart';
-import 'src/features/todo/presentation/views/play_video_from_asset.dart';
-import 'src/features/todo/presentation/views/play_video_from_network.dart';
-import 'src/features/todo/presentation/views/play_video_from_network_quality_urls.dart';
-import 'src/features/todo/presentation/views/play_video_from_vimeo_id.dart';
-import 'src/features/todo/presentation/views/play_video_from_vimeo_private_id.dart';
-import 'src/features/todo/presentation/views/play_video_from_youtube.dart';
+import 'src/features/todo/presentation/widgets/play_video_from_asset.dart';
+import 'src/features/todo/presentation/widgets/play_video_from_network.dart';
+import 'src/features/todo/presentation/widgets/play_video_from_network_quality_urls.dart';
+import 'src/features/todo/presentation/widgets/play_video_from_vimeo_id.dart';
+import 'src/features/todo/presentation/widgets/play_video_from_vimeo_private_id.dart';
+import 'src/features/todo/presentation/widgets/play_video_from_youtube.dart';
 
 void main() async {
   runApp(const MyApp());

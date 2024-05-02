@@ -2,16 +2,18 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:pod_player/pod_player.dart';
 
+import '../../../../constants/colors.dart';
+
+
 class PlayVideoFromNetworkQualityUrls extends StatefulWidget {
   const PlayVideoFromNetworkQualityUrls({super.key});
 
   @override
   State<PlayVideoFromNetworkQualityUrls> createState() =>
-      _PlayVideoFromNetworkQualityUrlsState();
+      _PlayVideoFromAssetState();
 }
 
-class _PlayVideoFromNetworkQualityUrlsState
-    extends State<PlayVideoFromNetworkQualityUrls> {
+class _PlayVideoFromAssetState extends State<PlayVideoFromNetworkQualityUrls> {
   late final PodPlayerController controller;
   @override
   void initState() {
@@ -26,7 +28,7 @@ class _PlayVideoFromNetworkQualityUrlsState
           VideoQalityUrls(
             quality: 720,
             url:
-                'http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ElephantsDream.mp4',
+                'https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerFun.mp4',
           ),
         ],
       ),
@@ -56,9 +58,9 @@ class _PlayVideoFromNetworkQualityUrlsState
                       left: 20,
                       right: 20,
                     ),
-              playingBarColor: Colors.blue,
-              circleHandlerColor: Colors.blue,
-              backgroundColor: Colors.blueGrey,
+              playingBarColor: kBlueColor,
+              circleHandlerColor: kBlueColor,
+              backgroundColor: kGreyColor,
             ),
           ),
         ),

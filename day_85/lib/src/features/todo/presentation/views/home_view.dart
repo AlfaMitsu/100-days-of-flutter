@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../../../../constants/styles.dart';
+
 class HomeView extends StatefulWidget {
   const HomeView({super.key});
 
@@ -15,7 +17,6 @@ class _HomeViewState extends State<HomeView> {
         child: ListView(
           shrinkWrap: true,
           children: [
-            // _button('Play video from File'),
             _button(
               'Play video from Network',
               onPressed: () => Navigator.of(context).pushNamed('/fromNetwork'),
@@ -60,7 +61,7 @@ class _HomeViewState extends State<HomeView> {
           onPressed: onPressed ?? () {},
           child: Text(
             text,
-            style: const TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+            style: kTextTextStyle,
           ),
         ),
       ),
