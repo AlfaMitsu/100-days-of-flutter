@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_adaptive_scaffold/flutter_adaptive_scaffold.dart';
 
+import '../../../../constants/assets.dart';
+import '../../../../constants/colors.dart';
 import '../../data/models/item_model.dart';
 import 'item_list_tile.dart';
 import 'small_compose_icon.dart';
@@ -39,7 +41,7 @@ class ItemList extends StatelessWidget {
                   child: CircleAvatar(
                     radius: 18,
                     child: Image.asset(
-                      'images/plum.png',
+                      kImgPlum,
                       width: 100,
                       height: 100,
                       fit: BoxFit.cover,
@@ -55,7 +57,7 @@ class ItemList extends StatelessWidget {
                 hintStyle:
                     const TextStyle(color: Color.fromARGB(255, 135, 129, 138)),
                 hintText: 'Search replies',
-                fillColor: Colors.white,
+                fillColor: kWhiteColor,
               ),
             ),
           ),

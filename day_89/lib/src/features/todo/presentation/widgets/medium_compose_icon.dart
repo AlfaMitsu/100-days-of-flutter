@@ -7,12 +7,14 @@ class MediumComposeIcon extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(children: <Widget>[
-      Container(
-        padding: const EdgeInsets.fromLTRB(0, 10, 0, 18),
-        child: const Icon(Icons.menu),
-      ),
-      const SmallComposeIcon(),
-    ]);
+    return Column(
+      children: <Widget>[
+        Container(
+          padding: const EdgeInsets.fromLTRB(0, 10, 0, 18),
+          child: const Icon(Icons.menu),
+        ),
+        const SmallComposeIcon(),
+      ],
+    );
   }
 }

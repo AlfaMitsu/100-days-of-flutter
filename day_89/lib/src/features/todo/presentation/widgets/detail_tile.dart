@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import '../../../../constants/colors.dart';
 import '../../data/models/email_model.dart';
 import '../../data/models/item_model.dart';
 import 'email_tile.dart';
@@ -17,7 +18,9 @@ class DetailTile extends StatelessWidget {
         child: Container(
           decoration: const BoxDecoration(
             color: Color.fromARGB(255, 245, 241, 248),
-            borderRadius: BorderRadius.all(Radius.circular(10)),
+            borderRadius: BorderRadius.all(
+              Radius.circular(10),
+            ),
           ),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
@@ -55,25 +58,28 @@ class DetailTile extends StatelessWidget {
                               Container(
                                 padding: const EdgeInsets.all(8.0),
                                 decoration: const BoxDecoration(
-                                  color: Colors.white,
+                                  color: kWhiteColor,
                                   borderRadius:
                                       BorderRadius.all(Radius.circular(15)),
                                 ),
-                                child: Icon(
+                                child: const Icon(
                                   Icons.restore_from_trash,
-                                  color: Colors.grey[600],
+                                  color: kGrey800Color,
                                 ),
                               ),
                               const SizedBox(width: 15),
                               Container(
                                 padding: const EdgeInsets.all(8.0),
                                 decoration: const BoxDecoration(
-                                  color: Colors.white,
-                                  borderRadius:
-                                      BorderRadius.all(Radius.circular(15)),
+                                  color: kWhiteColor,
+                                  borderRadius: BorderRadius.all(
+                                    Radius.circular(15),
+                                  ),
                                 ),
-                                child: Icon(Icons.more_vert,
-                                    color: Colors.grey[600]),
+                                child: const Icon(
+                                  Icons.more_vert,
+                                  color: kGrey800Color,
+                                ),
                               )
                             ],
                           ),

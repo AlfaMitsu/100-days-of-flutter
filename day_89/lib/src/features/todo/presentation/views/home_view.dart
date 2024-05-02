@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_adaptive_scaffold/flutter_adaptive_scaffold.dart';
 
+import '../../../../constants/styles.dart';
 import '../../data/data_sources/item_data_source.dart';
 import '../widgets/detail_tile.dart';
 import '../widgets/item_list.dart';
@@ -87,11 +88,15 @@ class _HomeViewState extends State<HomeView>
         children: <Widget>[
           const Divider(color: Colors.white, thickness: 1.5),
           const SizedBox(height: 10),
-          Row(children: <Widget>[
-            const SizedBox(width: 22),
-            Text('Folders',
-                style: TextStyle(fontSize: 13, color: Colors.grey[700]))
-          ]),
+          const Row(
+            children: <Widget>[
+              SizedBox(width: 22),
+              Text(
+                'Folders',
+                style: kFoldersTextStyle,
+              ),
+            ],
+          ),
           const SizedBox(height: 22),
           Row(
             children: <Widget>[
@@ -129,7 +134,8 @@ class _HomeViewState extends State<HomeView>
               ),
               const SizedBox(width: 21),
               const Flexible(
-                  child: Text('Taxes', overflow: TextOverflow.ellipsis))
+                child: Text('Taxes', overflow: TextOverflow.ellipsis),
+              ),
             ],
           ),
           const SizedBox(height: 16),
@@ -143,7 +149,8 @@ class _HomeViewState extends State<HomeView>
               ),
               const SizedBox(width: 21),
               const Flexible(
-                  child: Text('Receipts', overflow: TextOverflow.ellipsis))
+                child: Text('Receipts', overflow: TextOverflow.ellipsis),
+              ),
             ],
           ),
           Expanded(
@@ -152,20 +159,22 @@ class _HomeViewState extends State<HomeView>
               child: SwitchListTile.adaptive(
                 title: const Text(
                   'Directionality',
-                  style: TextStyle(fontSize: 12),
+                  style: kDirectionalityTextStyle,
                 ),
                 subtitle: Text(
                   directionalityOverride == TextDirection.ltr ? 'LTR' : 'RTL',
                 ),
                 value: directionalityOverride == TextDirection.ltr,
                 onChanged: (bool value) {
-                  setState(() {
-                    if (value) {
-                      directionalityOverride = TextDirection.ltr;
-                    } else {
-                      directionalityOverride = TextDirection.rtl;
-                    }
-                  });
+                  setState(
+                    () {
+                      if (value) {
+                        directionalityOverride = TextDirection.ltr;
+                      } else {
+                        directionalityOverride = TextDirection.rtl;
+                      }
+                    },
+                  );
                 },
               ),
             ),
@@ -191,32 +200,18 @@ class _HomeViewState extends State<HomeView>
         icon: Icon(Icons.video_call_outlined),
       )
     ];
-
-    // Updating the listener value.
     showGridView.value = Breakpoints.mediumAndUp.isActive(context);
-
     return Directionality(
       textDirection: directionalityOverride,
       child: Scaffold(
         backgroundColor: const Color.fromARGB(255, 234, 227, 241),
-        // Usage of AdaptiveLayout suite begins here. AdaptiveLayout takes
-        // LayoutSlots for its variety of screen slots.
         body: AdaptiveLayout(
-          // Each SlotLayout has a config which maps Breakpoints to
-          // SlotLayoutConfigs.
           primaryNavigation: SlotLayout(
             config: <Breakpoint, SlotLayoutConfig?>{
-              // The breakpoint used here is from the Breakpoints class but custom
-              // Breakpoints can be defined by extending the Breakpoint class
               Breakpoints.medium: SlotLayout.from(
-                // Every SlotLayoutConfig takes a key and a builder. The builder
-                // is to save memory that would be spent on initialization.
                 key: const Key('primaryNavigation'),
                 builder: (_) {
                   return AdaptiveScaffold.standardNavigationRail(
-                    // Usually it would be easier to use a builder from
-                    // AdaptiveScaffold for these types of navigation but this
-                    // navigation has custom staggered item animations.
                     onDestinationSelected: (int index) {
                       setState(() {
                         _navigationIndex = index;
@@ -259,8 +254,6 @@ class _HomeViewState extends State<HomeView>
               ),
               Breakpoints.large: SlotLayout.from(
                 key: const Key('Large primaryNavigation'),
-                // The AdaptiveScaffold builder here greatly simplifies
-                // navigational elements.
                 builder: (_) => AdaptiveScaffold.standardNavigationRail(
                   leading: const LargeComposeIcon(),
                   onDestinationSelected: (int index) {
@@ -283,9 +276,6 @@ class _HomeViewState extends State<HomeView>
             config: <Breakpoint, SlotLayoutConfig?>{
               Breakpoints.standard: SlotLayout.from(
                 key: const Key('body'),
-                // The conditional here is for navigation screens. The first
-                // screen shows the main screen and every other screen shows
-                //  ExamplePage.
                 builder: (_) => (_navigationIndex == 0)
                     ? Padding(
                         padding: const EdgeInsets.fromLTRB(0, 32, 0, 0),
@@ -303,8 +293,6 @@ class _HomeViewState extends State<HomeView>
               ? SlotLayout(
                   config: <Breakpoint, SlotLayoutConfig?>{
                     Breakpoints.mediumAndUp: SlotLayout.from(
-                      // This overrides the default behavior of the secondaryBody
-                      // disappearing as it is animating out.
                       outAnimation: AdaptiveScaffold.stayOnScreen,
                       key: const Key('Secondary Body'),
                       builder: (_) => SafeArea(
@@ -318,8 +306,6 @@ class _HomeViewState extends State<HomeView>
             config: <Breakpoint, SlotLayoutConfig?>{
               Breakpoints.small: SlotLayout.from(
                 key: const Key('bottomNavigation'),
-                // You can define inAnimations or outAnimations to override the
-                // default offset transition.
                 outAnimation: AdaptiveScaffold.topToBottom,
                 builder: (_) => AdaptiveScaffold.standardBottomNavigationBar(
                   destinations: destinations,

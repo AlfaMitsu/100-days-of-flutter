@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_adaptive_scaffold/flutter_adaptive_scaffold.dart';
 
+import '../../../../constants/colors.dart';
 import '../../data/data_sources/item_data_source.dart';
 import '../../data/models/email_model.dart';
 import '../../data/models/item_model.dart';
@@ -15,20 +16,25 @@ class ItemListTile extends StatelessWidget {
   final CardSelectedCallback selectCard;
 
   const ItemListTile(
-      {super.key, required this.item, required this.email, this.selected, required this.selectCard});
+      {super.key,
+      required this.item,
+      required this.email,
+      this.selected,
+      required this.selectCard});
 
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
-        // The behavior of opening a detail view is different on small screens
-        // than large screens.
-        // Small screens open a modal with the detail view while large screens
-        // simply show the details on the secondaryBody.
         selectCard(allItems.indexOf(item));
         if (!Breakpoints.mediumAndUp.isActive(context)) {
-          Navigator.of(context).pushNamed(ExtractRouteArguments.routeName,
-              arguments: ScreenArguments(item: item, selectCard: selectCard));
+          Navigator.of(context).pushNamed(
+            ExtractRouteArguments.routeName,
+            arguments: ScreenArguments(
+              item: item,
+              selectCard: selectCard,
+            ),
+          );
         } else {
           selectCard(allItems.indexOf(item));
         }
@@ -40,10 +46,12 @@ class ItemListTile extends StatelessWidget {
             color: selected == allItems.indexOf(item)
                 ? const Color.fromARGB(255, 234, 222, 255)
                 : const Color.fromARGB(255, 243, 237, 247),
-            borderRadius: const BorderRadius.all(Radius.circular(10)),
+            borderRadius: const BorderRadius.all(
+              Radius.circular(10),
+            ),
           ),
           child: Padding(
-            padding: const EdgeInsets.all(16.0),
+            padding: const EdgeInsets.all(16),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: <Widget>[
@@ -77,19 +85,28 @@ class ItemListTile extends StatelessWidget {
                     ],
                   ),
                   trailing: Container(
-                    padding: const EdgeInsets.all(8.0),
+                    padding: const EdgeInsets.all(8),
                     decoration: const BoxDecoration(
-                      color: Colors.white,
-                      borderRadius: BorderRadius.all(Radius.circular(50)),
+                      color: kWhiteColor,
+                      borderRadius: BorderRadius.all(
+                        Radius.circular(50),
+                      ),
                     ),
-                    child: Icon(Icons.star_outline, color: Colors.grey[500]),
+                    child: const Icon(Icons.star_outline, color: kGrey300Color),
                   ),
                 ),
                 const SizedBox(height: 13),
-                Text(item.title,
-                    style: Theme.of(context).textTheme.titleMedium),
+                Text(
+                  item.title,
+                  style: Theme.of(context).textTheme.titleMedium,
+                ),
                 const SizedBox(height: 9),
-                Text(email.body.replaceRange(116, email.body.length, '...'),
+                Text(
+                    email.body.replaceRange(
+                      116,
+                      email.body.length,
+                      '...',
+                    ),
                     style: Theme.of(context).textTheme.bodyLarge),
                 const SizedBox(height: 9),
                 SizedBox(

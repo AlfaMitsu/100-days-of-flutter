@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 
+import '../../../../constants/colors.dart';
+import '../../../../constants/styles.dart';
+
 class EmailTile extends StatelessWidget {
   final String sender;
   final String time;
@@ -22,8 +25,10 @@ class EmailTile extends StatelessWidget {
       padding: const EdgeInsets.fromLTRB(0, 4, 0, 4),
       child: Container(
         decoration: const BoxDecoration(
-          color: Colors.white,
-          borderRadius: BorderRadius.all(Radius.circular(10)),
+          color: kWhiteColor,
+          borderRadius: BorderRadius.all(
+            Radius.circular(10),
+          ),
         ),
         child: Padding(
           padding: const EdgeInsets.all(16),
@@ -45,12 +50,15 @@ class EmailTile extends StatelessWidget {
                   Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: <Widget>[
-                      Text(sender,
-                          style:
-                              TextStyle(color: Colors.grey[850], fontSize: 13)),
+                      Text(
+                        sender,
+                        style: kFoldersTextStyle,
+                      ),
                       const SizedBox(height: 3),
-                      Text('$time ago',
-                          style: Theme.of(context).textTheme.bodySmall),
+                      Text(
+                        '$time ago',
+                        style: Theme.of(context).textTheme.bodySmall,
+                      ),
                     ],
                   ),
                   const Spacer(),
@@ -60,27 +68,35 @@ class EmailTile extends StatelessWidget {
                       color: Color.fromARGB(255, 245, 241, 248),
                       borderRadius: BorderRadius.all(Radius.circular(50)),
                     ),
-                    child: Icon(Icons.star_outline, color: Colors.grey[500]),
+                    child: const Icon(
+                      Icons.star_outline,
+                      color: kGrey300Color,
+                    ),
                   ),
                 ],
               ),
               if (recipients != '')
-                Column(children: <Widget>[
-                  const SizedBox(height: 15),
-                  Text('To $recipients',
-                      style: TextStyle(color: Colors.grey[500], fontSize: 12)),
-                ])
+                Column(
+                  children: <Widget>[
+                    const SizedBox(height: 15),
+                    Text(
+                      'To $recipients',
+                      style: kRecipientsTextStyle,
+                    ),
+                  ],
+                )
               else
                 Container(),
               const SizedBox(height: 15),
-              Text(body,
-                  style: TextStyle(
-                      color: Colors.grey[700], height: 1.35, fontSize: 14.5)),
+              Text(
+                body,
+                style: kBodyTextStyle,
+              ),
               const SizedBox(height: 9),
               SizedBox(
-                  width: MediaQuery.of(context).size.width,
-                  child:
-                      (bodyImage != '') ? Image.asset(bodyImage) : Container()),
+                width: MediaQuery.of(context).size.width,
+                child: (bodyImage != '') ? Image.asset(bodyImage) : Container(),
+              ),
               const SizedBox(height: 10),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
@@ -92,19 +108,23 @@ class EmailTile extends StatelessWidget {
                       style: ButtonStyle(
                         shape: MaterialStateProperty.all(
                           RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(30.0)),
+                            borderRadius: BorderRadius.circular(30),
+                          ),
                         ),
                         backgroundColor: MaterialStateProperty.all<Color>(
                           const Color.fromARGB(255, 245, 241, 248),
                         ),
                         side: MaterialStateProperty.all(
                           const BorderSide(
-                              width: 0.0, color: Colors.transparent),
+                            width: 0.0,
+                            color: kTransparent,
+                          ),
                         ),
                       ),
-                      child: Text('Reply',
-                          style:
-                              TextStyle(color: Colors.grey[700], fontSize: 12)),
+                      child: const Text(
+                        'Reply',
+                        style: kReply2TextStyle,
+                      ),
                     ),
                   ),
                   SizedBox(
@@ -114,19 +134,22 @@ class EmailTile extends StatelessWidget {
                       style: ButtonStyle(
                         shape: MaterialStateProperty.all(
                           RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(30.0)),
+                            borderRadius: BorderRadius.circular(30),
+                          ),
                         ),
                         backgroundColor: MaterialStateProperty.all<Color>(
                           const Color.fromARGB(255, 245, 241, 248),
                         ),
                         side: MaterialStateProperty.all(
                           const BorderSide(
-                              width: 0.0, color: Colors.transparent),
+                            width: 0.0,
+                            color: kTransparent,
+                          ),
                         ),
                       ),
-                      child: Text(
+                      child: const Text(
                         'Reply all',
-                        style: TextStyle(color: Colors.grey[700], fontSize: 12),
+                        style: kReply2TextStyle,
                       ),
                     ),
                   ),
