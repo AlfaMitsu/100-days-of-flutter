@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:quickalert/quickalert.dart';
 
+import '../../../../constants/assets.dart';
+import '../../../../constants/colors.dart';
+import '../../../../constants/styles.dart';
+
 class HomeView extends StatefulWidget {
   const HomeView({super.key});
 
@@ -23,7 +27,7 @@ class _HomeViewState extends State<HomeView> {
       },
       title: 'Success',
       text: 'Transaction Completed Successfully!',
-      leadingImage: 'assets/success.gif',
+      leadingImage: kImgSuccess,
     );
 
     final errorAlert = buildButton(
@@ -33,14 +37,14 @@ class _HomeViewState extends State<HomeView> {
           type: QuickAlertType.error,
           title: 'Oops...',
           text: 'Sorry, something went wrong',
-          backgroundColor: Colors.black,
-          titleColor: Colors.white,
-          textColor: Colors.white,
+          backgroundColor: kBlackColor,
+          titleColor: kWhiteColor,
+          textColor: kWhiteColor,
         );
       },
       title: 'Error',
       text: 'Sorry, something went wrong',
-      leadingImage: 'assets/error.gif',
+      leadingImage: kImgError,
     );
 
     final warningAlert = buildButton(
@@ -53,7 +57,7 @@ class _HomeViewState extends State<HomeView> {
       },
       title: 'Warning',
       text: 'You just broke protocol',
-      leadingImage: 'assets/warning.gif',
+      leadingImage: kImgWarning,
     );
 
     final infoAlert = buildButton(
@@ -66,7 +70,7 @@ class _HomeViewState extends State<HomeView> {
       },
       title: 'Info',
       text: 'Buy two, get one free',
-      leadingImage: 'assets/info.gif',
+      leadingImage: kImgInfo,
     );
 
     final confirmAlert = buildButton(
@@ -82,21 +86,18 @@ class _HomeViewState extends State<HomeView> {
           textAlignment: TextAlign.right,
           confirmBtnText: 'Yes',
           cancelBtnText: 'No',
-          confirmBtnColor: Colors.white,
-          backgroundColor: Colors.black,
-          headerBackgroundColor: Colors.grey,
-          confirmBtnTextStyle: const TextStyle(
-            color: Colors.black,
-            fontWeight: FontWeight.bold,
-          ),
-          barrierColor: Colors.white,
-          titleColor: Colors.white,
-          textColor: Colors.white,
+          confirmBtnColor: kWhiteColor,
+          backgroundColor: kBlackColor,
+          headerBackgroundColor: kGreyColor,
+          confirmBtnTextStyle: kButtonTextStyle, 
+          barrierColor: kWhiteColor,
+          titleColor: kWhiteColor,
+          textColor: kWhiteColor,
         );
       },
       title: 'Confirm',
       text: 'Do you want to logout',
-      leadingImage: 'assets/confirm.gif',
+      leadingImage: kImgConfirm,
     );
 
     final loadingAlert = buildButton(
@@ -110,7 +111,7 @@ class _HomeViewState extends State<HomeView> {
       },
       title: 'Loading',
       text: 'Fetching your data',
-      leadingImage: 'assets/loading.gif',
+      leadingImage: kImgLoading,
     );
 
     final customAlert = buildButton(
@@ -121,7 +122,7 @@ class _HomeViewState extends State<HomeView> {
           type: QuickAlertType.custom,
           barrierDismissible: true,
           confirmBtnText: 'Save',
-          customAsset: 'assets/custom.gif',
+          customAsset: kImgCustom,
           widget: TextFormField(
             decoration: const InputDecoration(
               alignLabelWithHint: true,
@@ -156,15 +157,15 @@ class _HomeViewState extends State<HomeView> {
       },
       title: 'Custom',
       text: 'Custom Widget Alert',
-      leadingImage: 'assets/custom.gif',
+      leadingImage: kImgCustom,
     );
 
     return Scaffold(
-      backgroundColor: Colors.white,
+      backgroundColor: kWhiteColor,
       appBar: AppBar(
         elevation: 1,
         centerTitle: true,
-        backgroundColor: Colors.white,
+        backgroundColor: kWhiteColor,
         title: Text(
           "QuickAlert Demo",
           style: Theme.of(context).textTheme.titleMedium,
