@@ -18,13 +18,20 @@ class _PopButtonViewState extends State<PopButtonView> {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 25.0),
+      padding: const EdgeInsets.symmetric(horizontal: 25),
       child: Column(
         children: [
-          const Expanded(flex: 5, child: SizedBox()),
-          SvgPicture.asset('assets/svg/heading_buttons.svg'),
-          const Expanded(flex: 4, child: SizedBox()),
-          SvgPicture.asset('assets/svg/text_floating_tilted_button.svg'),
+          const Expanded(
+            flex: 5,
+            child: SizedBox(),
+          ),
+          SvgPicture.asset('lib/src/resources/assets/svg/heading_buttons.svg'),
+          const Expanded(
+            flex: 4,
+            child: SizedBox(),
+          ),
+          SvgPicture.asset(
+              'lib/src/resources/assets/svg/text_floating_tilted_button.svg'),
           const SizedBox(height: 15),
           NeoPopTiltedButton(
             isFloating: true,
@@ -38,14 +45,18 @@ class _PopButtonViewState extends State<PopButtonView> {
             ),
             child: Padding(
               padding: const EdgeInsets.symmetric(
-                horizontal: 70.0,
+                horizontal: 70,
                 vertical: 15,
               ),
-              child: SvgPicture.asset('assets/svg/cta_text_play_now.svg'),
+              child: SvgPicture.asset(
+                  'lib/src/resources/assets/svg/cta_text_play_now.svg'),
             ),
           ),
-          const Expanded(child: SizedBox()),
-          SvgPicture.asset('assets/svg/text_non_floating_tilt_button.svg'),
+          const Expanded(
+            child: SizedBox(),
+          ),
+          SvgPicture.asset(
+              'lib/src/resources/assets/svg/text_non_floating_tilt_button.svg'),
           const SizedBox(height: 15),
           NeoPopTiltedButton(
             color: kPrimaryButtonColor,
@@ -53,14 +64,18 @@ class _PopButtonViewState extends State<PopButtonView> {
             onTapDown: () => HapticFeedback.lightImpact(),
             child: Padding(
               padding: const EdgeInsets.symmetric(
-                horizontal: 80.0,
+                horizontal: 80,
                 vertical: 15,
               ),
-              child: SvgPicture.asset('assets/svg/cta_text_view.svg'),
+              child: SvgPicture.asset(
+                  'lib/src/resources/assets/svg/cta_text_view.svg'),
             ),
           ),
-          const Expanded(child: SizedBox()),
-          SvgPicture.asset('assets/svg/text_stroke_button.svg'),
+          const Expanded(
+            child: SizedBox(),
+          ),
+          SvgPicture.asset(
+              'lib/src/resources/assets/svg/text_stroke_button.svg'),
           const SizedBox(height: 18),
           NeoPopButton(
             color: kSecondaryButtonLightColor,
@@ -76,13 +91,17 @@ class _PopButtonViewState extends State<PopButtonView> {
             ),
             child: Padding(
               padding: const EdgeInsets.symmetric(
-                horizontal: 50.0,
+                horizontal: 50,
                 vertical: 15,
               ),
-              child: SvgPicture.asset('assets/svg/cta_text_scan.svg'),
+              child: SvgPicture.asset(
+                  'lib/src/resources/assets/svg/cta_text_scan.svg'),
             ),
           ),
-          const Expanded(flex: 4, child: SizedBox()),
+          const Expanded(
+            flex: 4,
+            child: SizedBox(),
+          ),
           BottomNavigator(
             onLeftTap: () =>
                 Navigator.of(context).popUntil((route) => route.isFirst),
@@ -91,7 +110,9 @@ class _PopButtonViewState extends State<PopButtonView> {
               curve: Curves.easeInOut,
             ),
           ),
-          const Expanded(child: SizedBox()),
+          const Expanded(
+            child: SizedBox(),
+          ),
         ],
       ),
     );

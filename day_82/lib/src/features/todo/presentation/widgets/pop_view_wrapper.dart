@@ -18,9 +18,15 @@ class PopViewWrapper extends StatelessWidget {
         child: Stack(
           fit: StackFit.expand,
           children: [
-            SvgPicture.asset('assets/svg/wrapper_bg.svg', fit: BoxFit.fill),
+            SvgPicture.asset(
+              'lib/src/resources/assets/svg/wrapper_bg.svg',
+              fit: BoxFit.fill,
+            ),
             if (isMobileWidth)
-              Image.asset('assets/bg_lights.png', fit: BoxFit.fill),
+              Image.asset(
+                'lib/src/resources/assets/images/bg_lights.png',
+                fit: BoxFit.fill,
+              ),
             Container(
               height: double.maxFinite,
               width: double.maxFinite,

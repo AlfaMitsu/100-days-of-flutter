@@ -14,9 +14,16 @@ class PopSecondaryButtonView extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        const Expanded(flex: 7, child: SizedBox()),
-        SvgPicture.asset('assets/svg/heading_secondary_btns.svg'),
-        const Expanded(flex: 8, child: SizedBox()),
+        const Expanded(
+          flex: 7,
+          child: SizedBox(),
+        ),
+        SvgPicture.asset(
+            'lib/src/resources/assets/svg/heading_secondary_btns.svg'),
+        const Expanded(
+          flex: 8,
+          child: SizedBox(),
+        ),
         NeoPopButton(
           color: kSecondaryButtonColor,
           parentColor: kSecondaryButtonLightColor,
@@ -29,8 +36,12 @@ class PopSecondaryButtonView extends StatelessWidget {
             BorderSide(color: kBorderColorWhite, width: kButtonBorderWidth),
           ),
           child: Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 100, vertical: 15),
-            child: SvgPicture.asset('assets/svg/cta_text_secondary.svg'),
+            padding: const EdgeInsets.symmetric(
+              horizontal: 100,
+              vertical: 15,
+            ),
+            child: SvgPicture.asset(
+                'lib/src/resources/assets/svg/cta_text_secondary.svg'),
           ),
         ),
         const Expanded(flex: 2, child: SizedBox()),
@@ -44,11 +55,18 @@ class PopSecondaryButtonView extends StatelessWidget {
           onTapUp: () => HapticFeedback.lightImpact(),
           onTapDown: () => HapticFeedback.lightImpact(),
           child: Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 100, vertical: 15),
-            child: SvgPicture.asset('assets/svg/cta_text_secondary.svg'),
+            padding: const EdgeInsets.symmetric(
+              horizontal: 100,
+              vertical: 15,
+            ),
+            child: SvgPicture.asset(
+                'lib/src/resources/assets/svg/cta_text_secondary.svg'),
           ),
         ),
-        const Expanded(flex: 2, child: SizedBox()),
+        const Expanded(
+          flex: 2,
+          child: SizedBox(),
+        ),
         NeoPopButton(
           color: kSecondaryButtonColor,
           parentColor: kSecondaryButtonLightColor,
@@ -58,14 +76,24 @@ class PopSecondaryButtonView extends StatelessWidget {
           onTapUp: () => HapticFeedback.lightImpact(),
           onTapDown: () => HapticFeedback.lightImpact(),
           border: const Border.fromBorderSide(
-            BorderSide(color: kBorderColorWhite, width: kButtonBorderWidth),
+            BorderSide(
+              color: kBorderColorWhite,
+              width: kButtonBorderWidth,
+            ),
           ),
           child: Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 50, vertical: 15),
-            child: SvgPicture.asset('assets/svg/cta_text_secondary.svg'),
+            padding: const EdgeInsets.symmetric(
+              horizontal: 50,
+              vertical: 15,
+            ),
+            child: SvgPicture.asset(
+                'lib/src/resources/assets/svg/cta_text_secondary.svg'),
           ),
         ),
-        const Expanded(flex: 10, child: SizedBox()),
+        const Expanded(
+          flex: 10,
+          child: SizedBox(),
+        ),
         BottomNavigator(
           onLeftTap: () => controller.previousPage(
             duration: const Duration(milliseconds: 500),
@@ -76,7 +104,10 @@ class PopSecondaryButtonView extends StatelessWidget {
             curve: Curves.easeInOut,
           ),
         ),
-        const Expanded(flex: 2, child: SizedBox()),
+        const Expanded(
+          flex: 2,
+          child: SizedBox(),
+        ),
       ],
     );
   }

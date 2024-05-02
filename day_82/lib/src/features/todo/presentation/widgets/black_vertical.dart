@@ -21,9 +21,9 @@ class BlackVertical extends StatelessWidget {
       onTapDown: () => HapticFeedback.lightImpact(),
       border: Border.all(color: kBorderColorGreen, width: kButtonBorderWidth),
       child: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 8.0, vertical: 17.5),
+        padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 17.5),
         child: SvgPicture.asset(
-          'assets/svg/cta_text_button.svg',
+          'lib/src/resources/assets/svg/cta_text_button.svg',
           color: kPrimaryButtonColor,
         ),
       ),

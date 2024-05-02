@@ -9,7 +9,11 @@ class HomeViewCta extends StatelessWidget {
   final String childPath;
   final VoidCallback onTap;
 
-  const HomeViewCta({super.key, required this.childPath, required this.onTap});
+  const HomeViewCta({
+    super.key,
+    required this.childPath,
+    required this.onTap,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -25,7 +29,7 @@ class HomeViewCta extends StatelessWidget {
       child: SizedBox(
         width: double.maxFinite,
         child: Padding(
-          padding: const EdgeInsets.symmetric(vertical: 12.0),
+          padding: const EdgeInsets.symmetric(vertical: 12),
           child: SvgPicture.asset(childPath),
         ),
       ),

@@ -18,8 +18,8 @@ class WhiteVertical extends StatelessWidget {
       onTapUp: () => HapticFeedback.lightImpact(),
       onTapDown: () => HapticFeedback.lightImpact(),
       child: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 8.0, vertical: 17.5),
-        child: SvgPicture.asset('assets/svg/cta_text_button.svg'),
+        padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 17.5),
+        child: SvgPicture.asset('lib/src/resources/assets/svg/cta_text_button.svg'),
       ),
     );
   }
