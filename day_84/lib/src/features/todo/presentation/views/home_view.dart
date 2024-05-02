@@ -24,17 +24,26 @@ class _HomeViewState extends State<HomeView> with TickerProviderStateMixin {
   void initState() {
     super.initState();
 
-    _settingController =
-        AnimationController(vsync: this, duration: const Duration(seconds: 1));
-    _favoriteController =
-        AnimationController(vsync: this, duration: const Duration(seconds: 1));
-    _menuController =
-        AnimationController(vsync: this, duration: const Duration(seconds: 1));
-    _bellController =
-        AnimationController(vsync: this, duration: const Duration(seconds: 1))
-          ..repeat();
-    _bookController =
-        AnimationController(vsync: this, duration: const Duration(seconds: 1));
+    _settingController = AnimationController(
+      vsync: this,
+      duration: const Duration(seconds: 1),
+    );
+    _favoriteController = AnimationController(
+      vsync: this,
+      duration: const Duration(seconds: 1),
+    );
+    _menuController = AnimationController(
+      vsync: this,
+      duration: const Duration(seconds: 1),
+    );
+    _bellController = AnimationController(
+      vsync: this,
+      duration: const Duration(seconds: 1),
+    )..repeat();
+    _bookController = AnimationController(
+      vsync: this,
+      duration: const Duration(seconds: 1),
+    );
   }
 
   @override
@@ -56,15 +65,14 @@ class _HomeViewState extends State<HomeView> with TickerProviderStateMixin {
       ),
       body: SingleChildScrollView(
         child: Padding(
-          padding: const EdgeInsets.all(18.0),
+          padding: const EdgeInsets.all(18),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
-              /// Tap with animation example
               Column(
                 children: [
                   const Padding(
-                    padding: EdgeInsets.all(8.0),
+                    padding: EdgeInsets.all(8),
                     child: Text('Tap'),
                   ),
                   IconButton(
@@ -75,19 +83,17 @@ class _HomeViewState extends State<HomeView> with TickerProviderStateMixin {
                       _settingController.forward();
                     },
                     icon: Padding(
-                      padding: const EdgeInsets.all(8.0),
+                      padding: const EdgeInsets.all(8),
                       child: Lottie.asset(Icons8.adjust,
                           controller: _settingController),
                     ),
                   ),
                 ],
               ),
-
-              /// Toggle example
               Column(
                 children: [
                   const Padding(
-                    padding: EdgeInsets.all(8.0),
+                    padding: EdgeInsets.all(8),
                     child: Text('Toggle'),
                   ),
                   IconButton(
@@ -107,12 +113,10 @@ class _HomeViewState extends State<HomeView> with TickerProviderStateMixin {
                   ),
                 ],
               ),
-
-              /// Hover example
               Column(
                 children: [
                   const Padding(
-                    padding: EdgeInsets.all(8.0),
+                    padding: EdgeInsets.all(8),
                     child: Text('Hover'),
                   ),
                   MouseRegion(
@@ -142,12 +146,10 @@ class _HomeViewState extends State<HomeView> with TickerProviderStateMixin {
                   ),
                 ],
               ),
-
-              /// repeat example
               Column(
                 children: [
                   const Padding(
-                    padding: EdgeInsets.all(8.0),
+                    padding: EdgeInsets.all(8),
                     child: Text('Repeat'),
                   ),
                   IconButton(
@@ -158,7 +160,6 @@ class _HomeViewState extends State<HomeView> with TickerProviderStateMixin {
                         print(_bellController.status);
                       }
                       if (_bellController.isAnimating) {
-                        // _bellController.stop();
                         _bellController.reset();
                       } else {
                         _bellController.repeat();
@@ -171,17 +172,14 @@ class _HomeViewState extends State<HomeView> with TickerProviderStateMixin {
                   ),
                 ],
               ),
-
-              /// change color example
-              // To change color, goto https://lottiefiles.com/editor
-              // original color
-              // changed color
               Column(
                 children: [
                   const Padding(
                     padding: EdgeInsets.all(8.0),
-                    child: Text('Edited animation color\nblack → blue',
-                        textAlign: TextAlign.center),
+                    child: Text(
+                      'Edited animation color\nblack → blue',
+                      textAlign: TextAlign.center,
+                    ),
                   ),
                   Row(
                     children: [
@@ -197,10 +195,12 @@ class _HomeViewState extends State<HomeView> with TickerProviderStateMixin {
                             _menuController.reverse();
                           }
                         },
-                        icon: Lottie.asset(Useanimations.menuV3,
-                            controller: _menuController,
-                            height: 60,
-                            fit: BoxFit.fitHeight),
+                        icon: Lottie.asset(
+                          Useanimations.menuV3,
+                          controller: _menuController,
+                          height: 60,
+                          fit: BoxFit.fitHeight,
+                        ),
                       ),
                       IconButton(
                         splashRadius: 50,
@@ -214,10 +214,12 @@ class _HomeViewState extends State<HomeView> with TickerProviderStateMixin {
                             _menuController.reverse();
                           }
                         },
-                        icon: Lottie.asset(Useanimations.menuV3Blue,
-                            controller: _menuController,
-                            height: 60,
-                            fit: BoxFit.fitHeight),
+                        icon: Lottie.asset(
+                          Useanimations.menuV3Blue,
+                          controller: _menuController,
+                          height: 60,
+                          fit: BoxFit.fitHeight,
+                        ),
                       ),
                     ],
                   ),
