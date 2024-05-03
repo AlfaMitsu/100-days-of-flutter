@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:mobile_scanner/mobile_scanner.dart';
 
+import '../../../../constants/colors.dart';
+
 class AnalyzeImageFromGalleryButton extends StatelessWidget {
   final MobileScannerController controller;
   const AnalyzeImageFromGalleryButton({super.key, required this.controller});
@@ -9,9 +11,9 @@ class AnalyzeImageFromGalleryButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return IconButton(
-      color: Colors.white,
+      color: kWhiteColor,
       icon: const Icon(Icons.image),
-      iconSize: 32.0,
+      iconSize: 32,
       onPressed: () async {
         final ImagePicker picker = ImagePicker();
 
@@ -34,11 +36,11 @@ class AnalyzeImageFromGalleryButton extends StatelessWidget {
         final SnackBar snackbar = barcodes != null
             ? const SnackBar(
                 content: Text('Barcode found!'),
-                backgroundColor: Colors.green,
+                backgroundColor: kLightGreenColor,
               )
             : const SnackBar(
                 content: Text('No barcode found!'),
-                backgroundColor: Colors.red,
+                backgroundColor: kRedColor,
               );
 
         ScaffoldMessenger.of(context).showSnackBar(snackbar);

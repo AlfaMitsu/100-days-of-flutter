@@ -3,6 +3,7 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:mobile_scanner/mobile_scanner.dart';
 
+import '../../../../constants/colors.dart';
 import '../widgets/analyze_image_from_gallery_button.dart';
 import '../widgets/scanner_error_widget.dart';
 import '../widgets/start_stop_mobile_scanner_button.dart';
@@ -36,14 +37,14 @@ class _BarcodeScannerWithControllerState
       return const Text(
         'Scan something!',
         overflow: TextOverflow.fade,
-        style: TextStyle(color: Colors.white),
+        style: TextStyle(color: kWhiteColor),
       );
     }
 
     return Text(
       value.displayValue ?? 'No display value.',
       overflow: TextOverflow.fade,
-      style: const TextStyle(color: Colors.white),
+      style: const TextStyle(color: kWhiteColor),
     );
   }
 
@@ -89,7 +90,7 @@ class _BarcodeScannerWithControllerState
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(title: const Text('With controller')),
-      backgroundColor: Colors.black,
+      backgroundColor: kBlackColor,
       body: Stack(
         children: [
           MobileScanner(
@@ -104,7 +105,7 @@ class _BarcodeScannerWithControllerState
             child: Container(
               alignment: Alignment.bottomCenter,
               height: 100,
-              color: Colors.black.withOpacity(0.4),
+              color: kBlackColor.withOpacity(0.4),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [

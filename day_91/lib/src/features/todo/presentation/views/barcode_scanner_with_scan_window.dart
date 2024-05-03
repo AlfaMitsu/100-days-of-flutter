@@ -2,6 +2,7 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:mobile_scanner/mobile_scanner.dart';
 
+import '../../../../constants/colors.dart';
 import '../widgets/scanned_barcode_label.dart';
 import '../widgets/scanner_error_widget.dart';
 
@@ -95,7 +96,7 @@ class _BarcodeScannerWithScanWindowState
 
     return Scaffold(
       appBar: AppBar(title: const Text('With Scan window')),
-      backgroundColor: Colors.black,
+      backgroundColor: kBlackColor,
       body: Stack(
         fit: StackFit.expand,
         children: [
@@ -115,7 +116,7 @@ class _BarcodeScannerWithScanWindowState
               alignment: Alignment.center,
               padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
               height: 100,
-              color: Colors.black.withOpacity(0.4),
+              color: kBlackColor.withOpacity(0.4),
               child: ScannedBarcodeLabel(barcodes: controller.barcodes),
             ),
           ),
@@ -143,7 +144,7 @@ class ScannerOverlay extends CustomPainter {
     final cutoutPath = Path()..addRect(scanWindow);
 
     final backgroundPaint = Paint()
-      ..color = Colors.black.withOpacity(0.5)
+      ..color = kBlackColor.withOpacity(0.5)
       ..style = PaintingStyle.fill
       ..blendMode = BlendMode.dstOut;
 
@@ -220,7 +221,7 @@ class BarcodeOverlay extends CustomPainter {
     final cutoutPath = Path()..addPolygon(adjustedOffset, true);
 
     final backgroundPaint = Paint()
-      ..color = Colors.red.withOpacity(0.3)
+      ..color = kRedColor.withOpacity(0.3)
       ..style = PaintingStyle.fill
       ..blendMode = BlendMode.dstOut;
 

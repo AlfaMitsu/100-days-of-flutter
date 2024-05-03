@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:mobile_scanner/mobile_scanner.dart';
 
+import '../../../../constants/colors.dart';
 import '../widgets/scanned_barcode_label.dart';
 import '../widgets/scanner_error_widget.dart';
 import '../widgets/switch_camera_button.dart';
@@ -34,7 +35,7 @@ class _BarcodeScannerWithOverlayState extends State<BarcodeScannerWithOverlay> {
     );
 
     return Scaffold(
-      backgroundColor: Colors.black,
+      backgroundColor: kBlackColor,
       appBar: AppBar(
         title: const Text('Scanner with Overlay Example app'),
       ),
@@ -51,7 +52,7 @@ class _BarcodeScannerWithOverlayState extends State<BarcodeScannerWithOverlay> {
               },
               overlayBuilder: (context, constraints) {
                 return Padding(
-                  padding: const EdgeInsets.all(16.0),
+                  padding: const EdgeInsets.all(16),
                   child: Align(
                     alignment: Alignment.bottomCenter,
                     child: ScannedBarcodeLabel(barcodes: controller.barcodes),
@@ -68,7 +69,6 @@ class _BarcodeScannerWithOverlayState extends State<BarcodeScannerWithOverlay> {
                   value.error != null) {
                 return const SizedBox();
               }
-
               return CustomPaint(
                 painter: ScannerOverlay(scanWindow: scanWindow),
               );
@@ -77,7 +77,7 @@ class _BarcodeScannerWithOverlayState extends State<BarcodeScannerWithOverlay> {
           Align(
             alignment: Alignment.bottomCenter,
             child: Padding(
-              padding: const EdgeInsets.all(16.0),
+              padding: const EdgeInsets.all(16),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
@@ -102,7 +102,7 @@ class _BarcodeScannerWithOverlayState extends State<BarcodeScannerWithOverlay> {
 class ScannerOverlay extends CustomPainter {
   const ScannerOverlay({
     required this.scanWindow,
-    this.borderRadius = 12.0,
+    this.borderRadius = 12,
   });
 
   final Rect scanWindow;
@@ -125,7 +125,7 @@ class ScannerOverlay extends CustomPainter {
       );
 
     final backgroundPaint = Paint()
-      ..color = Colors.black.withOpacity(0.5)
+      ..color = kBlackColor.withOpacity(0.5)
       ..style = PaintingStyle.fill
       ..blendMode = BlendMode.dstOut;
 
@@ -136,7 +136,7 @@ class ScannerOverlay extends CustomPainter {
     );
 
     final borderPaint = Paint()
-      ..color = Colors.white
+      ..color = kWhiteColor
       ..style = PaintingStyle.stroke
       ..strokeWidth = 4.0;
 

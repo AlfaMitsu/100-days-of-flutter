@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:mobile_scanner/mobile_scanner.dart';
 
+import '../../../../constants/colors.dart';
+
 class StartStopMobileScannerButton extends StatelessWidget {
   final MobileScannerController controller;
   const StartStopMobileScannerButton({super.key, required this.controller});
@@ -12,9 +14,9 @@ class StartStopMobileScannerButton extends StatelessWidget {
       builder: (context, state, child) {
         if (!state.isInitialized || !state.isRunning) {
           return IconButton(
-            color: Colors.white,
+            color: kWhiteColor,
             icon: const Icon(Icons.play_arrow),
-            iconSize: 32.0,
+            iconSize: 32,
             onPressed: () async {
               await controller.start();
             },
@@ -22,9 +24,9 @@ class StartStopMobileScannerButton extends StatelessWidget {
         }
 
         return IconButton(
-          color: Colors.white,
+          color: kWhiteColor,
           icon: const Icon(Icons.stop),
-          iconSize: 32.0,
+          iconSize: 32,
           onPressed: () async {
             await controller.stop();
           },

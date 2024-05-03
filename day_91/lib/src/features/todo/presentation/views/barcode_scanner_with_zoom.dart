@@ -2,6 +2,7 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:mobile_scanner/mobile_scanner.dart';
 
+import '../../../../constants/colors.dart';
 import '../widgets/analyze_image_from_gallery_button.dart';
 import '../widgets/scanned_barcode_label.dart';
 import '../widgets/scanner_error_widget.dart';
@@ -40,7 +41,7 @@ class _BarcodeScannerWithZoomState extends State<BarcodeScannerWithZoom> {
         final TextStyle labelStyle = Theme.of(context)
             .textTheme
             .headlineMedium!
-            .copyWith(color: Colors.white);
+            .copyWith(color: kWhiteColor);
 
         return Padding(
           padding: const EdgeInsets.symmetric(horizontal: 8.0),
@@ -78,7 +79,7 @@ class _BarcodeScannerWithZoomState extends State<BarcodeScannerWithZoom> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(title: const Text('With zoom slider')),
-      backgroundColor: Colors.black,
+      backgroundColor: kBlackColor,
       body: Stack(
         children: [
           MobileScanner(
@@ -93,7 +94,7 @@ class _BarcodeScannerWithZoomState extends State<BarcodeScannerWithZoom> {
             child: Container(
               alignment: Alignment.bottomCenter,
               height: 100,
-              color: Colors.black.withOpacity(0.4),
+              color: kBlackColor.withOpacity(0.4),
               child: Column(
                 children: [
                   if (!kIsWeb) _buildZoomScaleSlider(),

@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:mobile_scanner/mobile_scanner.dart';
 
+import '../../../../constants/colors.dart';
+
 class ScannedBarcodeLabel extends StatelessWidget {
   final Stream<BarcodeCapture> barcodes;
   const ScannedBarcodeLabel({super.key, required this.barcodes});
@@ -16,14 +18,14 @@ class ScannedBarcodeLabel extends StatelessWidget {
           return const Text(
             'Scan something!',
             overflow: TextOverflow.fade,
-            style: TextStyle(color: Colors.white),
+            style: TextStyle(color: kWhiteColor),
           );
         }
 
         return Text(
           scannedBarcodes.first.displayValue ?? 'No display value.',
           overflow: TextOverflow.fade,
-          style: const TextStyle(color: Colors.white),
+          style: const TextStyle(color: kWhiteColor),
         );
       },
     );

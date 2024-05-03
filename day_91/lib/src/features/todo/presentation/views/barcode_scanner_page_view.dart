@@ -3,6 +3,7 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:mobile_scanner/mobile_scanner.dart';
 
+import '../../../../constants/colors.dart';
 import '../widgets/scanned_barcode_label.dart';
 import '../widgets/scanner_error_widget.dart';
 
@@ -85,7 +86,7 @@ class _BarcodeScannerPage extends StatelessWidget {
           child: Container(
             alignment: Alignment.bottomCenter,
             height: 100,
-            color: Colors.black.withOpacity(0.4),
+            color: kBlackColor.withOpacity(0.4),
             child: Center(
               child: ScannedBarcodeLabel(barcodes: controller.barcodes),
             ),

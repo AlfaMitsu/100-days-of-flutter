@@ -3,6 +3,7 @@ import 'dart:math';
 import 'package:flutter/material.dart';
 import 'package:mobile_scanner/mobile_scanner.dart';
 
+import '../../../../constants/colors.dart';
 import '../widgets/scanned_barcode_label.dart';
 import '../widgets/scanner_error_widget.dart';
 import '../widgets/start_stop_mobile_scanner_button.dart';
@@ -46,7 +47,6 @@ class _BarcodeScannerReturningImageState
                 stream: controller.barcodes,
                 builder: (context, snapshot) {
                   final barcode = snapshot.data;
-
                   if (barcode == null) {
                     return const Center(
                       child: Text(
@@ -54,15 +54,12 @@ class _BarcodeScannerReturningImageState
                       ),
                     );
                   }
-
                   final barcodeImage = barcode.image;
-
                   if (barcodeImage == null) {
                     return const Center(
                       child: Text('No image for this barcode.'),
                     );
                   }
-
                   return Image.memory(
                     barcodeImage,
                     fit: BoxFit.contain,
@@ -83,7 +80,6 @@ class _BarcodeScannerReturningImageState
                           child: child,
                         );
                       }
-
                       return const Center(
                         child: CircularProgressIndicator(),
                       );
@@ -95,7 +91,7 @@ class _BarcodeScannerReturningImageState
             Expanded(
               flex: 2,
               child: ColoredBox(
-                color: Colors.grey,
+                color: kGreyColor,
                 child: Stack(
                   children: [
                     MobileScanner(
@@ -110,7 +106,7 @@ class _BarcodeScannerReturningImageState
                       child: Container(
                         alignment: Alignment.bottomCenter,
                         height: 100,
-                        color: Colors.black.withOpacity(0.4),
+                        color: kBlackColor.withOpacity(0.4),
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                           children: [

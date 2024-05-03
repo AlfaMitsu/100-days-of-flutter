@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:mobile_scanner/mobile_scanner.dart';
 
+import '../../../../constants/colors.dart';
+
 class ToggleFlashlightButton extends StatelessWidget {
   final MobileScannerController controller;
 
@@ -18,8 +20,8 @@ class ToggleFlashlightButton extends StatelessWidget {
         switch (state.torchState) {
           case TorchState.off:
             return IconButton(
-              color: Colors.white,
-              iconSize: 32.0,
+              color: kWhiteColor,
+              iconSize: 32,
               icon: const Icon(Icons.flash_off),
               onPressed: () async {
                 await controller.toggleTorch();
@@ -27,8 +29,8 @@ class ToggleFlashlightButton extends StatelessWidget {
             );
           case TorchState.on:
             return IconButton(
-              color: Colors.white,
-              iconSize: 32.0,
+              color: kWhiteColor,
+              iconSize: 32,
               icon: const Icon(Icons.flash_on),
               onPressed: () async {
                 await controller.toggleTorch();
@@ -37,7 +39,7 @@ class ToggleFlashlightButton extends StatelessWidget {
           case TorchState.unavailable:
             return const Icon(
               Icons.no_flash,
-              color: Colors.grey,
+              color: kGreyColor,
             );
         }
       },
