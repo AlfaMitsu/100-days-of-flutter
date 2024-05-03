@@ -30,7 +30,7 @@ class SwitchCameraButton extends StatelessWidget {
         }
 
         return IconButton(
-          iconSize: 32.0,
+          iconSize: 32,
           icon: icon,
           onPressed: () async {
             await controller.switchCamera();
