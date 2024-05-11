@@ -16,13 +16,15 @@ class HomeView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text('Home')),
+      appBar: AppBar(
+        title: const Text('Home'),
+      ),
       body: Center(
         child: Column(
           mainAxisSize: MainAxisSize.min,
           children: [
             const Text("This is the screen after Introduction"),
-            const SizedBox(height: 16.0),
+            const SizedBox(height: 16),
             ElevatedButton(
               onPressed: () => _onBackToIntro(context),
               child: const Text('Back to Introduction'),
